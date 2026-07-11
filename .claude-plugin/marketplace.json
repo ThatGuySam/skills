@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "thatguysam-skills",
+  "description": "Portable agent skills from ThatGuySam.",
+  "owner": {
+    "name": "ThatGuySam",
+    "url": "https://github.com/thatguysam"
+  },
+  "plugins": [
+    {
+      "name": "htma-measure",
+      "source": {
+        "source": "github",
+        "repo": "thatguysam/skills"
+      },
+      "description": "Calibrated, decision-ready estimates with ranges, sources, and value-of-information analysis.",
+      "homepage": "https://github.com/thatguysam/skills",
+      "license": "MIT",
+      "keywords": ["skills", "agents", "measurement", "estimation", "uncertainty", "decision-making"]
+    }
+  ]
+}

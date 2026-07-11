@@ -1,0 +1,11 @@
+{
+  "name": "htma-measure",
+  "description": "Creates calibrated, decision-ready estimates with ranges, sources, and value-of-information analysis.",
+  "author": {
+    "name": "ThatGuySam"
+  },
+  "homepage": "https://github.com/thatguysam/skills",
+  "repository": "https://github.com/thatguysam/skills",
+  "license": "MIT",
+  "skills": "./skills"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "thatguysam-skills",
+  "interface": {
+    "displayName": "ThatGuySam Skills"
+  },
+  "plugins": [
+    {
+      "name": "htma-measure",
+      "description": "Calibrated, decision-ready estimates with explicit uncertainty and value-of-information analysis.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

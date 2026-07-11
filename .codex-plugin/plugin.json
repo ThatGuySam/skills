@@ -1,0 +1,18 @@
+{
+  "name": "htma-measure",
+  "version": "0.1.0",
+  "description": "Creates calibrated, decision-ready estimates with ranges, sources, and value-of-information analysis.",
+  "author": {
+    "name": "ThatGuySam",
+    "url": "https://github.com/thatguysam"
+  },
+  "homepage": "https://github.com/thatguysam/skills",
+  "repository": "https://github.com/thatguysam/skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "HTMA Measure",
+    "shortDescription": "Calibrated estimates for uncertain decisions.",
+    "category": "Productivity"
+  }
+}
