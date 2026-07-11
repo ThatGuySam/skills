@@ -1,0 +1,61 @@
+---
+title: HTMA Measure
+description: Install and use a portable agent skill for calibrated, decision-ready estimates.
+head:
+  - tag: title
+    content: "HTMA Measure — calibrated estimates for AI agents"
+template: splash
+hero:
+  tagline: Turn uncertain costs, risks, ROI, and market questions into sourced ranges you can act on.
+  actions:
+    - text: Install the skill
+      link: /guides/installation/
+      icon: download
+      variant: primary
+    - text: Run a measurement
+      link: /guides/first-measurement/
+      icon: right-arrow
+      variant: minimal
+    - text: View on GitHub
+      link: https://github.com/ThatGuySam/skills
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+:::tip[Public and available]
+HTMA Measure is published at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). The current plugin release is **0.1.1**, and the same skill works through the open Skills CLI, Codex plugins, Claude Code plugins, or a manual copy.
+:::
+
+<CardGrid>
+  <Card title="Ranges, not false precision" icon="seti:config">
+    Every estimate includes a low bound, central estimate, high bound, and confidence level.
+  </Card>
+  <Card title="Decisions, not trivia" icon="approve-check">
+    The workflow starts with the decision threshold and stops measuring when more information cannot change the action.
+  </Card>
+  <Card title="Evidence with provenance" icon="document">
+    Confirmed facts, assumptions, inference, source quality, and freshness stay visibly separate.
+  </Card>
+  <Card title="Human and machine output" icon="robot">
+    Each memo ends with a validated `HTMA_RESULT` JSON appendix without replacing the written reasoning.
+  </Card>
+</CardGrid>
+
+## Choose your path
+
+<CardGrid>
+  <LinkCard title="Install with npx skills" href="/guides/installation/#open-skills-cli" description="The portable path for Codex and many other agents." />
+  <LinkCard title="Install as a Codex plugin" href="/guides/installation/#codex-plugin" description="Add the marketplace, then add the plugin." />
+  <LinkCard title="Install in Claude Code" href="/guides/installation/#claude-code-plugin" description="Use the same repository as a Claude plugin marketplace." />
+  <LinkCard title="Write your first prompt" href="/guides/first-measurement/" description="Define the decision, threshold, quantity, and evidence." />
+</CardGrid>
+
+## Machine-readable documentation
+
+Agents can read the entire documentation corpus in one request:
+
+- [`/llms.txt`](/llms.txt) — a curated map.
+- [`/llms-full.txt`](/llms-full.txt) — every documentation page concatenated.
+- [`/llms-small.txt`](/llms-small.txt) — a compact variant.

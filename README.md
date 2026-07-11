@@ -4,6 +4,12 @@
 
 `htma-measure` is an agent skill for estimating costs, budgets, rates, risks, ROI, market size, and other uncertain quantities. It forces the decision threshold, separates facts from inference, decomposes the estimate, reports a range instead of false precision, and identifies the next measurement worth making.
 
+## Documentation
+
+- Human guide: [skills.samcarlton.com](https://skills.samcarlton.com)
+- Complete agent corpus: [skills.samcarlton.com/llms-full.txt](https://skills.samcarlton.com/llms-full.txt)
+- Site source: [`apps/docs`](apps/docs)
+
 ## Quick Start
 
 Install with the open [skills CLI](https://github.com/vercel-labs/skills):
