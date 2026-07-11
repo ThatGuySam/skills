@@ -23,6 +23,7 @@ git clone https://github.com/thatguysam/skills.git
 
 ```bash
 codex plugin marketplace add thatguysam/skills
+codex plugin add htma-measure@thatguysam-skills
 ```
 
 </details>
