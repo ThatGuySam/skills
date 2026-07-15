@@ -1,12 +1,12 @@
 {
   "name": "thatguysam-skills",
   "interface": {
-    "displayName": "ThatGuySam Skills"
+    "displayName": "Sam's Skills"
   },
   "plugins": [
     {
       "name": "htma-measure",
-      "description": "Portable skills for clearer agent instructions and calibrated decisions.",
+      "description": "A portable collection of agent skills Sam uses and shares.",
       "source": {
         "source": "local",
         "path": "./"

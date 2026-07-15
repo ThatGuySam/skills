@@ -23,15 +23,15 @@ This is the narrowest installation route for Zach Prompting or HTMA Measure.
 
 ## Codex marketplace bundle
 
-Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the historical plugin ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.0` at `./skills/` and presents the collection as **ThatGuySam Skills**.
+Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.0` at `./skills/` and presents the collection as **Sam's Skills**.
 
-Installing that plugin exposes both current skills. The unchanged ID preserves the existing installation command.
+Installing that plugin exposes every current skill. The stable install ID avoids breaking existing marketplace installations; it does not control a skill's name or Claude command prefix.
 
 ## Claude Code marketplace bundle
 
 Claude clones the repository as a marketplace. The plugin entry uses `"source": "./"`, so Claude copies the plugin from the same checkout instead of cloning the public repository a second time. Claude automatically discovers the skill directories under the plugin root's `skills/` folder.
 
-The plugin namespace remains `htma-measure` for backward compatibility. The bundled Zach Prompting command is therefore namespaced as `/htma-measure:zach-prompting`; a standalone Skills CLI installation uses the unbundled skill name.
+The marketplace install ID remains `htma-measure`, but the plugin manifest sets the collection namespace to `sam`. Bundled Claude Code commands therefore use `/sam:<skill>`, including `/sam:zach-prompting` and `/sam:htma-measure`. A standalone Skills CLI installation uses the unbundled skill name.
 
 ## Manual consumers
 

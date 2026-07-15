@@ -3,9 +3,9 @@ title: Installation
 description: Install HTMA Measure with npx skills, Codex plugins, Claude Code plugins, or a manual copy.
 ---
 
-Choose one installation path. They all expose the same `skills/htma-measure` content.
+Choose one installation path. They all expose the same canonical `skills/htma-measure` content.
 
-The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle retains the historical plugin ID `htma-measure` for backward compatibility and loads every skill currently published in this repository.
+The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle keeps the stable install ID `htma-measure` and loads every skill currently published in this repository. Claude Code uses the collection-level `sam` namespace after installation.
 
 ## Open Skills CLI
 
@@ -91,25 +91,28 @@ claude plugin list --json
 
 The marketplace uses a same-repository relative source. Claude clones the public marketplace over HTTPS and copies the plugin from that checkout, so installing it does not require a GitHub SSH key.
 
+The bundle invokes this skill as `/sam:htma-measure`. A standalone Claude Code installation invokes it as `/htma-measure`.
+
 ## Manual installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/ThatGuySam/skills.git
+cd skills
 ```
 
 Copy the skill directory into the location your agent discovers:
 
 ```bash
 mkdir -p .agents/skills
-cp -R skills/skills/htma-measure .agents/skills/htma-measure
+cp -R skills/htma-measure .agents/skills/htma-measure
 ```
 
-The first `skills` in that copy command is the cloned repository directory. If you already changed into the repository, use:
+Run that command from the cloned repository. To install from another directory, use absolute source and destination paths instead.
 
 ```bash
-cp -R skills/htma-measure /path/to/project/.agents/skills/htma-measure
+cp -R /path/to/skills/skills/htma-measure /path/to/project/.agents/skills/htma-measure
 ```
 
 ## Verify the files

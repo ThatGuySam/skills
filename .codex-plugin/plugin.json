@@ -1,7 +1,7 @@
 {
   "name": "htma-measure",
   "version": "0.2.0",
-  "description": "Portable skills for improving agent instructions and making calibrated decisions.",
+  "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
     "url": "https://github.com/thatguysam"
@@ -11,8 +11,8 @@
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
-    "displayName": "ThatGuySam Skills",
-    "shortDescription": "Clearer instructions and calibrated decisions.",
+    "displayName": "Sam's Skills",
+    "shortDescription": "Portable workflows Sam uses and shares.",
     "category": "Productivity"
   }
 }

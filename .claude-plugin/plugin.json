@@ -1,6 +1,6 @@
 {
-  "name": "htma-measure",
-  "description": "Portable skills for improving agent instructions and making calibrated decisions.",
+  "name": "sam",
+  "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam"
   },

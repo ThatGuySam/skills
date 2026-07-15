@@ -19,10 +19,11 @@ Confirm discovery first:
 npx skills add thatguysam/skills --list
 ```
 
-It should report exactly:
+It should report both currently published skills:
 
 ```text
 htma-measure
+zach-prompting
 ```
 
 The canonical file path is `skills/htma-measure/SKILL.md`.
@@ -46,7 +47,7 @@ codex plugin list --json
 
 Release `0.1.1` changed the Claude marketplace entry to a same-repository relative source, so the plugin no longer needs a second SSH clone.
 
-Refresh and update:
+Refresh and update the current collection bundle:
 
 ```bash
 claude plugin marketplace update thatguysam-skills
@@ -54,6 +55,19 @@ claude plugin update htma-measure@thatguysam-skills
 ```
 
 If a stale cache persists, remove and reinstall the plugin.
+
+## An old command uses the `/htma-measure:` command prefix
+
+The marketplace install ID remains `htma-measure@thatguysam-skills`, but the installed collection's Claude namespace is `sam`.
+
+Refresh the marketplace, update the plugin, then reload plugins or start a new session:
+
+```bash
+claude plugin marketplace update thatguysam-skills
+claude plugin update htma-measure@thatguysam-skills
+```
+
+Bundled Claude Code commands use `/sam:<skill>`. The standalone HTMA Measure skill keeps its `/htma-measure` name.
 
 ## The skill asks for clarification instead of estimating
 

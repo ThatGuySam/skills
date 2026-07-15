@@ -1,9 +1,9 @@
-# ThatGuySam Skills
+# Sam's Skills
 
-- `Tease:` Portable agent skills for clearer instructions and better decisions.
-- `Lede:` This repository publishes reusable skills for Codex, Claude Code, and other agents that support the open Agent Skills format.
-- `Why it matters:` Each skill keeps a focused workflow in `SKILL.md` and loads conditional detail only when needed.
-- `Go deeper:` Choose a skill below, install only that directory with the Skills CLI, or use the backward-compatible marketplace bundle.
+- `Tease:` Skills Sam actually uses, packaged to share.
+- `Lede:` This repository is Sam's public collection of reusable skills for Codex, Claude Code, and other agents that support the open Agent Skills format.
+- `Why it matters:` Each skill captures a focused workflow that has earned a place in Sam's toolkit, keeps its core contract in `SKILL.md`, and loads conditional detail only when needed.
+- `Go deeper:` Choose one skill below or install the marketplace bundle to get the collection.
 
 ## Skills
 
@@ -60,7 +60,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships a marketplace bundle for Codex and Claude Code. Its plugin ID remains `htma-measure` for backward compatibility, while release `0.2.0` loads both current skills. Use the Skills CLI when you want only one skill.
+The repository also ships release `0.2.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -79,6 +79,8 @@ codex plugin add htma-measure@thatguysam-skills
 /plugin marketplace add thatguysam/skills
 /plugin install htma-measure@thatguysam-skills
 ```
+
+Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompting` and `/sam:htma-measure`. Standalone installations keep their unbundled names. Codex skill selectors remain `$zach-prompting` and `$htma-measure`.
 
 </details>
 

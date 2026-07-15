@@ -34,7 +34,7 @@ Install only this skill with the open Skills CLI:
 npx skills add thatguysam/skills --skill zach-prompting
 ```
 
-The canonical directory is [`skills/zach-prompting`](https://github.com/ThatGuySam/skills/tree/main/skills/zach-prompting). Invoke a standalone installation as `/zach-prompting` in Claude Code or `$zach-prompting` in Codex. The backward-compatible marketplace bundle uses the Claude namespace `/htma-measure:zach-prompting`.
+The canonical directory is [`skills/zach-prompting`](https://github.com/ThatGuySam/skills/tree/main/skills/zach-prompting). Invoke a standalone installation as `/zach-prompting` in Claude Code or `$zach-prompting` in Codex. The collection bundle uses the Claude namespace `/sam:zach-prompting`.
 
 ## What it improves
 

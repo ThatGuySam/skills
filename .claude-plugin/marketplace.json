@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "thatguysam-skills",
-  "description": "Portable agent skills from ThatGuySam.",
+  "description": "The portable agent skills Sam uses and shares.",
   "owner": {
     "name": "ThatGuySam",
     "url": "https://github.com/thatguysam"
@@ -10,7 +10,7 @@
     {
       "name": "htma-measure",
       "source": "./",
-      "description": "Portable skills for clearer agent instructions and calibrated decisions.",
+      "description": "A portable collection of agent skills Sam uses and shares.",
       "homepage": "https://github.com/thatguysam/skills",
       "license": "MIT",
       "keywords": ["skills", "agents", "prompting", "instructions", "measurement", "estimation", "uncertainty", "decision-making"]
