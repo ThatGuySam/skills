@@ -51,6 +51,7 @@ export default defineConfig({
           items: [
             { label: "Introduction", slug: "overview/introduction" },
             { label: "Who it's for", slug: "overview/who-its-for" },
+            { label: "Problems it solves", slug: "overview/problems-it-solves" },
             { label: "How it works", slug: "overview/how-it-works" },
             { label: "Installation", slug: "guides/installation" },
             { label: "Your first measurement", slug: "guides/first-measurement" },

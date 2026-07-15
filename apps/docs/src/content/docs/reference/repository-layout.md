@@ -23,6 +23,7 @@ The repository keeps one canonical directory per skill and several distribution 
 │   └── wrangler.jsonc
 ├── skills/
 │   ├── htma-measure/
+│   │   ├── README.md
 │   │   ├── SKILL.md
 │   │   ├── agents/openai.yaml
 │   │   ├── assets/measurement-brief-template.md
@@ -57,7 +58,8 @@ The agent reads only the resource needed for the current step. For example:
 - `method-map.md` selects the smallest useful measurement technique;
 - `local-paid-quote-adjustment.md` handles local/community paid-price scenarios;
 - `output-rubric.md` validates the final memo; and
-- `measurement-brief-template.md` provides the durable output frame; and
+- `measurement-brief-template.md` provides the durable output frame;
+- `README.md` gives humans a concise use-case and installation guide; and
 - `vendor-guidance.md` provides conditional GPT-5.6 and Claude Fable 5 guidance.
 
 ## Distribution manifests

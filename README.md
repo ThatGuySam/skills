@@ -37,14 +37,26 @@ Turn uncertain costs, budgets, rates, risks, ROI, market size, and other quantit
 npx skills add thatguysam/skills --skill htma-measure
 ```
 
+Common problems it solves:
+
+- you need a planning budget before vendor quotes exist;
+- a stakeholder wants one number even though the evidence supports a range;
+- unfamiliar work or hidden subcomponents keep making estimates too optimistic;
+- “cost” could mean public price, budget allowance, likely quote, or paid amount;
+- only a few observations are available, but ignoring them would waste evidence; or
+- research keeps expanding without a rule for when to decide.
+
 Example prompts:
 
 ```text
-Use $htma-measure to estimate the likely paid cost of this local event contract.
-Use $htma-measure to estimate whether this project can clear our ROI threshold.
+Use $htma-measure to create a planning allowance for this project before quotes arrive.
+Use $htma-measure to turn this point estimate into a calibrated decision range.
+Use $htma-measure to estimate this unfamiliar project by decomposing the hidden work.
+Use $htma-measure to update our risk estimate from these few observations.
+Use $htma-measure to tell us whether more research could still change the decision.
 ```
 
-Read the [HTMA Measure guide](https://skills.samcarlton.com/overview/introduction/).
+Read the [HTMA Measure README](skills/htma-measure/README.md), [guide](https://skills.samcarlton.com/overview/introduction/), and source-backed [problems it solves](https://skills.samcarlton.com/overview/problems-it-solves/).
 
 Review or rerun the [HTMA Measure evaluation suite](skills/htma-measure/evals/README.md).
 
@@ -91,6 +103,7 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 ```text
 skills/
   htma-measure/
+    README.md
     SKILL.md
     agents/openai.yaml
     assets/
