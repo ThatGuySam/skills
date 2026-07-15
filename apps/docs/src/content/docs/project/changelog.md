@@ -10,6 +10,13 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 ## 2026-07-15
 
+### HTMA Measure evaluation suite
+
+- Ported the original generic HTMA scoring utilities and scrubbed aggregate H1-H12 history beside the skill.
+- Added a transparent ten-case H12-derived regression packet, deterministic scorer, isolated Claude CLI runner, and recorded native-agent baseline.
+- Preserved the private boundary for source ledgers, raw historical outputs, mappings, human score sheets, and active sealed holdouts.
+- Reclassified the sanitized H12 packet as a visible regression set; its results are not fresh holdout evidence.
+
 ### Sam's Skills collection
 
 - Reframed the repository and documentation site as the collection of skills Sam uses and shares.

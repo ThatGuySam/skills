@@ -46,6 +46,8 @@ Use $htma-measure to estimate whether this project can clear our ROI threshold.
 
 Read the [HTMA Measure guide](https://skills.samcarlton.com/overview/introduction/).
 
+Review or rerun the [HTMA Measure evaluation suite](skills/htma-measure/evals/README.md).
+
 ## Documentation
 
 - Human guide: [skills.samcarlton.com](https://skills.samcarlton.com)
@@ -92,6 +94,7 @@ skills/
     SKILL.md
     agents/openai.yaml
     assets/
+    evals/
     references/
   zach-prompting/
     SKILL.md

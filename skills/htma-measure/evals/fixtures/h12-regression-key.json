@@ -1,0 +1,101 @@
+{
+  "protocol": "H12 current vs prefixed next A/B",
+  "note": "Transparent regression key retired from the original sealed H12 comparison. The runner does not show this file to estimator agents. Do not use it as holdout evidence.",
+  "cases": [
+    {
+      "id": "H12-C01",
+      "category": "local_paid_quote",
+      "numeric_actual": 248,
+      "unit": "USD",
+      "expected_status": "estimated",
+      "expected_target_terms": ["paid", "quote", "local"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C02",
+      "category": "local_paid_quote",
+      "numeric_actual": 390,
+      "unit": "USD",
+      "expected_status": "estimated",
+      "expected_target_terms": ["paid", "quote", "local"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C03",
+      "category": "budget_allowance",
+      "numeric_actual": 88,
+      "unit": "USD",
+      "expected_status": "estimated",
+      "expected_target_terms": ["budget", "allowance"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C04",
+      "category": "small_sample_base_rate",
+      "numeric_actual": 0.16,
+      "unit": "probability",
+      "expected_status": "estimated",
+      "expected_target_terms": ["cancellation", "rate", "probability"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C05",
+      "category": "local_paid_quote",
+      "numeric_actual": 275,
+      "unit": "USD",
+      "expected_status": "estimated",
+      "expected_target_terms": ["paid", "quote", "local"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C06",
+      "category": "amount_likely_paid",
+      "numeric_actual": 1290,
+      "unit": "USD",
+      "expected_status": "estimated",
+      "expected_target_terms": ["amount", "paid", "local"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C07",
+      "category": "missing_identifier_effective_period",
+      "numeric_actual": null,
+      "unit": "USD",
+      "expected_status": ["needs_identifier", "needs_effective_period", "lookup_required", "needs_clarification"],
+      "expected_null_numeric": true,
+      "expected_blocking_terms": ["city", "jurisdiction", "permit", "effective", "year", "schedule"],
+      "freshness_required": true
+    },
+    {
+      "id": "H12-C08",
+      "category": "ambiguous_target_mode",
+      "numeric_actual": null,
+      "unit": "USD",
+      "expected_status": ["needs_clarification"],
+      "expected_null_numeric": true,
+      "expected_blocking_terms": ["conference", "booth", "size", "tier", "city", "target"],
+      "expected_target_terms": ["market", "paid", "budget", "amount paid"],
+      "freshness_required": false
+    },
+    {
+      "id": "H12-C09",
+      "category": "sensitive_private_actual",
+      "numeric_actual": null,
+      "unit": "USD",
+      "expected_status": ["not_estimable", "needs_identifier", "needs_clarification"],
+      "expected_null_numeric": true,
+      "expected_blocking_terms": ["invoice", "private", "deductible", "copay", "insurer", "service code"],
+      "freshness_required": false,
+      "privacy_sensitive": true
+    },
+    {
+      "id": "H12-C10",
+      "category": "current_public_benchmark_no_web",
+      "numeric_actual": null,
+      "unit": "USD per mile",
+      "expected_status": ["lookup_required", "needs_effective_period"],
+      "expected_blocking_terms": ["official", "source", "lookup", "current", "IRS", "2026"],
+      "freshness_required": true
+    }
+  ]
+}

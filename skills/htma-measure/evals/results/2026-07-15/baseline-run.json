@@ -1,0 +1,44 @@
+{
+  "run_id": "htma-h12-regression-2026-07-15-baseline",
+  "started_on": "2026-07-15",
+  "finished_at": "2026-07-15T17:06:55Z",
+  "variant": "production-baseline",
+  "source_commit": "9d8e8f8384c60338e2b361e7b3b598671cf24972",
+  "skill_git_tree": "0bd2199818ef0ce6bfad753f5f0d79e52d8c9e99",
+  "runtime": "Codex native collaboration subagents",
+  "model": null,
+  "model_note": "The collaboration API did not expose the exact model identifier.",
+  "reasoning_effort": null,
+  "sampling_settings": null,
+  "agent_count": 2,
+  "shards": [
+    {
+      "output": "baseline-a.md",
+      "cases": ["H12-C01", "H12-C02", "H12-C03", "H12-C04", "H12-C05"]
+    },
+    {
+      "output": "baseline-b.md",
+      "cases": ["H12-C06", "H12-C07", "H12-C08", "H12-C09", "H12-C10"]
+    }
+  ],
+  "web": false,
+  "isolation": "Each agent received a copied skill bundle and case packet only, with instructions not to inspect other files, Git, answer keys, prior outputs, or scores. This was instruction isolation, not a hard OS sandbox.",
+  "case_packet_sha256": "dcc76cc2e53b1bfd929d71038d5bc562dec1f7121b9de6e618305c8b6ec8560d",
+  "scoring_fixture_digest": "sha256:3f570cf4d790f6f226aac45405c8dd25b0f2b721f1d08979f10bee2cdcd82d01",
+  "scorer_sha256": "2e50e7464cfc6cabd853df6cb10ca02d083bd8d9e5c7cfe27cb64f886187e4dd",
+  "outputs": [
+    {
+      "path": "baseline-a.md",
+      "sha256": "fa2bd50dad11f87b8d32cca1cb3cb21b6b02e776ccaa263a79cdad036d8193ca"
+    },
+    {
+      "path": "baseline-b.md",
+      "sha256": "8449d8ec1bd9d7f73205aee045432551030452b24d2c4bee873b9509fb088cba"
+    }
+  ],
+  "summary_sha256": "7378ced436466835fa5f55ce3e0f8df9743efac5c8f6e8c9c3aea2815d245167",
+  "retry_count": 0,
+  "infrastructure_failures": [
+    "The local Claude CLI runner could not execute because Claude Code was not authenticated. No output from that failed attempt was scored."
+  ]
+}
