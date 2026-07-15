@@ -3,7 +3,19 @@ title: Changelog
 description: Public changes to the skills, distribution metadata, and documentation.
 ---
 
+- `Tease:` Track what changed across the skills, shared packaging, and public site.
+- `Lede:` This changelog records user-visible collection changes with dates and verification boundaries.
+- `Why it matters:` A growing collection needs one place to distinguish skill behavior, installation metadata, and documentation releases.
+- `Go deeper:` Follow the dated entries and linked verification pages for the evidence behind each release claim.
+
 ## 2026-07-15
+
+### Sam's Skills collection
+
+- Reframed the repository and documentation site as the collection of skills Sam uses and shares.
+- Added collection-level About and Installation pages, and moved collection navigation ahead of skill-specific sections.
+- Changed the bundled Claude Code namespace from `htma-measure` to `sam` while retaining the stable marketplace install key.
+- Verified public commit [`8405b24`](https://github.com/ThatGuySam/skills/commit/8405b244fc09) through a fresh HTTPS marketplace install, strict manifest validation, component inventory, and recursive skill-content comparison.
 
 ### Zach Prompting
 

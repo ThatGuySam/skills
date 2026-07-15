@@ -1,7 +1,7 @@
-# ThatGuySam Skills documentation
+# Sam's Skills documentation
 
-- `Tease:` Public instructions for installing and using each skill live beside its source.
-- `Lede:` This Astro Starlight app documents the skills in `ThatGuySam/skills` for humans and emits a complete machine-readable corpus for agents.
+- `Tease:` One public review surface for the skills Sam uses and shares.
+- `Lede:` This Astro Starlight app documents Sam's public skill collection for humans and emits a complete machine-readable corpus for agents.
 - `Why it matters:`
   - Installation and usage examples stay tied to the public repository.
   - Skill pages preserve behavior, boundaries, edge cases, sources, and validation expectations.
@@ -53,6 +53,7 @@ https://skills.samcarlton.com
 
 ## Content layout
 
+- `collection/` explains what belongs here and how to install one skill or the full bundle.
 - `zach-prompting/` documents the prompt and instruction improvement skill.
 - `overview/`, `guides/`, `features/`, and `design/` document HTMA Measure, alongside its output and data-model references.
 - Collection-level packaging pages document repository layout, compatibility, and distribution.

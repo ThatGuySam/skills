@@ -3,6 +3,11 @@ title: Distribution model
 description: How canonical skill directories reach the Skills CLI, Codex, Claude Code, and manual consumers.
 ---
 
+- `Tease:` One canonical skill directory can travel through several installation surfaces.
+- `Lede:` Sam's Skills keeps workflow content under `skills/` and uses shared manifests only to package, discover, and namespace the collection.
+- `Why it matters:` Separating content from distribution prevents copied instructions from drifting and keeps each skill independently installable.
+- `Go deeper:` Follow the surface-specific behavior and versioning rules below.
+
 The repository publishes one canonical directory per skill and keeps distribution metadata at the root.
 
 ## Canonical sources

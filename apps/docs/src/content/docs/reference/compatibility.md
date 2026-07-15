@@ -3,7 +3,10 @@ title: Compatibility
 description: Verified installation paths and the boundaries of current compatibility claims.
 ---
 
-The repository uses the standard `skills/<name>/SKILL.md` layout and contains no runtime code or platform-specific dependency.
+- `Tease:` The collection installs through the documented paths, with evidence kept separate from model-quality claims.
+- `Lede:` Each canonical skill uses the standard `skills/<name>/SKILL.md` layout, and the shared marketplace bundle exposes the same source directories.
+- `Why it matters:` Installation success proves packaging and discovery; it does not prove that every future output will be correct or better.
+- `Go deeper:` Review the dated checks, then keep the compatibility boundaries attached to any downstream claim.
 
 ## HTMA Measure baseline
 
@@ -27,16 +30,30 @@ Verified on **2026-07-15** against the local publication candidate:
 | Surface | Result | Evidence |
 | --- | --- | --- |
 | Open Skills CLI `1.5.14` | Passed | Discovered two skills, selected only `zach-prompting`, copied its three files into a clean temporary Codex target, and produced a source/hash lock record. The installed directory matched the canonical source. |
-| Claude marketplace bundle | Passed | Strict manifest validation, local marketplace add, and clean plugin install all succeeded. The backward-compatible `htma-measure` bundle contained both canonical `SKILL.md` files without differences. |
+| Claude marketplace bundle | Passed | Strict manifest validation, local marketplace add, and clean plugin install all succeeded. The stable `htma-measure` install key loaded both canonical `SKILL.md` files without differences. |
 | JSON and YAML metadata | Passed | All distribution JSON parsed; `agents/openai.yaml` parsed; the official skill validator reported `Skill is valid!`. |
 | Docs and machine corpus | Passed | Starlight built 26 pages and all three `llms*.txt` outputs; the docs-spec gate passed 11 checks with no warnings or failures. |
 
 Post-push verification also passed at skill publication commit [`54ac5d4`](https://github.com/ThatGuySam/skills/commit/54ac5d427ee94efec808d39e0d4af5f3a7ea312d): GitHub `main` matched the commit, the Skills CLI installed only `zach-prompting` from the remote repository with no content differences, and a fresh Claude marketplace installation resolved version `54ac5d427ee9` with both skill directories intact.
 
+## Sam namespace check
+
+Verified on **2026-07-15** against public commit [`8405b24`](https://github.com/ThatGuySam/skills/commit/8405b244fc09):
+
+| Surface | Result | Evidence |
+| --- | --- | --- |
+| Remote marketplace install | Passed | A fresh Claude configuration added the public repository over HTTPS and installed the stable key `htma-measure@thatguysam-skills`. |
+| Collection namespace | Passed | The installed `.claude-plugin/plugin.json` reported `name: sam` and `skills: ./skills`. |
+| Component inventory | Passed | `claude plugin details` identified the plugin as `sam` and listed exactly `htma-measure` and `zach-prompting`. |
+| Installed content | Passed | Recursive comparison found no differences between either cached skill directory and the public commit's canonical source. |
+| Manifest validation | Passed | `claude plugin validate . --strict` accepted the marketplace and plugin structure. |
+
+Claude's official [plugin marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces) distinguishes the stable marketplace entry used by install commands from the plugin name used to namespace bundled skills. A fresh interactive invocation was not run during this packaging check; the verified manifest and component inventory are the basis for the `/sam:<skill>` compatibility claim.
+
 ## Compatibility boundaries
 
-- Each published skill works without the other skill or optional HTMA companion skills.
+- Each published skill works independently of the other published skills; HTMA Measure may still use optional companion skills when they are available.
 - Clients must support Agent Skills-style Markdown discovery or allow the instructions to be loaded manually.
 - A successful install proves packaging and discovery, not the quality of every future estimate or prompt revision.
 - Current-source research still requires network access and appropriate browsing tools.
-- Private inputs remain the user’s responsibility; the skill does not fetch or infer inaccessible financial facts.
+- Private inputs remain the user's responsibility. HTMA Measure does not fetch or infer inaccessible financial facts.

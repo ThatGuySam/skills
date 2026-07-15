@@ -7,9 +7,9 @@ export default defineConfig({
   site: "https://skills.samcarlton.com",
   integrations: [
     starlight({
-      title: "ThatGuySam Skills",
+      title: "Sam's Skills",
       description:
-        "Install and use portable agent skills for clearer instructions and better decisions.",
+        "The portable agent skills Sam uses and shares.",
       plugins: [starlightLlmsTxt()],
       social: [
         {
@@ -29,11 +29,13 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
-          label: "HTMA overview",
+          label: "Collection",
           items: [
-            { label: "Introduction", slug: "overview/introduction" },
-            { label: "Who it's for", slug: "overview/who-its-for" },
-            { label: "How it works", slug: "overview/how-it-works" },
+            { label: "About Sam's Skills", slug: "collection/about" },
+            { label: "Installation", slug: "collection/installation" },
+            { label: "Compatibility", slug: "reference/compatibility" },
+            { label: "Repository layout", slug: "reference/repository-layout" },
+            { label: "Distribution model", slug: "architecture/distribution-model" },
           ],
         },
         {
@@ -45,16 +47,11 @@ export default defineConfig({
           ],
         },
         {
-          label: "Collection",
+          label: "HTMA Measure",
           items: [
-            { label: "Repository layout", slug: "reference/repository-layout" },
-            { label: "Compatibility", slug: "reference/compatibility" },
-            { label: "Distribution model", slug: "architecture/distribution-model" },
-          ],
-        },
-        {
-          label: "HTMA install & use",
-          items: [
+            { label: "Introduction", slug: "overview/introduction" },
+            { label: "Who it's for", slug: "overview/who-its-for" },
+            { label: "How it works", slug: "overview/how-it-works" },
             { label: "Installation", slug: "guides/installation" },
             { label: "Your first measurement", slug: "guides/first-measurement" },
             { label: "Prompt recipes", slug: "guides/prompt-recipes" },

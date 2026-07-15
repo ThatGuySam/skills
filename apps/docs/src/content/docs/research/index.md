@@ -1,7 +1,12 @@
 ---
 title: Research
-description: The public sources and verification evidence behind the skill’s packaging and documentation.
+description: The public sources and verification evidence behind the skills, shared packaging, and documentation.
 ---
+
+- `Tease:` Claims in the collection should trace to public sources or recorded checks.
+- `Lede:` This section gathers the research and verification evidence behind Sam's published skills and their shared distribution surfaces.
+- `Why it matters:` Visible provenance keeps vendor guidance, packaging facts, and observed results separate from inference.
+- `Go deeper:` Follow the sources below and add dated memos when a future skill needs a durable evidence base.
 
 No standalone dated research memo is currently bundled with the repository.
 

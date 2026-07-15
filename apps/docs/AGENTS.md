@@ -1,4 +1,4 @@
-# Documentation handoff — ThatGuySam Skills
+# Documentation handoff — Sam's Skills
 
 This app is the public documentation and specification surface for the skills in this repository.
 
@@ -35,4 +35,4 @@ curl -I https://skills.samcarlton.com/llms-full.txt
 curl -fsS https://skills.samcarlton.com/llms-full.txt | rg 'PLACEHOLDER_UNIQUE_CHANGED_TEXT'
 ```
 
-Docs are not runtime tests for the skill. When distribution metadata changes, run and record clean-room installer checks.
+Docs are not runtime tests for any skill. When distribution metadata changes, run and record clean-room installer checks.

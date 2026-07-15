@@ -1,19 +1,19 @@
 ---
-title: ThatGuySam Skills
-description: Install portable agent skills for clearer instructions and better decisions.
+title: Sam's Skills
+description: Browse the portable agent skills Sam uses and shares.
 head:
   - tag: title
-    content: "ThatGuySam Skills — portable skills for AI agents"
+    content: "Sam's Skills — portable workflows for AI agents"
 template: splash
 hero:
-  tagline: Give agents compact, reusable workflows for improving instructions and making uncertain decisions.
+  tagline: A growing collection of focused agent workflows Sam uses in real work and shares for others to install.
   actions:
-    - text: Explore Zach Prompting
-      link: /zach-prompting/introduction/
+    - text: About the collection
+      link: /collection/about/
       icon: right-arrow
       variant: primary
-    - text: Explore HTMA Measure
-      link: /overview/introduction/
+    - text: Install a skill
+      link: /collection/installation/
       icon: right-arrow
       variant: minimal
     - text: View on GitHub
@@ -24,8 +24,8 @@ hero:
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-:::tip[Public and portable]
-The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). Install one skill at a time with the open Skills CLI or copy its directory into a compatible agent.
+:::tip[Used by Sam, packaged to share]
+The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). Each published skill is independently installable, portable outside Sam's private workspace, and paired with honest verification evidence.
 :::
 
 <CardGrid>
@@ -35,11 +35,11 @@ The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/Tha
   <Card title="HTMA Measure" icon="approve-check">
     Turn uncertain costs, risks, ROI, and market questions into sourced ranges and decision-ready measurement memos.
   </Card>
-  <Card title="Progressive disclosure" icon="document">
-    Each skill keeps the core workflow compact and loads detailed references only when the task needs them.
+  <Card title="Built from use" icon="approve-check">
+    A skill earns a place here by solving a repeatable problem in real work, not by filling out a catalog.
   </Card>
-  <Card title="Human and machine docs" icon="robot">
-    Read the site normally or load the complete corpus from `llms-full.txt`.
+  <Card title="Portable by default" icon="document">
+    Canonical skill directories keep the core workflow compact and load detailed references only when needed.
   </Card>
 </CardGrid>
 
@@ -48,8 +48,8 @@ The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/Tha
 <CardGrid>
   <LinkCard title="Improve an instruction artifact" href="/zach-prompting/introduction/" description="Review, rewrite, debug, or migrate prompts and agent instructions." />
   <LinkCard title="Make a calibrated estimate" href="/guides/first-measurement/" description="Define the decision, threshold, quantity, and evidence." />
-  <LinkCard title="Install Zach Prompting" href="/zach-prompting/introduction/#install" description="Add only the prompt-improvement skill with the open Skills CLI." />
-  <LinkCard title="Install HTMA Measure" href="/guides/installation/" description="Use the Skills CLI, Codex plugin, Claude Code plugin, or a manual copy." />
+  <LinkCard title="Install one skill" href="/collection/installation/#install-one-skill" description="Keep agent context narrow with the open Skills CLI." />
+  <LinkCard title="Install Sam's collection" href="/collection/installation/#install-the-collection-in-claude-code" description="Load every published skill under the Claude `/sam:` namespace." />
 </CardGrid>
 
 ## Machine-readable documentation
