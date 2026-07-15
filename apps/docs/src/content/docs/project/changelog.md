@@ -11,6 +11,7 @@ description: Public changes to the skills, distribution metadata, and documentat
 - Added conditional GPT-5.6 and Claude Fable 5 guidance sourced from the official OpenAI and Anthropic prompting guides.
 - Added four fresh-context forward uses covering rewrite, review-only, model migration, and a real repository instruction audit; recorded their scope and limitations on the verification page.
 - Added the public Zach Prompting guide, examples, source attribution, and Skills CLI installation command.
+- Verified the published GitHub commit with clean remote Skills CLI and Claude marketplace installs.
 
 ### Documentation collection
 

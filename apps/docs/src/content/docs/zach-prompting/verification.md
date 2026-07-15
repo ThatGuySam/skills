@@ -22,6 +22,9 @@ description: The structural, installation, and forward-use checks run for Zach P
 | Installed content | Recursive comparison of the installed directory with the canonical source | Passed: no differences |
 | Distribution manifests | JSON parsing plus `claude plugin validate . --strict` | Passed |
 | Claude marketplace bundle | Clean temporary marketplace add and install with the backward-compatible `htma-measure` ID | Passed; the installed bundle contained both canonical `SKILL.md` files with no differences |
+| Remote GitHub publication | Compare `refs/heads/main` with publication commit [`54ac5d4`](https://github.com/ThatGuySam/skills/commit/54ac5d427ee94efec808d39e0d4af5f3a7ea312d) | Passed |
+| Remote Skills CLI install | Install `zach-prompting` from `thatguysam/skills` into a second clean temporary Codex target | Passed; two skills were discovered, one was selected, and the installed directory matched the source |
+| Remote Claude install | Add `thatguysam/skills` as a fresh marketplace and install the backward-compatible bundle | Passed at version `54ac5d427ee9`; both installed skill directories matched the source |
 | Docs build | `bun run build` in `apps/docs` | Passed; generated the Zach Prompting route and all three `llms*.txt` files |
 | Docs-spec gate | Canonical `docs-spec/scripts/check.sh` | Passed: 11 checks, 0 warnings, 0 failures |
 | Forward use | Four fresh-context agent runs described below | Passed for workflow adherence; behavioral superiority remains awaiting evals |
@@ -52,5 +55,5 @@ The skill reviewed `apps/docs/AGENTS.md` without editing it. It found that the f
 
 - The forward uses validate workflow adherence and reveal whether the skill produces useful, bounded outputs; they are not controlled comparisons of downstream model quality.
 - No live GPT-5.6 or Claude Fable 5 API eval suite was available in this repository.
-- No production docs deployment was performed as part of these checks. The local build is current; the public site remains a separate deployment state.
+- No production docs deployment was performed as part of these checks. The GitHub skill publication is current; the public documentation site remains a separate deployment state.
 - Future claims of improved task performance require a baseline, representative cases, explicit pass conditions, and the same evals after each targeted prompt change.

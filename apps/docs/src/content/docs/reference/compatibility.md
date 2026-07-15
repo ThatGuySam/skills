@@ -31,7 +31,7 @@ Verified on **2026-07-15** against the local publication candidate:
 | JSON and YAML metadata | Passed | All distribution JSON parsed; `agents/openai.yaml` parsed; the official skill validator reported `Skill is valid!`. |
 | Docs and machine corpus | Passed | Starlight built 26 pages and all three `llms*.txt` outputs; the docs-spec gate passed 11 checks with no warnings or failures. |
 
-These checks validate the local publication candidate. Remote GitHub installation is a separate post-push verification state.
+Post-push verification also passed at skill publication commit [`54ac5d4`](https://github.com/ThatGuySam/skills/commit/54ac5d427ee94efec808d39e0d4af5f3a7ea312d): GitHub `main` matched the commit, the Skills CLI installed only `zach-prompting` from the remote repository with no content differences, and a fresh Claude marketplace installation resolved version `54ac5d427ee9` with both skill directories intact.
 
 ## Compatibility boundaries
 
