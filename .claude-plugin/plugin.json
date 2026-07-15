@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "description": "Creates calibrated, decision-ready estimates with ranges, sources, and value-of-information analysis.",
+  "description": "Portable skills for improving agent instructions and making calibrated decisions.",
   "author": {
     "name": "ThatGuySam"
   },

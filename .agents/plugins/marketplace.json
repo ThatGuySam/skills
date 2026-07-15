@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "htma-measure",
-      "description": "Calibrated, decision-ready estimates with explicit uncertainty and value-of-information analysis.",
+      "description": "Portable skills for clearer agent instructions and calibrated decisions.",
       "source": {
         "source": "local",
         "path": "./"
