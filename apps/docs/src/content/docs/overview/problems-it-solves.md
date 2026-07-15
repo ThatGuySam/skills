@@ -1,11 +1,11 @@
 ---
 title: Problems Measure solves
-description: Common estimation and decision pains that HTMA Measure turns into calibrated, source-backed next steps.
+description: Documented estimation and decision pains that HTMA Measure turns into calibrated, source-backed next steps.
 ---
 
 - `Tease:` Reach for Measure when a decision needs more than a confident-sounding number.
-- `Lede:` HTMA Measure turns recurring estimation pains—missing quotes, hidden work, thin evidence, ambiguous prices, and endless research—into explicit ranges, assumptions, thresholds, and next measurements.
-- `Why it matters:` Public guidance and forecasting research consistently favor ranges, decomposition, comparable cases, uncertainty disclosure, and decision-aware evidence gathering over unsupported point estimates.
+- `Lede:` HTMA Measure turns documented estimation pains—missing quotes, hidden work, thin evidence, ambiguous prices, and endless research—into explicit ranges, assumptions, thresholds, and next measurements.
+- `Why it matters:` The cited sources support ranges, decomposition, comparable cases, uncertainty disclosure, and decision-aware evidence gathering in their respective domains.
 - `Go deeper:` Match your pain below, copy the closest prompt, and replace every bracketed field with real context.
 
 These are researched scenario patterns, not quotations or claims that the skill eliminates forecasting error. The prompts are templates; bracketed fields are intentionally unfilled, and none of the examples below presents a measured result.
@@ -66,7 +66,7 @@ Use $htma-measure to estimate the likely paid quote for [deliverable].
 
 Distinguish public list price, budget allowance, and likely transaction price.
 Context: [buyer type, scope, location, timing, pickup or delivery, and known eligibility].
-Do not assume a discount; model one only when real evidence supports it.
+Treat any unconfirmed discount as a labeled scenario, not a fact, and keep the range wide enough to include a no-discount outcome.
 ```
 
 ### Only a small sample is available

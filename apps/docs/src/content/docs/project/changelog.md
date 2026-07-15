@@ -12,7 +12,7 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 ### HTMA Measure problem examples
 
-- Added a source-backed guide to common estimation pains, including budget-before-quote decisions, point-estimate risk, hidden work, target-price ambiguity, small samples, research stopping rules, and asymmetric error costs.
+- Added a source-backed guide to documented estimation pains, including budget-before-quote decisions, point-estimate risk, hidden work, target-price ambiguity, small samples, research stopping rules, and asymmetric error costs.
 - Added copyable prompts that use explicit bracketed fields rather than fabricated measurements or realistic-looking placeholder results.
 - Added a human-facing README beside the canonical HTMA Measure skill and aligned the root repository guide and Starlight navigation.
 

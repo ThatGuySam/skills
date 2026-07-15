@@ -37,7 +37,7 @@ Turn uncertain costs, budgets, rates, risks, ROI, market size, and other quantit
 npx skills add thatguysam/skills --skill htma-measure
 ```
 
-Common problems it solves:
+Situations it helps with:
 
 - you need a planning budget before vendor quotes exist;
 - a stakeholder wants one number even though the evidence supports a range;

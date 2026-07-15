@@ -9,7 +9,7 @@ This README is the human guide. [`SKILL.md`](SKILL.md) is the canonical instruct
 
 ## When it helps
 
-| Common pain | How Measure responds |
+| Situation | How Measure responds |
 | --- | --- |
 | You need a budget before quotes exist. | Produces a planning range from the available scope, comparable work, and explicit assumptions. |
 | Someone wants one number despite meaningful uncertainty. | Returns low, central, and high values with confidence and decision risk. |
@@ -93,7 +93,7 @@ is unlikely to change [decision] at [threshold].
 
 ## What it returns
 
-The skill produces a readable Markdown measurement memo with:
+When a numeric range is responsible, the skill produces a readable Markdown measurement memo with:
 
 - a precise quantity, unit, time horizon, and estimate mode;
 - confirmed facts separated from assumptions and inference;
@@ -101,6 +101,8 @@ The skill produces a readable Markdown measurement memo with:
 - a threshold implication when a real threshold exists;
 - the largest remaining uncertainty and next measurement step; and
 - a matching `HTMA_RESULT` JSON appendix for scoring or reuse.
+
+When a required identifier, current source, effective period, or private fact is missing, the memo keeps its numeric fields null and returns the structured blocker and next step instead.
 
 ## Boundaries
 
