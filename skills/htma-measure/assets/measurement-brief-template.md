@@ -75,10 +75,10 @@
   "high_90": null,
   "confidence": "90%",
   "decision_threshold": null,
-  "threshold_implication": "[above/below/overlaps threshold and action implication]",
+  "threshold_implication": "[no action comparison until the threshold is supplied]",
   "top_uncertainty_driver": "[largest remaining uncertainty]",
-  "estimate_status": "estimated",
-  "blocking_missing_inputs": [],
+  "estimate_status": "needs_clarification",
+  "blocking_missing_inputs": ["[required input]"],
   "assumed_target": null,
   "next_measurement_step": "[specific input or source lookup]"
 }

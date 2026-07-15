@@ -5,6 +5,8 @@
 - `Why it matters:` This is the frozen before-score for the Zach Prompting candidate. Both arms must use the same cases, deterministic scorer, no-web policy, and native-agent execution pattern.
 - `Go deeper:` See `baseline-summary.json` for exact aggregates, `baseline-run.json` for provenance, and the two Markdown shards for raw outputs.
 
+The completed Zach Prompting comparison adopted V2 for its 6/6 H13 state-transition result while preserving all critical H12 gates. See [`COMPARISON.md`](COMPARISON.md).
+
 ## Aggregate Baseline
 
 | Metric | Result |

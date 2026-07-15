@@ -14,6 +14,9 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 - Ported the original generic HTMA scoring utilities and scrubbed aggregate H1-H12 history beside the skill.
 - Added a transparent ten-case H12-derived regression packet, deterministic scorer, isolated Claude CLI runner, and recorded native-agent baseline.
+- Used Zach Prompting to reconcile estimate-versus-block transitions, then compared the unchanged skill and two isolated candidates on the same regression suite.
+- Added an explicitly synthetic six-case H13 acceptance suite for missing-threshold, current-lookup, ambiguous-target, and unavailable-private-actual behavior.
+- Updated HTMA Measure so a missing threshold blocks only the action comparison when a numeric range remains responsible, while missing identifiers, current sources, and private actuals still block numeric output.
 - Preserved the private boundary for source ledgers, raw historical outputs, mappings, human score sheets, and active sealed holdouts.
 - Reclassified the sanitized H12 packet as a visible regression set; its results are not fresh holdout evidence.
 

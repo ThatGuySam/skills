@@ -1,0 +1,47 @@
+{
+  "run_id": "htma-zach-state-transitions-2026-07-15",
+  "finished_at": "2026-07-15T17:31:46Z",
+  "baseline_skill_source_commit": "9d8e8f8384c60338e2b361e7b3b598671cf24972",
+  "eval_harness_commit": "c9f50097701dd66aae0f3bd41710b5aef6881192",
+  "runtime": "Codex native collaboration subagents",
+  "model": null,
+  "model_note": "The collaboration API did not expose the exact model identifier.",
+  "reasoning_effort": null,
+  "sampling_settings": null,
+  "web": false,
+  "isolation": "Each arm received only a copied skill bundle and assigned case packet, with instructions not to inspect Git, answer keys, prior outputs, scores, or other files. This was instruction isolation, not a hard OS sandbox.",
+  "skill_bundles": {
+    "baseline_sha256": "c0da98ee22a07acd75208b02f521c3f6e079633092703ad9de2004662fbe7009",
+    "candidate_v1_sha256": "951a2cf37b5d715d743e1852861898a27985a8daa08db6ac3eb7e5f00fa8ac03",
+    "candidate_v2_sha256": "dc3be89356e09aeecf943302d5ca59d60841a77fc3d98401938d6dcc5f53d80e"
+  },
+  "suites": {
+    "h12": {
+      "case_packet_sha256": "dcc76cc2e53b1bfd929d71038d5bc562dec1f7121b9de6e618305c8b6ec8560d",
+      "scoring_fixture_digest": "sha256:3f570cf4d790f6f226aac45405c8dd25b0f2b721f1d08979f10bee2cdcd82d01",
+      "scorer_sha256": "2e50e7464cfc6cabd853df6cb10ca02d083bd8d9e5c7cfe27cb64f886187e4dd",
+      "execution": "two five-case agents per arm"
+    },
+    "h13": {
+      "case_packet_sha256": "8dbe0316826dc5355187810597a068815785454a5d1eaa43679d92c4c3f8c00a",
+      "scoring_fixture_digest": "sha256:ae2f7bef731db152f09e2cb1f0278fc47c889d7c30cd628707066a3c09f969c2",
+      "scorer_sha256": "d6d4e6fafdb5939ef9cef3857064e9289e6f217799132e310cba0db35224b060",
+      "execution": "one six-case agent per arm"
+    }
+  },
+  "output_digests": {
+    "h12_candidate_v1_a": "sha256:52b9599afc5cc50642c09f8fc98fa053676b2cce07aa19481144e526a250fedd",
+    "h12_candidate_v1_b": "sha256:85dbb1e6f024b7ac09f403f01403192e77e423b19d7dd261acd38134917b68ff",
+    "h12_candidate_v2_a": "sha256:3f2d85ea86e865ecca61a304412fdd3bc208d525cec7f800aa6e2bf6cdd9652a",
+    "h12_candidate_v2_b": "sha256:af5c1e377824954548fc88b9a591734f7441e118531b28b0be974d237f6727b9",
+    "h13_baseline": "sha256:4c2ef6fc6cef7517a1f9c006ff7d9b03ca4dcd2b04cf3f1bbf93e8040f90efad",
+    "h13_candidate_v1": "sha256:4039f29c0346c06218a7998c86595aee5051e6e00e0f0fbbda329f29a4b0b9a8",
+    "h13_candidate_v2": "sha256:9e3ee4cfaca82e1268f1848dda709600f3c233e06eeb2000c98a19a5beafc6f1"
+  },
+  "summary_digests": {
+    "h12": "sha256:193842e2b7d57a3dc08cd727971246327a3fd8699023c683a431ced60915a5c9",
+    "h13": "sha256:5008b3e068a28d6117e7122263aabbd7a5589fd012800a2e5378b2a44dcec7a7"
+  },
+  "scored_retries": 0,
+  "status": "validated-targeted-improvement"
+}

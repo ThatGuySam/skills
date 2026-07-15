@@ -1,0 +1,46 @@
+{
+  "suite": "h13-state-transitions",
+  "evidence_status": "change-directed transparent acceptance test",
+  "cases": [
+    {
+      "id": "H13-C01",
+      "expected_state": "estimated",
+      "threshold_state": "absent",
+      "expected_status": ["estimated"]
+    },
+    {
+      "id": "H13-C02",
+      "expected_state": "blocked",
+      "threshold_state": "absent",
+      "expected_status": ["needs_identifier", "needs_effective_period", "needs_clarification"],
+      "blocking_terms": ["city", "jurisdiction", "year", "fee schedule"]
+    },
+    {
+      "id": "H13-C03",
+      "expected_state": "blocked",
+      "threshold_state": "absent",
+      "expected_status": ["lookup_required"],
+      "blocking_terms": ["official", "source", "lookup", "verify"]
+    },
+    {
+      "id": "H13-C04",
+      "expected_state": "blocked",
+      "threshold_state": "absent",
+      "expected_status": ["not_estimable", "needs_identifier", "needs_clarification"],
+      "blocking_terms": ["bill", "private", "insurance", "deductible", "copay"]
+    },
+    {
+      "id": "H13-C05",
+      "expected_state": "estimated",
+      "threshold_state": "present",
+      "expected_status": ["estimated"]
+    },
+    {
+      "id": "H13-C06",
+      "expected_state": "blocked",
+      "threshold_state": "absent",
+      "expected_status": ["needs_clarification"],
+      "blocking_terms": ["conference", "city", "booth", "tier", "target"]
+    }
+  ]
+}

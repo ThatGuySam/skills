@@ -3,6 +3,11 @@ title: Output contract
 description: The required memo sections, HTMA_RESULT fields, statuses, and verification rules.
 ---
 
+- `Tease:` Prose for judgment, JSON for reuse.
+- `Lede:` Every complete result combines a readable measurement memo with a state-consistent `HTMA_RESULT` appendix.
+- `Why it matters:` Explicit numeric and blocked states keep automation from mistaking missing inputs for measured values.
+- `Go deeper:` Use the memo sections, schema, status semantics, and verification rules below.
+
 Every complete response contains a written memo and an `HTMA_RESULT` JSON appendix.
 
 ## Memo sections
@@ -59,7 +64,7 @@ This is a schema template, not a measured result:
   "high_90": null,
   "confidence": "90%",
   "decision_threshold": null,
-  "threshold_implication": "[above, below, or overlaps threshold and action implication]",
+  "threshold_implication": "[no action comparison until the threshold is supplied]",
   "top_uncertainty_driver": "[largest remaining uncertainty]",
   "estimate_status": "needs_clarification",
   "blocking_missing_inputs": ["[required missing input]"],
@@ -76,10 +81,12 @@ This is a schema template, not a measured result:
 | `needs_clarification` | The decision or target quantity is ambiguous. |
 | `needs_identifier` | A required entity, product, case, or account identifier is absent. |
 | `needs_effective_period` | The applicable date or time period is missing. |
-| `lookup_required` | A current direct source must be refreshed before estimating. |
-| `not_estimable` | Available evidence cannot support a responsible interval. |
+| `lookup_required` | A named current external value needs a direct-source refresh before estimating. |
+| `not_estimable` | Available evidence cannot support a responsible interval, including when the requested private actual is unavailable. |
 
-When the status is not `estimated`, `low_90`, `central`, and `high_90` remain `null`.
+`estimated` requires numeric `low_90`, `central`, and `high_90` values plus an empty `blocking_missing_inputs` array. A non-estimated status requires null numeric fields, an explicit blocker, and a specific next measurement.
+
+A missing decision threshold does not by itself block a responsible numeric range. In that state, `decision_threshold` remains `null`, the memo withholds an action comparison, and the result identifies threshold collection as decision context rather than fabricating one.
 
 ## Verification
 
@@ -88,7 +95,7 @@ A valid result satisfies all of these:
 - low ≤ central ≤ high when numeric;
 - units are consistent across components and the final range;
 - confidence matches the named interval;
-- threshold implication matches the numeric range;
+- threshold implication matches the numeric range or explicitly withholds comparison when the threshold is absent;
 - top uncertainty driver appears in the value-of-information section;
 - missing inputs are empty only for an estimated result;
 - next measurement is specific enough to execute; and

@@ -11,8 +11,11 @@
 | --- | --- | --- |
 | `cases/h12-regression.md` | Ten sanitized numeric and behavioral cases from the original H12 A/B | Transparent regression set |
 | `fixtures/h12-regression-key.json` | Deterministic numeric and behavior expectations | Visible scorer key; not a holdout |
+| `cases/h13-state-transitions.md` | Six explicitly synthetic estimate-versus-block cases | Change-directed acceptance set |
+| `fixtures/h13-state-transitions-key.json` | Expected result state, blocker, status, and threshold semantics | Visible scorer key; not a holdout |
 | `scripts/run_claude.py` | Tool-free, isolated Claude CLI runner with provenance metadata | Reproducible model run |
 | `scripts/score_h12.py` | Deterministic scorer ported from the original H12 run | Reproducible aggregate scoring |
+| `scripts/score_state_transitions.py` | Deterministic H13 state-machine scorer | Reproducible targeted scoring |
 | `archive/2026-05-26/` | Scrubbed aggregate H1-H12 history and generic scoring utilities | Historical evidence |
 | `private/` | Optional local sealed cases, answer keys, outputs, and mappings | Ignored; never publish |
 
@@ -57,6 +60,23 @@ Add another `name=path` argument to compare a candidate. A sharded run may use `
 - evidence, value-of-information, burden, and privacy proxies.
 
 These are regression signals, not a substitute for real human ratings or a new sealed holdout.
+
+## Score State Transitions
+
+Run each skill arm against `cases/h13-state-transitions.md`, then score the saved outputs:
+
+```bash
+python3 skills/htma-measure/evals/scripts/score_state_transitions.py \
+  --key skills/htma-measure/evals/fixtures/h13-state-transitions-key.json \
+  --summary skills/htma-measure/evals/runs/h13-summary.json \
+  --details skills/htma-measure/evals/runs/h13-details.json \
+  baseline=skills/htma-measure/evals/runs/h13-baseline.md \
+  candidate=skills/htma-measure/evals/runs/h13-candidate.md
+```
+
+H13 was created after a benchmark-blind Zach Prompting review identified an estimate-state inconsistency. It measures the declared change directly, so treat it as an acceptance test rather than independent generalization evidence. All numeric fixtures are explicitly synthetic and carry no claim about real prices.
+
+The July 15 baseline, candidate outputs, and comparison are preserved in `results/2026-07-15/`.
 
 ## Evaluation Discipline
 

@@ -7,7 +7,7 @@ description: Creates HTMA-style calibrated measurement memos with decision thres
 
 ## Workflow
 
-1. Define the decision, quantity, unit, time horizon, threshold, and cost of being wrong. If any are unclear, clarify them before estimating.
+1. Identify the decision, quantity, unit, time horizon, threshold, and cost of being wrong. Ask only for a missing input that makes a responsible numeric range unsafe. Otherwise state the bounded assumption and proceed. Do not infer identifiers, jurisdictions, effective periods, current facts, or private facts.
 2. Classify the estimate mode before estimating: paid quote, market value, budget allowance, amount likely paid, official/public benchmark, or ambiguous.
 3. Gather local context before web research. Reuse existing repo memos when relevant.
 4. Build priors from direct evidence, reference classes, and comparable cases. Mark confirmed facts separately from assumptions and inference.
@@ -57,6 +57,13 @@ Produce a Markdown memo with:
   - `assumed_target`: target-mode phrase, or `null` when no target is safe to assume
   - `next_measurement_step`: specific input or source lookup that would most improve or unlock the estimate
 
+Keep result states internally consistent:
+
+- `estimated` requires numeric `low_90`, `central`, and `high_90` values plus an empty `blocking_missing_inputs` array.
+- A non-estimated status requires null numeric fields, at least one explicit missing input or unavailable lookup, and a specific `next_measurement_step`.
+- Use `lookup_required` when a named current external value can be resolved from a direct source. Use `not_estimable` when the requested private actual is unavailable; ask the user for the record instead of treating private data as an external lookup.
+- If no threshold was supplied but the range remains estimable, set `decision_threshold` to `null`, state that no action comparison is available, and do not invent a threshold.
+
 When a responsible numeric range is not available because a required identifier, effective period, jurisdiction, current source refresh, or private fact is missing, keep `low_90`, `central`, and `high_90` as `null` and use the nonnumeric status fields to explain the blocker. Do not fabricate a range just to satisfy the JSON block.
 
 Keep the JSON block as an appendix to the memo. Do not replace the memo with JSON-only output unless explicitly requested.
@@ -71,7 +78,7 @@ Keep the JSON block as an appendix to the memo. Do not replace the memo with JSO
 ## Stop Conditions
 
 - Do not provide only a point estimate.
-- Do not continue external research before identifying the decision threshold.
+- Do not continue external research before the quantity and estimate mode are clear. A missing threshold alone does not block an otherwise responsible range; it blocks only the action comparison.
 - Do not run Monte Carlo simulation on raw guesses.
 - Do not present inferred ranges as confirmed facts.
 - Do not let public-rate anchors crowd out a plausible local paid-quote floor.
