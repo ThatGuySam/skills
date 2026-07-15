@@ -3,10 +3,10 @@ title: Repository layout
 description: The public skill package, plugin manifests, docs app, and progressive-disclosure boundaries.
 ---
 
-The repository keeps one canonical skill directory and several distribution surfaces.
+The repository keeps one canonical directory per skill and several distribution surfaces.
 
 ```text
-skills/
+./
 ├── .agents/plugins/marketplace.json
 ├── .claude-plugin/
 │   ├── marketplace.json
@@ -16,14 +16,19 @@ skills/
 │   ├── src/content/docs/
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
-├── skills/htma-measure/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── assets/measurement-brief-template.md
-│   └── references/
-│       ├── local-paid-quote-adjustment.md
-│       ├── method-map.md
-│       └── output-rubric.md
+├── skills/
+│   ├── htma-measure/
+│   │   ├── SKILL.md
+│   │   ├── agents/openai.yaml
+│   │   ├── assets/measurement-brief-template.md
+│   │   └── references/
+│   │       ├── local-paid-quote-adjustment.md
+│   │       ├── method-map.md
+│   │       └── output-rubric.md
+│   └── zach-prompting/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       └── references/vendor-guidance.md
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE
@@ -42,12 +47,13 @@ When activated, the agent reads `SKILL.md`. It contains the sequence, output con
 
 ### Level 3: conditional resources
 
-The agent reads only the resource needed for the current step:
+The agent reads only the resource needed for the current step. For example:
 
 - `method-map.md` selects the smallest useful measurement technique;
 - `local-paid-quote-adjustment.md` handles local/community paid-price scenarios;
 - `output-rubric.md` validates the final memo; and
-- `measurement-brief-template.md` provides the durable output frame.
+- `measurement-brief-template.md` provides the durable output frame; and
+- `vendor-guidance.md` provides conditional GPT-5.6 and Claude Fable 5 guidance.
 
 ## Distribution manifests
 

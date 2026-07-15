@@ -5,6 +5,8 @@ description: Install HTMA Measure with npx skills, Codex plugins, Claude Code pl
 
 Choose one installation path. They all expose the same `skills/htma-measure` content.
 
+The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle retains the historical plugin ID `htma-measure` for backward compatibility and loads every skill currently published in this repository.
+
 ## Open Skills CLI
 
 This is the most portable path. The command is `npx skills`—plural.
@@ -70,7 +72,7 @@ Verify that it is installed and enabled:
 codex plugin list --json
 ```
 
-The plugin reports its version and marketplace source. Release `0.1.1` installs without additional authentication because the repository is public.
+The plugin reports its version and marketplace source. Release `0.2.0` installs without additional authentication because the repository is public.
 
 ## Claude Code plugin
 

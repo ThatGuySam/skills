@@ -1,10 +1,10 @@
-# HTMA Measure documentation
+# ThatGuySam Skills documentation
 
-- `Tease:` Public instructions for installing and using the skill live beside its source.
-- `Lede:` This Astro Starlight app documents HTMA Measure for humans and emits a complete machine-readable corpus for agents.
+- `Tease:` Public instructions for installing and using each skill live beside its source.
+- `Lede:` This Astro Starlight app documents the skills in `ThatGuySam/skills` for humans and emits a complete machine-readable corpus for agents.
 - `Why it matters:`
-  - Installation examples are verified against the public repository.
-  - Feature pages preserve the behavior, edge cases, and data contracts behind the user guides.
+  - Installation and usage examples stay tied to the public repository.
+  - Skill pages preserve behavior, boundaries, edge cases, sources, and validation expectations.
   - `/llms-full.txt` lets an agent read the complete documentation in one request.
 - `Go deeper:`
   - Live site: https://skills.samcarlton.com
@@ -53,9 +53,8 @@ https://skills.samcarlton.com
 
 ## Content layout
 
-- `overview/` and `design/` explain the product and its rationale.
-- `guides/` contains task-oriented installation and usage instructions.
-- `features/` and `architecture/` are the machine-tier behavior contracts.
-- `reference/` contains stable schemas and compatibility details.
-- `project/` records roadmap, open questions, decisions, and changes.
+- `zach-prompting/` documents the prompt and instruction improvement skill.
+- `overview/`, `guides/`, `features/`, and `design/` document HTMA Measure, alongside its output and data-model references.
+- Collection-level packaging pages document repository layout, compatibility, and distribution.
+- `project/` records the shared roadmap, open questions, decisions, and changes.
 - `research/` carries source-backed evidence when published.

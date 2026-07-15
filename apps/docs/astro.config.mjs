@@ -7,9 +7,9 @@ export default defineConfig({
   site: "https://skills.samcarlton.com",
   integrations: [
     starlight({
-      title: "HTMA Measure",
+      title: "ThatGuySam Skills",
       description:
-        "Install and use the HTMA Measure agent skill to create calibrated, decision-ready estimates.",
+        "Install and use portable agent skills for clearer instructions and better decisions.",
       plugins: [starlightLlmsTxt()],
       social: [
         {
@@ -29,7 +29,7 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
-          label: "Overview",
+          label: "HTMA overview",
           items: [
             { label: "Introduction", slug: "overview/introduction" },
             { label: "Who it's for", slug: "overview/who-its-for" },
@@ -37,7 +37,23 @@ export default defineConfig({
           ],
         },
         {
-          label: "Install & use",
+          label: "Zach Prompting",
+          badge: { text: "New", variant: "tip" },
+          items: [
+            { label: "Introduction", slug: "zach-prompting/introduction" },
+            { label: "Verification", slug: "zach-prompting/verification" },
+          ],
+        },
+        {
+          label: "Collection",
+          items: [
+            { label: "Repository layout", slug: "reference/repository-layout" },
+            { label: "Compatibility", slug: "reference/compatibility" },
+            { label: "Distribution model", slug: "architecture/distribution-model" },
+          ],
+        },
+        {
+          label: "HTMA install & use",
           items: [
             { label: "Installation", slug: "guides/installation" },
             { label: "Your first measurement", slug: "guides/first-measurement" },
@@ -47,7 +63,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Features",
+          label: "HTMA features",
           badge: { text: "Available", variant: "tip" },
           items: [
             { label: "Calibrated estimates", slug: "features/calibrated-estimates" },
@@ -56,24 +72,21 @@ export default defineConfig({
           ],
         },
         {
-          label: "Design",
+          label: "HTMA design",
           items: [
             { label: "Motivation", slug: "design/motivation" },
             { label: "Design principles", slug: "design/principles" },
           ],
         },
         {
-          label: "Reference",
+          label: "HTMA reference",
           items: [
             { label: "Output contract", slug: "reference/output-contract" },
-            { label: "Repository layout", slug: "reference/repository-layout" },
-            { label: "Compatibility", slug: "reference/compatibility" },
           ],
         },
         {
-          label: "Architecture",
+          label: "HTMA architecture",
           items: [
-            { label: "Distribution model", slug: "architecture/distribution-model" },
             { label: "Data model", slug: "architecture/data-model" },
           ],
         },

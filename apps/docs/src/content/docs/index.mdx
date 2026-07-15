@@ -1,19 +1,19 @@
 ---
-title: HTMA Measure
-description: Install and use a portable agent skill for calibrated, decision-ready estimates.
+title: ThatGuySam Skills
+description: Install portable agent skills for clearer instructions and better decisions.
 head:
   - tag: title
-    content: "HTMA Measure — calibrated estimates for AI agents"
+    content: "ThatGuySam Skills — portable skills for AI agents"
 template: splash
 hero:
-  tagline: Turn uncertain costs, risks, ROI, and market questions into sourced ranges you can act on.
+  tagline: Give agents compact, reusable workflows for improving instructions and making uncertain decisions.
   actions:
-    - text: Install the skill
-      link: /guides/installation/
-      icon: download
+    - text: Explore Zach Prompting
+      link: /zach-prompting/introduction/
+      icon: right-arrow
       variant: primary
-    - text: Run a measurement
-      link: /guides/first-measurement/
+    - text: Explore HTMA Measure
+      link: /overview/introduction/
       icon: right-arrow
       variant: minimal
     - text: View on GitHub
@@ -24,32 +24,32 @@ hero:
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-:::tip[Public and available]
-HTMA Measure is published at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). The current plugin release is **0.1.1**, and the same skill works through the open Skills CLI, Codex plugins, Claude Code plugins, or a manual copy.
+:::tip[Public and portable]
+The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). Install one skill at a time with the open Skills CLI or copy its directory into a compatible agent.
 :::
 
 <CardGrid>
-  <Card title="Ranges, not false precision" icon="seti:config">
-    Every estimate includes a low bound, central estimate, high bound, and confidence level.
+  <Card title="Zach Prompting" icon="seti:config">
+    Tighten prompts, skills, agent definitions, tool descriptions, and repository instructions without weakening their contract.
   </Card>
-  <Card title="Decisions, not trivia" icon="approve-check">
-    The workflow starts with the decision threshold and stops measuring when more information cannot change the action.
+  <Card title="HTMA Measure" icon="approve-check">
+    Turn uncertain costs, risks, ROI, and market questions into sourced ranges and decision-ready measurement memos.
   </Card>
-  <Card title="Evidence with provenance" icon="document">
-    Confirmed facts, assumptions, inference, source quality, and freshness stay visibly separate.
+  <Card title="Progressive disclosure" icon="document">
+    Each skill keeps the core workflow compact and loads detailed references only when the task needs them.
   </Card>
-  <Card title="Human and machine output" icon="robot">
-    Each memo ends with a validated `HTMA_RESULT` JSON appendix without replacing the written reasoning.
+  <Card title="Human and machine docs" icon="robot">
+    Read the site normally or load the complete corpus from `llms-full.txt`.
   </Card>
 </CardGrid>
 
-## Choose your path
+## Choose a skill
 
 <CardGrid>
-  <LinkCard title="Install with npx skills" href="/guides/installation/#open-skills-cli" description="The portable path for Codex and many other agents." />
-  <LinkCard title="Install as a Codex plugin" href="/guides/installation/#codex-plugin" description="Add the marketplace, then add the plugin." />
-  <LinkCard title="Install in Claude Code" href="/guides/installation/#claude-code-plugin" description="Use the same repository as a Claude plugin marketplace." />
-  <LinkCard title="Write your first prompt" href="/guides/first-measurement/" description="Define the decision, threshold, quantity, and evidence." />
+  <LinkCard title="Improve an instruction artifact" href="/zach-prompting/introduction/" description="Review, rewrite, debug, or migrate prompts and agent instructions." />
+  <LinkCard title="Make a calibrated estimate" href="/guides/first-measurement/" description="Define the decision, threshold, quantity, and evidence." />
+  <LinkCard title="Install Zach Prompting" href="/zach-prompting/introduction/#install" description="Add only the prompt-improvement skill with the open Skills CLI." />
+  <LinkCard title="Install HTMA Measure" href="/guides/installation/" description="Use the Skills CLI, Codex plugin, Claude Code plugin, or a manual copy." />
 </CardGrid>
 
 ## Machine-readable documentation

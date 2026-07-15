@@ -1,37 +1,46 @@
 ---
 title: Distribution model
-description: How one canonical skill reaches the Skills CLI, Codex, Claude Code, and manual consumers.
+description: How canonical skill directories reach the Skills CLI, Codex, Claude Code, and manual consumers.
 ---
 
-HTMA Measure publishes one source directory and points every installer at it.
+The repository publishes one canonical directory per skill and keeps distribution metadata at the root.
 
-## Canonical source
+## Canonical sources
 
 ```text
-skills/htma-measure/
+skills/
+├── htma-measure/
+└── zach-prompting/
 ```
 
-The folder contains the discovery metadata, core instructions, conditional references, output template, and UI metadata.
+Each folder contains its own discovery metadata, core instructions, conditional resources, and UI metadata. Distribution surfaces point to these directories rather than duplicating their content.
 
 ## Open Skills CLI
 
-The CLI clones the repository, discovers `skills/htma-measure/SKILL.md`, and copies or links that directory into the selected agent’s skill location. It records the source, skill path, and content hash in a lock file.
+The CLI clones or reads the repository, discovers every `skills/*/SKILL.md`, and lets the user select one skill. It copies or links only the selected directory into the target agent's skill location and records the source, skill path, and content hash in a lock file.
 
-## Codex
+This is the narrowest installation route for Zach Prompting or HTMA Measure.
 
-Codex first clones the repository as a marketplace snapshot. The marketplace catalog exposes `htma-measure`, and `.codex-plugin/plugin.json` points the installed plugin at `./skills/`.
+## Codex marketplace bundle
 
-## Claude Code
+Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the historical plugin ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.0` at `./skills/` and presents the collection as **ThatGuySam Skills**.
 
-Claude clones the repository as a marketplace. The plugin entry uses `"source": "./"`, so Claude copies the plugin from the same checkout instead of cloning the public repository a second time.
+Installing that plugin exposes both current skills. The unchanged ID preserves the existing installation command.
+
+## Claude Code marketplace bundle
+
+Claude clones the repository as a marketplace. The plugin entry uses `"source": "./"`, so Claude copies the plugin from the same checkout instead of cloning the public repository a second time. Claude automatically discovers the skill directories under the plugin root's `skills/` folder.
+
+The plugin namespace remains `htma-measure` for backward compatibility. The bundled Zach Prompting command is therefore namespaced as `/htma-measure:zach-prompting`; a standalone Skills CLI installation uses the unbundled skill name.
 
 ## Manual consumers
 
-Any compatible agent can load `SKILL.md` directly and resolve its relative `references/`, `assets/`, and `agents/` paths.
+Any compatible agent can load a chosen `SKILL.md` directly and resolve its relative `references/`, `assets/`, and `agents/` paths.
 
 ## Versioning
 
-- Codex and root plugin metadata currently report `0.1.1`.
-- Plugin metadata changes bump the version so cached installations can update.
-- The Open Skills CLI tracks the skill folder’s content hash independently.
-- Documentation deploys do not duplicate or rewrite the canonical skill.
+- Codex and root plugin metadata report `0.2.0` for the two-skill collection.
+- Claude uses the repository commit when the plugin manifest omits an explicit version.
+- Plugin metadata changes bump the root and Codex versions so cached installations can update.
+- The Open Skills CLI tracks each selected skill folder's content hash independently.
+- Documentation deploys do not duplicate or rewrite canonical skill content.

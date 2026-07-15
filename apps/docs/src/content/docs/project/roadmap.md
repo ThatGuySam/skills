@@ -7,6 +7,7 @@ description: What is available now and the evidence required before expanding th
 
 - Public `ThatGuySam/skills` repository.
 - Standalone `htma-measure` skill.
+- Standalone `zach-prompting` skill.
 - Open Skills CLI discovery and installation.
 - Codex marketplace and plugin installation.
 - Claude Code marketplace and plugin installation.
@@ -19,7 +20,7 @@ description: What is available now and the evidence required before expanding th
 2. Review whether repeated failure modes belong in the core skill or a reference.
 3. Add installation smoke tests to continuous integration.
 4. Publish versioned releases when the skill contract changes.
-5. Consider publishing companion HTMA skills only when each works independently and has a clear public use case.
+5. Consider publishing more skills only when each works independently and has a clear public use case.
 
 ## Expansion gate
 

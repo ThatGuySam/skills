@@ -1,11 +1,11 @@
 # Contributing
 
-Contributions are welcome when they make `htma-measure` more useful without making it less portable.
+Contributions are welcome when they make a published skill more useful without making it less portable.
 
 ## Guidelines
 
-- Make instructions actionable and decision-relevant.
-- Preserve calibrated ranges, source provenance, and explicit uncertainty.
+- Make instructions actionable and outcome-relevant.
+- Preserve each skill's outcome, evidence, permission, and validation contract.
 - Never add fabricated measurements, realistic-looking placeholders, private data, credentials, or machine-specific paths.
 - Keep `SKILL.md` concise and put conditional detail in `references/`.
 - Add only files the skill actually uses.
