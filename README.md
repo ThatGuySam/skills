@@ -15,6 +15,8 @@ Improve prompts, skills, system instructions, agent definitions, tool descriptio
 npx skills add thatguysam/skills --skill zach-prompting
 ```
 
+Invoke a standalone installation as `/zach-prompting` in Claude Code or `$zach-prompting` in Codex.
+
 Example prompts:
 
 ```text
