@@ -8,6 +8,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 - `Why it matters:` A growing collection needs one place to distinguish skill behavior, installation metadata, and documentation releases.
 - `Go deeper:` Follow the dated entries and linked verification pages for the evidence behind each release claim.
 
+## 2026-07-17
+
+### 0.2.1
+
+- Published the [skill and instruction system audit](/research/instruction-system-audit-2026-07-17/) with eight prioritized contract-level improvements and explicit validation limits.
+- Strengthened HTMA Measure so missing value-of-information inputs remain `unknown` or explicitly qualitative instead of receiving numerical defaults.
+- Added the VOI score state, nullable expected value, and missing-input contract to the feature and architecture documentation.
+- Recorded the remaining audit sequence on the project roadmap.
+
 ## 2026-07-15
 
 ### HTMA Measure problem examples

@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -13,6 +13,14 @@
   "interface": {
     "displayName": "Sam's Skills",
     "shortDescription": "Portable workflows Sam uses and shares.",
-    "category": "Productivity"
+    "longDescription": "Portable agent workflows for calibrated measurement and prompt or instruction improvement.",
+    "developerName": "ThatGuySam",
+    "category": "Productivity",
+    "capabilities": ["Analysis", "Research", "Writing"],
+    "defaultPrompt": [
+      "Create a calibrated estimate for this uncertain decision.",
+      "Review this prompt and improve its instruction contract.",
+      "Identify what evidence would change this decision."
+    ]
   }
 }

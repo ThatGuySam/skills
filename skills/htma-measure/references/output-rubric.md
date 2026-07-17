@@ -12,6 +12,7 @@ Before finalizing an HTMA memo, verify:
 - The memo names the top uncertainty driver.
 - Official fees, statutory rates, and public benchmark prices use fresh direct sources and are not locally discounted.
 - The value-of-information section says what to measure next, what evidence would move the estimate, and when to stop measuring.
+- Numeric value-of-information scores use supplied inputs; missing inputs remain `unknown` or explicitly qualitative.
 - The final recommendation connects the estimate to the decision when a threshold exists; otherwise it states that no action comparison is available.
 - The memo ends with an `HTMA_RESULT` fenced JSON block, and its status, blockers, numeric fields, and threshold implication match the prose.
 - Sensitive personal or financial details are omitted or replaced with `[ask user]`.
@@ -20,6 +21,7 @@ Common failure modes:
 
 - False precision: exact-looking number without an interval.
 - Measurement inversion: spending effort on easy variables that cannot change the decision.
+- Synthetic VOI: assigning numeric defaults to missing decision-change, cost, quality, or measurement-cost inputs.
 - Base-rate neglect: ignoring comparable cases.
 - Inside-view only: relying on narrative plausibility without reference classes.
 - Simulation laundering: using Monte Carlo simulation to make weak inputs look rigorous.

@@ -28,7 +28,7 @@ This is the narrowest installation route for Zach Prompting or HTMA Measure.
 
 ## Codex marketplace bundle
 
-Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.0` at `./skills/` and presents the collection as **Sam's Skills**.
+Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.1` at `./skills/` and presents the collection as **Sam's Skills**.
 
 Installing that plugin exposes every current skill. The stable install ID avoids breaking existing marketplace installations; it does not control a skill's name or Claude command prefix.
 
@@ -44,7 +44,7 @@ Any compatible agent can load a chosen `SKILL.md` directly and resolve its relat
 
 ## Versioning
 
-- Codex and root plugin metadata report `0.2.0` for the two-skill collection.
+- Codex and root plugin metadata report `0.2.1` for the two-skill collection.
 - Claude uses the repository commit when the plugin manifest omits an explicit version.
 - Plugin metadata changes bump the root and Codex versions so cached installations can update.
 - The Open Skills CLI tracks each selected skill folder's content hash independently.

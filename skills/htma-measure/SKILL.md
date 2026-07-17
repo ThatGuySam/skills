@@ -21,7 +21,7 @@ description: Creates HTMA-style calibrated measurement memos with decision thres
 10. Calibrate the range and state the confidence level. Widen weak bounds rather than expressing false precision.
 11. Use small samples or reference classes when a few observations can materially reduce uncertainty.
 12. Before finalizing, ask whether the low bound still allows for materially discounted local pricing when that context is explicit.
-13. Rank remaining uncertainty by value of information before doing more research. Say what evidence would move the estimate and when further measurement would stop mattering.
+13. Rank remaining uncertainty by value of information before doing more research. Say what evidence would move the estimate and when further measurement would stop mattering. Do not assign numeric VOI defaults to missing chance, cost, information-quality, or measurement-cost inputs; keep the value `unknown` or use an explicitly qualitative ranking.
 14. Use Monte Carlo simulation only after inputs are decomposed and calibrated.
 15. Produce a durable memo using `assets/measurement-brief-template.md`.
 
@@ -81,6 +81,7 @@ Keep the JSON block as an appendix to the memo. Do not replace the memo with JSO
 - Do not continue external research before the quantity and estimate mode are clear. A missing threshold alone does not block an otherwise responsible range; it blocks only the action comparison.
 - Do not run Monte Carlo simulation on raw guesses.
 - Do not present inferred ranges as confirmed facts.
+- Do not convert missing value-of-information inputs into numerical assumptions.
 - Do not let public-rate anchors crowd out a plausible local paid-quote floor.
 - Do not discount official fees, statutory rates, or public benchmark prices as if they were local vendor quotes.
 - If the estimate depends on sensitive personal or financial data, use `[ask user]` unless the user explicitly authorizes inclusion.

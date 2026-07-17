@@ -74,7 +74,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships release `0.2.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships release `0.2.1` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>

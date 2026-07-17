@@ -99,7 +99,13 @@ export default defineConfig({
         {
           label: "Research",
           collapsed: true,
-          items: [{ label: "Overview", link: "/research/" }],
+          items: [
+            { label: "Overview", link: "/research/" },
+            {
+              label: "Instruction-system audit",
+              slug: "research/instruction-system-audit-2026-07-17",
+            },
+          ],
         },
       ],
     }),

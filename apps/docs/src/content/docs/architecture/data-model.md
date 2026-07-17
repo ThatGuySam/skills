@@ -55,9 +55,14 @@ type MeasurementCandidate = {
   measurement: string
   costOrEffort: string
   expectedDecisionImpact: string
+  scoreStatus: "scored" | "needs-input"
+  expectedDecisionValue: number | null
+  missingInputs: string[]
   stopWhen: string
 }
 ```
+
+`expectedDecisionValue` is numeric only when the required chance, cost-of-error, information-quality, and measurement-cost inputs are supplied. Otherwise it remains `null`, `scoreStatus` is `needs-input`, and `missingInputs` explains what would unlock the calculation.
 
 ## Result relationships
 

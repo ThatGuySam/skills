@@ -16,8 +16,9 @@ Source collection is not the goal. The skill gathers and measures information on
 3. Every source is judged against the exact estimate target for quality and freshness.
 4. Facts are distinguished from assumptions and inference.
 5. Remaining uncertainties are ranked by their decision impact.
-6. The agent proposes the cheapest credible next measurement.
-7. Research stops when additional evidence cannot change the decision.
+6. A numeric value-of-information score is calculated only when its chance, cost, quality, and measurement-cost inputs are supplied. Missing inputs remain unknown rather than receiving defaults.
+7. The agent proposes the cheapest credible next measurement.
+8. Research stops when additional evidence cannot change the decision.
 
 For local nonprofit, community, or relationship-priced work, the agent models both full-market pricing and plausible paid-quote pricing. It never applies that adjustment to official fees, statutory rates, or current public benchmarks.
 
@@ -56,6 +57,7 @@ For local nonprofit, community, or relationship-priced work, the agent models bo
 | Easy but irrelevant metric | Do not measure it if it cannot change the decision. |
 | Discounted local context | Model a realistic paid scenario and stress-test the low bound. |
 | Official fee or statutory rate | Use the current official source without local discounting. |
+| Incomplete VOI inputs | Keep expected value unknown, name the missing inputs, and do not recommend “measure now” from a manufactured score. |
 
 ## Data shape
 
@@ -72,11 +74,14 @@ type EvidenceItem = {
 }
 
 type ValueOfInformationItem = {
-  rank: number
+  rank: number | null
   uncertainty: string
   whyItMatters: string
   measurement: string
   expectedDecisionImpact: string
+  scoreStatus: "scored" | "needs-input"
+  expectedDecisionValue: number | null
+  missingInputs: string[]
   stopWhen: string
 }
 ```
@@ -85,6 +90,7 @@ type ValueOfInformationItem = {
 
 - **2026-07-11 — Source relevance is target-specific.** A reputable source can still be a weak anchor for the quantity being estimated.
 - **2026-07-11 — Research has a stopping rule.** More citations are not automatically more decision value.
+- **2026-07-17 — Missing VOI inputs stay unknown.** Numerical defaults can create a decision-looking recommendation that the evidence does not support.
 
 ## Open questions
 
