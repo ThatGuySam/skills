@@ -8,9 +8,7 @@ description: The public sources and verification evidence behind the skills, sha
 - `Why it matters:` Visible provenance keeps vendor guidance, packaging facts, and observed results separate from inference.
 - `Go deeper:` Follow the sources below and add dated memos when a future skill needs a durable evidence base.
 
-Current dated evidence:
-
-- [Skill and instruction system audit — 2026-07-17](/research/instruction-system-audit-2026-07-17/) — static structure, behavioral-contract conflicts, first-fix evidence, and the remaining improvement sequence.
+The repository-wide [skill and instruction system audit](https://harness.docs.samcarlton.com/research/instruction-system-audit-2026-07-17/) lives in Harness Atlas because it reviews notes-search agent infrastructure rather than one portable public skill.
 
 The current documentation is grounded in:
 

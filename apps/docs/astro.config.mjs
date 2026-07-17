@@ -5,6 +5,10 @@ import starlightLlmsTxt from "starlight-llms-txt"
 
 export default defineConfig({
   site: "https://skills.samcarlton.com",
+  redirects: {
+    "/research/instruction-system-audit-2026-07-17":
+      "https://harness.docs.samcarlton.com/research/instruction-system-audit-2026-07-17/",
+  },
   integrations: [
     starlight({
       title: "Sam's Skills",
@@ -101,10 +105,6 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
-            {
-              label: "Instruction-system audit",
-              slug: "research/instruction-system-audit-2026-07-17",
-            },
           ],
         },
       ],

@@ -12,7 +12,7 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 ### 0.2.1
 
-- Published the [skill and instruction system audit](/research/instruction-system-audit-2026-07-17/) with eight prioritized contract-level improvements and explicit validation limits.
+- Relocated the repository-wide [skill and instruction system audit](https://harness.docs.samcarlton.com/research/instruction-system-audit-2026-07-17/) and its remaining roadmap to Harness Atlas, while keeping the HTMA behavior contract in this collection.
 - Strengthened HTMA Measure so missing value-of-information inputs remain `unknown` or explicitly qualitative instead of receiving numerical defaults.
 - Added the VOI score state, nullable expected value, and missing-input contract to the feature and architecture documentation.
 - Recorded the remaining audit sequence on the project roadmap.
