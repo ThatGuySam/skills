@@ -1,4 +1,4 @@
-# HTMA Output Rubric
+# HTMA output rubric
 
 Before finalizing an HTMA memo, verify:
 

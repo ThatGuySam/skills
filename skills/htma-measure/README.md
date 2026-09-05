@@ -1,9 +1,6 @@
 # HTMA Measure
 
-- `Tease:` Turn “we need a number” into a range you can make a decision with.
-- `Lede:` HTMA Measure is a portable agent skill for uncertain costs, budgets, rates, risks, ROI, market size, and other quantities where a precise-looking guess would be misleading.
-- `Why it matters:` The skill makes the target explicit, separates facts from assumptions, calibrates the range, connects it to a threshold, and identifies the next evidence worth collecting.
-- `Go deeper:` Install the skill, choose the pain that matches your situation, and let [`SKILL.md`](SKILL.md) remain the canonical agent workflow.
+HTMA Measure estimates uncertain costs, budgets, rates, risks, ROI, and market size. It returns a range with its evidence and assumptions, compares it with a threshold when available, and identifies what to measure next.
 
 This README is the human guide. [`SKILL.md`](SKILL.md) is the canonical instruction and output contract agents load.
 
@@ -14,7 +11,7 @@ This README is the human guide. [`SKILL.md`](SKILL.md) is the canonical instruct
 | You need a budget before quotes exist. | Produces a planning range from the available scope, comparable work, and explicit assumptions. |
 | Someone wants one number despite meaningful uncertainty. | Returns low, central, and high values with confidence and decision risk. |
 | The project is unfamiliar or keeps losing hidden work. | Decomposes the total, uses relevant reference classes, and makes exclusions visible. |
-| “Cost” could mean list price, budget allowance, quote, or paid amount. | Classifies the estimate mode before choosing evidence or making adjustments. |
+| "Cost" could mean list price, budget allowance, quote, or paid amount. | Classifies the estimate mode before choosing evidence or making adjustments. |
 | You have only a few observations. | Uses the sample cautiously, keeps wider bounds, and says what another observation could improve. |
 | Research keeps expanding without resolving the decision. | Ranks unknowns by value of information and gives the work a stopping rule. |
 | Underestimating and overestimating have different consequences. | Connects the range to a threshold and the cost of being wrong. |
@@ -30,7 +27,7 @@ Install only this skill with the open Skills CLI:
 npx skills add thatguysam/skills --skill htma-measure
 ```
 
-Or install Sam’s complete collection:
+Or install Sam's complete collection:
 
 <details>
 <summary><b>Codex</b></summary>

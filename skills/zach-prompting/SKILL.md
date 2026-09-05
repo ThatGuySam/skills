@@ -1,6 +1,6 @@
 ---
 name: zach-prompting
-description: Improves and refactors prompts, system instructions, skills, agent definitions, tool descriptions, CLAUDE.md, and AGENTS.md files by preserving intent while removing redundancy, contradictions, over-prescription, and obsolete scaffolding. Use when reviewing, rewriting, shortening, migrating, or debugging an instruction artifact; defining outcomes, success criteria, evidence, permissions, tools, output, stop rules, autonomy, or long-run behavior; or adapting prompts to GPT-6 Astra, GPT-5.6, or Claude Fable 5.
+description: Improves and refactors prompts, system instructions, skills, agent definitions, tool descriptions, CLAUDE.md, and AGENTS.md files by preserving intent while removing redundancy, contradictions, over-prescription, and outdated instructions. Use when reviewing, rewriting, shortening, migrating, or debugging an instruction artifact; defining outcomes, success criteria, evidence, permissions, tools, output, stop rules, autonomy, or long-run behavior; or adapting prompts to GPT-6 Astra, GPT-5.6, or Claude Fable 5.
 ---
 
 # Zach Prompting
@@ -20,17 +20,17 @@ Treat brevity as a means, not the success metric. Call a change an improvement o
 
 Infer the mode from the request. Ask only when choosing incorrectly would cause an unauthorized edit or materially different result.
 
-## Rewrite the contract
+## Preserve the requirements
 
 1. **Recover intent.** Read the whole target plus governing instructions and any referenced files that affect its behavior. Identify the audience, runtime, model, request type, and the larger purpose the artifact serves.
 2. **Map what must survive.** Record the user-visible outcome, success criteria, true invariants, evidence rules, authorization boundary, relevant tools, required output, validation, and stop conditions. Preserve explicit user values.
-3. **Find behavioral friction.** Locate contradictions, repeated rules, obsolete scaffolding, behavior-neutral examples, irrelevant tools, vague tone labels, unneeded absolutes, keyword shortcuts, hidden approval rules, unsupported claims, and missing completion criteria.
+3. **Find behavioral friction.** Locate contradictions, repeated rules, outdated instructions, behavior-neutral examples, irrelevant tools, vague tone labels, unneeded absolutes, keyword shortcuts, hidden approval rules, unsupported claims, and missing completion criteria.
 4. **Make a narrow revision.** Lead with the outcome. Keep one rule per behavior. Use absolutes only for invariants; use decision rules for judgment. State safe autonomy and approval boundaries once. Add detail only where it changes behavior.
 5. **Check the result.** Compare the revision against the preserved contract. Run available representative evals or validation. For consequential or complex changes, prefer a fresh-context verifier over self-critique.
 
 Do not force a small prompt into a large template. For complex artifacts, use this order when it helps: context, goal, success criteria, constraints, tools, output, stop rules.
 
-## Apply these editing rules
+## Editing rules
 
 ### Outcomes and completion
 
@@ -65,7 +65,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 
 ### Reader-facing communication
 
-- Define tone with observable choices instead of labels such as “friendly” or “professional.”
+- Define tone with observable choices instead of labels such as "friendly" or "professional."
 - Lead final responses with the outcome. Preserve material facts, decisions, caveats, and next actions; remove repetition and optional background first.
 - Prefer clear sentences over fragments, jargon, or dense shorthand.
 - Do not ask the model to expose, reproduce, or transcribe private chain-of-thought. Request conclusions, evidence, assumptions, and concise rationale instead.

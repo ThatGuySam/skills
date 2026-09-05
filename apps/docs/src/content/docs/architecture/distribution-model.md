@@ -3,12 +3,8 @@ title: Distribution model
 description: How canonical skill directories reach the Skills CLI, Codex, Claude Code, and manual consumers.
 ---
 
-- `Tease:` One canonical skill directory can travel through several installation surfaces.
-- `Lede:` Sam's Skills keeps workflow content under `skills/` and uses shared manifests only to package, discover, and namespace the collection.
-- `Why it matters:` Separating content from distribution prevents copied instructions from drifting and keeps each skill independently installable.
-- `Go deeper:` Follow the surface-specific behavior and versioning rules below.
+The repository keeps each skill in `skills/<name>/`. Root manifests let the Skills CLI, Codex, and Claude Code install those directories without maintaining separate copies of the instructions.
 
-The repository publishes one canonical directory per skill and keeps distribution metadata at the root.
 
 ## Canonical sources
 
@@ -18,7 +14,7 @@ skills/
 └── zach-prompting/
 ```
 
-Each folder contains its own discovery metadata, core instructions, conditional resources, and UI metadata. Distribution surfaces point to these directories rather than duplicating their content.
+Each folder contains discovery metadata, instructions, supporting resources, and UI metadata. Installers use these directories.
 
 ## Open Skills CLI
 
@@ -28,7 +24,7 @@ This is the narrowest installation route for Zach Prompting or HTMA Measure.
 
 ## Codex marketplace bundle
 
-Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.1` at `./skills/` and presents the collection as **Sam's Skills**.
+Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points release `0.2.1` at `./skills/` and presents the collection as Sam's Skills.
 
 Installing that plugin exposes every current skill. The stable install ID avoids breaking existing marketplace installations; it does not control a skill's name or Claude command prefix.
 

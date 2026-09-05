@@ -17,13 +17,13 @@ The memo labels direct evidence, assumptions, reference classes, and inference. 
 
 ## Smallest useful method
 
-Clarification, decomposition, calibrated ranges, small samples, value of information, and simulation are tools—not a ritual. Use only the smallest method that reduces decision-relevant uncertainty.
+Choose among clarification, decomposition, calibrated ranges, small samples, value of information, and simulation. Use the simplest method that reduces uncertainty relevant to the decision.
 
 ## Portable core, optional companions
 
 The published skill works by itself. Other HTMA skills can deepen a step, but missing companion skills never break the core workflow.
 
-## Refuse fabricated completeness
+## Keep missing inputs explicit
 
 When a responsible number requires an identifier, effective period, jurisdiction, lookup, or private fact, numeric fields remain `null`. The status explains what is missing and how to unlock the estimate.
 

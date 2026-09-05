@@ -1,9 +1,6 @@
 # Contributing
 
-- `Tease:` Improve a skill Sam uses without making the collection harder to trust.
-- `Lede:` Contributions are welcome when they strengthen a published workflow, its evidence, or its portability.
-- `Why it matters:` This is a curated working collection, so additions should solve a demonstrated problem instead of expanding the catalog for its own sake.
-- `Go deeper:` Keep changes focused, verify the affected behavior, and preserve each skill's independent installation contract.
+Contributions should improve a published skill's behavior, evidence, or portability. Keep changes focused and preserve independent installation for each skill.
 
 ## Guidelines
 

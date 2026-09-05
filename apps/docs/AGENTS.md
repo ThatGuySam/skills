@@ -1,6 +1,6 @@
-# Documentation handoff — Sam's Skills
+# Sam's Skills documentation handoff
 
-This app is the public documentation and specification surface for the skills in this repository.
+This app documents the skills and their expected behavior.
 
 ## Read the docs first
 

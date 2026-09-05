@@ -1,4 +1,4 @@
-# HTMA Method Map
+# HTMA method map
 
 Use this reference to select the smallest technique that can reduce decision-relevant uncertainty.
 

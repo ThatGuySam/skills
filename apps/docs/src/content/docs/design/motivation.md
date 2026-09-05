@@ -3,12 +3,9 @@ title: Motivation
 description: Why an agent needs a decision-first measurement workflow instead of another estimation prompt.
 ---
 
-- `Tease:` Honest ranges beat precise-looking guesses.
-- `Lede:` HTMA Measure connects uncertainty to a decision while preserving source quality, calibrated bounds, and explicit stop rules.
-- `Why it matters:` A useful measurement workflow must avoid point-estimate confidence, open-ended research, and simulation built on weak inputs.
-- `Go deeper:` Review the failure modes, design choices, alternatives, and non-goals below.
+HTMA Measure helps an agent estimate a range that can support a decision. It records the evidence, assumptions, confidence, and conditions for stopping research.
 
-A general-purpose agent can always produce a number. The hard part is producing a range that is honest enough to use and structured enough to improve.
+An estimate needs evidence for its bounds and enough detail for someone to revise it when new information arrives.
 
 ## The problem
 
@@ -17,28 +14,28 @@ Two common approaches fail in opposite ways:
 - **A quick point estimate** is cheap but hides the uncertainty that controls the decision.
 - **Open-ended research** collects more facts but often lacks a threshold, source hierarchy, or stopping rule.
 
-Both can create confident output without decision value. A third failure—simulation laundering—adds mathematical machinery to weak assumptions and makes the result look more trustworthy than it is.
+Neither approach necessarily helps someone choose an action. Simulation can compound the problem by making weak assumptions look precise.
 
 ## The mental model
 
 Measurement is valuable when it changes a decision. The workflow therefore begins with the decision and target quantity, uses a threshold when one is available, decomposes uncertainty, and buys information only where it can change the action.
 
-A range is not an admission of failure. It is the honest shape of the available knowledge.
+The range should reflect what the evidence can support.
 
 ## Key design decisions
 
-- **Decision context before research.** The target and, when available, its threshold determine which uncertainty matters. (Consequence: unsafe ambiguity requires clarification, while a missing threshold alone need not suppress a useful range.)
-- **Ranges before simulation.** Calibrated inputs carry the real epistemic work. (Consequence: the skill refuses decorative Monte Carlo output.)
-- **Source provenance in the memo.** Facts, assumptions, and inference remain distinguishable. (Consequence: the memo is longer than a bare answer.)
-- **A structured appendix, not a structured substitute.** JSON supports reuse while the prose preserves reasoning. (Consequence: every output has two representations to keep aligned.)
-- **Missing inputs stay missing.** Blocked estimates use null numeric fields and an explicit status. (Consequence: the workflow sometimes declines to estimate.)
+- **Decision context before research.** Identify the target and use its threshold when available. Clarify ambiguity that prevents a responsible estimate; a missing threshold alone need not block a useful range.
+- **Ranges before simulation.** Establish defensible input ranges before running Monte Carlo. Simulation cannot justify weak inputs.
+- **Sources in the memo.** Label facts, assumptions, and inference. This adds length but lets the reader check the estimate.
+- **Prose and JSON together.** Explain the estimate in prose and provide JSON for reuse. Keep the two consistent.
+- **Missing inputs stay missing.** When evidence cannot support a range, return null numeric fields and explain the blocker.
 
 ## Alternatives considered
 
 - **A single reusable prompt.** Too easy for an agent to skip thresholds, source grading, or verification.
 - **A calculator-only tool.** Reliable arithmetic, but no judgment about target mode, evidence quality, or decision relevance.
 - **A simulation-first workflow.** Precise output cannot rescue uncalibrated inputs.
-- **A full HTMA suite as a hard dependency.** More power, but worse portability. Companion skills remain optional.
+- **A full HTMA suite as a hard dependency.** Requiring companion skills would limit where this skill works. They remain optional.
 
 ## Non-goals
 

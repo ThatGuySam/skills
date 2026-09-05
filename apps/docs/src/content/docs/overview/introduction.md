@@ -18,9 +18,9 @@ The skill converts a vague question into a measurement memo with:
 
 ## The key difference
 
-HTMA Measure does not ask, “What number sounds plausible?” It asks, “What range is defensible, what decision changes across that range, and what evidence is worth buying next?”
+HTMA Measure asks which range the evidence supports, how that range affects the decision, and what evidence would be worth collecting next.
 
-That distinction prevents three common failures:
+The workflow addresses these common failures:
 
 1. **False precision:** a single number disguises uncertainty.
 2. **Research without a stopping rule:** the agent gathers easy facts that cannot change the decision.
@@ -28,7 +28,7 @@ That distinction prevents three common failures:
 
 ## What HTMA means here
 
-The workflow draws on decision-focused measurement and calibrated estimation ideas popularized by Douglas W. Hubbard’s *How to Measure Anything*. This repository is an independent implementation and is not affiliated with or endorsed by the author or publisher.
+The workflow draws on decision-focused measurement and calibrated estimation ideas popularized by Douglas W. Hubbard's *How to Measure Anything*. This repository is an independent implementation and is not affiliated with or endorsed by the author or publisher.
 
 ## Start using it
 

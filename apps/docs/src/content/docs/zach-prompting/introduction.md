@@ -3,24 +3,16 @@ title: Zach Prompting
 description: Improve prompts, skills, agent instructions, and AGENTS.md files with lean, outcome-first, evidence-backed contracts.
 ---
 
-- `Tease:` Make agent instructions clearer by preserving the contract and removing the clutter.
-- `Lede:` Zach Prompting improves prompts, skills, system instructions, tool descriptions, agent definitions, and `AGENTS.md` files with current guidance from OpenAI and Anthropic.
-- `Why it matters:`
-  - Capable models can become less reliable when old scaffolding, repeated rules, and contradictory instructions accumulate.
-  - Good agent instructions define the outcome, evidence, authorization boundary, output, and completion bar without micromanaging every step.
-- `Go deeper:`
-  - Use the contract-first workflow below.
-  - Keep model-specific controls conditional.
-  - Validate changes on representative tasks before calling them improvements.
+Zach Prompting edits prompts, skills, tool descriptions, and repository instructions. It preserves the task's requirements while removing repetition and conflicting directions. Model-specific advice stays in a separate reference; claims of improvement require representative evaluations.
 
 ## The short version
 
-Use Zach Prompting when an instruction artifact has grown by accretion or when a newer model needs a cleaner contract.
+Use Zach Prompting when instructions have accumulated over time or need adapting to a newer model.
 
-The skill follows four moves:
+The workflow has four steps:
 
 1. **Preserve the contract.** Keep the user-visible outcome, success criteria, invariants, evidence rules, permissions, required output, and stop conditions.
-2. **Prune the noise.** Remove repetition, obsolete scaffolding, behavior-neutral examples, irrelevant tools, and contradictions.
+2. **Prune the noise.** Remove repetition, outdated instructions, behavior-neutral examples, irrelevant tools, and contradictions.
 3. **Clarify judgment.** Replace unnecessary absolutes and keyword shortcuts with contextual decision rules. State what the agent may do, when it must pause, and what proof completion requires.
 4. **Verify the change.** Test representative tasks, compare against the prior artifact, and make one targeted change at a time when causal attribution matters.
 
@@ -48,7 +40,7 @@ The canonical directory is [`skills/zach-prompting`](https://github.com/ThatGuyS
 
 The skill preserves the artifact's native format and scope. It does not silently turn a review into an implementation, add unsupported product claims, or apply vendor-specific settings to unrelated models.
 
-## A useful prompt contract
+## What the instructions need to define
 
 For a complex artifact, make these decisions visible when they materially change behavior:
 
@@ -94,9 +86,9 @@ GPT-5.6 is more concise by default than GPT-5.5, so broad brevity instructions m
 
 ### Claude Fable 5
 
-Anthropic recommends revisiting older prompts because stronger instruction following can make symptom-by-symptom rules unnecessary. For long or high-effort work, its guide emphasizes acting once enough information exists, preventing unrequested scope expansion, grounding progress claims in tool evidence, using parallel subagents for independent work, and ending only at completion or a genuine user-only-input blocker.
+Anthropic recommends revisiting older prompts because stronger instruction following can make symptom-by-symptom rules unnecessary. For long or high-effort work, its guide recommends acting once enough information exists and staying within scope. Ground progress claims in tool results and use parallel subagents for independent work. Continue until the task is complete or requires information only the user can provide.
 
-Fable-specific controls should not become universal prompt boilerplate. In particular, effort defaults, long-run harness behavior, memory scaffolding, fallback behavior, and instructions related to reasoning-extraction refusals belong only where that model and runtime require them.
+Fable-specific controls should not become universal prompt boilerplate. In particular, effort defaults, long-run harness behavior, memory instructions, fallback behavior, and instructions related to reasoning-extraction refusals belong only where that model and runtime require them.
 
 ## Example requests
 

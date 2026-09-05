@@ -3,12 +3,14 @@ title: Changelog
 description: Public changes to the skills, distribution metadata, and documentation.
 ---
 
-- `Tease:` Track what changed across the skills, shared packaging, and public site.
-- `Lede:` This changelog records user-visible collection changes with dates and verification boundaries.
-- `Why it matters:` A growing collection needs one place to distinguish skill behavior, installation metadata, and documentation releases.
-- `Go deeper:` Follow the dated entries and linked verification pages for the evidence behind each release claim.
+Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
 ## 2026-09-05
+
+### Documentation editing
+
+- Applied p-unslop to maintained documentation, skill instructions, references, and the memo template. Replaced repeated introductions, abstract wording, and dense sentences with direct explanations.
+- Preserved commands, schemas, citations, requirements, and recorded evaluation evidence.
 
 ### Zach Prompting Astra update
 
@@ -80,7 +82,7 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 ### 0.1.1
 
-- Changed Claude’s plugin source to the same marketplace repository.
+- Changed Claude's plugin source to the same marketplace repository.
 - Removed the second GitHub SSH clone requirement.
 - Documented the complete two-command Codex installation.
 

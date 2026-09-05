@@ -27,7 +27,7 @@ description: Creates HTMA-style calibrated measurement memos with decision thres
 
 Optional companion skills can help with decision clarification, decomposition, calibrated ranges, small samples, value of information, Monte Carlo simulation, and calibration review. The workflow above must still work when those companion skills are unavailable.
 
-## Output Contract
+## Output contract
 
 Produce a Markdown memo with:
 
@@ -75,7 +75,7 @@ Keep the JSON block as an appendix to the memo. Do not replace the memo with JSO
 - Read `references/local-paid-quote-adjustment.md` when an estimate involves local nonprofit/community vendors or the gap between public rates and likely paid quotes.
 - Use `assets/measurement-brief-template.md` for durable research or decision memos.
 
-## Stop Conditions
+## Stop conditions
 
 - Do not provide only a point estimate.
 - Do not continue external research before the quantity and estimate mode are clear. A missing threshold alone does not block an otherwise responsible range; it blocks only the action comparison.

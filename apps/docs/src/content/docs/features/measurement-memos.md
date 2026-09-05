@@ -7,7 +7,7 @@ sidebar:
     variant: tip
 ---
 
-The measurement memo makes an estimate reviewable by a human and reusable by software.
+The memo explains the estimate for reviewers and includes JSON for software to reuse.
 
 ## Behavior
 
@@ -58,8 +58,8 @@ The bundled template lives at `assets/measurement-brief-template.md`.
 | Estimated | Numeric fields contain the final range and central estimate. |
 | Blocked | Numeric fields are null; status and missing inputs explain why. |
 | Mixed units | The memo stops and normalizes units before rolling up components. |
-| JSON parse failure | The output fails verification and must be corrected. |
-| Prose/JSON mismatch | The output fails verification and must be reconciled. |
+| JSON parse failure | Correct the JSON before marking the output verified. |
+| Prose/JSON mismatch | Reconcile the values before marking the output verified. |
 | Sensitive input | Omit it or use `[ask user]` unless inclusion is explicitly authorized. |
 | Source unavailable | Mark the claim unverified or return a lookup-required status. |
 
@@ -93,8 +93,8 @@ type HTMAResult = {
 
 ## Decisions
 
-- **2026-07-11 — Prose and JSON ship together.** Humans need reasoning; automation needs stable fields.
-- **2026-07-11 — The template includes every output-contract field.** A partial appendix is not a valid memo.
+- **2026-07-11. Prose and JSON ship together.** Humans need reasoning; automation needs stable fields.
+- **2026-07-11. The template includes every output-contract field.** A partial appendix is not a valid memo.
 
 ## Open questions
 

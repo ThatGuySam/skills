@@ -3,10 +3,7 @@ title: Roadmap
 description: What is available now and the evidence required before expanding the public skill collection.
 ---
 
-- `Tease:` Maintain the skills Sam uses before expanding the catalog.
-- `Lede:` The collection already ships two independently installable skills, shared marketplace packaging, and public human and machine documentation.
-- `Why it matters:` Growth is useful only when each addition remains focused, portable, and verified.
-- `Go deeper:` Finish the evidence and automation work below before treating collection size as progress.
+Maintain the two published skills, improve their evidence, and automate installation checks before adding more skills.
 
 ## Available now
 
@@ -17,7 +14,7 @@ description: What is available now and the evidence required before expanding th
 - Codex marketplace and plugin installation.
 - Claude Code marketplace and plugin installation.
 - Calibrated memo template and JSON output contract.
-- Public documentation and machine-readable `llms*.txt` surfaces.
+- Public documentation and machine-readable `llms*.txt` files.
 
 ## Next
 

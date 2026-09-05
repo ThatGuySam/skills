@@ -1,11 +1,8 @@
-# HTMA Measure Evals
+# HTMA Measure evals
 
-- `Tease:` Measure changes before trusting them.
-- `Lede:` This directory preserves the portable parts and aggregate history of the original HTMA evaluation program, then adds a regression runner for comparing skill revisions on the same cases and scorer.
-- `Why it matters:` The historical results established useful behavior, but their raw holdouts were intentionally private. The portable suite makes repeatable regression checks possible without pretending its visible answer key is a sealed holdout.
-- `Go deeper:` Run the H12 regression below, inspect `archive/2026-05-26/` for the original H1-H12 protocols and aggregate results, and keep fresh holdouts under ignored `private/` storage.
+This directory contains the public HTMA evaluation history and a runner for comparing skill revisions with the same cases and scorer. H12 is a visible regression set, not a sealed holdout. Keep fresh holdouts in ignored `private/` storage; the original protocols and aggregate results are in `archive/2026-05-26/`.
 
-## What Is Here
+## What is here
 
 | Path | Purpose | Evidence status |
 | --- | --- | --- |
@@ -21,7 +18,7 @@
 
 The H12 prompt packet was originally kept private to preserve a sealed comparison. It is safe and sanitized, but publishing it here changes its role: it is now a transparent regression set. Do not cite a pass here as fresh holdout evidence.
 
-## Run A Model
+## Run a model
 
 Prerequisites:
 
@@ -41,7 +38,7 @@ python3 skills/htma-measure/evals/scripts/run_claude.py \
 
 The runner disables model tools, executes from a fresh temporary directory, passes only the skill bundle and case packet, and writes a sibling `.run.json` file containing timestamps, hashes, CLI version, model, and effort. It does not guarantee provider-side determinism; compare variants in the same session with the same runner settings.
 
-## Score One Or More Variants
+## Score one or more variants
 
 ```bash
 python3 skills/htma-measure/evals/scripts/score_h12.py \
@@ -61,7 +58,7 @@ Add another `name=path` argument to compare a candidate. A sharded run may use `
 
 These are regression signals, not a substitute for real human ratings or a new sealed holdout.
 
-## Score State Transitions
+## Score state transitions
 
 Run each skill arm against `cases/h13-state-transitions.md`, then score the saved outputs:
 
@@ -78,7 +75,7 @@ H13 was created after a benchmark-blind Zach Prompting review identified an esti
 
 The July 15 baseline, candidate outputs, and comparison are preserved in `results/2026-07-15/`.
 
-## Evaluation Discipline
+## Evaluation discipline
 
 1. Freeze the baseline skill and evaluator before drafting a candidate.
 2. Have the candidate author avoid cases, keys, prior outputs, and aggregate results.
@@ -88,6 +85,6 @@ The July 15 baseline, candidate outputs, and comparison are preserved in `result
 6. Use a fresh private holdout for promotion claims; keep it outside Git.
 7. Record regressions and null results. Do not tune against individual answer keys.
 
-## Historical Boundary
+## Historical boundary
 
 The archived research intentionally omitted private actuals, raw model outputs, source ledgers, blinded mappings, and human score sheets. That boundary remains in force. This port includes only already-public research artifacts plus the sanitized H12 packet reclassified as a visible regression test.

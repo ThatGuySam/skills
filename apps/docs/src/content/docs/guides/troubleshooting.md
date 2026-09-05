@@ -3,12 +3,9 @@ title: Troubleshooting
 description: Fix discovery, installation, invocation, missing-input, and source-quality problems.
 ---
 
-- `Tease:` Most failures come from the wrong install surface, stale plugin state, or missing decision inputs.
-- `Lede:` Use the symptom-specific checks below before changing skill content or inventing missing data.
-- `Why it matters:` Packaging failures and legitimate skill stop conditions need different fixes.
-- `Go deeper:` Match the observed symptom, run the narrow command, and verify the resulting state.
+Check the installation method, plugin state, and missing inputs before editing the skill. An installation failure needs a different fix from an estimate that correctly stops for missing evidence.
 
-## “npx skill” does not work
+## "npx skill" does not work
 
 The package and executable are plural:
 

@@ -3,18 +3,13 @@ title: Installation
 description: Install HTMA Measure with npx skills, Codex plugins, Claude Code plugins, or a manual copy.
 ---
 
-- `Tease:` Install HTMA Measure alone or load it through Sam's shared skill bundle.
-- `Lede:` Every path below resolves to the same canonical `skills/htma-measure` directory.
-- `Why it matters:` Standalone installation keeps context narrow; the bundle makes all of Sam's published skills available together.
-- `Go deeper:` Choose one tested path, verify the resulting files, and use the correct standalone or bundled invocation name.
-
-Choose one installation path. They all expose the same canonical `skills/htma-measure` content.
+Every installation path below uses `skills/htma-measure`. The Skills CLI installs HTMA Measure alone; the marketplace bundle installs all published skills.
 
 The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle keeps the stable install ID `htma-measure` and loads every skill currently published in this repository. Claude Code uses the collection-level `sam` namespace after installation.
 
 ## Open Skills CLI
 
-This is the most portable path. The command is `npx skills`—plural.
+Use the plural command, `npx skills`.
 
 List the skills found in the repository without installing:
 
@@ -53,7 +48,7 @@ A project-scoped Codex install lands at:
 .agents/skills/htma-measure/
 ```
 
-To disable the Skills CLI’s anonymous telemetry for an install:
+To disable the Skills CLI's anonymous telemetry for an install:
 
 ```bash
 DISABLE_TELEMETRY=1 npx skills add thatguysam/skills \

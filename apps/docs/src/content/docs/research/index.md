@@ -3,10 +3,7 @@ title: Research
 description: The public sources and verification evidence behind the skills, shared packaging, and documentation.
 ---
 
-- `Tease:` Claims in the collection should trace to public sources or recorded checks.
-- `Lede:` This section gathers the research and verification evidence behind Sam's published skills and their shared distribution surfaces.
-- `Why it matters:` Visible provenance keeps vendor guidance, packaging facts, and observed results separate from inference.
-- `Go deeper:` Follow the sources below and add dated memos when a future skill needs a durable evidence base.
+These sources and recorded checks support the skills, installation methods, and documentation. Distinguish vendor recommendations and observed results from editorial inference.
 
 The repository-wide [skill and instruction system audit](https://harness.docs.samcarlton.com/research/instruction-system-audit-2026-07-17/) lives in Harness Atlas because it reviews notes-search agent infrastructure rather than one portable public skill.
 

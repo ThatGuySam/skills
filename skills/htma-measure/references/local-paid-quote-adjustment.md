@@ -1,4 +1,4 @@
-# Local Paid-Quote Adjustment
+# Local paid-quote adjustment
 
 Use this adjustment when the prompt points to a local vendor, community event, nonprofit organizer, or relationship-priced work.
 
@@ -21,7 +21,7 @@ Public, retail, or corporate-market anchors can be too high when the decision is
 4. Set the central estimate as a weighted blend, leaning toward the paid-quote scenario when local nonprofit/community context is explicit.
 5. Stress-test the low bound. If a realistic discounted local quote would fall below it, lower the bound or widen the interval.
 
-## Calibration Notes
+## Calibration notes
 
 - Media, apparel, signage, and custom local-vendor work can show larger nonprofit/community discounts than small SaaS or commodity rentals.
 - Small SaaS, security, and minor rentals may already be close to public pricing; apply a lighter adjustment there unless the prompt suggests otherwise.

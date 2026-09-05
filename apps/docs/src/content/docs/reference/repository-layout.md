@@ -3,12 +3,7 @@ title: Repository layout
 description: The public skill collection, plugin manifests, docs app, and progressive-disclosure boundaries.
 ---
 
-- `Tease:` Every skill has one canonical directory; shared surfaces package and explain the collection.
-- `Lede:` The repository separates independently installable skills from marketplace manifests and the public documentation site.
-- `Why it matters:` A clear boundary prevents collection branding from leaking into a skill's workflow or creating duplicate sources of truth.
-- `Go deeper:` Follow the tree and progressive-disclosure levels below when adding or changing a skill.
-
-The repository keeps one canonical directory per skill and several distribution surfaces.
+Each skill has one directory under `skills/`. Root manifests package the collection, and `apps/docs` contains the public guide. Keep reusable skill instructions in the skill directory.
 
 ```text
 ./
@@ -58,16 +53,16 @@ The agent reads only the resource needed for the current step. For example:
 - `method-map.md` selects the smallest useful measurement technique;
 - `local-paid-quote-adjustment.md` handles local/community paid-price scenarios;
 - `output-rubric.md` validates the final memo; and
-- `measurement-brief-template.md` provides the durable output frame;
+- `measurement-brief-template.md` provides the memo template;
 - `README.md` gives humans a concise use-case and installation guide; and
 - `vendor-guidance.md` provides conditional GPT-5.6 and Claude Fable 5 guidance.
 
 ## Distribution manifests
 
-- `.agents/plugins/marketplace.json` exposes the repository to Codex’s plugin marketplace.
+- `.agents/plugins/marketplace.json` exposes the repository to Codex's plugin marketplace.
 - `.codex-plugin/plugin.json` declares the Codex plugin and version.
 - `.claude-plugin/marketplace.json` exposes the same repository as a Claude marketplace.
 - `.claude-plugin/plugin.json` points Claude to the canonical `skills/` directory.
 - `plugin.json` supplies portable root metadata.
 
-No distribution surface duplicates canonical skill content.
+The distribution manifests reference the skill directories without duplicating their content.

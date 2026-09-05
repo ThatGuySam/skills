@@ -7,16 +7,16 @@ sidebar:
     variant: tip
 ---
 
-Source collection is not the goal. The skill gathers and measures information only when it improves the estimate or changes the action.
+Gather information when it can improve the estimate or change the action.
 
 ## Behavior
 
 1. The agent gathers available local context before web research.
-2. Direct evidence, official sources, reference classes, and comparable cases are listed separately.
-3. Every source is judged against the exact estimate target for quality and freshness.
-4. Facts are distinguished from assumptions and inference.
-5. Remaining uncertainties are ranked by their decision impact.
-6. A numeric value-of-information score is calculated only when its chance, cost, quality, and measurement-cost inputs are supplied. Missing inputs remain unknown rather than receiving defaults.
+2. The agent lists direct evidence, official sources, reference classes, and comparable cases separately.
+3. The agent assesses each source for quality, freshness, and relevance to the exact estimate.
+4. The agent labels facts, assumptions, and inference.
+5. The agent ranks remaining uncertainties by their effect on the decision.
+6. The agent calculates a numeric value-of-information score only when its chance, cost, quality, and measurement-cost inputs are supplied. Missing inputs remain unknown rather than receiving defaults.
 7. The agent proposes the cheapest credible next measurement.
 8. Research stops when additional evidence cannot change the decision.
 
@@ -57,7 +57,7 @@ For local nonprofit, community, or relationship-priced work, the agent models bo
 | Easy but irrelevant metric | Do not measure it if it cannot change the decision. |
 | Discounted local context | Model a realistic paid scenario and stress-test the low bound. |
 | Official fee or statutory rate | Use the current official source without local discounting. |
-| Incomplete VOI inputs | Keep expected value unknown, name the missing inputs, and do not recommend “measure now” from a manufactured score. |
+| Incomplete VOI inputs | Keep expected value unknown, name the missing inputs, and do not recommend "measure now" from a manufactured score. |
 
 ## Data shape
 
@@ -88,9 +88,9 @@ type ValueOfInformationItem = {
 
 ## Decisions
 
-- **2026-07-11 — Source relevance is target-specific.** A reputable source can still be a weak anchor for the quantity being estimated.
-- **2026-07-11 — Research has a stopping rule.** More citations are not automatically more decision value.
-- **2026-07-17 — Missing VOI inputs stay unknown.** Numerical defaults can create a decision-looking recommendation that the evidence does not support.
+- **2026-07-11. Source relevance is target-specific.** A reputable source can still be a weak anchor for the quantity being estimated.
+- **2026-07-11. Research has a stopping rule.** Additional citations may not change the decision.
+- **2026-07-17. Missing VOI inputs stay unknown.** Numerical defaults can produce a recommendation the evidence does not support.
 
 ## Open questions
 

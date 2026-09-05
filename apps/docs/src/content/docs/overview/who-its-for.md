@@ -3,7 +3,7 @@ title: Who it's for
 description: The teams and decisions that benefit from calibrated, source-backed estimation.
 ---
 
-HTMA Measure is for people using AI agents to support decisions under uncertainty—not merely to generate plausible prose.
+HTMA Measure is for people who need to choose an action while costs, outcomes, or risks remain uncertain.
 
 ## Strong fits
 

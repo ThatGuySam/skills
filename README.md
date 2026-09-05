@@ -1,9 +1,6 @@
 # Sam's Skills
 
-- `Tease:` Skills Sam actually uses, packaged to share.
-- `Lede:` This repository is Sam's public collection of reusable skills for Codex, Claude Code, and other agents that support the open Agent Skills format.
-- `Why it matters:` Each skill captures a focused workflow that has earned a place in Sam's toolkit, keeps its core contract in `SKILL.md`, and loads conditional detail only when needed.
-- `Go deeper:` Choose one skill below or install the marketplace bundle to get the collection.
+Sam's Skills contains reusable workflows for Codex, Claude Code, and other agents that support the Agent Skills format. Install a single skill or the collection bundle. Each skill keeps its instructions in `SKILL.md` and loads supporting references when needed.
 
 ## Skills
 
@@ -31,7 +28,7 @@ Read the [Zach Prompting guide](apps/docs/src/content/docs/zach-prompting/introd
 
 ### HTMA Measure
 
-Turn uncertain costs, budgets, rates, risks, ROI, market size, and other quantities into calibrated, decision-ready estimates.
+Estimate uncertain costs, budgets, rates, risks, ROI, and market size with ranges, sources, and recommendations.
 
 ```bash
 npx skills add thatguysam/skills --skill htma-measure
@@ -42,7 +39,7 @@ Situations it helps with:
 - you need a planning budget before vendor quotes exist;
 - a stakeholder wants one number even though the evidence supports a range;
 - unfamiliar work or hidden subcomponents keep making estimates too optimistic;
-- “cost” could mean public price, budget allowance, likely quote, or paid amount;
+- "cost" could mean public price, budget allowance, likely quote, or paid amount;
 - only a few observations are available, but ignoring them would waste evidence; or
 - research keeps expanding without a rule for when to decide.
 

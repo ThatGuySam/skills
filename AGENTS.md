@@ -1,6 +1,6 @@
 # Sam's Skills repository
 
-This repository is Sam's public collection of agent skills that he uses and shares.
+This repository contains the agent skills Sam uses and publishes.
 
 ## Start here
 

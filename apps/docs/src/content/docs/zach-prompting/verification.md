@@ -3,14 +3,7 @@ title: Verification
 description: The structural, installation, and forward-use checks run for Zach Prompting on July 15, 2026.
 ---
 
-- `Tease:` The package, docs, and review modes were exercised before publication; live model behavior still needs task-specific evals.
-- `Lede:` Zach Prompting passed structural validation, a clean local Skills CLI install, and the documentation gate, then completed four fresh-context forward uses on July 15, 2026.
-- `Why it matters:`
-  - The checks prove the public package is discoverable and that the workflow can preserve boundaries across rewrite, migration, and assessment-only requests.
-  - They do not prove that every rewritten prompt will outperform its baseline.
-- `Go deeper:`
-  - Review the exact checks and limitations below.
-  - Keep future model and prompt comparisons tied to representative evals.
+On July 15, 2026, Zach Prompting passed the structural checks, clean local Skills CLI installation, and docs gate listed below. Four fresh-context trials exercised its rewrite, migration, and review modes. These checks do not establish that its revised prompts outperform their baselines.
 
 ## Results
 

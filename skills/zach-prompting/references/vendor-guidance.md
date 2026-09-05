@@ -1,4 +1,4 @@
-# Vendor Guidance
+# Vendor guidance
 
 Use this reference only for model-specific tuning, migration, or source-backed rationale. The Astra guidance was checked on September 5, 2026. The GPT-5.6 and Claude Fable 5 sections retain their July 15, 2026 source review; they were not reverified in the Astra update. Recheck the named model before relying on changing API controls.
 
@@ -26,7 +26,7 @@ Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/d
 
 - Start from a working prompt and tool set. Remove one instruction, example, or tool group at a time and rerun the same representative evals.
 - Preserve the outcome, success and stop conditions, safety, evidence, permission constraints, contextual routing, output shape, and validation.
-- Remove repeated rules, obsolete scaffolding, behavior-neutral examples, and irrelevant tools. Audit remaining instructions for contradictions.
+- Remove repeated rules, outdated instructions, behavior-neutral examples, and irrelevant tools. Audit remaining instructions for contradictions.
 - Prefer outcome-level contracts. Reserve `always`, `never`, `must`, and `only` for true invariants; use decision rules for judgment.
 - Preserve explicit user values. When a value is implicit, provide criteria rather than universal defaults or keyword maps.
 
@@ -50,7 +50,7 @@ Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/d
 - Preserve the prior reasoning setting as the migration baseline. Test the same setting and one level lower before increasing effort.
 - Use higher effort only when evals show a meaningful gain. Before increasing it, check for missing success criteria, dependencies, routing rules, or verification loops.
 - Give the model access to relevant checks: targeted tests, applicable lint or type checks, affected-package builds, and a minimal smoke test when broader validation is too expensive.
-- Migrate surgically: baseline first, remove obsolete scaffolding, add the smallest fix for a measured regression, and rerun the same cases after each change.
+- For migration, establish a baseline, remove outdated instructions, add the smallest fix for a measured regression, and rerun the same cases after each change.
 
 OpenAI reports directional internal coding-agent results from leaner system prompts, but explicitly says results vary by workload. Do not reuse its reported ranges as a guarantee for another system.
 
@@ -60,9 +60,9 @@ Source: [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-wit
 
 ### Prompt construction
 
-- Reevaluate old skills and prompts. Stronger instruction following can make older symptom-by-symptom scaffolding over-prescriptive.
+- Reevaluate old skills and prompts. Stronger instruction following can make older symptom-by-symptom instructions over-prescriptive.
 - Use a concise behavior rule instead of enumerating every unwanted manifestation.
-- Give the larger purpose, intended audience, and what the output enables—not only the immediate request.
+- Explain the larger purpose, intended audience, and what the output enables alongside the immediate request.
 - Lead with the outcome. Achieve brevity by dropping non-decision-relevant detail, not by compressing prose into fragments or jargon.
 
 ### Effort and long runs

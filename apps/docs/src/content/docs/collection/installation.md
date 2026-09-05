@@ -3,10 +3,7 @@ title: Install Sam's Skills
 description: Install one skill or the full collection in Codex, Claude Code, and compatible agents.
 ---
 
-- `Tease:` Install one workflow or bring in Sam's whole collection.
-- `Lede:` The open Skills CLI installs one canonical skill at a time; the marketplace bundle installs every skill currently published here.
-- `Why it matters:` The narrow path keeps agent context small, while the bundle makes Sam's full toolkit available under one collection namespace.
-- `Go deeper:` Use the real commands below, then invoke the skill by its standalone or bundled name.
+Use the Skills CLI to install one skill. The marketplace bundle installs every skill in the collection. The commands and invocation names for each client are below.
 
 ## See what is available
 
@@ -42,7 +39,7 @@ claude plugin marketplace add https://github.com/ThatGuySam/skills.git
 claude plugin install htma-measure@thatguysam-skills
 ```
 
-The HTTPS repository URL avoids depending on a configured GitHub SSH key. The stable install key and the command namespace serve different purposes: installation stays compatible, while skills inside the bundle use the `sam` prefix.
+The HTTPS repository URL avoids depending on a configured GitHub SSH key. The stable install key preserves compatibility. Skills inside the bundle use the `sam` command prefix.
 
 | Skill | Standalone Claude Code | Bundled Claude Code | Codex |
 | --- | --- | --- | --- |

@@ -3,10 +3,7 @@ title: Compatibility
 description: Verified installation paths and the boundaries of current compatibility claims.
 ---
 
-- `Tease:` The collection installs through the documented paths, with evidence kept separate from model-quality claims.
-- `Lede:` Each canonical skill uses the standard `skills/<name>/SKILL.md` layout, and the shared marketplace bundle exposes the same source directories.
-- `Why it matters:` Installation success proves packaging and discovery; it does not prove that every future output will be correct or better.
-- `Go deeper:` Review the dated checks, then keep the compatibility boundaries attached to any downstream claim.
+The checks below record which installation paths worked at specific dates and commits. They establish packaging and discovery behavior; model-quality claims need separate evaluations.
 
 ## HTMA Measure baseline
 
@@ -19,9 +16,9 @@ Verified on **2026-07-11** against public commit `6989b11` or a later documentat
 | Claude Code plugin `0.1.1` | Passed | Marketplace add and plugin install both succeeded from a clean `CLAUDE_CONFIG_DIR`. |
 | Manual copy | Compatible by format | The skill is a self-contained directory with relative resource paths. |
 
-The Open Skills CLI’s [documented discovery locations](https://github.com/vercel-labs/skills#skill-discovery) include the root `skills/` directory. Its [CLI reference](https://www.skills.sh/docs/cli) supports repository shorthand, `--list`, `--skill`, agent targeting, global installs, updates, and removal.
+The Open Skills CLI's [documented discovery locations](https://github.com/vercel-labs/skills#skill-discovery) include the root `skills/` directory. Its [CLI reference](https://www.skills.sh/docs/cli) supports repository shorthand, `--list`, `--skill`, agent targeting, global installs, updates, and removal.
 
-Claude’s [marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces) supports same-repository relative plugin sources. Version `0.1.1` uses that pattern to avoid a second GitHub SSH clone.
+Claude's [marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces) supports same-repository relative plugin sources. Version `0.1.1` uses that pattern to avoid a second GitHub SSH clone.
 
 ## Two-skill collection checks
 

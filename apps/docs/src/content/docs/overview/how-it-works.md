@@ -3,12 +3,8 @@ title: How it works
 description: The end-to-end HTMA Measure workflow from decision threshold to the next useful measurement.
 ---
 
-- `Tease:` Make the quantity precise before making the number precise.
-- `Lede:` HTMA Measure selects the target, builds evidence, decomposes uncertainty, calibrates a range, and connects it to an action only when the decision context supports one.
-- `Why it matters:` Missing identifiers, current sources, or private facts should block false precision; a missing threshold alone should not erase an otherwise useful range.
-- `Go deeper:` Follow the seven-stage workflow below.
+HTMA Measure identifies the quantity, gathers evidence, estimates component ranges, and compares the result with a decision threshold when one exists. A missing threshold can prevent an action recommendation without preventing a useful estimate.
 
-HTMA Measure follows a decision-first sequence.
 
 ## 1. Make the question precise
 
@@ -25,9 +21,9 @@ If a required identifier, period, jurisdiction, current source, or private fact 
 
 ## 2. Choose the estimate mode
 
-The same noun can refer to different quantities. “Cost” might mean:
+The same noun can refer to different quantities. "Cost" might mean:
 
-- a vendor’s public market price;
+- a vendor's public market price;
 - a budget allowance;
 - the amount likely paid;
 - an official fee;
@@ -38,19 +34,19 @@ The mode determines which evidence and adjustments are legitimate.
 
 ## 3. Build and rank evidence
 
-The agent starts with available local context, then uses direct sources, reference classes, and comparable cases. Each source is judged against the target for quality and freshness.
+The agent starts with available local context, then uses direct sources, reference classes, and comparable cases. The agent assesses each source for quality, freshness, and relevance to the target.
 
 Confirmed facts stay separate from assumptions and inference.
 
 ## 4. Decompose and calibrate
 
-The quantity is broken into smaller components with low, central, and high values. Weak bounds are widened rather than hidden behind precision.
+The agent breaks the quantity into components with low, central, and high values. It widens bounds when evidence is weak.
 
 Monte Carlo simulation is optional and only follows credible, calibrated inputs.
 
 ## 5. Connect the range to the decision
 
-When a threshold exists, the final interval is compared with it and the memo explains what action follows. Without one, the threshold stays null and the memo makes no approve/reject claim.
+When a threshold exists, the agent compares the final interval with it and explains what action follows. Without one, the threshold stays null and the memo makes no approve/reject claim.
 
 ## 6. Measure only what matters next
 

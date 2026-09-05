@@ -3,7 +3,7 @@ title: Data model
 description: The entities that connect decisions, evidence, component ranges, uncertainty, and the final HTMA_RESULT.
 ---
 
-The skill is Markdown-driven, but its output follows a stable conceptual model.
+The Markdown instructions produce the data structures below.
 
 ## Decision context
 
@@ -62,7 +62,7 @@ type MeasurementCandidate = {
 }
 ```
 
-`expectedDecisionValue` is numeric only when the required chance, cost-of-error, information-quality, and measurement-cost inputs are supplied. Otherwise it remains `null`, `scoreStatus` is `needs-input`, and `missingInputs` explains what would unlock the calculation.
+`expectedDecisionValue` is numeric only when the required chance, cost-of-error, information-quality, and measurement-cost inputs are supplied. Otherwise it remains `null`, `scoreStatus` is `needs-input`, and `missingInputs` lists what the calculation needs.
 
 ## Result relationships
 
@@ -82,4 +82,4 @@ Remaining uncertainty ────────────────┘
 All sections ──> Written memo + HTMA_RESULT
 ```
 
-The written memo preserves reasoning and provenance. `HTMA_RESULT` preserves stable fields for scoring, automation, and later calibration review.
+The written memo explains the estimate and identifies its sources. `HTMA_RESULT` preserves stable fields for scoring, automation, and later calibration review.

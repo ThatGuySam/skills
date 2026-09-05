@@ -3,12 +3,7 @@ title: Output contract
 description: The required memo sections, HTMA_RESULT fields, statuses, and verification rules.
 ---
 
-- `Tease:` Prose for judgment, JSON for reuse.
-- `Lede:` Every complete result combines a readable measurement memo with a state-consistent `HTMA_RESULT` appendix.
-- `Why it matters:` Explicit numeric and blocked states keep automation from mistaking missing inputs for measured values.
-- `Go deeper:` Use the memo sections, schema, status semantics, and verification rules below.
-
-Every complete response contains a written memo and an `HTMA_RESULT` JSON appendix.
+A complete result contains a measurement memo and an `HTMA_RESULT` appendix with matching values and status. Blocked results keep numeric fields null and name the missing inputs.
 
 ## Memo sections
 
@@ -73,7 +68,7 @@ This is a schema template, not a measured result:
 }
 ```
 
-## Status semantics
+## Status meanings
 
 | Status | Meaning |
 | --- | --- |

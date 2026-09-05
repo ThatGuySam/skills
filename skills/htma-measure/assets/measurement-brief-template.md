@@ -1,20 +1,11 @@
-# [Topic] Calibrated Measurement Brief
+# [Topic] measurement brief
 
-- `Tease:` [One-line relevance hook.]
-- `Lede:` [Main estimate with range, confidence, and decision implication.]
-- `Why it matters:`
-  - [Decision consequence.]
-  - [Uncertainty consequence.]
-  - [What this memo helps decide.]
-- `Go deeper:`
-  - Question made precise -- §1
-  - Decomposition -- §4
-  - Value of information -- §6
+[Summarize the estimate, range, confidence, and decision implication. State the main uncertainty and what this memo helps decide.]
 
 **Date:** [YYYY-MM-DD]
 **Scope:** [What is and is not being estimated.]
 
-## 1. Question Made Precise
+## 1. Question made precise
 
 - Decision:
 - Quantity of interest:
@@ -24,14 +15,14 @@
 - Cost of being wrong:
 - Estimate mode:
 
-## 2. Short Answer
+## 2. Short answer
 
 - Calibrated range:
 - Central estimate:
 - Confidence:
 - Decision implication:
 
-## 3. Priors And Sources
+## 3. Priors and sources
 
 | Source / Anchor | Value | Source quality | Notes |
 | --- | ---: | --- | --- |
@@ -41,16 +32,16 @@
 | Component | Low | Central | High | Confidence | Basis | What would tighten |
 | --- | ---: | ---: | ---: | --- | --- | --- |
 
-## 5. Calibrated Range
+## 5. Calibrated range
 
 [Explain bounds, equivalent-bet check, and why this is not a point estimate.]
 
-## 6. Value Of Information
+## 6. Value of information
 
 | Rank | Uncertainty | Why it matters | Measurement | Decision impact |
 | ---: | --- | --- | --- | --- |
 
-## 7. What Would Move The Estimate
+## 7. What would move the estimate
 
 - Move up:
 - Move down:

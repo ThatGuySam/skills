@@ -7,22 +7,18 @@ sidebar:
     variant: tip
 ---
 
-- `Tease:` Put honest bounds around the number.
-- `Lede:` Calibrated estimates pair a central value with low and high bounds, explicit confidence, and a decision comparison when a real threshold exists.
-- `Why it matters:` The interval exposes decision risk while the blocked states prevent missing facts from becoming fabricated precision.
-- `Go deeper:` Review the workflow, inputs, outputs, edge states, and data shape below.
+A calibrated estimate includes a central value, low and high bounds, and a confidence statement. When the user supplies a decision threshold, the skill compares the range with it. Missing required facts produce an explicit blocked state.
 
-Calibrated estimates replace a precise-looking guess with a defensible interval and an explicit decision implication.
 
 ## Behavior
 
 1. The user supplies an uncertain quantity and the decision it informs.
 2. The agent identifies the unit, time horizon, threshold, and cost of being wrong.
 3. The agent classifies the target mode: paid quote, market value, budget allowance, amount likely paid, official benchmark, or ambiguous.
-4. The quantity is decomposed into smaller uncertain components.
-5. Each component receives a low, central, and high value with a stated basis.
+4. The agent breaks the quantity into smaller uncertain components.
+5. The agent assigns low, central, and high values to each component and explains their basis.
 6. The agent calibrates the rolled-up interval and states its confidence.
-7. When a threshold exists, the final interval is compared with it.
+7. When a threshold exists, the agent compares the final interval with it.
 8. The memo states the action implication or explicitly withholds that comparison, then names the largest remaining uncertainty.
 
 The agent does not return only a point estimate.
@@ -99,9 +95,9 @@ type ComponentRange = {
 
 ## Decisions
 
-- **2026-07-11 — Intervals are mandatory.** A central value without bounds hides the uncertainty the skill exists to expose.
-- **2026-07-11 — Missing required inputs produce nulls.** Fabricated completeness is worse than a blocked result.
-- **2026-07-15 — A missing threshold blocks the action comparison, not every estimate.** Responsible ranges may proceed with an explicit null threshold.
+- **2026-07-11. Intervals are mandatory.** A central value without bounds hides the uncertainty the skill exists to expose.
+- **2026-07-11. Missing required inputs produce nulls.** Nulls prevent missing inputs from appearing as measured values.
+- **2026-07-15. A missing threshold blocks the action comparison, not every estimate.** Responsible ranges may proceed with an explicit null threshold.
 
 ## Open questions
 

@@ -1,6 +1,6 @@
 ---
 title: Your first measurement
-description: Write a decision-ready HTMA Measure prompt and understand the memo it returns.
+description: Write an HTMA Measure prompt and read the resulting estimate.
 ---
 
 After installation, ask your agent to use `htma-measure`. Clients that support explicit skill selectors expose the skill by name; the examples here use `$htma-measure`.
@@ -44,7 +44,7 @@ The skill:
 
 ## Read the short answer first
 
-A useful short answer looks like this structure:
+A short answer can use this format:
 
 ```text
 Calibrated range: $48,000–$82,000 (90%)
@@ -53,7 +53,7 @@ Decision implication: the interval crosses the $75,000 approval threshold.
 Next measurement: obtain a fixed quote for data migration, the largest uncertainty driver.
 ```
 
-Those numbers are only a format example, not a real estimate. Your memo’s values must come from your supplied evidence and traceable sources.
+The numbers above illustrate the format; they are not a real estimate. Your memo's values must come from your supplied evidence and traceable sources.
 
 ## If key inputs are missing
 
@@ -69,7 +69,7 @@ Use `blocking_missing_inputs` and `next_measurement_step` to unlock the estimate
 
 ## Improve the result
 
-If the first interval is too wide, do not ask the agent to “be more precise.” Ask it to rank the evidence that would reduce decision-relevant uncertainty:
+If the first interval is too wide, do not ask the agent to "be more precise." Ask it to rank the evidence that would reduce decision-relevant uncertainty:
 
 ```text
 Using the current memo, rank the remaining unknowns by value of information.
