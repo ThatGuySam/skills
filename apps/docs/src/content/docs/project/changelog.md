@@ -8,6 +8,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 - `Why it matters:` A growing collection needs one place to distinguish skill behavior, installation metadata, and documentation releases.
 - `Go deeper:` Follow the dated entries and linked verification pages for the evidence behind each release claim.
 
+## 2026-09-05
+
+### Zach Prompting Astra update
+
+- Added conditional GPT-6 Astra guidance and dated source attribution.
+- Clarified authorization carryover, instruction-conflict reporting, continuation after follow-ups, and proportional verification.
+- Preserved the existing review, rewrite, debug, and migration modes and standalone install name.
+- Behavioral improvement remains awaiting comparative evals; structural checks do not establish model performance.
+
 ## 2026-07-17
 
 ### 0.2.1

@@ -23,7 +23,7 @@ Example prompts:
 Use $zach-prompting to tighten this AGENTS.md while preserving its safety,
 permission, validation, and repository-boundary rules.
 
-Use $zach-prompting to migrate this working prompt to GPT-5.6 one measured
+Use $zach-prompting to migrate this working prompt to GPT-6 Astra one measured
 change at a time.
 ```
 

@@ -1,6 +1,6 @@
 ---
 name: zach-prompting
-description: Improves and refactors prompts, system instructions, skills, agent definitions, tool descriptions, CLAUDE.md, and AGENTS.md files by preserving intent while removing redundancy, contradictions, over-prescription, and obsolete scaffolding. Use when reviewing, rewriting, shortening, migrating, or debugging an instruction artifact; defining outcomes, success criteria, evidence, permissions, tools, output, stop rules, autonomy, or long-run behavior; or adapting prompts to GPT-5.6 or Claude Fable 5.
+description: Improves and refactors prompts, system instructions, skills, agent definitions, tool descriptions, CLAUDE.md, and AGENTS.md files by preserving intent while removing redundancy, contradictions, over-prescription, and obsolete scaffolding. Use when reviewing, rewriting, shortening, migrating, or debugging an instruction artifact; defining outcomes, success criteria, evidence, permissions, tools, output, stop rules, autonomy, or long-run behavior; or adapting prompts to GPT-6 Astra, GPT-5.6, or Claude Fable 5.
 ---
 
 # Zach Prompting
@@ -22,7 +22,7 @@ Infer the mode from the request. Ask only when choosing incorrectly would cause 
 
 ## Rewrite the contract
 
-1. **Recover intent.** Read the whole target plus governing instructions. Identify the audience, runtime, model, request type, and the larger purpose the artifact serves.
+1. **Recover intent.** Read the whole target plus governing instructions and any referenced files that affect its behavior. Identify the audience, runtime, model, request type, and the larger purpose the artifact serves.
 2. **Map what must survive.** Record the user-visible outcome, success criteria, true invariants, evidence rules, authorization boundary, relevant tools, required output, validation, and stop conditions. Preserve explicit user values.
 3. **Find behavioral friction.** Locate contradictions, repeated rules, obsolete scaffolding, behavior-neutral examples, irrelevant tools, vague tone labels, unneeded absolutes, keyword shortcuts, hidden approval rules, unsupported claims, and missing completion criteria.
 4. **Make a narrow revision.** Lead with the outcome. Keep one rule per behavior. Use absolutes only for invariants; use decision rules for judgment. State safe autonomy and approval boundaries once. Add detail only where it changes behavior.
@@ -37,13 +37,14 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 - Describe the destination and completion bar before prescribing process.
 - Retain required calculations, evidence, citations, fields, and validation even when shortening.
 - Define when to retry, use a fallback, ask for missing input, abstain, or finish.
-- End autonomous work only when complete or blocked on input only the user can provide.
+- Carry the active goal through follow-up questions and corrections; replace it only when the user cancels or changes the objective. Finish authorized work before asking for a decision that remains blocked.
 
 ### Boundaries and autonomy
 
 - Distinguish inspect/report requests from change/build requests.
 - Permit safe, reversible, in-scope actions needed for an authorized change.
-- Require a pause for destructive or irreversible actions, external writes not already authorized, purchases, real scope expansion, or user-only information.
+- Carry forward authorization already established in the session. Pause when an action still needs permission under the governing instructions or when essential user-only information is missing. Do not infer authority for unrelated effects.
+- When a skill causes a pause or diversion, identify the file and relevant rule, and distinguish its requirement from your interpretation. User instructions outrank skill guidelines within the governing instruction hierarchy.
 - Keep research, design, implementation, review, and external coordination from silently bleeding into one another.
 - Respect ownership and instruction hierarchy. For vendored, generated, protected, or out-of-scope artifacts, return a patch or bridge instead of modifying the source.
 
@@ -60,7 +61,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 - Keep only task-relevant tools. State what each tool does, when to use it, important outputs, and meaningful failure behavior.
 - Make prerequisites explicit. Parallelize independent reads; sequence dependent work; synthesize before acting.
 - Use programmatic or batch tool calling only for bounded deterministic reduction. Keep approval, citations, semantic judgment, and final validation in direct model control.
-- Delegate independent work when it improves speed or verification, but give each agent a bounded deliverable and enough source context to succeed.
+- Make delegation conditional on runtime support and authorization. Specify useful independent tasks, bounded deliverables, and concurrency limits appropriate to the workflow.
 
 ### Reader-facing communication
 
@@ -71,7 +72,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 
 ## Keep vendor guidance conditional
 
-Read `references/vendor-guidance.md` when the request names GPT-5.6, Claude Fable 5, model migration, reasoning or effort settings, long-run harness behavior, or source-backed rationale.
+Read `references/vendor-guidance.md` when the request names GPT-6 Astra, GPT-5.6, Claude Fable 5, model migration, reasoning or effort settings, long-run harness behavior, or source-backed rationale.
 
 Do not copy model-specific settings into a general artifact unless the named runtime uses them. Prefer shared behavioral rules in portable skills and keep provider controls in scoped sections.
 
@@ -84,5 +85,7 @@ Match the requested mode and native artifact format. Include only what helps the
 3. unresolved conflicts or missing context;
 4. validation performed and observable results; and
 5. status: `validated`, `awaiting-evals`, `no-change-needed`, or `blocked`.
+
+Run required checks and tests relevant to the changed behavior. Repeat or broaden them only for a new change, failure, or unresolved risk. Distinguish structural validation from behavioral evidence.
 
 Do not claim `validated` without real checks. If no eval can run, label the revision `awaiting-evals` and provide the smallest representative test set with explicit pass conditions.

@@ -67,7 +67,7 @@ Do not force every small prompt into eight headings. Add structure only where it
 
 ## Shared guidance from the model vendors
 
-The two source guides converge on several practical ideas:
+The source guides converge on several practical ideas:
 
 - lead with the intended outcome rather than an exhaustive procedure;
 - keep true invariants, but express judgment calls as compact decision rules;
@@ -81,6 +81,10 @@ The two source guides converge on several practical ideas:
 These are cross-source editorial conclusions, not claims that the vendors use identical wording or defaults.
 
 ## Keep model-specific advice conditional
+
+### GPT-6 Astra
+
+The Astra update adds checks for unnecessary approval pauses, instruction conflicts, delegation rules, writing preferences, and excessive verification. The canonical [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) keeps these checks conditional and records its source-review date.
 
 ### GPT-5.6
 
@@ -126,8 +130,9 @@ Do not claim a rewrite is better merely because it is shorter or cleaner. Report
 
 ## Sources and origin
 
-The skill's prompting techniques are based on the official vendor guidance available on July 15, 2026:
+The Astra source was checked September 5, 2026. The earlier GPT-5.6 and Claude sections retain their July 15, 2026 review:
 
+- OpenAI, [GPT-6 Astra prompting best practices](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices).
 - OpenAI, [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6).
 - Anthropic, [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
 

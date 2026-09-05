@@ -1,6 +1,22 @@
 # Vendor Guidance
 
-Use this reference only for model-specific tuning, migration, or source-backed rationale. The source pages were accessed on July 15, 2026 and may change.
+Use this reference only for model-specific tuning, migration, or source-backed rationale. The Astra guidance was checked on September 5, 2026. The GPT-5.6 and Claude Fable 5 sections retain their July 15, 2026 source review; they were not reverified in the Astra update. Recheck the named model before relying on changing API controls.
+
+## OpenAI: GPT-6 Astra
+
+Source: [Astra prompting best practices](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices), checked September 5, 2026.
+
+- Encourage completion of action requests, reasonable assumptions, and preparation of reviewable work before outstanding approvals.
+- Audit loaded skills and instruction files for conflicting guidance. Explain which rule caused a pause; preserve user priority over skill guidelines within the instruction hierarchy.
+- Specify readable prose, useful formatting, and plain technical language. Do not transfer GPT-5.6's concision assumptions to Astra.
+- Tune delegation triggers and amount for the runtime. Keep agent messages legible.
+- Complete relevant tests and required checks; expand verification only when changes, failures, or unresolved concerns justify it.
+
+### Applying this in Zach Prompting
+
+These are editorial checks, not a replacement system prompt. Preserve the target's review-only mode, authorization, output schema, and model choice. Do not add subagent tools or API features merely because Astra supports them.
+
+For an actual API migration, consult the same guide's migration section. Preserve effective reasoning effort; map unsupported `none` or `minimal` to `low`. Astra tool calling requires Responses. Check unsupported sampling parameters separately from prompt edits.
 
 ## OpenAI: GPT-5.6
 
@@ -18,7 +34,7 @@ Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/d
 
 - Reassess broad brevity instructions: GPT-5.6 is more concise by default than GPT-5.5. Use `text.verbosity` for an API-level default and prompt instructions for task-specific preservation and structure.
 - Keep personality and collaboration style short and distinct. Define tone through observable writing choices.
-- Centralize request-type authorization: inspect and report for assessment; make in-scope local changes for authorized implementation; confirm external, destructive, costly, or scope-expanding actions.
+- Centralize request-type authorization: inspect and report for assessment; make in-scope local changes for authorized implementation; confirm external, destructive, costly, or scope-expanding actions when they are not already authorized under the governing instructions.
 - For long-running work, identify the active layer: research, design, implementation, review, or external coordination.
 
 ### Tools, retrieval, and state
@@ -73,4 +89,4 @@ Source: [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-wit
 
 ## Cross-model inference
 
-The shared editorial method is: clarify intent and boundaries, delete obsolete prescription, preserve evidence and completion requirements, then verify the smallest change on realistic tasks. This sentence is a synthesis of the two sources, not vendor wording.
+The shared editorial method is: clarify intent and boundaries, delete obsolete prescription, preserve evidence and completion requirements, then verify the smallest change on realistic tasks. This sentence is an editorial synthesis of the cited sources, not vendor wording.
