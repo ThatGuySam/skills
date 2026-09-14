@@ -24,6 +24,74 @@
   --sl-nav-height: 4rem;
 }
 
+/* Preserve readable shell-token gaps, including inline flags, in code fonts. */
+code {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  word-spacing: 0.08em;
+}
+.sl-markdown-content :not(pre) > code {
+  white-space: break-spaces;
+}
+
+.install-command-picker {
+  margin-block: 1.5rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--sl-color-bg-sidebar);
+}
+.install-command-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  font-size: var(--sl-text-sm);
+}
+.install-command-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--sl-color-gray-2);
+}
+.install-command-toolbar select,
+.install-command-toolbar button {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--sl-color-gray-4);
+  border-radius: 0.3rem;
+  font: inherit;
+  color: var(--sl-color-white);
+  background: var(--sl-color-bg);
+  cursor: pointer;
+}
+.install-command-toolbar button {
+  margin-inline-start: auto;
+}
+.install-command-picker :focus-visible {
+  outline: 2px solid var(--sl-color-accent-high);
+  outline-offset: 3px;
+}
+.install-command-status {
+  color: var(--sl-color-gray-2);
+}
+.install-command-picker pre {
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: transparent;
+  white-space: pre;
+  overflow-x: auto;
+}
+.install-command-picker code {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-code);
+  color: var(--sl-color-text);
+  white-space: inherit;
+}
+
 /* ---------- Dark theme (default) — Linear near-black ---------- */
 :root {
   --sl-color-accent-low: #211d4d;

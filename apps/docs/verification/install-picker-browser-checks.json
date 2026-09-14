@@ -1,0 +1,34 @@
+[
+  {
+    "command": "npx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "npx"
+  },
+  {
+    "command": "bunx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "bunx"
+  },
+  {
+    "command": "pnpx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "pnpx"
+  },
+  {
+    "command": "pnpm dlx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "pnpm"
+  },
+  {
+    "command": "yarn dlx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "yarn"
+  },
+  {
+    "command": "npm exec -- skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "npm"
+  },
+  {
+    "command": "mise exec node@lts npm:skills@latest -- skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "mise"
+  },
+  {
+    "command": "pnx skills add thatguysam/skills --skill sam-ux-audit",
+    "runner": "pnx"
+  }
+]

@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Public documentation for the portable agent skills Sam uses and shares.",
   "scripts": {
+    "test": "node --test src/scripts/*.test.mjs",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",

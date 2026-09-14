@@ -12,6 +12,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Sam's Skills",
+      components: { Footer: "./src/components/Footer.astro" },
       description:
         "The portable agent skills Sam uses and shares.",
       plugins: [starlightLlmsTxt()],

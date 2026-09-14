@@ -7,6 +7,13 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-09-14
 
+### Install command preferences
+
+- Added a shared runner picker for Skills CLI command blocks, with npx, bunx, pnpx, pnpm dlx, Yarn dlx, npm exec, mise, and pnx options.
+- Remember the latest selection locally and synchronize it across command blocks, pages, and open tabs.
+- Copy the selected command with its environment variables and multiline flags intact. Preserve the original npx examples for clients without JavaScript and the agent-readable docs.
+- Disable code-font ligatures and preserve inline whitespace to make spaces before flags visible.
+
 ### Sam UX Audit and Collection 0.3.0
 
 - Added independently installable `sam-ux-audit` for websites and GitHub repositories.
