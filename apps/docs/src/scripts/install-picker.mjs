@@ -1,4 +1,5 @@
-import { RUNNERS, STORAGE_KEY, formatCommand, parseCommand, readPreference, runnerFor, savePreference } from "./install-commands.mjs"
+import { STORAGE_KEY, formatCommand, parseCommand, readPreference, runnerFor, savePreference } from "./install-commands.mjs"
+import { createRunnerMenu } from "./runner-menu.mjs"
 
 const storage = () => window.localStorage
 let selected = readPreference(storage)
@@ -7,13 +8,14 @@ let pickers = []
 function updatePickers(id) {
   selected = runnerFor(id).id
   for (const picker of pickers) {
-    picker.select.value = selected
+    picker.runnerMenu.setValue(selected)
     picker.code.textContent = formatCommand(picker.command, selected)
     picker.status.textContent = ""
   }
 }
 
 function initialize() {
+  if (!("showPopover" in HTMLElement.prototype)) return
   pickers = pickers.filter((picker) => picker.panel.isConnected)
   for (const block of document.querySelectorAll(".sl-markdown-content .expressive-code")) {
     // Expressive Code's copy payload retains newlines between highlighted divs.
@@ -26,13 +28,14 @@ function initialize() {
     panel.setAttribute("aria-label", "Skills CLI command")
     const toolbar = document.createElement("div")
     toolbar.className = "install-command-toolbar"
-    const label = document.createElement("label")
+    const label = document.createElement("div")
+    label.className = "install-runner-label"
     label.textContent = "Run with "
-    const select = document.createElement("select")
-    select.name = "install-runner"
-    select.setAttribute("aria-label", "Run command with")
-    for (const runner of RUNNERS) select.add(new Option(runner.label, runner.id))
-    label.append(select)
+    const runnerMenu = createRunnerMenu((id) => {
+      savePreference(storage, id)
+      updatePickers(id)
+    })
+    label.append(runnerMenu.element)
     const copy = document.createElement("button")
     copy.type = "button"
     copy.textContent = "Copy command"
@@ -46,10 +49,6 @@ function initialize() {
     status.setAttribute("role", "status")
     toolbar.append(label, status, copy)
     panel.append(toolbar, pre)
-    select.addEventListener("change", () => {
-      savePreference(storage, select.value)
-      updatePickers(select.value)
-    })
     copy.addEventListener("click", async () => {
       const value = code.textContent
       try {
@@ -65,13 +64,15 @@ function initialize() {
       }
     })
     block.replaceWith(panel)
-    pickers.push({ panel, select, code, command, status })
+    pickers.push({ panel, runnerMenu, code, command, status })
   }
   updatePickers(readPreference(storage))
 }
 
 initialize()
 document.addEventListener("astro:page-load", initialize)
+window.addEventListener("resize", () => pickers.forEach((picker) => picker.runnerMenu.position()))
+window.addEventListener("scroll", () => pickers.forEach((picker) => picker.runnerMenu.position()), true)
 window.addEventListener("storage", (event) => {
   if (event.key === STORAGE_KEY || event.key === null) updatePickers(event.newValue)
 })

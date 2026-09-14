@@ -7,7 +7,7 @@ test("every runner retains the skill flag and its preceding ASCII space", () => 
   for (const runner of RUNNERS) {
     assert.equal(formatCommand(parsed, runner.id), `${runner.command} add thatguysam/skills --skill sam-ux-audit`)
   }
-  assert.equal(formatCommand(parsed, "npm"), "npm exec -- skills add thatguysam/skills --skill sam-ux-audit")
+  assert.equal(formatCommand(parsed, "npm"), "npx skills add thatguysam/skills --skill sam-ux-audit")
 })
 
 test("environment assignments and multiline arguments survive switching", () => {
@@ -15,7 +15,7 @@ test("environment assignments and multiline arguments survive switching", () => 
   const parsed = parseCommand(`DISABLE_TELEMETRY=1 npx skills${argumentsText}`)
   assert.equal(formatCommand(parsed, "bunx"), `DISABLE_TELEMETRY=1 bunx skills${argumentsText}`)
   const encoded = `npx skills${argumentsText.replaceAll("\n", "\u007f")}`
-  assert.equal(formatCommand(parseCommand(encoded), "pnpx"), `pnpx skills${argumentsText}`)
+  assert.equal(formatCommand(parseCommand(encoded), "pnpx"), `pnx skills${argumentsText}`)
   assert.equal(parseCommand("npm ci --ignore-scripts"), null)
   assert.equal(parseCommand("npx skills-other add example"), null)
 })
@@ -27,6 +27,10 @@ test("latest preference persists and invalid or blocked storage falls back safel
   savePreference(storage, "bunx")
   savePreference(storage, "mise")
   assert.equal(readPreference(storage), "mise")
+  values.set(STORAGE_KEY, "pnpx")
+  assert.equal(readPreference(storage), "pnx")
+  values.set(STORAGE_KEY, "pnpm")
+  assert.equal(readPreference(storage), "pnx")
   values.set(STORAGE_KEY, "removed-runner")
   assert.equal(readPreference(storage), "npx")
   const blocked = () => { throw new Error("Storage blocked") }

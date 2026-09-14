@@ -9,6 +9,9 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ### Install command preferences
 
+- Replaced the native selector with a custom ChatGPT-style menu, selected-item checkmarks, keyboard navigation, and viewport-aware positioning.
+- Reduced the choices to npx, bunx, pnx, mise, and Yarn dlx. Migrate saved aliases without losing the runner preference.
+
 - Added a shared runner picker for Skills CLI command blocks, with npx, bunx, pnpx, pnpm dlx, Yarn dlx, npm exec, mise, and pnx options.
 - Remember the latest selection locally and synchronize it across command blocks, pages, and open tabs.
 - Copy the selected command with its environment variables and multiline flags intact. Preserve the original npx examples for clients without JavaScript and the agent-readable docs.

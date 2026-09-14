@@ -5,9 +5,11 @@ description: Install one skill or the full collection in Codex, Claude Code, and
 
 Use the Skills CLI to install one skill. The marketplace bundle installs every skill in the collection. The commands and invocation names for each client are below.
 
-Use **Run with** above a Skills CLI command to choose npx, bunx, pnpx, pnpm dlx, Yarn dlx, npm exec, mise, or pnx. Your latest choice is remembered across pages and visits on this device. Copy command copies the selected version, including its flags.
+Use **Run with** above a Skills CLI command to choose a runner from the custom menu. Recommended choices come first: npx, bunx, and pnx. mise and Yarn dlx follow under “Also supported.” This order prioritizes compatibility and familiar workflows, not measured popularity. Your latest choice is remembered across pages and visits on this device. Copy command copies the selected version, including its flags.
 
 Yarn dlx requires modern Yarn (2+); pnx requires pnpm 12+. The mise command provisions Node LTS and the Skills CLI as needed while respecting your mise policies. If JavaScript or browser storage is unavailable, the original npx command remains usable.
+
+The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices map to pnx; npm exec maps to npx. Use arrow keys, Home/End, or type a runner name to move through the menu. Escape dismisses it; Enter selects.
 
 ## See what is available
 
