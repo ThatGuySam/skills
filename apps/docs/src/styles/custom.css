@@ -118,7 +118,7 @@ code {
   position: fixed;
   inset: auto;
   margin: 0;
-  width: 16rem;
+  width: 12rem;
   max-width: calc(100vw - 16px);
   padding: 0.4rem;
   border: 1px solid var(--sl-color-gray-5);
@@ -127,16 +127,6 @@ code {
   color: var(--sl-color-text);
   box-shadow: 0 12px 32px rgb(0 0 0 / 25%);
   overflow-y: auto;
-}
-.install-runner-group {
-  padding: 0.4rem 0.65rem;
-  color: var(--sl-color-gray-3);
-  font-size: 0.75rem;
-}
-.install-runner-group:not(:first-child) {
-  margin-top: 0.35rem;
-  padding-top: 0.7rem;
-  border-top: 1px solid var(--sl-color-gray-5);
 }
 .install-runner-menu button {
   position: relative;
@@ -149,12 +139,6 @@ code {
   text-align: start;
   background: transparent;
   color: inherit;
-}
-.install-runner-menu button small {
-  display: block;
-  margin-top: 0.1rem;
-  color: var(--sl-color-gray-3);
-  font-size: 0.75rem;
 }
 .install-runner-menu button:hover,
 .install-runner-menu button:focus-visible {

@@ -23,16 +23,7 @@ export function createRunnerMenu(onChange) {
   menu.setAttribute("aria-label", "Command runner")
   trigger.setAttribute("aria-controls", menu.id)
   let current = "npx"
-  let group = ""
   const options = RUNNERS.map((runner) => {
-    if (group !== runner.group) {
-      const heading = document.createElement("div")
-      heading.className = "install-runner-group"
-      heading.setAttribute("role", "presentation")
-      heading.textContent = runner.group
-      menu.append(heading)
-      group = runner.group
-    }
     const option = document.createElement("button")
     option.type = "button"
     option.setAttribute("role", "menuitemradio")
@@ -41,13 +32,11 @@ export function createRunnerMenu(onChange) {
     option.tabIndex = -1
     const name = document.createElement("span")
     name.textContent = runner.label
-    const detail = document.createElement("small")
-    detail.textContent = runner.detail
     const check = document.createElement("span")
     check.className = "install-runner-check"
     check.textContent = "✓"
     check.setAttribute("aria-hidden", "true")
-    option.append(name, detail, check)
+    option.append(name, check)
     option.addEventListener("click", () => {
       onChange(runner.id)
       menu.hidePopover()

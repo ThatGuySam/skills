@@ -1,11 +1,11 @@
 export const STORAGE_KEY = "sam-skills:install-runner"
 
 export const RUNNERS = [
-  { id: "npx", label: "npx", detail: "Included with Node.js", group: "Recommended", command: "npx skills" },
-  { id: "bunx", label: "bunx", detail: "For Bun users", group: "Recommended", command: "bunx skills" },
-  { id: "pnx", label: "pnx", detail: "For pnpm 12+ users", group: "Recommended", command: "pnx skills" },
-  { id: "mise", label: "mise", detail: "Manage the runtime too", group: "Also supported", command: "mise exec node@lts npm:skills@latest -- skills" },
-  { id: "yarn", label: "Yarn dlx", detail: "For Yarn 2+ users", group: "Also supported", command: "yarn dlx skills" },
+  { id: "npx", label: "npx", command: "npx skills" },
+  { id: "bunx", label: "bunx", command: "bunx skills" },
+  { id: "pnx", label: "pnx", command: "pnx skills" },
+  { id: "mise", label: "mise", command: "mise exec node@lts npm:skills@latest -- skills" },
+  { id: "yarn", label: "Yarn dlx", command: "yarn dlx skills" },
 ]
 
 export function runnerFor(id) {

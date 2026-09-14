@@ -9,6 +9,8 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ### Install command preferences
 
+- Simplified the dropdown to tool names, hover states, and the selected checkmark; removed group headings and descriptions.
+
 - Replaced the native selector with a custom ChatGPT-style menu, selected-item checkmarks, keyboard navigation, and viewport-aware positioning.
 - Reduced the choices to npx, bunx, pnx, mise, and Yarn dlx. Migrate saved aliases without losing the runner preference.
 
