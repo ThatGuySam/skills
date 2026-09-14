@@ -11,7 +11,7 @@ Use the Skills CLI to install one skill. The marketplace bundle installs every s
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `zach-prompting` and `htma-measure`.
+The current repository publishes `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
 
 ## Install one skill
 

@@ -17,6 +17,14 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
 ├── skills/
+│   ├── sam-ux-audit/
+│   │   ├── SKILL.md
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── skills-lock.json
+│   │   ├── scripts/
+│   │   ├── references/
+│   │   └── evals/
 │   ├── htma-measure/
 │   │   ├── README.md
 │   │   ├── SKILL.md

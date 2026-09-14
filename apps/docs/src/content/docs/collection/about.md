@@ -21,6 +21,7 @@ A skill belongs here when it is:
 
 | Skill | Use it for | Start here |
 | --- | --- | --- |
+| Sam UX Audit | Review websites and repository UX with locked dependencies and evidence-backed findings. | [Read the guide](/sam-ux-audit/introduction/) |
 | Zach Prompting | Improve prompts, skills, agent definitions, tool descriptions, and repository instructions without weakening their contract. | [Read the guide](/zach-prompting/introduction/) |
 | HTMA Measure | Turn uncertain costs, risks, ROI, market size, and other quantities into estimates with ranges, sources, and recommendations. | [Read the guide](/overview/introduction/) |
 

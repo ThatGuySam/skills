@@ -1,0 +1,84 @@
+{
+  "headings": [],
+  "images": [
+    {
+      "alt": null,
+      "src": "./img/headline_middle.gif"
+    },
+    {
+      "alt": null,
+      "src": "./img/headline_middle.gif"
+    },
+    {
+      "alt": null,
+      "src": "./img/headline_middle.gif"
+    },
+    {
+      "alt": "",
+      "src": "./img/morearrow.gif"
+    },
+    {
+      "alt": "",
+      "src": "./img/morearrow.gif"
+    },
+    {
+      "alt": "",
+      "src": "./img/morearrow.gif"
+    },
+    {
+      "alt": "bullet",
+      "src": "./img/list_bullets.gif"
+    },
+    {
+      "alt": "bullet",
+      "src": "./img/list_bullets.gif"
+    },
+    {
+      "alt": "1234 56789",
+      "src": "./img/telefon_white_bg.gif"
+    }
+  ],
+  "links": [
+    {
+      "href": "javascript:location.href='home.html';",
+      "images": [
+        {
+          "alt": null
+        }
+      ],
+      "text": ""
+    },
+    {
+      "href": "javascript:location.href='news.html';",
+      "images": [
+        {
+          "alt": null
+        }
+      ],
+      "text": ""
+    },
+    {
+      "href": "javascript:location.href='tickets.html';",
+      "images": [
+        {
+          "alt": null
+        }
+      ],
+      "text": ""
+    },
+    {
+      "href": "javascript:location.href='survey.html';",
+      "images": [
+        {
+          "alt": null
+        }
+      ],
+      "text": ""
+    }
+  ],
+  "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-14",
+  "model": "gpt-6-astra",
+  "evaluationType": "author-led-browser-smoke-and-independent-source-review",
+  "cases": [
+    {
+      "id": "w3-before",
+      "result": "pass-with-limits",
+      "report": "web-report.md"
+    },
+    {
+      "id": "w3-after",
+      "result": "pass-with-limits",
+      "report": "web-report.md"
+    },
+    {
+      "id": "govuk",
+      "result": "pass-with-limits",
+      "report": "web-report.md"
+    },
+    {
+      "id": "todomvc",
+      "result": "pass-with-limits",
+      "report": "repos/todomvc-report.md"
+    },
+    {
+      "id": "express",
+      "result": "pass-with-limits",
+      "report": "repos/express-report.md"
+    }
+  ],
+  "crossModelBenchmark": false,
+  "liveUserStudy": false
+}

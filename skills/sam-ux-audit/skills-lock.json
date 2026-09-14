@@ -1,0 +1,45 @@
+{
+  "lockfileVersion": 1,
+  "skills": {
+    "a11y": {
+      "spec": "addyosmani/web-quality-skills",
+      "resolved": "https://github.com/addyosmani/web-quality-skills.git",
+      "ref": null,
+      "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+      "path": "skills/accessibility",
+      "integrity": "sha256-qMiDPllFTw2Y67U7AxFuQfp9xrSNdOCB+qCegaiz9X4="
+    },
+    "core-web-vitals": {
+      "spec": "addyosmani/web-quality-skills",
+      "resolved": "https://github.com/addyosmani/web-quality-skills.git",
+      "ref": null,
+      "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+      "path": "skills/core-web-vitals",
+      "integrity": "sha256-jDudK46ldtnZNRlaMixb5w/wCgqASTCZIGDmRyWgaDk="
+    },
+    "hig": {
+      "spec": "dickwu/apple-design-skill",
+      "resolved": "https://github.com/dickwu/apple-design-skill.git",
+      "ref": null,
+      "commit": "da2da6dd03aacf06da3fecf205347601d38bb141",
+      "path": ".",
+      "integrity": "sha256-IVX+F5J8XSp2cpH5dZnftKZhmu8TOEakfeMh1+W26d8="
+    },
+    "motion": {
+      "spec": "emilkowalski/skills",
+      "resolved": "https://github.com/emilkowalski/skills.git",
+      "ref": null,
+      "commit": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "path": "skills/review-animations",
+      "integrity": "sha256-q+a0sSZT5I3lZpxztGsAeFXockWNCuIy4kdTwuypCfI="
+    },
+    "performance": {
+      "spec": "addyosmani/web-quality-skills",
+      "resolved": "https://github.com/addyosmani/web-quality-skills.git",
+      "ref": null,
+      "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+      "path": "skills/performance",
+      "integrity": "sha256-hOtmGLxt/XAdQvqonF2Vcf32nnwAy4MZc2zcXjzP9hw="
+    }
+  }
+}

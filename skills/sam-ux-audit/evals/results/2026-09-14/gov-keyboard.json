@@ -1,0 +1,18 @@
+{
+  "activeId": "tab_northern-ireland",
+  "tabs": [
+    {
+      "selected": "false",
+      "text": "England and Wales"
+    },
+    {
+      "selected": "false",
+      "text": "Scotland"
+    },
+    {
+      "selected": "true",
+      "text": "Northern Ireland"
+    }
+  ],
+  "url": "https://www.gov.uk/bank-holidays#northern-ireland"
+}

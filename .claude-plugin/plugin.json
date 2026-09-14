@@ -7,5 +7,6 @@
   "homepage": "https://github.com/thatguysam/skills",
   "repository": "https://github.com/thatguysam/skills",
   "license": "MIT",
-  "skills": "./skills"
+  "skills": "./skills",
+  "version": "0.3.0"
 }

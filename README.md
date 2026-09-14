@@ -4,6 +4,18 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Sam UX Audit
+
+Audit websites and GitHub repositories through locked UX, accessibility, HIG, motion, and performance review skills. Findings include evidence, scope limits, and actionable acceptance checks.
+
+```bash
+npx skills add thatguysam/skills --skill sam-ux-audit
+```
+
+Ask: `Use $sam-ux-audit to audit this URL or GitHub repository.` The agent restores the skill's locked dependencies on first use. Request a dependency update explicitly when you want the latest upstream instructions.
+
+Read the [guide](apps/docs/src/content/docs/sam-ux-audit/introduction.md) and [smoke evals](skills/sam-ux-audit/evals/README.md).
+
 ### Zach Prompting
 
 Improve prompts, skills, system instructions, agent definitions, tool descriptions, `CLAUDE.md`, and `AGENTS.md` files without weakening their intent or safeguards.
@@ -71,7 +83,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships release `0.2.1` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships release `0.3.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -99,6 +111,14 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  sam-ux-audit/
+    SKILL.md
+    package.json
+    package-lock.json
+    skills-lock.json
+    scripts/
+    references/
+    evals/
   htma-measure/
     README.md
     SKILL.md
@@ -115,6 +135,8 @@ skills/
 Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with conditional detail in supporting resources.
 
 ## Acknowledgments
+
+- Sam UX Audit composes the referenced skills from Addy Osmani, Emil Kowalski, and the community HIG reviewer by dickwu using Luisa Lima’s skills-lock. The HIG reviewer is not an Apple-authored package; each dependency retains its own provenance and terms.
 
 - Zach Prompting's name and original spark were inspired by [Zach Miles](https://zachmil.es/). Its concrete prompting methods synthesize the cited OpenAI and Anthropic guidance; it is not affiliated with or endorsed by them.
 - HTMA Measure is inspired by measurement and uncertainty-management ideas popularized by Douglas W. Hubbard's *How to Measure Anything*. It is not affiliated with or endorsed by the author or publisher.

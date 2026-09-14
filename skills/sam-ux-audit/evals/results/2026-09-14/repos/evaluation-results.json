@@ -1,0 +1,39 @@
+{
+  "evaluationType": "independent-agent-forward-test",
+  "date": "2026-09-14",
+  "scope": "Two source-only repository UX audits; no target dependency or browser execution",
+  "preflight": {
+    "startPassed": true,
+    "endPassed": true,
+    "versionsUnchanged": true,
+    "startingReceipt": "skill-versions.json",
+    "endingReceipt": "skill-versions-end.json"
+  },
+  "cases": [
+    {
+      "target": "https://github.com/tastejs/todomvc",
+      "commit": "ff43b02e59dfa604386bb382034b2cd07c2bcd8a",
+      "report": "todomvc-report.md",
+      "result": "pass-with-runtime-limits",
+      "observedEvaluationOutcome": "Completed a bounded source review of create, complete, edit, delete and retention; produced three supported source risks, acceptance checks, separate severity/confidence and per-lens dispositions. Did not claim browser completion or measured performance.",
+      "findings": 3,
+      "runtimeVerified": false
+    },
+    {
+      "target": "https://github.com/expressjs/express",
+      "commit": "3ce6d0eb86e9d93529ff3191c6bb5db8ce6e72c8",
+      "report": "express-report.md",
+      "result": "pass",
+      "observedEvaluationOutcome": "Recognized backend framework scope, reviewed a concrete developer documentation journey, found one textual version inconsistency, and marked visual lenses not applicable. No invented screens.",
+      "findings": 1,
+      "runtimeVerified": false
+    }
+  ],
+  "skillBugs": [],
+  "limitations": [
+    "Single evaluator using one host model; no cross-model benchmark.",
+    "No full browser accessibility, task completion, visual review, performance measurement, or repository test execution.",
+    "These are genuine source-review smoke evaluations, not proof of all-target audit quality."
+  ],
+  "publicSafety": "Receipts retain exact integrities but replace workstation entrypoint prefixes with skill-relative paths."
+}

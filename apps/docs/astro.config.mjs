@@ -43,6 +43,13 @@ export default defineConfig({
           ],
         },
         {
+          label: "Sam UX Audit",
+          items: [
+            { label: "Introduction", slug: "sam-ux-audit/introduction" },
+            { label: "Verification", slug: "sam-ux-audit/verification" },
+          ],
+        },
+        {
           label: "Zach Prompting",
           badge: { text: "New", variant: "tip" },
           items: [

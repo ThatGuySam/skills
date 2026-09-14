@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-09-14
+
+### Sam UX Audit and Collection 0.3.0
+
+- Added independently installable `sam-ux-audit` for websites and GitHub repositories.
+- Bundled the core audit method and pinned five upstream review dependencies with frozen installation and integrity checks.
+- Added public smoke results for W3C before/after pages, GOV.UK, TodoMVC and Express. Findings distinguish observed behavior from source risks.
+- Kept the stable marketplace install key and `sam` namespace. The GitHub package includes documentation source; website deployment is a separate action.
+
 ## 2026-09-05
 
 ### Documentation editing
