@@ -17,9 +17,13 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+The current repository publishes `migrate-cgpt`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
 
 ## Install one skill
+
+```bash
+npx skills add thatguysam/skills --skill migrate-cgpt
+```
 
 ```bash
 npx skills add thatguysam/skills --skill zach-prompting
@@ -49,6 +53,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 
 | Skill | Standalone Claude Code | Bundled Claude Code | Codex |
 | --- | --- | --- | --- |
+| Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
 | Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
 | HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
 

@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-09-17
+
+### Custom GPT migration
+
+- Added `migrate-cgpt` for portable conversion to local agents, personal skills, and GitHub repositories.
+- Preserve required outputs and authorization rules; track missing knowledge and Action integrations explicitly.
+- Added conditional delivery, component mapping, verification, and dated source references.
+- Added a guide and verification record. Documentation deployment remains a separate step.
+
 ## 2026-09-14
 
 ### Install command preferences
