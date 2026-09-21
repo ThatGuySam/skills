@@ -5,6 +5,18 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-09-18
+
+### Sales Research and Collection 0.4.0
+
+- Packaged Sales Research as a self-contained skill with practitioner routing,
+  primary-source links, and communication guidance.
+- Removed private-workspace and companion-skill requirements from the portable version.
+- Added installation instructions, seven prompt templates, a source guide, and
+  a tester checklist. Existing synthetic scenarios remain unscored criteria.
+- Updated collection discovery and plugin metadata. GitHub publication and
+  website deployment remain separate from local validation.
+
 ## 2026-09-14
 
 ### Install command preferences

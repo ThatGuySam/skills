@@ -21,6 +21,7 @@ A skill belongs here when it is:
 
 | Skill | Use it for | Start here |
 | --- | --- | --- |
+| Sales Research | Research sales decisions and draft buyer communication. | [Read the guide](/sales-research/introduction/) |
 | Sam UX Audit | Review websites and repository UX with locked dependencies and evidence-backed findings. | [Read the guide](/sam-ux-audit/introduction/) |
 | Zach Prompting | Improve prompts, skills, agent definitions, tool descriptions, and repository instructions without weakening their contract. | [Read the guide](/zach-prompting/introduction/) |
 | HTMA Measure | Turn uncertain costs, risks, ROI, market size, and other quantities into estimates with ranges, sources, and recommendations. | [Read the guide](/overview/introduction/) |
@@ -30,7 +31,7 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 ## Names you will see
 
 - **Repository:** `ThatGuySam/skills`
-- **Standalone skills:** `zach-prompting` and `htma-measure`
+- **Standalone skills:** `sales-research`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`
 - **Marketplace:** `thatguysam-skills`
 - **Stable plugin install key:** `htma-measure@thatguysam-skills`
 - **Claude Code bundle namespace:** `/sam:<skill>`

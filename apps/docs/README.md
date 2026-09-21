@@ -48,6 +48,7 @@ https://skills.samcarlton.com
 
 ## Content layout
 
+- `sales-research/` covers installation, usage examples, source selection, and tester feedback.
 - `collection/` explains what belongs here and how to install one skill or the full bundle.
 - `zach-prompting/` documents the prompt and instruction improvement skill.
 - `overview/`, `guides/`, `features/`, and `design/` document HTMA Measure, alongside its output and data-model references.

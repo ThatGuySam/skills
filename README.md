@@ -4,6 +4,24 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Sales Research
+
+Research sales decisions and draft buyer communication using relevant practitioner
+sources. Covers discovery, positioning, paid diagnostics, pricing, proposals,
+AI proof of concept, and sales-call reviews.
+
+```bash
+npx skills add ThatGuySam/skills --skill sales-research
+```
+
+Ask: `Use $sales-research to help me decide the next step in this sales conversation.`
+Include your offer, buyer context, constraints, and the decision you need.
+No private corpus or companion skill is required.
+
+Read the [install and usage guide](apps/docs/src/content/docs/sales-research/introduction.md),
+[examples](apps/docs/src/content/docs/sales-research/examples.md), and
+[tester checklist](apps/docs/src/content/docs/sales-research/verification.md).
+
 ### Sam UX Audit
 
 Audit websites and GitHub repositories through locked UX, accessibility, HIG, motion, and performance review skills. Findings include evidence, scope limits, and actionable acceptance checks.
@@ -83,7 +101,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships release `0.3.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships release `0.4.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -111,6 +129,12 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  sales-research/
+    SKILL.md
+    README.md
+    agents/openai.yaml
+    references/
+    evals/
   sam-ux-audit/
     SKILL.md
     package.json
@@ -135,6 +159,8 @@ skills/
 Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with conditional detail in supporting resources.
 
 ## Acknowledgments
+
+- Sales Research uses original workflow instructions informed by the practitioners linked in its source guide. Their work remains with its publishers; inclusion does not imply endorsement.
 
 - Sam UX Audit composes the referenced skills from Addy Osmani, Emil Kowalski, and the community HIG reviewer by dickwu using Luisa Lima’s skills-lock. The HIG reviewer is not an Apple-authored package; each dependency retains its own provenance and terms.
 
