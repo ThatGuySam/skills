@@ -1,6 +1,43 @@
 # Vendor guidance
 
-Use this reference only for model-specific tuning, migration, or source-backed rationale. The Astra guidance was checked on September 5, 2026. The GPT-5.6 and Claude Fable 5 sections retain their July 15, 2026 source review; they were not reverified in the Astra update. Recheck the named model before relying on changing API controls.
+Use this reference only for model-specific tuning, migration, or source-backed rationale. Source review dates appear in each section. Recheck the named model before relying on changing API controls.
+
+## OpenAI: GPT-6 Sol and Luna
+
+Sources checked September 22, 2026: [GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol), [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna), [GPT-6 prompting guidance](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices), and [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
+
+### Verified API facts
+
+- Sol is built for complex coding and agentic workflows. Luna is optimized for focused, high-volume tasks.
+- Both support `reasoning.effort` values `none`, `low`, `medium`, `high`, `xhigh`, and `max`; the API default is `medium`.
+- Use Responses for reasoning with tools. Chat Completions supports function calling only with `reasoning_effort: none`.
+- Check the selected runtime's exposed settings separately. API support does not establish Codex settings or account availability. Astra's restrictions do not automatically apply to Sol or Luna.
+
+### Conditional prompting guidance
+
+OpenAI offers its GPT-6 prompts as family-wide starting points, but attributes the observed behaviors to Astra. The fetched sources do not establish distinct Sol and Luna prompting styles. Evaluate these candidates on the target model before calling them improvements:
+
+- Audit skill and instruction-file conflicts that cause unnecessary pauses. Preserve authorization already granted and explicit approval gates.
+- Define completion so authorized work continues through relevant verification. Calibrate testing scope to avoid redundant checks.
+- Specify the intended writing structure when default formatting or detail does not fit the reader.
+- Tune delegation only for runtimes that support it and workflows that benefit from independent work.
+
+Keep descriptions short and task-specific, and disclose supporting guidance only when relevant. Do not remove useful instructions from a shared skill solely because Astra needs less guidance.
+
+### Migration and evaluation
+
+Establish a baseline on the exact model and runtime before editing the prompt. Preserve the effort setting where supported; resolve compatibility differences explicitly. Change prompt, model, tools, endpoint, and effort in separate experiments.
+
+Compare the existing and revised skill separately on Sol and Luna, using the same inputs, tools, and supported effort setting. Use representative tasks with these pass conditions:
+
+| Task | Pass condition |
+| --- | --- |
+| Review an instruction artifact | Reports evidence-backed findings without modifying the artifact. |
+| Rewrite an instruction artifact | Preserves every required outcome, evidence rule, permission boundary, and output field. |
+| Debug a real failed trace | Connects a narrow proposed fix to the observed failure and reports checks accurately. |
+| Migrate model-specific instructions | Verifies the exact target's runtime controls and labels cross-model guidance as conditional. |
+
+Include an approval-gated case with independent authorized preparation and a small change with required validation. Check that preparation completes without crossing the gate, and that extra testing has a stated reason. Repeat cases to assess variability; record task success, contract violations, false completion, unnecessary pauses, repeated checks, tokens, and latency. Lower resource use counts as improvement only when the behavioral checks pass. Structural checks alone leave behavioral status `awaiting-evals`.
 
 ## OpenAI: GPT-6 Astra
 
@@ -19,6 +56,8 @@ These are editorial checks, not a replacement system prompt. Preserve the target
 For an actual API migration, consult the same guide's migration section. Preserve effective reasoning effort; map unsupported `none` or `minimal` to `low`. Astra tool calling requires Responses. Check unsupported sampling parameters separately from prompt edits.
 
 ## OpenAI: GPT-5.6
+
+Source rechecked September 22, 2026.
 
 Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6)
 

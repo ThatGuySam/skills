@@ -1,6 +1,6 @@
 ---
 name: zach-prompting
-description: Improves and refactors prompts, system instructions, skills, agent definitions, tool descriptions, CLAUDE.md, and AGENTS.md files by preserving intent while removing redundancy, contradictions, over-prescription, and outdated instructions. Use when reviewing, rewriting, shortening, migrating, or debugging an instruction artifact; defining outcomes, success criteria, evidence, permissions, tools, output, stop rules, autonomy, or long-run behavior; or adapting prompts to GPT-6 Astra, GPT-5.6, or Claude Fable 5.
+description: Review, rewrite, debug, or migrate prompts and agent instructions, including skills, tool descriptions, AGENTS.md, and CLAUDE.md. Preserve intent, evidence, permissions, and validation while removing conflicting rules.
 ---
 
 # Zach Prompting
@@ -16,7 +16,7 @@ Treat brevity as a means, not the success metric. Call a change an improvement o
 - **Review:** Inspect and report findings. Do not edit when the user asked only for assessment.
 - **Rewrite:** Return the revised artifact or apply an in-scope edit when the user asked for a change.
 - **Debug:** Use real failures or traces to find a likely instruction-level cause, then propose or make a surgical change.
-- **Migrate:** Establish the current model, runtime, prompt, tools, reasoning or effort setting, and eval baseline. Change one variable group at a time.
+- **Migrate:** Establish the current and target model, runtime, endpoint when applicable, supported settings, prompt, tools, reasoning or effort setting, and eval baseline. Change one variable group at a time.
 
 Infer the mode from the request. Ask only when choosing incorrectly would cause an unauthorized edit or materially different result.
 
@@ -43,7 +43,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 
 - Distinguish inspect/report requests from change/build requests.
 - Permit safe, reversible, in-scope actions needed for an authorized change.
-- Carry forward authorization already established in the session. Pause when an action still needs permission under the governing instructions or when essential user-only information is missing. Do not infer authority for unrelated effects.
+- Carry forward authorization already established in the session. Complete independent, authorized preparation before seeking permission for the remaining action. Pause when that action still needs permission under the governing instructions or when essential user-only information is missing. Do not infer authority for unrelated effects.
 - When a skill causes a pause or diversion, identify the file and relevant rule, and distinguish its requirement from your interpretation. User instructions outrank skill guidelines within the governing instruction hierarchy.
 - Keep research, design, implementation, review, and external coordination from silently bleeding into one another.
 - Respect ownership and instruction hierarchy. For vendored, generated, protected, or out-of-scope artifacts, return a patch or bridge instead of modifying the source.
@@ -72,7 +72,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 
 ## Keep vendor guidance conditional
 
-Read `references/vendor-guidance.md` when the request names GPT-6 Astra, GPT-5.6, Claude Fable 5, model migration, reasoning or effort settings, long-run harness behavior, or source-backed rationale.
+Read the relevant section of [vendor guidance](references/vendor-guidance.md) for model-specific prompting or migration, reasoning or effort settings, long-run runtime behavior, or source-backed rationale. Verify current guidance for the exact target model and runtime before applying provider controls.
 
 Do not copy model-specific settings into a general artifact unless the named runtime uses them. Prefer shared behavioral rules in portable skills and keep provider controls in scoped sections.
 

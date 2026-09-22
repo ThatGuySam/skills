@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-09-22
+
+### Zach Prompting Sol and Luna guidance
+
+- Added verified GPT-6 Sol and Luna API details and a conditional prompt migration checklist.
+- Shortened skill activation metadata while preserving the newer Astra, session-authority, and delegation rules.
+- Clarified approved preparation before outstanding action gates and source checks for exact model and runtime settings.
+- Added representative comparison criteria; Sol and Luna behavior improvements remain awaiting evals. GitHub publication and website deployment are separate states.
+
 ## 2026-09-18
 
 ### Sales Research and Collection 0.4.0

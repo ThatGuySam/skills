@@ -74,6 +74,12 @@ These are cross-source editorial conclusions, not claims that the vendors use id
 
 ## Keep model-specific advice conditional
 
+### GPT-6 Sol and Luna
+
+Sol targets complex coding and agent workflows; Luna targets focused, high-volume work. Both support API reasoning effort from `none` through `max`, with `medium` as the default. For tool use with reasoning, use the Responses API. Confirm the settings exposed by the actual runtime before changing a prompt.
+
+OpenAI presents GPT-6 prompts as family-wide starting points, but its observed behaviors come from Astra. Test completion, approval timing, writing, delegation, and verification guidance separately on Sol and Luna. The [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) gives a small comparison set with pass conditions. These are proposed checks, not measured improvements.
+
 ### GPT-6 Astra
 
 The Astra update adds checks for unnecessary approval pauses, instruction conflicts, delegation rules, writing preferences, and excessive verification. The canonical [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) keeps these checks conditional and records its source-review date.
@@ -122,8 +128,10 @@ Do not claim a rewrite is better merely because it is shorter or cleaner. Report
 
 ## Sources and origin
 
-The Astra source was checked September 5, 2026. The earlier GPT-5.6 and Claude sections retain their July 15, 2026 review:
+The Sol, Luna, and GPT-5.6 sources were checked September 22, 2026. The Astra guidance was checked September 5, 2026. The Claude section retains its July 15, 2026 review:
 
+- OpenAI, [GPT-6 Sol model page](https://developers.openai.com/api/docs/models/gpt-6-sol) and [GPT-6 Luna model page](https://developers.openai.com/api/docs/models/gpt-6-luna).
+- OpenAI, [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
 - OpenAI, [GPT-6 Astra prompting best practices](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices).
 - OpenAI, [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6).
 - Anthropic, [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
