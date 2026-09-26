@@ -1,0 +1,33 @@
+{
+  "id": "missing-knowledge",
+  "name": "policy-answer",
+  "target": {
+    "runtime": "Codex project skill",
+    "path": ".agents/skills/policy-answer",
+    "capabilities": [
+      "read supplied files",
+      "write files"
+    ],
+    "delivery": "Prepare project-scoped skill files in the local project."
+  },
+  "source": {
+    "instructions": "Answer policy questions only from the attached policy-v3.md and fees-2026.csv. Cite the filename and section or row used for every policy fact. Never infer a fee or use general industry policy. If a needed file is missing, identify that filename and answer only portions supported by available files. Say the fee is unknown when the fee table is absent.",
+    "knowledge_files": [
+      {
+        "name": "policy-v3.md",
+        "content": "# Synthetic policy v3\n## Changes\nDate changes are allowed up to 48 hours before a TEST_EVENT. The fee is defined only in fees-2026.csv.\n"
+      },
+      {
+        "name": "fees-2026.csv",
+        "status": "missing"
+      }
+    ],
+    "actions": []
+  },
+  "probes": [
+    {
+      "id": "missing-file",
+      "request": "I need to move a TEST_EVENT 72 hours before it starts. Is that allowed and what is the fee?"
+    }
+  ]
+}

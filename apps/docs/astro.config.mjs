@@ -34,6 +34,15 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
+          label: "Sales Research",
+          items: [
+            { label: "Install and use", slug: "sales-research/introduction" },
+            { label: "Examples", slug: "sales-research/examples" },
+            { label: "Sources", slug: "sales-research/sources" },
+            { label: "Testing and verification", slug: "sales-research/verification" },
+          ],
+        },
+        {
           label: "Collection",
           items: [
             { label: "About Sam's Skills", slug: "collection/about" },

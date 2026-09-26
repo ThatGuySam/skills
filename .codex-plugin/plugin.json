@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Sam's Skills",
     "shortDescription": "Portable workflows Sam uses and shares.",
-    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, and evidence-backed UX audits.",
+    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, and sales research.",
     "developerName": "ThatGuySam",
     "category": "Productivity",
     "capabilities": [
@@ -25,7 +25,8 @@
       "Create a calibrated estimate for this uncertain decision.",
       "Review this prompt and improve its instruction contract.",
       "Identify what evidence would change this decision.",
-      "Audit this website or GitHub repository for usability with evidence."
+      "Audit this website or GitHub repository for usability with evidence.",
+      "Research this sales situation and recommend the next decision."
     ]
   }
 }

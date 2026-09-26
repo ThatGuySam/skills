@@ -1,0 +1,1 @@
+The ticket-summary skill requires you to resolve its conflicting output rules before I can complete the summary. Which should govern: raw JSON with `title` and `severity`, or a Markdown table with `Title` and `Severity`?

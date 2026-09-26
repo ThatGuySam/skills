@@ -1,0 +1,124 @@
+{
+  "date": "2026-09-26",
+  "migration_skill_ref": "fd76d69db2f82ac4443327a69fc187ab5e28c369",
+  "current_main_ref": "7c74baf",
+  "runtime": "ChatGPT Work Mode collaboration agents",
+  "model": "Inherited parent model; exact identifier and effort not exposed by spawn results",
+  "selection": "Explicit invocation; automatic selection not tested",
+  "method": "One fresh agent per migration and another fresh agent per generated skill. Multi-probe tasks asked the agent to treat each request independently; they were not separate processes. Expected requirements were withheld from migration and execution agents.",
+  "normalization": "Only report paths replace the temporary checkout prefix with <WORKSPACE>. Generated skills, resources and response bytes are unchanged. SKILL.md is stored as generated-skill.txt to avoid accidental discovery.",
+  "cases": [
+    {
+      "id": "actions",
+      "fixture_sha256": "9df292829fef24d83be8bf0b10532f39e8fb4ffe8ea05412b2fc7406d947f2de",
+      "migration_agent": "baseline_actions",
+      "execution_agent": "probe_actions",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "40b3972c610e2d90a7ffae605a4b97721614a31338d4a298af57f5c3167fa111"
+        },
+        "references/integration.md": {
+          "artifact": "references/integration.md",
+          "sha256": "5692470b2a3d5cec8020582fe87e013ffa050fb5742f26ea0675a97f48d95726"
+        },
+        "references/inventory.openapi.json": {
+          "artifact": "references/inventory.openapi.json",
+          "sha256": "1df4037451ac502569e1b96b406d5685023eddeedc13eca9daa8f95bd344ec1c"
+        }
+      },
+      "responses": {
+        "unavailable-action": "9c814b56d861fd31c5588d05ff8d9a94c69b45a9e5ae00909256816f9cb9f572"
+      }
+    },
+    {
+      "id": "capability-mismatch",
+      "fixture_sha256": "b591914dd8936a01453ab527932ea9a1898e724b561c794dffc4a7889836a5ae",
+      "migration_agent": "baseline_capability",
+      "execution_agent": "probe_capability",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "caf4671dc86815d68ecd58200447f072fafe01b0473b24c5ef6fcba1618321e1"
+        }
+      },
+      "responses": {
+        "no-image-tool": "ca9d33b46bb5e1959b551183852d2b25dbcf84cf4f4372fd5d33d6fe2a2702b8"
+      }
+    },
+    {
+      "id": "conflicting-instructions",
+      "fixture_sha256": "1d30a781babb4cfc8f2f268c7089482f36cdfa5081968173471294a1ec4196ef",
+      "migration_agent": "baseline_conflict",
+      "execution_agent": "probe_conflict",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "db27804799e1b7c7bf49d18aa38f663fd692f1871dc3819ea1b63d89a4b24c8a"
+        }
+      },
+      "responses": {
+        "conflict": "683ab40361439e12e6d08d07ddec2986e89f7703663d8823131b44e2589d3233"
+      }
+    },
+    {
+      "id": "instruction-only",
+      "fixture_sha256": "84b599cfa80d04c05edb3eb85944a81c05d3e13c475537919095b86b82097f37",
+      "migration_agent": "baseline_instruction",
+      "execution_agent": "probe_instruction",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "fec893cf7db4dabb7a13db0e18e5f80fa93951d1debac05ce9c42402a7187c94"
+        }
+      },
+      "responses": {
+        "normal": "03e6e73b86bb9bc656a40121c2c6b4c264119919a7aa11d01c4b61611a13b0e3",
+        "missing-input": "a32a1bb8df1c582982e5c31790c2587dd662ddaa2822f636d4ae65080028d254"
+      }
+    },
+    {
+      "id": "missing-knowledge",
+      "fixture_sha256": "75d9bc914397a3a7a2fb43dab905b32b06610076577652b941f68033b4abdd84",
+      "migration_agent": "baseline_missing",
+      "execution_agent": "probe_missing",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "904113c66caec0b2221b70f8352d06ab67bb369a8b0a1554b65733663d148828"
+        },
+        "references/policy-v3.md": {
+          "artifact": "references/policy-v3.md",
+          "sha256": "0f6e9c7a00ab3675aa95833ec19a70dd9eaed443b8459b7d27322b3da390a12a"
+        }
+      },
+      "responses": {
+        "missing-file": "65661a3b975ff0ba9aa4729ea14de4f6656c3cd4065e60e3882f27d7de1eceba"
+      }
+    },
+    {
+      "id": "strict-output",
+      "fixture_sha256": "b3513ad980e57d44cbb560c8b9d907e9bd21e9a8c143fb3eaac6759bfbf119d2",
+      "migration_agent": "baseline_output",
+      "execution_agent": "probe_output",
+      "files": {
+        "SKILL.md": {
+          "artifact": "generated-skill.txt",
+          "sha256": "70b19d3f7c3d71f54bbe7b4b156e5dd36baa5411b6d8f7fdecd7b20bdcc56e9f"
+        }
+      },
+      "responses": {
+        "valid": "00bf28c575f50184a2bdc4a4632f4666c22a06f630c742b3a8b0526723b9cfa4",
+        "invalid": "bae91a525f1fbc3aaab4143b1d4e00d9a40196ebf777c38da518d034db60dde2"
+      }
+    }
+  ],
+  "skill_files": {
+    "SKILL.md": "7863363b87ee9551f49f428f534ec8eda3c1d518164407fc5f550b414453dd60",
+    "agents/openai.yaml": "3fe8229b5c848c9b7311152c4e3b4ff85cfb43a2b3d7c493d44d66588d0f6bca",
+    "references/component-map.md": "14777f2efe73ed7140ce14f3cbd745fd74d2d62967f8071dee8ccc1b76fd27a5",
+    "references/destinations.md": "19cfff88b33c0a86aa8815e64e958b620734bb5bd9fa1ec7d782913e6ec0e11b",
+    "references/sources.md": "2b15f8126284877d885a8d6cb448ee172f86747d3d2066cbd3b9c6538ab1d533",
+    "references/verification.md": "b0f7ebe74f1287f514e191ad5912cfb22381f2ba284feaf421c9aeed95880e71"
+  }
+}

@@ -1,0 +1,23 @@
+---
+name: ticket-summary
+description: Summarize tickets supplied in the conversation or files using the supplied title and severity. Use for ticket-summary requests. Completion currently requires the owner to resolve conflicting JSON and Markdown output rules.
+---
+
+# Ticket summary
+
+Summarize only supplied tickets. Read supplied files when needed. Do not look up tickets or send messages.
+
+Use only severity explicitly supplied with the ticket. Valid severity values are `low`, `medium`, and `high`. Do not infer severity. If it is absent or outside those values, ask for a valid severity before completing the summary.
+
+## Resolve the output conflict before completing a summary
+
+The source has both of these current requirements, with neither superseding the other:
+
+- Rule A: Every completed answer must be raw JSON with exactly keys `title` and `severity`, no Markdown.
+- Rule B: Every completed answer must be a Markdown table with exactly columns `Title` and `Severity`, no JSON.
+
+These requirements cannot both hold for a completed answer. Do not choose a default, combine the formats, or treat a request to pick the usual format as a resolution. Ask the owner which requirement should govern. Until the owner explicitly resolves this conflict, provide a clarification request and do not present a completed summary.
+
+After the owner resolves the conflict, use the selected requirement exactly. Preserve the supplied ticket information and the severity rule above. A completed summary requires both a resolved output format and a valid supplied severity.
+
+Example invocation: "Summarize ticket: title TEST_TICKET; severity low."

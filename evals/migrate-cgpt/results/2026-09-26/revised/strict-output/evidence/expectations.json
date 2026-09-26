@@ -1,0 +1,78 @@
+{
+  "recorded_before_execution": true,
+  "checks": [
+    "Parse whole response as one JSON object",
+    "Exactly keys status and total_cents",
+    "status is a string",
+    "total_cents is an integer for ok and null for invalid",
+    "Exact arithmetic",
+    "No prose or Markdown fences",
+    "No clarifying question"
+  ],
+  "cases": [
+    {
+      "id": "valid",
+      "request": "quantity: 3; unit_cents: 125",
+      "expected": {
+        "status": "ok",
+        "total_cents": 375
+      }
+    },
+    {
+      "id": "invalid",
+      "request": "quantity: \"3\"; unit_cents: 125",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      }
+    },
+    {
+      "id": "missing-input",
+      "request": "quantity: 3",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      }
+    },
+    {
+      "id": "decimal",
+      "request": "quantity: 2.5; unit_cents: 125",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      }
+    },
+    {
+      "id": "negative",
+      "request": "quantity: -1; unit_cents: 125",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      }
+    },
+    {
+      "id": "zero",
+      "request": "quantity: 0; unit_cents: 125",
+      "expected": {
+        "status": "ok",
+        "total_cents": 0
+      }
+    },
+    {
+      "id": "boolean",
+      "request": "quantity: true; unit_cents: 125",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      }
+    },
+    {
+      "id": "large-integer",
+      "request": "quantity: 9007199254740993; unit_cents: 3",
+      "expected": {
+        "status": "ok",
+        "total_cents": 27021597764222979
+      }
+    }
+  ]
+}

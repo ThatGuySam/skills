@@ -5,6 +5,39 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-09-26
+
+### Custom GPT migration evaluations
+
+- Added six synthetic migration fixtures with explicit expected requirements,
+  retained conversion artifacts, and generated-skill response checks.
+- Separated conversion inspection, task execution, destination delivery, and
+  automatic discovery in the migration verification guidance.
+- Recovered and ran the original docs-spec gate through its documented setup.
+- Recorded current plugin, project-installation, skill, and documentation checks
+  with live-integration and native-runtime limits. No deployment was performed.
+
+## 2026-09-22
+
+### Zach Prompting Sol and Luna guidance
+
+- Added verified GPT-6 Sol and Luna API details and a conditional prompt migration checklist.
+- Shortened skill activation metadata while preserving the newer Astra, session-authority, and delegation rules.
+- Clarified approved preparation before outstanding action gates and source checks for exact model and runtime settings.
+- Added representative comparison criteria; Sol and Luna behavior improvements remain awaiting evals. GitHub publication and website deployment are separate states.
+
+## 2026-09-18
+
+### Sales Research and Collection 0.4.0
+
+- Packaged Sales Research as a self-contained skill with practitioner routing,
+  primary-source links, and communication guidance.
+- Removed private-workspace and companion-skill requirements from the portable version.
+- Added installation instructions, seven prompt templates, a source guide, and
+  a tester checklist. Existing synthetic scenarios remain unscored criteria.
+- Updated collection discovery and plugin metadata. GitHub publication and
+  website deployment remain separate from local validation.
+
 ## 2026-09-17
 
 ### Custom GPT migration

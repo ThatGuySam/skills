@@ -30,6 +30,12 @@ Supply instructions or authorized editor access, available knowledge files, rele
 
 The result contains SKILL.md and only the references, assets, metadata, or scripts the workflow needs. The migration report gives the destination, component mapping, actual checks, unresolved dependencies, and an invocation example.
 
+Verification has two parts: compare the converted files with the source
+requirements, then run the generated skill with representative inputs. Keep
+expected requirements separate from the runners and retain their actual
+responses. A correctly reported missing integration can pass this evaluation
+while the replacement remains partial.
+
 ## States & edge cases
 
 - `ready`: required behavior and delivery verified.

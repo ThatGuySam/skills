@@ -17,13 +17,21 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `migrate-cgpt`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+The current repository publishes `migrate-cgpt`, `sales-research`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
 
 ## Install one skill
 
 ```bash
 npx skills add thatguysam/skills --skill migrate-cgpt
 ```
+
+See the [migration guide](/migrate-cgpt/introduction/) for supported targets and known gaps.
+
+```bash
+npx skills add ThatGuySam/skills --skill sales-research
+```
+
+See the [Sales Research guide](/sales-research/introduction/) for examples and a tester checklist.
 
 ```bash
 npx skills add thatguysam/skills --skill zach-prompting
@@ -40,7 +48,7 @@ codex plugin marketplace add thatguysam/skills
 codex plugin add htma-measure@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors remain `$zach-prompting` and `$htma-measure`.
+The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$migrate-cgpt`, `$sales-research`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
 
 ## Install the collection in Claude Code
 
@@ -54,6 +62,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 | Skill | Standalone Claude Code | Bundled Claude Code | Codex |
 | --- | --- | --- | --- |
 | Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
+| Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |
 | Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
 | HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
 

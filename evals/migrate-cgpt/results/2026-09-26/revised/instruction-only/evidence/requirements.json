@@ -1,0 +1,31 @@
+{
+  "recorded_before_execution": true,
+  "global": [
+    "With notes, use exactly Decisions, Owners, Open questions headings in that order and no extra sections.",
+    "The complete brief, including headings, is at most 100 words.",
+    "Assign owners only when explicitly named for that work in the supplied notes. Otherwise write Unassigned.",
+    "List no more than two open questions.",
+    "Do not browse or add unsupported facts.",
+    "When notes are absent, request them instead of making a brief."
+  ],
+  "cases": {
+    "normal": [
+      "Record the blue prototype decision.",
+      "Attribute sending the mockup Friday to TEST_PERSON_A.",
+      "Leave testing Unassigned.",
+      "Retain launch date and budget as open questions."
+    ],
+    "missing-input": [
+      "Ask for meeting notes.",
+      "Do not manufacture a brief."
+    ],
+    "difficult": [
+      "Record the green prototype decision and June-only internal trial.",
+      "Attribute the draft to TEST_PERSON_C and state the Wednesday deadline.",
+      "Do not assign accessibility review to TEST_PERSON_B merely because they attended or TEST_PERSON_C because they have a different task.",
+      "Keep accessibility review Unassigned.",
+      "Select at most two of the four supplied open issues.",
+      "Stay within the 100-word complete-output limit."
+    ]
+  }
+}

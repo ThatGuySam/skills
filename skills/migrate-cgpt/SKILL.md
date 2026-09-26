@@ -44,7 +44,7 @@ Start with behavior-preserving conversion. Separate optional improvements from n
 
 ## Check and deliver
 
-Validate frontmatter and resource links in the actual target directory. Inspect staged content for credentials and accidental private data. Run any new scripts. Use [verification.md](references/verification.md) to check behavior with representative inputs, including a difficult case and a missing-dependency case when relevant.
+Validate frontmatter and resource links in the actual target directory. Inspect staged content for credentials and accidental private data. Run any new scripts. Use [verification.md](references/verification.md) to inspect the conversion and separately execute the generated skill with representative inputs, including a difficult case and a missing-dependency case when relevant. Record expected requirements before running and retain the observed outputs.
 
 Report structural checks separately from execution evidence. A described test is not a run test. If the original GPT cannot be run, compare against the recovered contract and label direct before/after parity unverified. Do not claim an Action works from its schema or a mock alone.
 

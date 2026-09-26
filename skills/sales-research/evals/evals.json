@@ -1,0 +1,62 @@
+{
+  "skill_name": "sales-research",
+  "evals": [
+    {
+      "id": 0,
+      "name": "premature-consulting-recommendations",
+      "prompt": "A founder I know wants a free call so I can tell them which AI features to build and how to fix their product roadmap. Help me respond without sounding defensive or salesy.",
+      "expected_output": "Copy first. Classifies this as bespoke consulting at discovery with premature-advice and free-diagnosis risk. Uses the Selling is Leading posture, acknowledges possible early hypotheses, frames a paid decision phase positively, makes no safe, and ends with a concrete next decision.",
+      "files": [],
+      "expectations": [
+        "Gives the prospect-facing copy before framework commentary",
+        "Does not provide the requested product diagnosis for free",
+        "Frames paid work as a useful next stage rather than a rebuke",
+        "Ends with a clear decision or next step and allows a safe no",
+        "Does not attribute a practitioner claim without a retrieved or project-cited source"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "saas-positioning-and-conversion",
+      "prompt": "Research why my self-serve scheduling SaaS gets signups but few paid conversions. Tell me which sales thinkers are relevant and what decision I should make next.",
+      "expected_output": "Classifies this as SaaS/product rather than bespoke consulting, inspects local product and customer evidence first, routes primarily through Dunford, Kazanjy, Moesta, and McKenzie, expands current research only for missing or stale claims, and recommends a testable next decision without defaulting to a paid diagnostic.",
+      "files": [],
+      "expectations": [
+        "Treats the problem as SaaS/product sales rather than consulting sales",
+        "Inspects local evidence before searching outward",
+        "Uses no more than four practitioners unless it explains why more are necessary",
+        "Separates observed facts from inference and preserves direct source links",
+        "Ends with a concrete product or customer decision rather than generic advice"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "employment-technical-evaluation",
+      "prompt": "A company interviewing me asked me to walk through how I would evaluate their AI search quality. Is this free consulting, and how should I answer?",
+      "expected_output": "Classifies this as employment/recruiting, does not mechanically apply consulting boundaries, distinguishes legitimate evaluation from material unpaid deliverables, states the assumptions that affect the boundary, and gives a calm response that clarifies scope and leads to a decision.",
+      "files": [],
+      "expectations": [
+        "Does not automatically label the request free consulting",
+        "Distinguishes discussion of approach from producing a real diagnosis or roadmap",
+        "States the smallest material assumptions or asks only for a blocking fact",
+        "Provides usable copy with a clear next step",
+        "Avoids manipulative or defensive language"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "enterprise-ai-poc",
+      "prompt": "An enterprise prospect wants a broad RAG proof of concept before procurement will engage. Research how I should structure the proof and the next commercial step.",
+      "expected_output": "Classifies enterprise AI at proof/POC stage, routes through the minimum relevant combination of Cohan, Liu, Husain or Shankar, and Hadjar where supported, retrieves primary sources before attribution, accounts for procurement and readiness, and recommends the minimum adequate proof plus a bounded commercial decision.",
+      "files": [],
+      "expectations": [
+        "Identifies the proof decision, procurement constraint, and free-diagnosis risk",
+        "Selects a small practitioner bench suited to enterprise AI and POCs",
+        "Attributes practitioner claims only after retrieving a direct source",
+        "Includes technical or procurement primary evidence when it changes the sale",
+        "Stops research once the proof and next commercial decision are adequately supported"
+      ]
+    }
+  ],
+  "provenance": "Authored synthetic test scenarios, adapted from the original skill evaluation prompts. Expectations are review criteria, not observed results."
+}
