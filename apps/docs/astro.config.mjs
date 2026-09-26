@@ -53,6 +53,13 @@ export default defineConfig({
           ],
         },
         {
+          label: "Migrate Custom GPTs",
+          items: [
+            { label: "Introduction", slug: "migrate-cgpt/introduction" },
+            { label: "Verification", slug: "migrate-cgpt/verification" },
+          ],
+        },
+        {
           label: "Sam UX Audit",
           items: [
             { label: "Introduction", slug: "sam-ux-audit/introduction" },

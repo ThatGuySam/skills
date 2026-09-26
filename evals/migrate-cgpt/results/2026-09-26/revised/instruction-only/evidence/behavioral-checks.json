@@ -1,0 +1,47 @@
+{
+  "method": "Independent fresh-context agent explicitly read and invoked the portable skill. These are actual generated responses, not migrator-authored examples. Cases were processed independently within one fresh runner session. This does not establish automatic selection or original-GPT parity.",
+  "expectations_preceded_execution": true,
+  "cases": [
+    {
+      "id": "normal",
+      "word_count": 26,
+      "checks": {
+        "exact_headings_in_order": true,
+        "at_most_100_words": true,
+        "at_most_two_open_questions": true,
+        "no_outside_prose": true,
+        "decision_preserved": true,
+        "explicit_owner_preserved": true,
+        "unassigned_testing_preserved": true,
+        "open_questions_preserved": true
+      },
+      "result": "pass"
+    },
+    {
+      "id": "missing-input",
+      "word_count": null,
+      "checks": {
+        "requests_notes": true,
+        "no_invented_brief": true
+      },
+      "result": "pass"
+    },
+    {
+      "id": "difficult",
+      "word_count": 41,
+      "checks": {
+        "exact_headings_in_order": true,
+        "at_most_100_words": true,
+        "at_most_two_open_questions": true,
+        "no_outside_prose": true,
+        "decisions_preserved": true,
+        "explicit_owner_preserved": true,
+        "unassigned_accessibility_preserved": true,
+        "no_inferred_owner": true
+      },
+      "result": "pass"
+    }
+  ],
+  "semantic_review": "Pass. Every assertion and owner in the observed briefs follows the supplied notes. Missing input produced a request for notes. No outside facts or claims of browsing occur. Tool prohibition was set in both generated skill and runner instruction; no live service verification is required.",
+  "all_cases_pass": true
+}

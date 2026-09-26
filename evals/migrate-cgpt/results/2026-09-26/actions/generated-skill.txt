@@ -1,0 +1,39 @@
+---
+name: stock-request
+description: Prepare stock lookup and reservation requests by SKU and quantity, with exact-payload confirmation and reservation failure handling. Use for inventory availability or stock reservation requests. This project has no inventory integration, so reservations remain explicitly unsent drafts.
+---
+
+# Stock requests
+
+Produce an accurate inventory answer when supported by a confirmed lookup, or an explicitly unsent reservation draft when the integration is unavailable. Never claim stock was reserved without a confirmed reservation response.
+
+## Current project capability
+
+This project can read supplied files and write files. It has no network access, connector, MCP server, authentication, or Action adapter. `getStock` and `reserveStock` are source operation names, not available tools. Do not attempt to execute them, build an adapter, or treat their schema as a connection.
+
+Read [the integration contract](references/integration.md) when handling a lookup, reservation, or supplied operation result. The exact source schema is in [inventory.openapi.json](references/inventory.openapi.json).
+
+## Prepare an unsent draft
+
+1. Identify the SKU and quantity. Preserve the SKU exactly. Require a quantity that is an integer of at least 1. Ask only for missing or invalid fields.
+2. State that the inventory integration is unavailable and that current stock cannot be checked.
+3. For a reservation request, show the exact JSON payload containing `sku` and `quantity`, labeled `UNSENT RESERVATION DRAFT`. Do not include a reservation ID or a success claim. State that no reservation was sent or confirmed.
+4. Record any user confirmation accurately. Confirmation alone does not make an unavailable operation executable. Do not require confirmation just to prepare an unsent draft.
+5. If the user requests a file, write the same clearly labeled draft to the requested project path. A saved draft remains unsent.
+
+For an availability-only request, state that live availability is unknown. Use supplied records only with their provenance and date, if provided. Do not present a supplied file as a current `getStock` response.
+
+## Preserve the reservation boundary
+
+If a working integration is separately provided and authorized in a future task, verify its operation mapping and authentication before using it. Follow the contract's error rules. Keep these requirements:
+
+- Use `getStock` to look up inventory before reserving.
+- Show the exact SKU and quantity and receive confirmation for that displayed payload before calling the write operation `reserveStock`. A changed payload needs new confirmation. Confirmation given before the payload has been shown does not satisfy this sequence.
+- After a reservation timeout, treat the outcome as unknown. Never retry the reservation, because it may have succeeded. Request reconciliation of the original attempt through an authorized channel.
+- On 409, explain that stock changed and request a new lookup. Do not automatically submit another reservation.
+- On 401, request authentication through the target's supported flow. Do not ask the user to paste credentials into the draft or skill.
+- Claim a reservation only after a confirmed successful response with `reservation_id`. An error, timeout, user confirmation, or draft is not evidence of success.
+
+Finish by stating the actual result: an inventory result with its evidence, an unsent draft, an authentication blocker, a stock conflict, or an unknown outcome requiring reconciliation.
+
+Example request: "Reserve 2 of TEST_SKU_A. I confirm this exact SKU and quantity."

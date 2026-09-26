@@ -1,0 +1,28 @@
+{
+  "id": "strict-output",
+  "name": "line-total",
+  "target": {
+    "runtime": "ChatGPT personal skill",
+    "path": "prepared/line-total",
+    "capabilities": [
+      "read supplied files",
+      "write staging files"
+    ],
+    "delivery": "Prepare a portable replacement for my ChatGPT personal skills. This environment has no managed personal-skills checkout or save/reconciliation tool. Do not install into another account or runtime."
+  },
+  "source": {
+    "instructions": "Compute a line total from quantity and unit_cents. Both must be nonnegative integers. Return exactly one JSON object with keys status and total_cents. status is ok for valid inputs, invalid otherwise. total_cents is quantity multiplied by unit_cents on success and null for invalid or missing inputs. Never coerce numeric strings, round decimals, ask a clarifying question, output Markdown fences, or add any other text.",
+    "knowledge_files": [],
+    "actions": []
+  },
+  "probes": [
+    {
+      "id": "valid",
+      "request": "quantity: 3; unit_cents: 125"
+    },
+    {
+      "id": "invalid",
+      "request": "quantity: \"3\"; unit_cents: 125"
+    }
+  ]
+}

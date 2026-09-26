@@ -1,0 +1,14 @@
+[
+  {
+    "id": "normal",
+    "response": "## Decisions\n- Selected the blue prototype.\n\n## Owners\n- TEST_PERSON_A: Send the mockup Friday.\n- Unassigned: Test the prototype.\n\n## Open questions\n- What is the launch date?\n- What is the budget?"
+  },
+  {
+    "id": "missing-input",
+    "response": "Please provide the meeting notes."
+  },
+  {
+    "id": "difficult",
+    "response": "## Decisions\n- Selected the green prototype.\n- The June trial will be internal only; no customer launch was approved.\n\n## Owners\n- TEST_PERSON_C: Write the revised draft by Wednesday.\n- Unassigned: Complete the accessibility review.\n\n## Open questions\n- What is the trial date?\n- What is the budget?"
+  }
+]

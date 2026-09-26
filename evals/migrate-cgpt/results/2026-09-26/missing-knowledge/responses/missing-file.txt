@@ -1,0 +1,3 @@
+Yes. You can move a TEST_EVENT 72 hours before it starts because date changes are allowed up to 48 hours before the event (policy-v3.md, “Changes”).
+
+The fee is unknown. The policy defines the fee only in fees-2026.csv, which is missing. Please provide fees-2026.csv so I can confirm the amount (policy-v3.md, “Changes”).

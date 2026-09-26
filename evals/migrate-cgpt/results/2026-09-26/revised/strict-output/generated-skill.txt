@@ -1,0 +1,15 @@
+---
+name: line-total
+description: Compute a line total in cents from quantity and unit_cents. Use for line-total requests requiring an exact JSON result and strict nonnegative integer inputs.
+---
+
+# Line total
+
+Compute `quantity * unit_cents` only when both supplied values are nonnegative integers. Treat missing inputs, negative numbers, decimals, strings, booleans, null, and other non-integer values as invalid. Never coerce numeric strings or round decimals.
+
+Return exactly one JSON object with exactly these keys:
+
+- `status`: `"ok"` for valid inputs, otherwise `"invalid"`.
+- `total_cents`: the integer product for valid inputs, otherwise `null`.
+
+Do not ask a clarifying question. Do not output Markdown fences, commentary, or any other text. Finish after the JSON object.

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "valid",
+    "request": "quantity: 3; unit_cents: 125"
+  },
+  {
+    "id": "invalid",
+    "request": "quantity: \"3\"; unit_cents: 125"
+  },
+  {
+    "id": "missing-input",
+    "request": "quantity: 3"
+  },
+  {
+    "id": "decimal",
+    "request": "quantity: 2.5; unit_cents: 125"
+  },
+  {
+    "id": "negative",
+    "request": "quantity: -1; unit_cents: 125"
+  },
+  {
+    "id": "zero",
+    "request": "quantity: 0; unit_cents: 125"
+  },
+  {
+    "id": "boolean",
+    "request": "quantity: true; unit_cents: 125"
+  },
+  {
+    "id": "large-integer",
+    "request": "quantity: 9007199254740993; unit_cents: 3"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "executor": "Independent fresh-context agent /root/revised_output/execute_line_total",
+  "scope": "Portable instructions explicitly read and executed by an agent outside ChatGPT personal skills; not native target-runtime execution or automatic discovery.",
+  "inputs_given_to_runner": [
+    "prepared/line-total/SKILL.md",
+    "evidence/requests.json"
+  ],
+  "expected_results_withheld_from_runner": true,
+  "results": [
+    {
+      "id": "valid",
+      "request": "quantity: 3; unit_cents: 125",
+      "raw_response": "{\"status\":\"ok\",\"total_cents\":375}\n",
+      "expected": {
+        "status": "ok",
+        "total_cents": 375
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "cf7d409dba6835c8ff66e8ef0117ae74e5a937b09681eaf4b6d3ee3cc5c2304c"
+    },
+    {
+      "id": "invalid",
+      "request": "quantity: \"3\"; unit_cents: 125",
+      "raw_response": "{\"status\":\"invalid\",\"total_cents\":null}\n",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60"
+    },
+    {
+      "id": "missing-input",
+      "request": "quantity: 3",
+      "raw_response": "{\"status\":\"invalid\",\"total_cents\":null}\n",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60"
+    },
+    {
+      "id": "decimal",
+      "request": "quantity: 2.5; unit_cents: 125",
+      "raw_response": "{\"status\":\"invalid\",\"total_cents\":null}\n",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60"
+    },
+    {
+      "id": "negative",
+      "request": "quantity: -1; unit_cents: 125",
+      "raw_response": "{\"status\":\"invalid\",\"total_cents\":null}\n",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60"
+    },
+    {
+      "id": "zero",
+      "request": "quantity: 0; unit_cents: 125",
+      "raw_response": "{\"status\":\"ok\",\"total_cents\":0}\n",
+      "expected": {
+        "status": "ok",
+        "total_cents": 0
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "43244a49f49faf7adf5064deb79b31b8cb7e95bb607a2188372b958d653e9016"
+    },
+    {
+      "id": "boolean",
+      "request": "quantity: true; unit_cents: 125",
+      "raw_response": "{\"status\":\"invalid\",\"total_cents\":null}\n",
+      "expected": {
+        "status": "invalid",
+        "total_cents": null
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60"
+    },
+    {
+      "id": "large-integer",
+      "request": "quantity: 9007199254740993; unit_cents: 3",
+      "raw_response": "{\"status\":\"ok\",\"total_cents\":27021597764222979}\n",
+      "expected": {
+        "status": "ok",
+        "total_cents": 27021597764222979
+      },
+      "result": "pass",
+      "errors": [],
+      "response_sha256": "c1c9935a8e7cb25dbbce8b2a4272248c00256f31c4c54de8b54af2ab7162d05e"
+    }
+  ]
+}

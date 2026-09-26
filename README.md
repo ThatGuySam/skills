@@ -4,6 +4,17 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Migrate Custom GPTs
+
+Convert your Custom GPT instructions, knowledge, and integration requirements into a portable skill for a local agent, ChatGPT, or a GitHub repository. Missing files and Actions remain explicit migration gaps.
+
+```bash
+npx skills add thatguysam/skills --skill migrate-cgpt
+```
+
+Ask: `Use $migrate-cgpt to migrate this GPT configuration into my skills repository.`
+
+Read the [migration guide](apps/docs/src/content/docs/migrate-cgpt/introduction.md) and [verification limits](apps/docs/src/content/docs/migrate-cgpt/verification.md).
 ### Sales Research
 
 Research sales decisions and draft buyer communication using relevant practitioner
@@ -129,6 +140,10 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  migrate-cgpt/
+    SKILL.md
+    agents/openai.yaml
+    references/
   sales-research/
     SKILL.md
     README.md

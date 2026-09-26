@@ -1,0 +1,86 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "url": "https://inventory.example.invalid/v1"
+    }
+  ],
+  "paths": {
+    "/stock/{sku}": {
+      "get": {
+        "operationId": "getStock",
+        "parameters": [
+          {
+            "name": "sku",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON object with sku string and available integer"
+          },
+          "401": {
+            "description": "Unauthenticated"
+          }
+        }
+      }
+    },
+    "/reservations": {
+      "post": {
+        "operationId": "reserveStock",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "sku",
+                  "quantity"
+                ],
+                "properties": {
+                  "sku": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "JSON object with reservation_id string"
+          },
+          "401": {
+            "description": "Unauthenticated"
+          },
+          "409": {
+            "description": "Insufficient stock"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "inventoryKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Inventory-Key"
+      }
+    }
+  },
+  "security": [
+    {
+      "inventoryKey": []
+    }
+  ]
+}

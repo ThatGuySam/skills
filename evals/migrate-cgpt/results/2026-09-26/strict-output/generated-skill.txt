@@ -1,0 +1,12 @@
+---
+name: line-total
+description: Compute a line total from quantity and unit_cents. Use when asked to calculate this total and return exactly one JSON object, including invalid or missing input results.
+---
+
+# Line total
+
+Return exactly one JSON object with keys `status` and `total_cents`.
+
+Both `quantity` and `unit_cents` must be nonnegative integers. If both are valid, set `status` to `"ok"` and `total_cents` to their product. If either is invalid or missing, set `status` to `"invalid"` and `total_cents` to `null`.
+
+Never coerce numeric strings, round decimals, ask a clarifying question, output Markdown fences, or add any other text.
