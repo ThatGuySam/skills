@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-01
+
+### Backup-first GPT migration and collection 0.5.0 candidate
+
+- Added private original-detail capture, checksummed file inventory, and explicit missing-file states before conversion.
+- Documented the standard Agent Skills folder, local/repository delivery, and account-dependent ChatGPT Web plugin installation.
+- Added a hand-test checklist; live owned-GPT parity and Web installation remain untested.
+- Removed private workspace provenance from maintained documentation, aligned bundle versions and migration metadata, and stabilized the evaluation link.
+- Hardened the recorded-evidence checker for optimized Python and pinned the current requirements retrospectively without claiming historical pre-run proof.
+
 ## 2026-09-26
 
 ### Custom GPT migration evaluations

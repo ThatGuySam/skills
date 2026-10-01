@@ -72,7 +72,7 @@ Verify that it is installed and enabled:
 codex plugin list --json
 ```
 
-The plugin reports its version and marketplace source. Release `0.2.1` installs without additional authentication because the repository is public.
+The plugin reports its version and marketplace source. The repository is public; any authentication or workspace approval requirements depend on the selected host. Check the current package version rather than assuming a cached release is current.
 
 ## Claude Code plugin
 

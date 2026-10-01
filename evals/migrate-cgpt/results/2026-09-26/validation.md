@@ -1,8 +1,9 @@
 # Validation record
 
-All checks below ran on 2026-09-26 against the candidate containing the revised
-skill and documentation. The two revised-run skill snapshots match the final
-canonical skill file hashes in `revised.json`.
+The checks in the first table ran on 2026-09-26 against the candidate containing
+the revised skill and documentation. The two revised-run skill snapshots matched
+the canonical skill file hashes recorded in `revised.json` for that candidate.
+The checker repair and recheck on 2026-10-01 are recorded separately below.
 
 | Check | Observed result |
 | --- | --- |
@@ -42,29 +43,21 @@ cd apps/docs
 bun install --minimum-release-age 604800
 bun run test
 bun run build
-bash "$HOME/.codex/skills/docs-spec/scripts/check.sh" "$(pwd)"
+bash "$DOCS_SPEC_DIR/scripts/check.sh" "$(pwd)"
 ```
 
 The install added 395 dependencies without changing the tracked lockfile.
 The build retains nonfatal notices for deprecated Markdown processor options
 and a missing custom 404 entry. No dependency upgrade or deployment occurred.
 
-## Canonical docs-spec source
+## Docs-spec gate
 
-The checker was missing from the initial host. Authorized repository access
-recovered the original full skill from `ThatGuySam/notes-search`, revision
-`e80f979305d203a6c5e2797c82ec4ba2b4a596d1`, under
-`.agents/skills/docs-spec/`. Its SKILL.md documents the global Claude/Codex
-locations and the build-then-check command. The full directory was copied to
-`~/.claude/skills/docs-spec`; `~/.codex/skills/docs-spec` links there. The checker
-uses Bash, Perl, and standard shell utilities. The current tree contains the
-full skill even though an older setup note calls that repo path a thin bridge.
+To repeat the documentation gate, use an authorized installation of the full
+`docs-spec` skill and set `DOCS_SPEC_DIR` to its root before running the command
+above. Build the site first. The checker uses Bash, Perl, and standard shell
+utilities. A replacement smoke check does not reproduce this gate.
 
-- Script path: `.agents/skills/docs-spec/scripts/check.sh`
-- Git blob: `a40e496f40115fe1dc6eeb510c54028845ad0675`
-- SHA-256: `9c6e7d2ee7da230bd28cd059512857ce008ddac7ccc292afe075399e1d6a5b7a`
-
-The installed script's checksum matched before and after both runs. Its output:
+The recorded 2026-09-26 run produced:
 
 ```text
 build output present (dist/)
@@ -81,8 +74,8 @@ feature spec complete: features/sources-and-voi.md
 summary: 11 passed, 0 warnings, 0 failures; gate passed
 ```
 
-This is the original gate, not a replacement check. No auth Worker, gated
-routes, or other docs-spec scaffold behavior was added to the public site.
+No auth Worker, gated routes, or other docs-spec scaffold behavior was added
+to the public site.
 
 ## Package commands
 
@@ -119,3 +112,43 @@ diff -r "$REPO/skills/migrate-cgpt" .agents/skills/migrate-cgpt
 This checks local candidate packaging, not the published default branch,
 ChatGPT personal installation, or a disconnected Mac. No live integrations,
 hosted migration, original-GPT comparison, or automatic trigger was exercised.
+
+## Checker repair and recheck, 2026-10-01
+
+The checker now raises validation errors unconditionally. Python's `-O` mode
+no longer removes integrity or response-contract checks. A failing revised-run
+check also exits before printing any `PASS` line.
+
+`run.json` now records `expected_sha256` for the retained `expected.json`:
+
+```text
+4362cf7ac0abf119f39983e87641746e919dd0f49ce4a846d46d06c0a4e60cd7
+```
+
+This hash was added retrospectively on 2026-10-01. It detects subsequent edits
+to the retained requirements, including changes that keep all case IDs the
+same. It does not prove which requirements existed before the 2026-09-26 run
+or independently establish when they were written. The historical account of
+requirements being withheld from runners remains an account of that run.
+
+The following commands passed on 2026-10-01:
+
+```bash
+python3 evals/migrate-cgpt/check.py
+python3 -O evals/migrate-cgpt/check.py
+python3 -m unittest discover -s evals/migrate-cgpt -p 'test_check.py'
+python3 -O -m unittest discover -s evals/migrate-cgpt -p 'test_check.py'
+git diff --check
+```
+
+Both checker modes passed the six baseline cases, nine retained files, eight
+baseline responses, and eleven revised-run responses. All 27 regression tests
+passed in both normal and optimized test runs. The CLI tests use disposable
+copies and exercise corruption, missing requirements hashes, duplicate and
+missing cases, path escapes including symlinks, missing resources, and invalid
+responses with updated hashes. Each CLI case runs the checker both normally
+and with `-O`.
+
+These checks replay retained evidence. They do not rerun a model, establish
+semantic correctness, or repeat the packaging and documentation checks from
+the historical table.

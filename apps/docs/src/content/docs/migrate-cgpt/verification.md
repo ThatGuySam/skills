@@ -7,6 +7,17 @@ Checked 2026-09-26. Six synthetic migrations and eight generated-skill response
 probes passed. This demonstrates portable instruction behavior in Work Mode,
 not live GPT parity or native execution in every destination.
 
+## Backup-first extension, 2026-10-01
+
+The private-backup helper and current packaging pass 37 synthetic tests in both
+normal and optimized Python, schema and skill validation, strict plugin checks,
+a clean local install, the 38-page docs build, and the original 11-check docs
+gate. [Current validation record](https://github.com/ThatGuySam/skills/blob/main/evals/migrate-cgpt/results/2026-10-01/validation.md)
+
+These checks do not rerun the historical model evaluations below. The revised
+workflow still needs a hand-test with an owned GPT and the selected Web account;
+use the [hand-test checklist](/migrate-cgpt/backup-and-install/#hand-test-checklist).
+
 ## Behavioral evidence
 
 Each migration used a fresh agent given the source configuration and migration
@@ -36,7 +47,7 @@ negative values, and integer arithmetic beyond JavaScript's safe integer range.
 Their evidence is retained alongside the baseline, for eight conversions and
 19 observed responses in total. This small sample is not a reliability rate.
 
-The [evaluation set and run procedure](https://github.com/ThatGuySam/skills/tree/feat/migrate-cgpt/evals/migrate-cgpt)
+The [evaluation set and run procedure](https://github.com/ThatGuySam/skills/tree/main/evals/migrate-cgpt)
 include synthetic fixtures, generated files, response bytes, hashes, and the
 independent assessment. The replay checker checks recorded evidence; it does
 not call a model. Baseline reports predate the separate response runs, so their
@@ -63,7 +74,7 @@ The build emits 37 pages and all three `llms*.txt` files with the changed
 migration content. The original docs-spec checker passes 11 checks with zero
 warnings or failures. It was recovered through its documented installation
 layout, not replaced with a substitute. See `apps/docs/README.md` for setup and
-the evaluation validation record for its pinned source and checksum.
+the evaluation validation record for the recorded gate result and generic setup.
 
 No documentation deployment was performed. Existing build notices about
 deprecated Markdown processor options and the missing custom 404 entry are

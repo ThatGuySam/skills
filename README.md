@@ -6,13 +6,15 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ### Migrate Custom GPTs
 
-Convert your Custom GPT instructions, knowledge, and integration requirements into a portable skill for a local agent, ChatGPT, or a GitHub repository. Missing files and Actions remain explicit migration gaps.
+Back up the original details of a user-owned Custom GPT privately, then convert its instructions, knowledge, and integration requirements into a portable skill folder or Git repository. ChatGPT Web delivery uses a supported plugin route. Missing files and Actions remain explicit migration gaps.
 
 ```bash
 npx skills add thatguysam/skills --skill migrate-cgpt
 ```
 
-Ask: `Use $migrate-cgpt to migrate this GPT configuration into my skills repository.`
+Ask: `Use $migrate-cgpt to back up this GPT privately, then convert it into my skills repository.`
+
+For ChatGPT Web, private backups, manual folder installation, and the unmerged-PR preview route, see the [backup and installation guide](apps/docs/src/content/docs/migrate-cgpt/backup-and-install.md).
 
 Read the [migration guide](apps/docs/src/content/docs/migrate-cgpt/introduction.md) and [verification limits](apps/docs/src/content/docs/migrate-cgpt/verification.md).
 ### Sales Research
@@ -112,7 +114,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships release `0.4.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships release candidate `0.5.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -144,6 +146,8 @@ skills/
     SKILL.md
     agents/openai.yaml
     references/
+    assets/
+    scripts/
   sales-research/
     SKILL.md
     README.md

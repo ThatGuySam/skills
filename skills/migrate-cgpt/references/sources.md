@@ -1,16 +1,24 @@
 # Research and maintenance
 
-Checked 2026-09-17. Recheck vendor facts before relying on dates, eligibility, UI steps, or runtime installation paths. These links support decisions; they are not prerequisites for offline conversion of supplied instructions.
+Checked 2026-10-01. Recheck vendor facts before relying on dates, eligibility, UI steps, or runtime installation paths. These links support decisions; they are not prerequisites for offline conversion of supplied instructions.
 
 ## Migration facts
 
+[Agent Skills specification](https://agentskills.io/specification) defines the portable folder and frontmatter contract. The private backup manifest in this skill is an independent capture record, not part of that standard.
+
+[OpenAI: Moving custom GPT workflows to plugins](https://learn.chatgpt.com/docs/migrate-custom-gpts) documents the current creator/admin flow and its read-only effect on the original. Back up before invoking it; Actions require separate rebuilding.
+
+[OpenAI: Package your plugin](https://developers.openai.com/plugins/build/plugins) defines the portable root manifest and supported compatibility overlay.
+
+[OpenAI: Enterprise plugin management](https://learn.chatgpt.com/docs/enterprise/plugin-management) documents admin marketplace import. This does not establish availability for personal accounts.
+
 [OpenAI: Custom GPT retirement and migration FAQ](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq)
 
-The published Enterprise schedule targets migration availability on September 17, ends new creation on September 25, and schedules retirement for December 11, 2026. Dates and availability can change; other plans require their own notices. Instructions become a plugin skill, connected apps carry over, and Actions require rebuilding. Model choice does not carry over; chats and starters may not copy. Check reference material. Built-in migration requires a published GPT and creator/admin access in the described Enterprise flow. The original becomes read-only; the replacement starts private. Portable conversion from authorized files does not invoke that flow.
+Check the current FAQ and the actual account/workspace notice for rollout and retirement dates; do not apply one workspace's schedule to every plan. Instructions become a plugin skill, connected apps can carry over, and Actions require rebuilding. Model selection and starters do not transfer one-to-one. Verify knowledge files and runtime capabilities. Built-in migration requires an eligible published GPT and creator/admin access. The original becomes read-only; the replacement starts private. Portable conversion from authorized files does not invoke that flow.
 
 [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills)
 
-Defines SKILL.md packaging, progressive loading, runtime discovery locations, and metadata. Verify paths against the target runtime. Local discovery and plugin distribution are separate delivery modes.
+Defines SKILL.md packaging, progressive loading, runtime discovery locations, and metadata. Verify paths against the target runtime. Standalone desktop/CLI/IDE discovery and plugin distribution to ChatGPT Web are separate delivery modes. Confirm availability in the actual target account.
 
 [OpenAI: Skills and plugins](https://learn.chatgpt.com/docs/skills-and-plugins)
 

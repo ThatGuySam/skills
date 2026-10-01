@@ -120,5 +120,10 @@
     "references/destinations.md": "19cfff88b33c0a86aa8815e64e958b620734bb5bd9fa1ec7d782913e6ec0e11b",
     "references/sources.md": "2b15f8126284877d885a8d6cb448ee172f86747d3d2066cbd3b9c6538ab1d533",
     "references/verification.md": "b0f7ebe74f1287f514e191ad5912cfb22381f2ba284feaf421c9aeed95880e71"
+  },
+  "expected_sha256": "4362cf7ac0abf119f39983e87641746e919dd0f49ce4a846d46d06c0a4e60cd7",
+  "expected_pinning": {
+    "date": "2026-10-01",
+    "method": "Retrospective hash of the retained expected.json requirements. This detects subsequent changes; it does not prove which requirements existed before the 2026-09-26 run."
   }
 }
