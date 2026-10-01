@@ -14,7 +14,7 @@ npx skills add thatguysam/skills --skill migrate-cgpt
 
 Ask: `Use $migrate-cgpt to back up this GPT privately, then convert it into my skills repository.`
 
-For ChatGPT Web, private backups, manual folder installation, and the unmerged-PR preview route, see the [backup and installation guide](apps/docs/src/content/docs/migrate-cgpt/backup-and-install.md).
+For ChatGPT Web, private backups, manual folder installation, and revision-pinned installation, see the [backup and installation guide](apps/docs/src/content/docs/migrate-cgpt/backup-and-install.md).
 
 Read the [migration guide](apps/docs/src/content/docs/migrate-cgpt/introduction.md) and [verification limits](apps/docs/src/content/docs/migrate-cgpt/verification.md).
 ### Sales Research
@@ -114,7 +114,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships release candidate `0.5.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.5.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -188,7 +188,7 @@ Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with co
 
 ## Contributing
 
-Changes should keep each skill specific, portable, verifiable, and minimal. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Use trunk-based development for ordinary authorized changes: validate and publish directly to `main`, with branches or pull requests for explicit requests or required repository rules. Changes should keep each skill specific, portable, verifiable, and minimal. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

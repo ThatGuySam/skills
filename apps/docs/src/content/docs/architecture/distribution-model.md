@@ -27,7 +27,7 @@ This is the narrowest installation route when only one skill is needed.
 
 ## Codex marketplace bundle
 
-Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points the `0.5.0` candidate at `./skills/` and presents the collection as Sam's Skills.
+Codex first clones the repository as a marketplace snapshot. The marketplace catalog retains the stable install ID `htma-measure`, while `.codex-plugin/plugin.json` points version `0.5.0` at `./skills/` and presents the collection as Sam's Skills.
 
 Installing that plugin exposes every current skill. The stable install ID avoids breaking existing marketplace installations; it does not control a skill's name or Claude command prefix.
 
@@ -43,7 +43,7 @@ Any compatible agent can load a chosen `SKILL.md` directly and resolve its relat
 
 ## Versioning
 
-- Root, Codex, and Claude manifests carry the same `0.5.0` candidate version for the five-skill collection.
+- Root, Codex, and Claude manifests carry the same `0.5.0` version for the five-skill collection.
 - Root `plugin.json` declares the portable Agent Plugins schema; the Codex overlay supplies compatible presentation metadata.
 - Bump all three versions for package changes so cached installations can update.
 - The Open Skills CLI tracks each selected skill folder's content hash independently.

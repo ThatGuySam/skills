@@ -19,24 +19,26 @@ original read-only; back up and approve that consequence before using it.
 
 ## Install the migrator
 
-For a local supported agent after this change is merged into the default branch:
+For a local supported agent:
 
 ```bash
 npx skills add thatguysam/skills --skill migrate-cgpt
 ```
 
-To test the current PR before merge, use a disposable clone and install from it:
+For a repeatable installation, use a reviewed immutable repository revision.
+The example below pins the validated, merged migration revision; select a newer
+reviewed commit when you intentionally want an update:
 
 ```bash
-git clone --branch feat/migrate-cgpt https://github.com/ThatGuySam/skills.git
+git clone https://github.com/ThatGuySam/skills.git
 cd skills
+git checkout --detach dadb6aa3dd25c2ae8bf8ae59362eee9198b0971f
 npx skills add . --skill migrate-cgpt
 ```
 
-Review the checked-out revision before installing. The PR branch is a preview,
-not a stable release; record the commit for repeatable tests. Choose the intended
-agent/scope in the installer. Installing the migrator does not install the new
-skill it will create.
+Record the selected commit with the test results. Choose the intended agent/scope
+in the installer. Installing the migrator does not install the new skill it will
+create.
 
 Invoke `$migrate-cgpt` in Codex, `/migrate-cgpt` in standalone Claude Code, or
 `/sam:migrate-cgpt` in the Claude collection. Example:

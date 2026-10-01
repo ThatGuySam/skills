@@ -8,6 +8,14 @@ This repository contains the agent skills Sam uses and publishes.
 - Read `skills/<name>/SKILL.md` before changing a skill.
 - Read `apps/docs/README.md` and `apps/docs/AGENTS.md` before changing or deploying the documentation site.
 
+## Contribution workflow
+
+- Use trunk-based development in this repository. For ordinary changes the user has authorized publishing, commit and push directly to the current `main` branch by default; a pull request is not required.
+- Honor an explicit request for a branch, pull request, review gate, or draft-only work. This default does not authorize publication when the task only asks for investigation or a draft.
+- Start from the latest remote `main`, keep changes small and focused, preserve unrelated work, and run the applicable validation gates before pushing.
+- Never force-push shared history. If `main` advances, reconcile and rerun affected checks before publishing.
+- Respect required repository rules and checks. If they block direct publication, report the blocker rather than disabling protection, changing permissions, or bypassing checks.
+
 ## Collection boundaries
 
 - Keep one canonical, independently installable skill in each `skills/<name>/` directory.

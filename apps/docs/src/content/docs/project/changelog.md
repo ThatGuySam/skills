@@ -7,6 +7,13 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-10-01
 
+### Trunk-based contributions
+
+- Merged the migration workflow and installation documentation into `main`.
+- Made direct-to-`main` publication the default for ordinary authorized changes; explicit review requests, contributor access limits, and repository rules still take precedence.
+- Kept validation, authorization, and no-force-push requirements. No branch protection, security, or permission settings were changed.
+- Updated current installation instructions to use the published default branch rather than an unmerged PR preview.
+
 ### Backup-first GPT migration and collection 0.5.0 candidate
 
 - Added private original-detail capture, checksummed file inventory, and explicit missing-file states before conversion.
