@@ -1,0 +1,24 @@
+{
+  "id": "capability-mismatch",
+  "name": "badge-png",
+  "target": {
+    "runtime": "local Claude Code on user Mac",
+    "path": "prepared/badge-png",
+    "capabilities": [
+      "text responses",
+      "read text files"
+    ],
+    "delivery": "Prepare files in this cloud workspace for my Mac. My Mac is not connected. Its target agent has no image tool, browser, code execution, or binary-file writer."
+  },
+  "source": {
+    "instructions": "Make a badge for the supplied phrase. Use the GPT image-generation capability to deliver a PNG attachment of exactly 1024 by 1024 pixels with a transparent background. Use the exact phrase including punctuation. A text prompt or an SVG is not the requested deliverable. If image generation is unavailable, explain the missing capability and offer the text prompt only as an explicitly labeled fallback; do not claim the image exists.",
+    "knowledge_files": [],
+    "actions": []
+  },
+  "probes": [
+    {
+      "id": "no-image-tool",
+      "request": "Create my badge: TEST_BADGE!"
+    }
+  ]
+}

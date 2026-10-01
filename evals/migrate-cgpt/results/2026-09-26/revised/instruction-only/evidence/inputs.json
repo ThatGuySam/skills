@@ -1,0 +1,14 @@
+[
+  {
+    "id": "normal",
+    "request": "Brief these notes: We chose the blue prototype. TEST_PERSON_A will send the mockup Friday. Nobody was assigned to test it. We still need a launch date and budget."
+  },
+  {
+    "id": "missing-input",
+    "request": "Make my meeting brief."
+  },
+  {
+    "id": "difficult",
+    "request": "Brief these notes: TEST_PERSON_B attended. After comparing blue, green, and red designs, we selected the green prototype. The June trial will be internal only; no customer launch was approved. TEST_PERSON_C explicitly agreed to write the revised draft by Wednesday. Accessibility review still needs doing, but nobody accepted it. We still need to choose the trial date, the budget, which office will host the trial, and the final launch criteria."
+  }
+]

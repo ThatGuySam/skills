@@ -1,0 +1,22 @@
+{
+  "frontmatter": "pass",
+  "name_and_folder": "pass",
+  "relative_resource_links": {
+    "status": "pass",
+    "count": 0
+  },
+  "only_expected_skill_files": [
+    "SKILL.md"
+  ],
+  "credential_pattern_scan": "pass",
+  "synthetic_source_privacy_review": "pass; no knowledge, credentials, examples, or action schemas included",
+  "scripts": "none",
+  "sha256": "b23cc2a18326d87d357431c7a1a1cdd78f7d6909efeea427cae4ebdfcf68110c",
+  "target": "<WORKSPACE>/migration-runs/revised/strict-output/prepared/line-total",
+  "available_quick_validator": {
+    "command": "python /root/.codex/skills/oai/skill-creator/scripts/quick_validate.py <WORKSPACE>/migration-runs/revised/strict-output/prepared/line-total",
+    "exit_code": 0,
+    "stdout": "Skill is valid!",
+    "scope": "Portable packaging only; does not verify personal-skill installation."
+  }
+}

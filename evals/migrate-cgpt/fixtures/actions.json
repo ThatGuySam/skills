@@ -1,0 +1,111 @@
+{
+  "id": "actions",
+  "name": "stock-request",
+  "target": {
+    "runtime": "Claude Code project skill",
+    "path": ".claude/skills/stock-request",
+    "capabilities": [
+      "read supplied files",
+      "write files"
+    ],
+    "delivery": "Prepare the local project skill. There is no network, connector, MCP server, authentication, or adapter in the target; building adapters is outside this request."
+  },
+  "source": {
+    "instructions": "Look up inventory with getStock. Reserve stock only after showing SKU and quantity and receiving confirmation for that exact payload. reserveStock is a write. Do not retry reservation after a timeout because it might have succeeded. On 409 explain that stock changed and request a new lookup; on 401 request authentication. Never claim a reservation without a confirmed response. If the integration is unavailable, prepare a clearly unsent reservation draft.",
+    "knowledge_files": [],
+    "actions": [
+      {
+        "openapi": "3.1.0",
+        "servers": [
+          {
+            "url": "https://inventory.example.invalid/v1"
+          }
+        ],
+        "paths": {
+          "/stock/{sku}": {
+            "get": {
+              "operationId": "getStock",
+              "parameters": [
+                {
+                  "name": "sku",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "JSON object with sku string and available integer"
+                },
+                "401": {
+                  "description": "Unauthenticated"
+                }
+              }
+            }
+          },
+          "/reservations": {
+            "post": {
+              "operationId": "reserveStock",
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "required": [
+                        "sku",
+                        "quantity"
+                      ],
+                      "properties": {
+                        "sku": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "JSON object with reservation_id string"
+                },
+                "401": {
+                  "description": "Unauthenticated"
+                },
+                "409": {
+                  "description": "Insufficient stock"
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "securitySchemes": {
+            "inventoryKey": {
+              "type": "apiKey",
+              "in": "header",
+              "name": "X-Inventory-Key"
+            }
+          }
+        },
+        "security": [
+          {
+            "inventoryKey": []
+          }
+        ]
+      }
+    ]
+  },
+  "probes": [
+    {
+      "id": "unavailable-action",
+      "request": "Reserve 2 of TEST_SKU_A. I confirm this exact SKU and quantity."
+    }
+  ]
+}

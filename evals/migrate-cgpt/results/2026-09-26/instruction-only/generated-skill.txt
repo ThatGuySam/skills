@@ -1,0 +1,20 @@
+---
+name: meeting-brief
+description: Turn supplied meeting notes into a brief of decisions, owners, and open questions. Use when the user asks to summarize meeting notes or create a meeting brief.
+---
+
+# Meeting brief
+
+Turn the supplied meeting notes into a brief. If no notes are supplied, request them instead of producing a brief.
+
+Use exactly these headings, in this order, and add no other sections:
+
+- Decisions
+- Owners
+- Open questions
+
+Keep the complete brief at or below 100 words, including headings. Assign an owner only when explicitly named in the notes. Write `Unassigned` otherwise. List no more than two open questions.
+
+Use only the supplied notes. Do not browse. Before returning the brief, check the heading order, total word count, owner evidence, and open-question limit.
+
+Example invocation: "Brief these meeting notes: [paste notes]."

@@ -1,0 +1,24 @@
+{
+  "id": "conflicting-instructions",
+  "name": "ticket-summary",
+  "target": {
+    "runtime": "repository collection",
+    "path": "skills/ticket-summary",
+    "capabilities": [
+      "read supplied files",
+      "write files"
+    ],
+    "delivery": "Prepare all unblocked files locally. Report any decision needed from me."
+  },
+  "source": {
+    "instructions": "Summarize supplied tickets. Rule A: Every completed answer must be raw JSON with exactly keys title and severity, no Markdown. Rule B: Every completed answer must be a Markdown table with exactly columns Title and Severity, no JSON. Both rules are from the same current instructions; neither supersedes the other. Severity must be one of low, medium, high and must come from the supplied ticket; do not infer it. If severity is absent, ask for it. Do not look up tickets or send messages.",
+    "knowledge_files": [],
+    "actions": []
+  },
+  "probes": [
+    {
+      "id": "conflict",
+      "request": "Summarize ticket: title TEST_TICKET; severity low. Pick the usual output format."
+    }
+  ]
+}

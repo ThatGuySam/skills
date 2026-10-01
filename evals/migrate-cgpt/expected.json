@@ -1,0 +1,33 @@
+{
+  "instruction-only": [
+    "Preserve headings in order, <=100 words, at most two questions, explicit owners only and missing-notes behavior.",
+    "Do not add browsing or tools.",
+    "Repository files are not an installed live runtime."
+  ],
+  "missing-knowledge": [
+    "Include the supplied policy content with accurate provenance and citations.",
+    "Identify fees-2026.csv as missing and do not create a placeholder fee file or infer a fee.",
+    "Answer allowed date change separately from unknown fee."
+  ],
+  "actions": [
+    "Preserve both operation IDs, endpoint, input and output contracts, apiKey header auth; do not invent OAuth scopes or executable tools.",
+    "Preserve exact-payload confirmation, 401, 409, and timeout/no-retry behavior.",
+    "Produce unsent draft with integration missing, never a claimed reservation even after confirmation."
+  ],
+  "conflicting-instructions": [
+    "Record both mutually exclusive output requirements.",
+    "Do not silently pick precedence, combine formats, or present a chosen format as equivalent.",
+    "Complete unblocked conversion, ask user which format controls, and mark conflict unresolved.",
+    "Preserve severity enum, no inference, no lookup/send."
+  ],
+  "strict-output": [
+    "Preserve exact raw-JSON keys and types, null on invalid, no coercion/rounding/question/prose.",
+    "Execute valid and numeric-string-invalid probes against generated skill.",
+    "Report ChatGPT installation pending; no alternate runtime installation or invented save command."
+  ],
+  "capability-mismatch": [
+    "Preserve PNG, 1024x1024, transparency and verbatim phrase requirement.",
+    "Record missing image capability; fallback text is not an image or full parity.",
+    "Cloud file delivery does not claim installation on the disconnected Mac."
+  ]
+}

@@ -5,6 +5,28 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-01
+
+### Backup-first GPT migration and collection 0.5.0 candidate
+
+- Added private original-detail capture, checksummed file inventory, and explicit missing-file states before conversion.
+- Documented the standard Agent Skills folder, local/repository delivery, and account-dependent ChatGPT Web plugin installation.
+- Added a hand-test checklist; live owned-GPT parity and Web installation remain untested.
+- Removed private workspace provenance from maintained documentation, aligned bundle versions and migration metadata, and stabilized the evaluation link.
+- Hardened the recorded-evidence checker for optimized Python and pinned the current requirements retrospectively without claiming historical pre-run proof.
+
+## 2026-09-26
+
+### Custom GPT migration evaluations
+
+- Added six synthetic migration fixtures with explicit expected requirements,
+  retained conversion artifacts, and generated-skill response checks.
+- Separated conversion inspection, task execution, destination delivery, and
+  automatic discovery in the migration verification guidance.
+- Recovered and ran the original docs-spec gate through its documented setup.
+- Recorded current plugin, project-installation, skill, and documentation checks
+  with live-integration and native-runtime limits. No deployment was performed.
+
 ## 2026-09-22
 
 ### Zach Prompting Sol and Luna guidance
@@ -25,6 +47,15 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
   a tester checklist. Existing synthetic scenarios remain unscored criteria.
 - Updated collection discovery and plugin metadata. GitHub publication and
   website deployment remain separate from local validation.
+
+## 2026-09-17
+
+### Custom GPT migration
+
+- Added `migrate-cgpt` for portable conversion to local agents, personal skills, and GitHub repositories.
+- Preserve required outputs and authorization rules; track missing knowledge and Action integrations explicitly.
+- Added conditional delivery, component mapping, verification, and dated source references.
+- Added a guide and verification record. Documentation deployment remains a separate step.
 
 ## 2026-09-14
 

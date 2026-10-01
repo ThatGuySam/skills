@@ -1,0 +1,28 @@
+{
+  "id": "instruction-only",
+  "name": "meeting-brief",
+  "target": {
+    "runtime": "repository collection",
+    "path": "skills/meeting-brief",
+    "capabilities": [
+      "read supplied files",
+      "write files"
+    ],
+    "delivery": "Prepare the repository files locally; no remote publication is requested."
+  },
+  "source": {
+    "instructions": "Turn supplied meeting notes into a brief. Use exactly these headings in order: Decisions, Owners, Open questions. Keep the complete brief at or below 100 words, including headings. Assign an owner only when explicitly named in the notes. Write Unassigned otherwise. List no more than two open questions. Do not browse. If there are no notes, request them instead of making a brief. Do not add other sections.",
+    "knowledge_files": [],
+    "actions": []
+  },
+  "probes": [
+    {
+      "id": "normal",
+      "request": "Brief these notes: We chose the blue prototype. TEST_PERSON_A will send the mockup Friday. Nobody was assigned to test it. We still need a launch date and budget."
+    },
+    {
+      "id": "missing-input",
+      "request": "Make my meeting brief."
+    }
+  ]
+}

@@ -17,6 +17,10 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
 ├── skills/
+│   ├── migrate-cgpt/
+│   │   ├── SKILL.md
+│   │   ├── agents/openai.yaml
+│   │   └── references/
 │   ├── sales-research/
 │   │   ├── SKILL.md
 │   │   ├── README.md
@@ -69,7 +73,7 @@ The agent reads only the resource needed for the current step. For example:
 - `output-rubric.md` validates the final memo; and
 - `measurement-brief-template.md` provides the memo template;
 - `README.md` gives humans a concise use-case and installation guide; and
-- `vendor-guidance.md` provides conditional GPT-5.6 and Claude Fable 5 guidance.
+- `vendor-guidance.md` provides conditional GPT-6 Astra, Sol, Luna, and Claude Fable 5 guidance.
 
 ## Distribution manifests
 

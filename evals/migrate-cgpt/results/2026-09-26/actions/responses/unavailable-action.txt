@@ -1,0 +1,9 @@
+You confirmed SKU `TEST_SKU_A` and quantity `2`. The inventory integration is unavailable, so current stock cannot be checked.
+
+**UNSENT RESERVATION DRAFT**
+
+```json
+{"sku":"TEST_SKU_A","quantity":2}
+```
+
+No reservation was sent or confirmed. Your confirmation is recorded, but the draft remains unsent.

@@ -1,0 +1,13 @@
+## Decisions
+
+- Chose the blue prototype.
+
+## Owners
+
+- TEST_PERSON_A: Send the mockup Friday.
+- Unassigned: Test the prototype.
+
+## Open questions
+
+- What is the launch date?
+- What is the budget?

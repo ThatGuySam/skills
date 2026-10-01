@@ -1,0 +1,15 @@
+{
+  "target": "skills/meeting-brief/SKILL.md",
+  "frontmatter": "pass, delimiter structure and required string fields",
+  "name": "pass, matches directory and lowercase hyphen format",
+  "relative_links": "pass, no resource links or dependencies",
+  "credential_scan": "pass, no credential patterns found",
+  "manual_data_review": "Only generic workflow instructions in deliverable; no synthetic test names or source examples embedded.",
+  "new_scripts": "none",
+  "source_sha256": "84b599cfa80d04c05edb3eb85944a81c05d3e13c475537919095b86b82097f37",
+  "skill_sha256": "c6bfbc2643317771a05c7d0a871e22c689b931466aaab4c22cbbe825df543d6f",
+  "expectations_recorded_mtime_ns": 1790390074522001080,
+  "checked_files": [
+    "skills/meeting-brief/SKILL.md"
+  ]
+}

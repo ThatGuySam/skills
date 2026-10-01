@@ -1,0 +1,43 @@
+{
+  "scope": "Two affected cases rerun after the verification guidance changed",
+  "migration_agents": [
+    "revised_instruction",
+    "revised_output"
+  ],
+  "execution_agents": [
+    "revised_instruction/execute_meeting_brief",
+    "revised_output/execute_line_total"
+  ],
+  "normalization": "Only temporary paths in reports and auxiliary evidence are replaced with <WORKSPACE>; skills and responses unchanged.",
+  "skill_files": {
+    "SKILL.md": "0a16cab30e7af16b978919d20635ededd9232ebc7b9b3ab34df856472457c707",
+    "agents/openai.yaml": "3fe8229b5c848c9b7311152c4e3b4ff85cfb43a2b3d7c493d44d66588d0f6bca",
+    "references/component-map.md": "14777f2efe73ed7140ce14f3cbd745fd74d2d62967f8071dee8ccc1b76fd27a5",
+    "references/destinations.md": "19cfff88b33c0a86aa8815e64e958b620734bb5bd9fa1ec7d782913e6ec0e11b",
+    "references/sources.md": "2b15f8126284877d885a8d6cb448ee172f86747d3d2066cbd3b9c6538ab1d533",
+    "references/verification.md": "a4f601dde0c72b48c0d4ece30924387469938e08594494ef769131467c15fee4"
+  },
+  "artifacts": {
+    "revised/instruction-only/evidence/behavioral-checks.json": "0c76fa4b97d3c61efbbc87de6b9cdefed0e07571dc21df8105a823f288c5d237",
+    "revised/instruction-only/evidence/inputs.json": "ffaed62317fd2903100772b58939279df8f935f970317fc0040931a25fdc9be5",
+    "revised/instruction-only/evidence/observed.json": "aa41403e8da98f36fce1f6ba938322d22aa9540d03b4ad89d829c98806f26f02",
+    "revised/instruction-only/evidence/requirements.json": "a5556f7adaeceaad62c4af99d20f5d2e7db65d7d4bdc1bfbacc3c17abdaa0e48",
+    "revised/instruction-only/evidence/structural-checks.json": "8c2544955736686664bf7280ff6b256418fd70a18ac12851a2e2e4cb4e697a8f",
+    "revised/instruction-only/generated-skill.txt": "c6bfbc2643317771a05c7d0a871e22c689b931466aaab4c22cbbe825df543d6f",
+    "revised/instruction-only/report.md": "922b49e4f5c89d43c11e02165252106ea3da521319c64e302f09991aefa00ca9",
+    "revised/strict-output/evidence/behavioral-results.json": "6abacedf2ba64c4e544f436cba85092da0a07293b2ae4206c94c9744f0f27264",
+    "revised/strict-output/evidence/expectations.json": "93b445003a22334c0771828eece09c0d1d9fe62e8e8bffb35d85ac8765415ef1",
+    "revised/strict-output/evidence/requests.json": "ca373122fcde57cc6eb72632e5c81d4da7cbfe5a88f967df55a516188acf41ed",
+    "revised/strict-output/evidence/responses/boolean.txt": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60",
+    "revised/strict-output/evidence/responses/decimal.txt": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60",
+    "revised/strict-output/evidence/responses/invalid.txt": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60",
+    "revised/strict-output/evidence/responses/large-integer.txt": "c1c9935a8e7cb25dbbce8b2a4272248c00256f31c4c54de8b54af2ab7162d05e",
+    "revised/strict-output/evidence/responses/missing-input.txt": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60",
+    "revised/strict-output/evidence/responses/negative.txt": "d32b0cfb12c8bdef4b6454864b0ca2e946d670e2f9d907aa8022afab1a997d60",
+    "revised/strict-output/evidence/responses/valid.txt": "cf7d409dba6835c8ff66e8ef0117ae74e5a937b09681eaf4b6d3ee3cc5c2304c",
+    "revised/strict-output/evidence/responses/zero.txt": "43244a49f49faf7adf5064deb79b31b8cb7e95bb607a2188372b958d653e9016",
+    "revised/strict-output/evidence/structural-checks.json": "dc0835f59dcd0fbe4e4ea024d894f246c4747291b42a14d18b0b41a720223176",
+    "revised/strict-output/generated-skill.txt": "b23cc2a18326d87d357431c7a1a1cdd78f7d6909efeea427cae4ebdfcf68110c",
+    "revised/strict-output/report.md": "8fcbefbff900e3d73e707a762961b86dfc082040e05a91b0b7cfa1de343ef693"
+  }
+}

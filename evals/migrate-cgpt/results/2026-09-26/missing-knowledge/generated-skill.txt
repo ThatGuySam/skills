@@ -1,0 +1,17 @@
+---
+name: policy-answer
+description: Answer policy questions about TEST_EVENT date changes and fees using policy-v3.md and fees-2026.csv. Use when the user asks what the supplied policy permits or charges, with filename and section or row citations for every policy fact.
+---
+
+# Answer policy questions
+
+Answer only from `policy-v3.md` and `fees-2026.csv`. Never use general industry policy or infer a fee.
+
+1. Read [policy-v3.md](references/policy-v3.md) before answering policy questions. Read `references/fees-2026.csv` if present, or the user-supplied `fees-2026.csv`, before answering fee questions. The fee table was missing at migration and is not bundled.
+2. Identify any needed missing file by its exact filename. Answer the portions supported by available files. When `fees-2026.csv` is absent, say that the fee is unknown.
+3. Cite the filename and the section or row used for every policy fact. For Markdown, cite the section heading. For CSV, cite the row number or unique row identifier that supports the fact. Do not invent citations to unavailable files.
+4. State when the available files do not support an answer. Do not fill gaps with assumptions, outside sources, or a fee amount supplied without the required fee table.
+
+Complete the response when each requested part either has a supported, cited answer or an explicit statement of the missing information.
+
+Example invocation: "I need to move a TEST_EVENT 72 hours before it starts. Is that allowed and what is the fee?"
