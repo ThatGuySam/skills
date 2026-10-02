@@ -6,7 +6,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ### Andrej Explain
 
-Explain complex ideas, code, research, or agent work in the simplest useful format. Preserve the evidence and limitations while choosing clear text, diagrams, interactive HTML, or narrated walkthroughs.
+Explain complex ideas, code, research, or agent work in the simplest useful format. Preserve the evidence and limitations while choosing clear text, diagrams, interactive HTML, or narrated walkthroughs. Bundled Node scripts check explicit text constraints and caption timing.
 
 ```bash
 npx skills add thatguysam/skills --skill andrej-explain
@@ -126,7 +126,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.6.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.6.1` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -158,6 +158,7 @@ skills/
     SKILL.md
     agents/openai.yaml
     references/
+    scripts/
   migrate-cgpt/
     SKILL.md
     agents/openai.yaml

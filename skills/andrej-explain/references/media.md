@@ -35,6 +35,6 @@ A “3Blue1Brown-style” request can mean geometric intuition, worked examples,
 
 Separate explanatory beats and allow the viewer to pause or revisit them. Synchronize narration with the visible step. Provide captions or a transcript; advice against redundant screen text is not a reason to remove accessibility support.
 
-Inspect the resulting video for correct labels, readable timing, and matching narration. Verify duration, audio presence when requested, and the actual delivered file. If rendering or narration is unavailable, provide the useful script, storyboard, or animation source and label exactly what it is. A storyboard is not a completed video.
+For SRT captions, run the bundled timing checker as directed in `SKILL.md`. Inspect the resulting video for correct labels, readable timing, and matching narration. Verify duration, audio presence when requested, and the actual delivered file. If rendering or narration is unavailable, provide the useful script, storyboard, or animation source and label exactly what it is. A storyboard is not a completed video.
 
 Use an already authorized narration service or an available local option. Never put an API key into the delivered HTML, repository, script example, or transcript. Explain a tool limitation before asking for access that is genuinely required.

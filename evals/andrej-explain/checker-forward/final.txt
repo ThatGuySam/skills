@@ -1,0 +1,3 @@
+Retry only if the status is 429 and fewer than 3 attempts have been made.
+Wait at least 5 seconds between attempts.
+When cancellation is requested, stop immediately.

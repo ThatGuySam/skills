@@ -46,3 +46,16 @@ Small HTML explainers default to a standalone file without external dependencies
 ## Completion
 
 Finish when the requested explanation is delivered and checked to the extent supported by the tools. Report material gaps. Do not turn an unavailable renderer into a request for unrelated access or imply that a polished output proves the underlying work is correct.
+
+## Mechanical enforcement
+
+The skill bundles dependency-free Node scripts. See the [checker reference](https://github.com/ThatGuySam/skills/blob/main/skills/andrej-explain/references/checks.md) for contracts, scope, and examples.
+
+| Script | Hard checks | Limits |
+| --- | --- | --- |
+| `check-text.mjs` | Empty text, semicolons in STE-inspired profiles, explicit length/count contracts, required and forbidden literals | STE length suggestions are advisory; English segmentation is not the complete STE word-count method. No grammar, dictionary, or meaning validation. |
+| `check-captions.mjs` | Sequential cues, timestamp syntax, positive duration, nonempty text, ordering, overlaps, optional end limit | No audio, video, readability, or synchronization validation. Gaps are allowed. |
+
+Both produce JSON with exit codes `0` for implemented checks passing, `1` for failed checks, and `2` for invalid input or configuration. A passing text check can still contain advisory warnings. The agent must inspect the report and preserve meaning when fixing failures. Node.js 18+ is needed only for these checks; without it, manual verification remains available and automated checks must be marked unrun.
+
+Exact wording contracts are appropriate for identifiers and explicit requirements, not for proving semantic equivalence. A phrase can appear in a negated or otherwise incorrect sentence. No pass certifies ASD-STE100 compliance.

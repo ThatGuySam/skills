@@ -7,7 +7,7 @@ Use `andrej-explain` to understand an idea, inspect an agent's work, or make a t
 
 ## Install
 
-You need an agent that supports Agent Skills. The core workflow needs no API key or companion skill. Browsing, file creation, rendering, and narration depend on the host agent's tools.
+You need an agent that supports Agent Skills. The core workflow needs no API key or companion skill. Bundled mechanical checks use Node.js 18+ without additional packages. Browsing, file creation, rendering, and narration depend on the host agent's tools.
 
 ```bash
 npx skills add thatguysam/skills --skill andrej-explain

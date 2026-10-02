@@ -20,7 +20,8 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── andrej-explain/
 │   │   ├── SKILL.md
 │   │   ├── agents/openai.yaml
-│   │   └── references/
+│   │   ├── references/
+│   │   └── scripts/
 │   ├── migrate-cgpt/
 │   │   ├── SKILL.md
 │   │   ├── agents/openai.yaml

@@ -1,0 +1,4 @@
+{
+  "requiredLiterals": ["429", "fewer than 3 attempts", "at least 5 seconds"],
+  "forbidSemicolons": true
+}

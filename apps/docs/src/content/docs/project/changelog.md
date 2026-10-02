@@ -7,6 +7,13 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-10-02
 
+### Andrej Explain mechanical checks, collection 0.6.1
+
+- Added local Node text and SRT checkers with JSON reports and meaningful exit codes.
+- Enforce explicit text contracts, semicolon checks, caption structure, ordering, overlap, and optional duration limits.
+- Keep approximate STE length findings advisory and distinguish all script results from full compliance or semantic verification.
+- Added boundary and CLI regression tests and wired the checks into the skill's verification step.
+
 ### Andrej Explain and collection 0.6.0
 
 - Added `andrej-explain` for source-grounded explanations of ideas, code, research, and agent work.

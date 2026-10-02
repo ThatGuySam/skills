@@ -26,6 +26,12 @@ The skill's official structural validator passed. Claude Code 2.1.283 strict mar
 
 Build and docs-spec gate results are recorded in the [validation record](https://github.com/ThatGuySam/skills/blob/main/evals/andrej-explain/README.md). Package validation, local installation, remote publication, automatic skill selection, and website deployment are separate checks.
 
+## Deterministic checks added in 0.6.1
+
+Fourteen Node tests passed for text constraints and SRT timing. They cover threshold boundaries, missing literals, misleading larger numbers, malformed configuration, empty input, caption ordering/overlap, duration boundaries, and CLI exit codes. The retained 45-second caption file also passes the bundled checker. See [test source](https://github.com/ThatGuySam/skills/blob/main/evals/andrej-explain/checks.test.mjs).
+
+These checks enforce their explicit contracts. Approximate STE length warnings and literal presence cannot establish grammatical compliance or meaning preservation.
+
 ## Known limits
 
 - No paired no-skill baseline or human comprehension study.

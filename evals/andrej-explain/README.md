@@ -44,3 +44,14 @@ The docs-spec checker was retrieved unchanged from the authorized source, blob `
 ## Limits
 
 No native Codex loader check (CLI unavailable), Claude marketplace install, remote installation, automatic trigger suite, human learning study, strict STE audit, or finished video was tested in this pass. Playwright's browser executable was missing; HTML rendering and real keyboard behavior remain unchecked. A mock DOM does not validate layout or accessibility. Repository publication and website deployment require separate evidence.
+
+
+## 0.6.1 mechanical-check update
+
+Run date: 2026-10-02 UTC; Node 24.19.0. `node --test evals/andrej-explain/checks.test.mjs` passed 14 tests with zero failures. Boundary coverage includes 20/21 and 25/26 approximate words, 6/7 sentences, exact-literal boundaries, invalid contracts, CRLF/empty text, caption structure, overlap, endpoint limits, and real CLI exit codes. No network or third-party dependency is used by either checker.
+
+The retained SRT passed `check-captions.mjs` with `--duration-ms 45000`: nine cues, final endpoint 45000 ms. A fresh local Skills CLI copy matched all canonical files, and its installed caption script produced the same result. Skill validation and both strict Claude validators passed. The docs build completed 43 pages; the original docs-spec gate passed 11 checks without warnings or failures. Existing build deprecation/404 notices remain.
+
+Length profiles are advisory because Intl segmentation does not implement all STE counting rules. Explicit contracts are enforced under the documented counting/matching method. No script result certifies grammar, meaning, complete STE compliance, or rendered media.
+
+A fresh-context forward use in `checker-forward/` rewrote a conditional retry instruction, preserved all requested literal phrases, and invoked the bundled checker. The resulting three-sentence prose passed with no errors or warnings. Parent inspection also retained conjunction, attempt limit, wait minimum, and immediate cancellation. The exact task, output, contract, JSON report, and command record are retained. This is one observed invocation, not a general performance claim.

@@ -41,7 +41,8 @@ For an agent's work, make the inspection useful: explain what changed, why, what
 
 1. Compare the explanation against the source. Check decisive claims, calculations, conditions, diagram arrows, and example outputs. Correct unsupported certainty.
 2. For generated artifacts, check the actual output using the format-specific checks in media guidance. Distinguish rendered and tested output from unrendered source, a storyboard, or an untested prototype.
-3. Return the answer or usable artifact with enough source attribution to trace consequential claims. State only limitations that affect its use. Keep source notes accessible without overwhelming the explanation.
+3. For controlled-language rewrites, explicit text constraints, or SRT captions, read [mechanical checks](references/checks.md). Run the relevant bundled Node checker when Node is available. Inspect its errors and warnings, fix applicable failures, and rerun. Scripts check defined mechanical properties; retain the source-fidelity review and never claim full STE compliance from a pass.
+4. Return the answer or usable artifact with enough source attribution to trace consequential claims. State only limitations that affect its use. Keep source notes accessible without overwhelming the explanation.
 
 For learning requests, optionally add one prediction, application, or teach-back question tied to the goal. Do not force quizzes on a quick answer or review task, and do not claim the reader has learned from exposure alone.
 

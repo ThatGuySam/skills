@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "profile": "procedure",
+  "scope": "Mechanical checks only; not ASD-STE100 compliance or semantic fidelity.",
+  "engine": {
+    "node": "24.19.0",
+    "icu": "78.3",
+    "segmentation": "Intl.Segmenter/en"
+  },
+  "metrics": {
+    "paragraphs": 1,
+    "sentences": 3,
+    "words": 28,
+    "sentenceCounts": [
+      3
+    ]
+  },
+  "sentences": [
+    {
+      "paragraph": 1,
+      "text": "Retry only if the status is 429 and fewer than 3 attempts have been made.",
+      "words": 15
+    },
+    {
+      "paragraph": 1,
+      "text": "Wait at least 5 seconds between attempts.",
+      "words": 7
+    },
+    {
+      "paragraph": 1,
+      "text": "When cancellation is requested, stop immediately.",
+      "words": 6
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

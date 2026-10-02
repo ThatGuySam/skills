@@ -29,3 +29,5 @@ Issue 9 is dated 15 January 2025 in the official material researched for this sk
 The reference infographic in the originating research marks TEST as an approved verb. The official Issue 9 dictionary instead lists TEST as a noun and directs the unapproved verb toward alternatives. Do not copy that chart as authority. Nor does this correction establish that the rest of the chart is correct.
 
 “80% STE” means a relaxed style request, not a measurable compliance score. Explain it as STE-inspired writing when the distinction matters.
+
+For repeatable punctuation, approximate length, and explicit text-contract checks, use the bundled Node scripts as directed in `SKILL.md`. They do not validate vocabulary, noun clusters, verb forms, or semantic preservation.
