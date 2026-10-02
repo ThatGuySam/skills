@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>When does a cache item stop being fresh?</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#182c39;background:#f3f5f3;line-height:1.6}*{box-sizing:border-box}body{margin:0}main{max-width:780px;margin:auto;padding:32px 22px 56px}h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.15;margin:12px 0 20px}h2{font-size:1.2rem}p{margin:12px 0}.eyebrow{font-size:.85rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#435b64}.panel{background:white;border:1px solid #c7d2ce;border-radius:12px;padding:22px;margin:24px 0}code{font-size:1.05em;background:#eaf0ec;padding:2px 5px;border-radius:4px}.controls{display:grid;gap:24px}label{display:flex;justify-content:space-between;gap:16px;font-weight:650}input[type=range]{width:100%;margin:14px 0;accent-color:#006b55;cursor:pointer}.limits{display:flex;justify-content:space-between;color:#435b64;font-size:.85rem}button{font:inherit;background:#173e37;color:white;border:0;border-radius:6px;padding:10px 16px;margin-top:22px;cursor:pointer}:focus-visible{outline:3px solid #ac5700;outline-offset:4px}#status{font-size:1.7rem;font-weight:750;margin:0}.result{border-left:5px solid #006b55;padding-left:18px;margin-top:28px}.result[data-fresh=false]{border-color:#96501b}.track{height:20px;background:#e9ded3;position:relative;margin:18px 0 8px;border:1px solid #526b60;border-radius:4px}.fresh-band{position:absolute;inset:0 auto 0 0;width:50%;background:#428e79}.cutoff{position:absolute;left:50%;height:32px;top:-7px;border-left:3px dashed #182c39}.now{position:absolute;left:20%;top:27px;width:14px;height:14px;background:#182c39;transform:translateX(-50%) rotate(45deg)}.scale{display:flex;justify-content:space-between;font-size:.85rem;margin-top:22px}.legend{font-size:.9rem}.legend span{display:block}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;border-bottom:1px solid #ccd5d0;padding:10px 6px}caption{text-align:left;font-weight:650;margin-bottom:8px}footer{font-size:.9rem;color:#435b64}fieldset{border:0;padding:0;margin:0;min-width:0}fieldset:disabled{opacity:.7}@media(max-width:420px){main{padding:24px 16px}.panel{padding:16px}th,td{padding:9px 4px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">An illustrative cache model</div>
+<h1>When does a cache item stop being fresh?</h1>
+<p>An item is created at <strong>t = 0 seconds</strong>. Its time to live, or TTL, sets how long it can stay fresh. In this model it is fresh only while <code>elapsed &lt; TTL</code>.</p>
+<p>Start with 2 seconds elapsed and a 5-second TTL. The item is fresh because <strong>2 &lt; 5</strong>. Move elapsed time to 5 seconds to reach the exact boundary.</p>
+<section class="panel" aria-label="Explore elapsed time and TTL">
+<noscript><p><strong>Scripts are off.</strong> The controls are disabled. The example and table below still explain the rule.</p></noscript>
+<fieldset id="controls" disabled>
+<legend style="margin-bottom:18px;font-weight:700">Adjust the two times</legend>
+<div class="controls">
+<div><label for="elapsed">Elapsed time <output id="elapsed-value" for="elapsed">2.0 seconds</output></label><input id="elapsed" type="range" min="0" max="10" step="0.1" value="2"><div class="limits"><span>0 seconds</span><span>10 seconds</span></div></div>
+<div><label for="ttl">Time to live <output id="ttl-value" for="ttl">5.0 seconds</output></label><input id="ttl" type="range" min="0" max="10" step="0.1" value="5"><div class="limits"><span>0 seconds</span><span>10 seconds</span></div></div>
+</div>
+<button id="reset" type="button">Reset to 2 seconds / 5-second TTL</button>
+</fieldset>
+<div class="result" id="result" data-fresh="true" role="status" aria-live="polite" aria-atomic="true">
+<p id="status">Fresh</p>
+<p id="comparison">2.0 &lt; 5.0 is true.</p>
+<p id="reason">3.0 seconds remain until the item stops being fresh.</p>
+</div>
+<div aria-hidden="true">
+<div class="track"><div class="fresh-band" id="band"></div><div class="cutoff" id="cutoff"></div><div class="now" id="now"></div></div>
+<div class="scale"><span>0 seconds</span><span>5 seconds</span><span>10 seconds</span></div>
+</div>
+<p class="legend"><span>Green span: fresh times before the TTL boundary.</span><span>Dashed line: TTL boundary. Diamond: elapsed time.</span></p>
+</section>
+<section aria-labelledby="boundary-heading">
+<h2 id="boundary-heading">The boundary is excluded</h2>
+<p>At equality, <code>elapsed &lt; TTL</code> is false. With a TTL of 5 seconds, the item stops being fresh at exactly 5 seconds, including that instant.</p>
+<p>With <strong>TTL = 0</strong>, the item is never fresh in this model. Even at creation, <code>0 &lt; 0</code> is false.</p>
+<table>
+<caption>Examples you can read without scripts</caption>
+<thead><tr><th scope="col">Elapsed</th><th scope="col">TTL</th><th scope="col">Result</th></tr></thead>
+<tbody><tr><td>2 seconds</td><td>5 seconds</td><td>Fresh, 2 &lt; 5</td></tr><tr><td>5 seconds</td><td>5 seconds</td><td>Not fresh, equality</td></tr><tr><td>6 seconds</td><td>5 seconds</td><td>Not fresh, past TTL</td></tr><tr><td>0 seconds</td><td>0 seconds</td><td>Not fresh, zero TTL</td></tr></tbody>
+</table>
+</section>
+<footer><p><strong>Model limits and source.</strong> This page implements the rule specified in the request. It is an illustrative model, not a prediction of any real cache. It models freshness only; it does not model deletion, fetching, or cache-specific behavior. Both controls use seconds from 0 to 10, in steps of 0.1.</p></footer>
+</main>
+<script>
+'use strict';
+const elapsed = document.getElementById('elapsed');
+const ttl = document.getElementById('ttl');
+const get = id => document.getElementById(id);
+function update() {
+  const e = Number(elapsed.value), t = Number(ttl.value);
+  const fresh = e < t;
+  get('elapsed-value').textContent = e.toFixed(1) + ' seconds';
+  get('ttl-value').textContent = t.toFixed(1) + ' seconds';
+  get('status').textContent = fresh ? 'Fresh' : 'Not fresh';
+  get('comparison').textContent = `${e.toFixed(1)} < ${t.toFixed(1)} is ${fresh}.`;
+  get('reason').textContent = t === 0
+    ? 'A zero TTL gives no fresh interval, even at creation.'
+    : e === t ? 'Elapsed time equals TTL. Equality is not fresh.'
+    : fresh ? `${(t-e).toFixed(1)} seconds remain until the item stops being fresh.`
+    : `The item stopped being fresh ${(e-t).toFixed(1)} seconds ago.`;
+  get('result').dataset.fresh = String(fresh);
+  get('band').style.width = `${t*10}%`;
+  get('cutoff').style.left = `${t*10}%`;
+  get('now').style.left = `${e*10}%`;
+}
+elapsed.addEventListener('input', update);
+ttl.addEventListener('input', update);
+get('reset').addEventListener('click', () => { elapsed.value = '2'; ttl.value = '5'; update(); });
+update();
+get('controls').disabled = false;
+</script>
+</body>
+</html>

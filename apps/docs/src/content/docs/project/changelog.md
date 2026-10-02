@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-02
+
+### Andrej Explain and collection 0.6.0
+
+- Added `andrej-explain` for source-grounded explanations of ideas, code, research, and agent work.
+- Merged both research threads, recovered the original post link with its indirect verification limit, and corrected the STE chart's TEST entry.
+- Used Zach Prompting to preserve the explanation contract while making media, controlled-language rules, and learning checks conditional.
+- Added an install-to-first-result guide, examples, behavior reference, and verification record informed by Stripe's documentation patterns.
+- Added retained forward-use fixtures and package checks. See [verification](/andrej-explain/verification/) for observed results and limits; website deployment is separate.
+
 ## 2026-10-01
 
 ### Trunk-based contributions

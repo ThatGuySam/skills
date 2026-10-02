@@ -4,6 +4,18 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Andrej Explain
+
+Explain complex ideas, code, research, or agent work in the simplest useful format. Preserve the evidence and limitations while choosing clear text, diagrams, interactive HTML, or narrated walkthroughs.
+
+```bash
+npx skills add thatguysam/skills --skill andrej-explain
+```
+
+Ask: `Use $andrej-explain to explain this change, including the mechanism, important boundary case, and what remains untested.`
+
+Read the [quickstart](apps/docs/src/content/docs/andrej-explain/introduction.md), [examples](apps/docs/src/content/docs/andrej-explain/examples.md), [research](apps/docs/src/content/docs/research/andrej-explain-2026-10-01.md), and [verification](apps/docs/src/content/docs/andrej-explain/verification.md).
+
 ### Migrate Custom GPTs
 
 Back up the original details of a user-owned Custom GPT privately, then convert its instructions, knowledge, and integration requirements into a portable skill folder or Git repository. ChatGPT Web delivery uses a supported plugin route. Missing files and Actions remain explicit migration gaps.
@@ -114,7 +126,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.5.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.6.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -142,6 +154,10 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  andrej-explain/
+    SKILL.md
+    agents/openai.yaml
+    references/
   migrate-cgpt/
     SKILL.md
     agents/openai.yaml
@@ -178,6 +194,8 @@ skills/
 Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with conditional detail in supporting resources.
 
 ## Acknowledgments
+
+- Andrej Explain is inspired by Andrej Karpathy’s writing about understanding model outputs and the sources in its research memo. It is not affiliated with or endorsed by him.
 
 - Sales Research uses original workflow instructions informed by the practitioners linked in its source guide. Their work remains with its publishers; inclusion does not imply endorsement.
 

@@ -1,0 +1,41 @@
+1
+00:00:00,000 --> 00:00:07,000
+Find eleven in this sorted list. Binary search checks
+the middle, rather than trying every number.
+
+2
+00:00:07,000 --> 00:00:11,000
+The middle is eight. Eleven is larger.
+
+3
+00:00:11,000 --> 00:00:17,000
+Because the list is sorted, eight and everything to its
+left are too small. Seven candidates remain.
+
+4
+00:00:17,000 --> 00:00:21,000
+Now check twelve, the middle of the remaining seven.
+
+5
+00:00:21,000 --> 00:00:26,000
+Eleven is smaller, so discard twelve and everything
+to its right. Three remain.
+
+6
+00:00:26,000 --> 00:00:30,000
+Check ten. Eleven is larger, leaving just eleven.
+
+7
+00:00:30,000 --> 00:00:35,000
+Check it: found. The candidate counts went
+fifteen, seven, three, one.
+
+8
+00:00:35,000 --> 00:00:41,000
+Each unsuccessful comparison removes the middle and
+one side, leaving at most half the candidates.
+
+9
+00:00:41,000 --> 00:00:45,000
+Sorted order makes that safe. Without it,
+discarded values could include our target.

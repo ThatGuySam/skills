@@ -17,6 +17,10 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
 ├── skills/
+│   ├── andrej-explain/
+│   │   ├── SKILL.md
+│   │   ├── agents/openai.yaml
+│   │   └── references/
 │   ├── migrate-cgpt/
 │   │   ├── SKILL.md
 │   │   ├── agents/openai.yaml

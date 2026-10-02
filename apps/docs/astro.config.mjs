@@ -34,6 +34,16 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
+          label: "Andrej Explain",
+          badge: { text: "New", variant: "tip" },
+          items: [
+            { label: "Install and use", slug: "andrej-explain/introduction" },
+            { label: "Examples", slug: "andrej-explain/examples" },
+            { label: "Behavior and formats", slug: "andrej-explain/reference" },
+            { label: "Testing and troubleshooting", slug: "andrej-explain/verification" },
+          ],
+        },
+        {
           label: "Sales Research",
           items: [
             { label: "Install and use", slug: "sales-research/introduction" },
@@ -130,6 +140,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
+            { label: "Andrej Explain research", slug: "research/andrej-explain-2026-10-01" },
           ],
         },
       ],

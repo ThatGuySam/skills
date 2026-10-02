@@ -9,6 +9,9 @@ These questions concern the collection and shared packaging. None currently bloc
 
 Questions to revisit with evidence:
 
+- Does Andrej Explain improve comprehension or review accuracy compared with an ordinary explanation prompt? Initial forward-use checks do not answer this.
+- Which video rendering and narration workflow should be supported beyond the portable fallback?
+
 - Should the repository publish automated cross-client installation tests on every release?
 - What evidence should be required before a workflow becomes a new public skill?
 - Should the other HTMA companion skills become public packages, or remain optional internal tools?
@@ -39,3 +42,7 @@ The docs Worker serves static assets directly. There is no authentication Worker
 ### 2026-07-15. Use Sam as the Claude bundle namespace
 
 The marketplace keeps its stable `htma-measure` install key so existing installations continue to resolve. The plugin manifest uses `sam` as the collection namespace, so bundled Claude Code skills appear as `/sam:<skill>`.
+
+### 2026-10-02. Publish Andrej Explain as a bounded workflow
+
+Name the skill `andrej-explain`. Keep format selection and factual fidelity in the core; load media and STE details conditionally. Do not require paid narration, a learning database, or strict STE for ordinary explanation. Merge the two research threads into one public research memo and retain evidence limits.

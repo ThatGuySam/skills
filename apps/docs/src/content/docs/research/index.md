@@ -7,6 +7,8 @@ These sources and recorded checks support the skills, installation methods, and 
 
 The repository-wide [skill and instruction system audit](https://harness.docs.samcarlton.com/research/instruction-system-audit-2026-07-17/) lives in Harness Atlas because it reviews notes-search agent infrastructure rather than one portable public skill.
 
+Read the [merged Andrej Explain research](/research/andrej-explain-2026-10-01/) for Karpathy’s original post, related writing, learning design, skill-authoring practices, and evidence limits.
+
 The current documentation is grounded in:
 
 - the official OpenAI [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6);

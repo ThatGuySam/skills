@@ -1,0 +1,4 @@
+interface:
+  display_name: "Andrej Explain"
+  short_description: "Understand and inspect complex ideas and agent work"
+  default_prompt: "Use $andrej-explain to explain this material in the simplest useful format while preserving evidence and caveats."
