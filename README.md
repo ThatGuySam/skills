@@ -47,6 +47,18 @@ Read the [install and usage guide](apps/docs/src/content/docs/sales-research/int
 [examples](apps/docs/src/content/docs/sales-research/examples.md), and
 [tester checklist](apps/docs/src/content/docs/sales-research/verification.md).
 
+### Sam's Gen Writing
+
+Draft, review, or plan AI-assisted web content meant for Google Search. It applies Google's published policy on scaled content abuse, human review, disclosure, and authorship, plus attributed Search Off the Record commentary. It marks missing first-hand material instead of inventing it and does not promise rankings.
+
+```bash
+npx skills add thatguysam/skills --skill sams-gen-writing
+```
+
+Ask: `Use $sams-gen-writing to review this AI-assisted page against Google's guidance before I publish it.`
+
+Read the [guide](apps/docs/src/content/docs/sams-gen-writing/introduction.md) and [smoke scenarios](skills/sams-gen-writing/evals/README.md).
+
 ### Sam UX Audit
 
 Audit websites and GitHub repositories through locked UX, accessibility, HIG, motion, and performance review skills. Findings include evidence, scope limits, and actionable acceptance checks.
@@ -126,7 +138,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.6.1` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.7.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -168,6 +180,11 @@ skills/
   sales-research/
     SKILL.md
     README.md
+    agents/openai.yaml
+    references/
+    evals/
+  sams-gen-writing/
+    SKILL.md
     agents/openai.yaml
     references/
     evals/

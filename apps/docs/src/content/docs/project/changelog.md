@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-07
+
+### Sam's Gen Writing and collection 0.7.0
+
+- Added `sams-gen-writing` for drafting, reviewing, and planning AI-assisted web content for Google Search.
+- Grounded it in Search Central's generative AI, helpful content, and spam policy pages (checked October 7, 2026) and in speaker-attributed Search Off the Record remarks from 2021 to July 2026.
+- Used Zach Prompting to keep one rule per behavior, explicit evidence tiers, no fabricated authors or experience, and four completion statuses.
+- Added five synthetic smoke scenarios. No behavioral pass rate is measured yet; see [verification](/sams-gen-writing/verification/).
+
 ## 2026-10-02
 
 ### Andrej Explain mechanical checks, collection 0.6.1

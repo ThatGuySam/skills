@@ -17,7 +17,7 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `andrej-explain`, `migrate-cgpt`, `sales-research`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+The current repository publishes `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
 
 ## Install one skill
 
@@ -40,6 +40,12 @@ npx skills add ThatGuySam/skills --skill sales-research
 See the [Sales Research guide](/sales-research/introduction/) for examples and a tester checklist.
 
 ```bash
+npx skills add thatguysam/skills --skill sams-gen-writing
+```
+
+See the [Sam's Gen Writing guide](/sams-gen-writing/introduction/) for modes, sources, and limits.
+
+```bash
 npx skills add thatguysam/skills --skill zach-prompting
 ```
 
@@ -54,7 +60,7 @@ codex plugin marketplace add thatguysam/skills
 codex plugin add htma-measure@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
+The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
 
 ## Install the collection in Claude Code
 
@@ -70,6 +76,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 | Andrej Explain | `/andrej-explain` | `/sam:andrej-explain` | `$andrej-explain` |
 | Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
 | Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |
+| Sam's Gen Writing | `/sams-gen-writing` | `/sam:sams-gen-writing` | `$sams-gen-writing` |
 | Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
 | HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
 

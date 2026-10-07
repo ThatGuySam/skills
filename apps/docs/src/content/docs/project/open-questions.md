@@ -11,6 +11,7 @@ Questions to revisit with evidence:
 
 - Does Andrej Explain improve comprehension or review accuracy compared with an ordinary explanation prompt? Initial forward-use checks do not answer this.
 - Which video rendering and narration workflow should be supported beyond the portable fallback?
+- Does Sam's Gen Writing catch scaled-content and fabricated-author risks more reliably than an unassisted prompt? The smoke scenarios have not been run.
 
 - Should the repository publish automated cross-client installation tests on every release?
 - What evidence should be required before a workflow becomes a new public skill?
@@ -46,3 +47,7 @@ The marketplace keeps its stable `htma-measure` install key so existing installa
 ### 2026-10-02. Publish Andrej Explain as a bounded workflow
 
 Name the skill `andrej-explain`. Keep format selection and factual fidelity in the core; load media and STE details conditionally. Do not require paid narration, a learning database, or strict STE for ordinary explanation. Merge the two research threads into one public research memo and retain evidence limits.
+
+### 2026-10-07. Publish Sam's Gen Writing with public sources only
+
+Name the skill `sams-gen-writing`. Ground it in Google's public Search Central pages and paraphrased, linked Search Off the Record episodes so it works without a private transcript corpus. Treat podcast remarks as commentary below formal policy, and mark older human-supervision framing as superseded.

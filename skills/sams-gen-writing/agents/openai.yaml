@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Gen Writing"
+  short_description: "AI-assisted pages that hold up in Google Search"
+  default_prompt: "Use $sams-gen-writing to review this AI-assisted page against Google's guidance and tell me what it needs before publishing."

@@ -71,6 +71,14 @@ export default defineConfig({
           ],
         },
         {
+          label: "Sam's Gen Writing",
+          badge: { text: "New", variant: "tip" },
+          items: [
+            { label: "Install and use", slug: "sams-gen-writing/introduction" },
+            { label: "Verification", slug: "sams-gen-writing/verification" },
+          ],
+        },
+        {
           label: "Sam UX Audit",
           items: [
             { label: "Introduction", slug: "sam-ux-audit/introduction" },

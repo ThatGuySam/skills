@@ -32,6 +32,11 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   │   ├── agents/openai.yaml
 │   │   ├── references/
 │   │   └── evals/
+│   ├── sams-gen-writing/
+│   │   ├── SKILL.md
+│   │   ├── agents/openai.yaml
+│   │   ├── references/
+│   │   └── evals/
 │   ├── sam-ux-audit/
 │   │   ├── SKILL.md
 │   │   ├── package.json
