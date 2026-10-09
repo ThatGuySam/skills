@@ -34,6 +34,14 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
+          label: "Env Example",
+          items: [
+            { label: "Draft and example", slug: "env-example/introduction" },
+            { label: "Verification", slug: "env-example/verification" },
+            { label: "Agent checker", slug: "env-example/checker" },
+          ],
+        },
+        {
           label: "Andrej Explain",
           badge: { text: "New", variant: "tip" },
           items: [
@@ -148,6 +156,8 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
+            { label: "Concise env examples", slug: "research/concise-env-example-writing-2026-10-09" },
+
             { label: "Andrej Explain research", slug: "research/andrej-explain-2026-10-01" },
           ],
         },

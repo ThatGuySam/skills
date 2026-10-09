@@ -21,3 +21,5 @@ The current documentation is grounded in:
 - clean-room installation checks for the Open Skills CLI, Codex, and Claude Code completed on 2026-07-11 and 2026-07-15.
 
 Future source-backed skill research can be published here as dated pages. Each memo becomes canonical at its deployed documentation path and appears as a separate Research sidebar entry.
+
+- [Concise, useful environment examples](/research/concise-env-example-writing-2026-10-09/), user preferences and primary-source comparisons for Env Example.

@@ -7,6 +7,10 @@ These questions concern the collection and shared packaging. None currently bloc
 
 ## Open questions
 
+### Env Example
+
+The initial two review questions are settled below. Unknown provider permissions remain explicit gaps; they do not justify invented values.
+
 Questions to revisit with evidence:
 
 - Does Andrej Explain improve comprehension or review accuracy compared with an ordinary explanation prompt? Initial forward-use checks do not answer this.
@@ -19,6 +23,20 @@ Questions to revisit with evidence:
 - Which calibration-review metrics are useful enough to standardize across real measurement memos?
 
 ## Decided
+
+### 2026-10-09. Adopt Static @env-spec Comments
+
+Use standard type, requiredness, sensitivity, and documentation annotations inside comments while retaining ordinary dotenv assignments. The requested zero-dependency checker validates a documented static subset. It rejects unsupported features instead of claiming full Varlock compatibility. File-input restrictions remain unchanged.
+
+
+### 2026-10-09. Restrict Existing Env Inputs
+
+Inspect code and configuration to discover variables. Read existing env content only from Git-tracked `.env.example` files. Never inspect actual `.env` or `.env.local` files. The implementation uses committed regular-file blobs to avoid local overrides and symlink targets. Git tracking is an input restriction, not proof that a file contains no secrets.
+
+### 2026-10-09. Use Pragmatic Comment Detail
+
+Use the amount of guidance useful for each variable: exact doc URLs, dashboard/admin links, single-line operations, non-obvious possible values, and other practical details. Avoid fixed comment quotas and repeated boilerplate. The [research](/research/concise-env-example-writing-2026-10-09/) separates these user decisions from outside recommendations.
+
 
 ### 2026-07-11. Publish one standalone skill first
 

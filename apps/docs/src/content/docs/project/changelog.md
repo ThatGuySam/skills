@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-09
+
+### Env Example and Collection 0.8.0
+
+- Added `env-example` with pragmatic setup guidance and standard static `@env-spec` comments.
+- Added a dependency-free Node.js checker, 11 behavioral tests, and a concise synthetic example.
+- Restricted existing env input to committed, Git-tracked `.env.example` blobs; actual env files remain excluded.
+- Added source-backed research, usage docs, and verification evidence. The checker intentionally supports a bounded static subset.
+
 ## 2026-10-07
 
 ### Sam's Gen Writing and collection 0.7.0

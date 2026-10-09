@@ -21,6 +21,7 @@ A skill belongs here when it is:
 
 | Skill | Use it for | Start here |
 | --- | --- | --- |
+| Env Example | Draft annotated environment examples with useful setup guidance and a static checker. | [Read the guide](/env-example/introduction/) |
 | Andrej Explain | Understand complex material and inspect agent work through useful explanation formats. | [Read the guide](/andrej-explain/introduction/) |
 | Migrate Custom GPTs | Convert GPT workflows to skills while tracking missing knowledge and integrations. | [Read the guide](/migrate-cgpt/introduction/) |
 | Sales Research | Research sales decisions and draft buyer communication. | [Read the guide](/sales-research/introduction/) |
@@ -34,7 +35,7 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 ## Names you will see
 
 - **Repository:** `ThatGuySam/skills`
-- **Standalone skills:** `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`
+- **Standalone skills:** `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`
 - **Marketplace:** `thatguysam-skills`
 - **Stable plugin install key:** `htma-measure@thatguysam-skills`
 - **Claude Code bundle namespace:** `/sam:<skill>`

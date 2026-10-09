@@ -17,7 +17,11 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+The current repository publishes `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+
+Env Example is documented in its [guide](/env-example/introduction/).
+Install it with `npx skills add ThatGuySam/skills --skill env-example`.
+Its invocation names are `/env-example`, `/sam:env-example`, and `$env-example`.
 
 ## Install one skill
 
@@ -60,7 +64,7 @@ codex plugin marketplace add thatguysam/skills
 codex plugin add htma-measure@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
+The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$env-example`, `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
 
 ## Install the collection in Claude Code
 
@@ -73,6 +77,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 
 | Skill | Standalone Claude Code | Bundled Claude Code | Codex |
 | --- | --- | --- | --- |
+| Env Example | `/env-example` | `/sam:env-example` | `$env-example` |
 | Andrej Explain | `/andrej-explain` | `/sam:andrej-explain` | `$andrej-explain` |
 | Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
 | Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |

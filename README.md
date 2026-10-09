@@ -4,6 +4,20 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Env Example
+
+Draft environment templates from project configuration, with useful docs links,
+dashboard links, commands, and accurate missing/empty-value guidance.
+
+Ask: `Use $env-example to draft this project's .env.example.`
+
+Read the [guide](apps/docs/src/content/docs/env-example/introduction.mdx)
+and [synthetic test contract](skills/env-example/evals/contract.md).
+```bash
+npx skills add ThatGuySam/skills --skill env-example
+```
+
+
 ### Andrej Explain
 
 Explain complex ideas, code, research, or agent work in the simplest useful format. Preserve the evidence and limitations while choosing clear text, diagrams, interactive HTML, or narrated walkthroughs. Bundled Node scripts check explicit text constraints and caption timing.
@@ -138,7 +152,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.7.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.8.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -166,6 +180,12 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  env-example/
+    SKILL.md
+    agents/openai.yaml
+    references/
+    scripts/
+    evals/
   andrej-explain/
     SKILL.md
     agents/openai.yaml

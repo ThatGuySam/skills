@@ -1,0 +1,59 @@
+---
+title: Env Example
+description: Draft environment templates with setup links, commands, and verified configuration behavior.
+---
+
+import { Code } from '@astrojs/starlight/components';
+import skill from '../../../../../../skills/env-example/SKILL.md?raw';
+import example from '../../../../../../skills/env-example/evals/annotated-example.md?raw';
+
+Env Example drafts environment templates from a project's actual configuration contract. It puts documentation links, dashboard entry points, and useful commands beside the settings they explain.
+
+Install the standalone skill:
+
+```sh
+npx skills add ThatGuySam/skills --skill env-example
+```
+
+## Use
+
+```text
+Use $env-example to draft this project's .env.example from its source and
+configuration schema. Include useful docs links, dashboard links, and commands.
+```
+
+## Behavior
+
+The skill inspects the loader and configuration consumers, drafts the template, and distinguishes parsing checks from application validation and provider verification. It preserves the difference between missing and empty settings and marks unknown requirements rather than guessing.
+
+## Inputs and Outputs
+
+Input is a repository or explicit configuration contract. Output is an environment template, needed setup-doc changes, and an evidence report. Only Git-tracked `.env.example` files supply existing env content. Code, schemas, and public provider docs supply the rest. Actual env files are never inspected.
+
+## States and Edge Cases
+
+Incomplete contracts produce a draft with explicit gaps. Optional integrations remain optional. Blank required credentials leave application setup incomplete even if the template parses. Loader-specific syntax and public browser prefixes are resolved from the target project.
+
+Read the [research](/research/concise-env-example-writing-2026-10-09/) behind this revision.
+
+## Agent Checker
+
+The skill includes a dependency-free Node.js checker for a documented static subset of `@env-spec`. It checks types, required values, annotation syntax, and duplicates without printing values. See [checker usage](/env-example/checker/).
+
+## Data Shape
+
+Each variable has a name, purpose, requiredness, value format, missing/empty behavior, and exposure. Acquisition links, commands, permissions, and restart rules are added only where relevant.
+
+## Canonical Skill
+
+This block imports the actual skill file at build time. It is the artifact used for design review.
+
+<Code code={skill} lang="markdown" title="skills/env-example/SKILL.md" />
+
+## Test Environment Example
+
+This annotated synthetic example is newly authored text. The block imports the example text directly from the skill package.
+
+<Code code={example} lang="markdown" title="skills/env-example/evals/annotated-example.md" />
+
+Read the [verification record](/env-example/verification/) for checks and their limits. Review questions are tracked in [open questions](/project/open-questions/).
