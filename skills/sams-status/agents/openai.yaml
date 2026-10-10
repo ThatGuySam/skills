@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Status"
+  short_description: "Scan project work in a familiar status tree"
+  default_prompt: "Use $sams-status to show the current project's relevant work and status."

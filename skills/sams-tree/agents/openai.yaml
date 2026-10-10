@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Tree"
+  short_description: "Make familiar, scannable trees from any subject"
+  default_prompt: "Use $sams-tree to organize this material into a scannable tree."

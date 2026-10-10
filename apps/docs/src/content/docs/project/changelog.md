@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-10
+
+### Tree and Status, Collection 0.9.0
+
+- Added independently installable `sams-tree` and `sams-status` skills.
+- Kept familiar groupings, three displayed levels, collapsed branches, and `->` paths as the shared presentation defaults.
+- Added phase-relative status, Needs Info, brief parent summaries, likely-stale markers, and source links outside the tree.
+- Captured the confirmed design, glossary, synthetic evaluation requests, and [verification evidence](/tree-status/verification/).
+
 ## 2026-10-09
 
 ### Env Example and Collection 0.8.0

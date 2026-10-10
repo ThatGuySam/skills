@@ -17,6 +17,12 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
 ├── skills/
+│   ├── sams-tree/
+│   │   ├── SKILL.md
+│   │   └── references/tree-format.md
+│   ├── sams-status/
+│   │   ├── SKILL.md
+│   │   └── references/tree-format.md
 │   ├── env-example/
 │   │   ├── SKILL.md
 │   │   ├── agents/openai.yaml
@@ -106,3 +112,5 @@ The agent reads only the resource needed for the current step. For example:
 - `plugin.json` supplies portable root metadata.
 
 The distribution manifests reference the skill directories without duplicating their content.
+
+Sam’s Tree owns the shared tree-format reference. Sam’s Status bundles an identical copy so either skill installs independently. Both include synthetic evaluation requests and optional Codex UI metadata.

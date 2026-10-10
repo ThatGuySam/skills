@@ -4,6 +4,18 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Sam's Tree and Sam's Status
+
+Turn large amounts of material into familiar, scannable trees. Sam's Tree owns the three-level view, collapsed branches, and short familiar labels. Sam's Status adds project sources, phase-relative progress, missing-information flags, and likely-stale markers.
+
+```bash
+npx skills add ThatGuySam/skills --skill sams-tree sams-status
+```
+
+Ask: `Use $sams-tree to organize these notes.` Or: `Use $sams-status to show where the current project stands.` Either skill installs independently.
+
+Read the [guide](apps/docs/src/content/docs/tree-status/introduction.md), [design](apps/docs/src/content/docs/tree-status/design.md), and [verification](apps/docs/src/content/docs/tree-status/verification.md).
+
 ### Env Example
 
 Draft environment templates from project configuration, with useful docs links,
@@ -152,7 +164,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.8.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.9.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -180,6 +192,8 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ```text
 skills/
+  sams-tree/
+  sams-status/
   env-example/
     SKILL.md
     agents/openai.yaml

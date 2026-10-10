@@ -13,8 +13,7 @@ export default defineConfig({
     starlight({
       title: "Sam's Skills",
       components: { Footer: "./src/components/Footer.astro" },
-      description:
-        "The portable agent skills Sam uses and shares.",
+      description: "The portable agent skills Sam uses and shares.",
       plugins: [starlightLlmsTxt()],
       social: [
         {
@@ -33,6 +32,15 @@ export default defineConfig({
       },
       lastUpdated: true,
       sidebar: [
+        {
+          label: "Tree and Status",
+          items: [
+            { label: "Install and use", slug: "tree-status/introduction" },
+            { label: "Design", slug: "tree-status/design" },
+            { label: "Glossary", slug: "tree-status/glossary" },
+            { label: "Verification", slug: "tree-status/verification" },
+          ],
+        },
         {
           label: "Env Example",
           items: [
@@ -133,15 +141,11 @@ export default defineConfig({
         },
         {
           label: "HTMA reference",
-          items: [
-            { label: "Output contract", slug: "reference/output-contract" },
-          ],
+          items: [{ label: "Output contract", slug: "reference/output-contract" }],
         },
         {
           label: "HTMA architecture",
-          items: [
-            { label: "Data model", slug: "architecture/data-model" },
-          ],
+          items: [{ label: "Data model", slug: "architecture/data-model" }],
         },
         {
           label: "Project",
@@ -156,7 +160,10 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
-            { label: "Concise env examples", slug: "research/concise-env-example-writing-2026-10-09" },
+            {
+              label: "Concise env examples",
+              slug: "research/concise-env-example-writing-2026-10-09",
+            },
 
             { label: "Andrej Explain research", slug: "research/andrej-explain-2026-10-01" },
           ],

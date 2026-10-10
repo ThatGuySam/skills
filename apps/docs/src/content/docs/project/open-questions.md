@@ -24,6 +24,10 @@ Questions to revisit with evidence:
 
 ## Decided
 
+### 2026-10-10. Familiar Trees and Contextual Status
+
+The creator confirmed the [tree and status design](/tree-status/design/). Sam's Tree owns shared presentation defaults. Sam's Status adds project-scoped discovery and contextual work statuses. Both install independently through bundled copies of the same tree-format reference. The interview has no unresolved requirements.
+
 ### 2026-10-09. Adopt Static @env-spec Comments
 
 Use standard type, requiredness, sensitivity, and documentation annotations inside comments while retaining ordinary dotenv assignments. The requested zero-dependency checker validates a documented static subset. It rejects unsupported features instead of claiming full Varlock compatibility. File-input restrictions remain unchanged.

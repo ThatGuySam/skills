@@ -1,0 +1,17 @@
+# Synthetic Requests
+
+These invented fixtures test behavior; they are not real projects or measured results. Evaluate each request independently with only `sams-tree` installed.
+
+## Course Outline
+
+Use $sams-tree to show the algebra work we are discussing. My outline is Mathematics -> Algebra -> Equations -> Linear equations -> Practice; Mathematics -> Algebra -> Equations -> Quadratics -> Examples; Mathematics -> Geometry -> Shapes -> Triangles; Writing -> Essays -> Drafting. Preserve familiar names. We are focused on Practice, but I want enough context to locate it. Suggest useful groupings only if necessary.
+
+Then ask: Expand Geometry. Keep the algebra context visible.
+
+## Existing Department Organization
+
+Use $sams-tree on these notes. Keep my departments: Support has Inbox and Escalations, Engineering has Releases and Maintenance, Finance has Billing and Budgets. Focus on Support. I have not given you any work statuses.
+
+## Pass Conditions
+
+Check familiar names, correct relationships, an implied root, at most three levels by default, `->` compression when useful, and visibly collapsed non-relevant branches. Expansion should preserve unrelated structure. New suggestions must be at most three names outside the tree. A generic tree must not manufacture progress or invoke tracker discovery.
