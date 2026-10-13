@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -13,10 +13,14 @@
   "interface": {
     "displayName": "Sam's Skills",
     "shortDescription": "Portable workflows Sam uses and shares.",
-    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views.",
+    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision.",
     "developerName": "ThatGuySam",
     "category": "Productivity",
-    "capabilities": ["Analysis", "Research", "Writing"],
+    "capabilities": [
+      "Analysis",
+      "Research",
+      "Writing"
+    ],
     "defaultPrompt": [
       "Create a calibrated estimate for this uncertain decision.",
       "Review this prompt and improve its instruction contract.",
@@ -27,7 +31,8 @@
       "Back up my Custom GPT privately and convert its workflow into a portable skill.",
       "Explain this material in the simplest useful format while preserving its evidence and limits.",
       "Organize this material into a familiar, scannable tree.",
-      "Show current project work as a brief status tree."
+      "Show current project work as a brief status tree.",
+      "Turn this workflow into a focused, tested agent skill using the locked authoring methods."
     ]
   }
 }

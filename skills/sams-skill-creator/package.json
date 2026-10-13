@@ -1,0 +1,51 @@
+{
+  "name": "sams-skill-creator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "skills:install": "skills-lock install --frozen",
+    "skills:update": "skills-lock update",
+    "skills:list": "skills-lock list",
+    "preflight": "node scripts/preflight.mjs",
+    "test": "node --test scripts/preflight.test.mjs",
+    "skills:outdated": "node scripts/outdated.mjs"
+  },
+  "devDependencies": {
+    "skills-lock": "https://codeload.github.com/luisalima/skills-lock/tar.gz/4e37719a163b6022d4a2828850567421f9de7825"
+  },
+  "skills": {
+    "anthropic-creator": {
+      "source": "anthropics/skills",
+      "path": "skills/skill-creator"
+    },
+    "writing-for-agents": {
+      "source": "mattpocock/skills",
+      "path": "skills/productivity/writing-for-agents"
+    },
+    "automate-me": {
+      "source": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/automate-me"
+    },
+    "poteto-mode": {
+      "source": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/poteto-mode"
+    },
+    "zach-prompting": {
+      "source": "thatguysam/skills",
+      "path": "skills/zach-prompting"
+    },
+    "codex-creator": {
+      "source": "file:./.sources/codex-creator",
+      "path": "."
+    }
+  },
+  "skillsConfig": {
+    "agents": [
+      "skill-mixer"
+    ],
+    "agentDirs": {
+      "skill-mixer": ".runtime/skills"
+    }
+  }
+}

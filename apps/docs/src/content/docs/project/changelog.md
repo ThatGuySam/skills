@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-12
+
+### Sam's Skill Creator, collection 0.10.0
+
+- Added `sams-skill-creator`, a single authoring workflow that consults relevant methods at each decision.
+- Locked Anthropic Skill Creator, Writing for Agents, Automate Me, and Zach Prompting, with a separate Codex packaging snapshot and Poteto runtime support.
+- Added frozen restores, read-only freshness checks, integrity tests, bundled synthetic cases, and honest baseline comparisons.
+- Kept review-only tasks read-only and made history mining conditional on preference-based work.
+- Recorded bounded authoring/review validation; automatic discovery and downstream use of generated skills remain untested.
+
 ## 2026-10-10
 
 ### Tree and Status, Collection 0.9.0

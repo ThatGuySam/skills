@@ -17,6 +17,11 @@ Each skill has one directory under `skills/`. Root manifests package the collect
 │   ├── astro.config.mjs
 │   └── wrangler.jsonc
 ├── skills/
+│   ├── sams-skill-creator/
+│   │   ├── SKILL.md
+│   │   ├── skills-lock.json
+│   │   ├── references/
+│   │   └── scripts/
 │   ├── sams-tree/
 │   │   ├── SKILL.md
 │   │   └── references/tree-format.md

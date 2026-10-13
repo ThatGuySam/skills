@@ -95,6 +95,10 @@ export default defineConfig({
           ],
         },
         {
+          label: "Sam's Skill Creator",
+          items: [{ label: "Install and use", slug: "sams-skill-creator/introduction" }],
+        },
+        {
           label: "Sam UX Audit",
           items: [
             { label: "Introduction", slug: "sam-ux-audit/introduction" },

@@ -26,6 +26,7 @@ A skill belongs here when it is:
 | Migrate Custom GPTs | Convert GPT workflows to skills while tracking missing knowledge and integrations. | [Read the guide](/migrate-cgpt/introduction/) |
 | Sales Research | Research sales decisions and draft buyer communication. | [Read the guide](/sales-research/introduction/) |
 | Sam's Gen Writing | Draft, review, or plan AI-assisted pages for Google Search using Google's published policy and Search Relations guidance. | [Read the guide](/sams-gen-writing/introduction/) |
+| Sam's Skill Creator | Author and improve skills by mixing locked methods at each decision. | [Read the guide](/sams-skill-creator/introduction/) |
 | Sam UX Audit | Review websites and repository UX with locked dependencies and evidence-backed findings. | [Read the guide](/sam-ux-audit/introduction/) |
 | Zach Prompting | Improve prompts, skills, agent definitions, tool descriptions, and repository instructions without weakening their contract. | [Read the guide](/zach-prompting/introduction/) |
 | HTMA Measure | Turn uncertain costs, risks, ROI, market size, and other quantities into estimates with ranges, sources, and recommendations. | [Read the guide](/overview/introduction/) |

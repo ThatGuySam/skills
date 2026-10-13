@@ -107,3 +107,13 @@ codex plugin list --json
 ```
 
 For file-level verification, each installed skill should contain the same `SKILL.md` and supporting resources as its canonical directory in the public repository.
+
+## Skill authoring mixer
+
+Install the authoring workflow independently:
+
+```sh
+npx skills add ThatGuySam/skills --skill sams-skill-creator
+```
+
+For global installation, add `-g`. See [Sam's Skill Creator](/sams-skill-creator/introduction/) for private dependency restoration and explicit refreshes.

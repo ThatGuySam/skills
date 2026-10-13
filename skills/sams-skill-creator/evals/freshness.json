@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-12T22:29:33.104Z",
+  "readOnly": true,
+  "sources": [
+    {
+      "name": "anthropic-creator",
+      "status": "current",
+      "lockedCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "currentCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
+    },
+    {
+      "name": "writing-for-agents",
+      "status": "current",
+      "lockedCommit": "49dd158d1076134a641b33efb035946536778336",
+      "currentCommit": "49dd158d1076134a641b33efb035946536778336"
+    },
+    {
+      "name": "automate-me",
+      "status": "current",
+      "lockedCommit": "1bfdab4219d41c4d0bb28d1e7832de6128373611",
+      "currentCommit": "1bfdab4219d41c4d0bb28d1e7832de6128373611"
+    },
+    {
+      "name": "poteto-mode",
+      "status": "current",
+      "lockedCommit": "1bfdab4219d41c4d0bb28d1e7832de6128373611",
+      "currentCommit": "1bfdab4219d41c4d0bb28d1e7832de6128373611"
+    },
+    {
+      "name": "zach-prompting",
+      "status": "current",
+      "lockedCommit": "0ce3185ef0c754c75580404c7dff99a9bda5681e",
+      "currentCommit": "0ce3185ef0c754c75580404c7dff99a9bda5681e"
+    },
+    {
+      "name": "codex-creator",
+      "status": "current-local-snapshot",
+      "source": "<codex-home>/skills/.system/skill-creator",
+      "lockedIntegrity": "sha256-BFcML/+bzzj2vb1pn3rwlPhgciNzyb5in3L5QAy7sYg="
+    }
+  ]
+}

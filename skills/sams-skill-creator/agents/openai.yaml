@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Skill Creator"
+  short_description: "Blend proven methods into tested agent skills"
+  default_prompt: "Use $sams-skill-creator to turn this workflow into a focused skill with clear completion criteria and appropriate validation."
