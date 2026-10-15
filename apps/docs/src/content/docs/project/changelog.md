@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-15
+
+### Tree Visual Markers, Collection 0.10.1
+
+- Require a meaningful emoji or visual marker on every tree row, including leaves and collapsed branches.
+- Keep category markers distinct from work status; explicit no-emoji requests use compact text markers.
+- Record the October 14 synthetic forward check and document repository-backed symlink installations for local development.
+- Source publication does not imply a documentation deployment.
+
 ## 2026-10-12
 
 ### Sam's Skill Creator, collection 0.10.0

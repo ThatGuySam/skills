@@ -12,6 +12,10 @@ Then ask: Expand Geometry. Keep the algebra context visible.
 
 Use $sams-tree on these notes. Keep my departments: Support has Inbox and Escalations, Engineering has Releases and Maintenance, Finance has Billing and Budgets. Focus on Support. I have not given you any work statuses.
 
+## No Emoji Follow-Up
+
+After the department tree, ask: Show the same tree without emoji for a plain-text system.
+
 ## Pass Conditions
 
-Check familiar names, correct relationships, an implied root, at most three levels by default, `->` compression when useful, and visibly collapsed non-relevant branches. Expansion should preserve unrelated structure. New suggestions must be at most three names outside the tree. A generic tree must not manufacture progress or invoke tracker discovery.
+Check meaningful visual markers on every row, including collapsed branches and leaves. Default to emojis; the no-emoji follow-up should use compact text markers while preserving the hierarchy. Category markers must not imply work status. Check familiar names, correct relationships, an implied root, at most three levels by default, `->` compression when useful, and visibly collapsed non-relevant branches. Expansion should preserve unrelated structure. New suggestions must be at most three names outside the tree. A generic tree must not manufacture progress or invoke tracker discovery.

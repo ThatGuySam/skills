@@ -37,3 +37,8 @@ The synthetic requests and pass conditions live under each skill's `evals/reques
 ## Limits
 
 These are bounded synthetic smoke evaluations, not a cross-model benchmark. Live Linear, Notion, Jira, and Basecamp integration is not exercised. Freshness and phase inference remain judgments that depend on the quality of available evidence.
+
+
+## October 14 Visual-Marker Correction
+
+After a reported unmarked-tree output, the skill now requires meaningful visual markers on every row. A fresh evaluator produced a category-emoji tree and a no-emoji follow-up using text markers. Both preserved the hierarchy, collapsed unrelated branches, and avoided invented status. Both skill validators passed, global instructions matched canonical instructions, and the bundled references matched. The correction was validated locally on October 14 and prepared for repository publication on October 15. Docs deployment is a separate action.

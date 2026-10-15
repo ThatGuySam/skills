@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -16,11 +16,7 @@
     "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision.",
     "developerName": "ThatGuySam",
     "category": "Productivity",
-    "capabilities": [
-      "Analysis",
-      "Research",
-      "Writing"
-    ],
+    "capabilities": ["Analysis", "Research", "Writing"],
     "defaultPrompt": [
       "Create a calibrated estimate for this uncertain decision.",
       "Review this prompt and improve its instruction contract.",

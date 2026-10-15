@@ -5,7 +5,7 @@ description: Organize supplied or established material into a familiar, scannabl
 
 # Sam's Tree
 
-Make a large amount of information easy to scan without making the reader learn a new organization.
+Make a large amount of information easy to scan without making the reader learn a new organization. Every tree must combine branch connectors, short labels, and a meaningful emoji or visual marker on each row; plain unmarked labels are not the default.
 
 Use the subject and scope established by the prompt and conversation. Read [the tree format](references/tree-format.md), which this skill owns. Render the tree directly when the material is sufficient; ask only when an essential scope or relationship cannot be inferred.
 

@@ -26,9 +26,11 @@ Supply the subject or use material already in the conversation:
 Use $sams-tree to organize these notes. Focus on the algebra exercises.
 ```
 
+Every tree uses a meaningful emoji or visual marker on each row. Category markers describe what an item is, without inventing work status. If you ask for no emoji, compact text markers preserve scanability.
+
 The tree uses familiar names, at most three displayed levels by default, and `->` to combine deeper paths. An ellipsis marks collapsed detail. Ask to expand a branch or show more levels when useful. The subject or project stays implied rather than taking a level.
 
-This is actual output from a synthetic evaluation, not a real course record:
+This is historical output from the October 10 synthetic evaluation, not a real course record. It predates the October 14 requirement for visual markers on every row:
 
 ```text
 ├── Mathematics
@@ -74,3 +76,18 @@ Show four levels this time.
 No particular connector is required. With no tracker access, provide excerpts or use conversation context. The skill will state material gaps rather than inventing status or sources.
 
 See the [design](/tree-status/design/), [glossary](/tree-status/glossary/), and [verification record](/tree-status/verification/).
+
+
+## Develop From a Repository Checkout
+
+The repository is the source of truth for local edits. Link local installations to its skill directories so edits take effect without maintaining separate copies.
+
+From the repository root, when the destination paths do not already exist:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+ln -s "$PWD/skills/sams-tree" "$HOME/.agents/skills/sams-tree"
+ln -s "$PWD/skills/sams-status" "$HOME/.agents/skills/sams-status"
+```
+
+For an existing copied installation, compare it with the repository first and preserve any differences before replacing the copy with a link. Keep the checkout at a stable location. The standalone packages remain self-contained for other users.

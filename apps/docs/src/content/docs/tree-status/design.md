@@ -17,6 +17,10 @@ The reference image establishes a file-style tree as the starting visual directi
 
 `sams-status` applies that presentation to current project work and adds source discovery, work statuses, brief parent summaries, and freshness judgments.
 
+## October 14 Visual-Marker Correction
+
+The creator reported that the tree output lacked emojis and was not scannable enough. Every tree now requires branch connectors, short labels, and a meaningful visual marker on every row. Category emojis are the default for ordinary trees; work-status trees use their status symbols. A no-emoji request uses compact text markers. This supersedes the earlier optional-marker behavior.
+
 ## Confirmed Behavior
 
 - Use known or easily inferred groupings and names by default. Preserve the reader’s familiarity with the material.
