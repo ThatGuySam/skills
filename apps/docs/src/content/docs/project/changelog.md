@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-16
+
+### Phone Size, collection 0.11.0
+
+- Add `phone-size`, a portable successor to phone-roll for concise task, decision, research and update content.
+- Replace fixed cards and link counts with content-specific briefs and destination-native disclosure.
+- Preserve evidence, uncertainty, scope, access and authority; distinguish content checks from actual rendered phone fit.
+- Include independent synthetic trials and their scoped results. Automatic runtime discovery, native Linear write behavior and physical iPhones remain untested.
+- Source publication and global installation do not imply documentation-site deployment.
+
 ## 2026-10-15
 
 ### Tree Visual Markers, Collection 0.10.1

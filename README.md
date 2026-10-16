@@ -4,6 +4,18 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
+### Phone Size
+
+Condense tasks, decisions, research, and updates into a comfortable phone-screen brief with useful detail one tap away. Preserves scope, uncertainty, evidence, and authority while adapting to the destination. Supersedes the earlier phone-roll workflow.
+
+```bash
+npx skills add ThatGuySam/skills --skill phone-size -g
+```
+
+Ask: `Use $phone-size to make this long task readable on my phone without hiding its blockers.`
+
+Read the [guide](apps/docs/src/content/docs/phone-size/introduction.md) and [scoped validation](skills/phone-size/evals/results.md). No companion skills are required.
+
 ### Sam's Skill Creator
 
 Create and improve agent skills by mixing authoring, instruction design, preference evidence, and validation methods at each decision. The workflow keeps one owner and uses version-locked sources.
@@ -176,7 +188,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.10.1` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships version `0.11.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>

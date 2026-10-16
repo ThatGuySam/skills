@@ -33,6 +33,10 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
+          label: "Phone Size",
+          items: [{ label: "Install and use", slug: "phone-size/introduction" }],
+        },
+        {
           label: "Tree and Status",
           items: [
             { label: "Install and use", slug: "tree-status/introduction" },

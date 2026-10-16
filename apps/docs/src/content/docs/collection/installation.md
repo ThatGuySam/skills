@@ -17,13 +17,19 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
+The current repository publishes `phone-size`, `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
 
 Env Example is documented in its [guide](/env-example/introduction/).
 Install it with `npx skills add ThatGuySam/skills --skill env-example`.
 Its invocation names are `/env-example`, `/sam:env-example`, and `$env-example`.
 
 ## Install one skill
+
+```bash
+npx skills add ThatGuySam/skills --skill phone-size -g
+```
+
+Phone Size creates short mobile briefs with supporting detail. See the [guide](/phone-size/introduction/). Invoke `$phone-size`, `/phone-size`, or `/sam:phone-size` according to your installation.
 
 ```bash
 npx skills add ThatGuySam/skills --skill sams-tree
@@ -71,7 +77,7 @@ codex plugin marketplace add thatguysam/skills
 codex plugin add htma-measure@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$sams-tree`, `$sams-status`, `$env-example`, `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
+The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$phone-size`, `$sams-tree`, `$sams-status`, `$env-example`, `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
 
 ## Install the collection in Claude Code
 

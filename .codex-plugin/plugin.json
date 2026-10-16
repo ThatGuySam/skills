@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -13,10 +13,14 @@
   "interface": {
     "displayName": "Sam's Skills",
     "shortDescription": "Portable workflows Sam uses and shares.",
-    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision.",
+    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision. Includes phone-sized briefs with progressively disclosed detail.",
     "developerName": "ThatGuySam",
     "category": "Productivity",
-    "capabilities": ["Analysis", "Research", "Writing"],
+    "capabilities": [
+      "Analysis",
+      "Research",
+      "Writing"
+    ],
     "defaultPrompt": [
       "Create a calibrated estimate for this uncertain decision.",
       "Review this prompt and improve its instruction contract.",
@@ -28,7 +32,8 @@
       "Explain this material in the simplest useful format while preserving its evidence and limits.",
       "Organize this material into a familiar, scannable tree.",
       "Show current project work as a brief status tree.",
-      "Turn this workflow into a focused, tested agent skill using the locked authoring methods."
+      "Turn this workflow into a focused, tested agent skill using the locked authoring methods.",
+      "Condense this content into a readable phone-screen brief with useful supporting detail."
     ]
   }
 }

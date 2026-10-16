@@ -46,3 +46,5 @@ The install key is retained so existing marketplace users keep working. The `sam
 ## Publishing contract
 
 The public repository, this site, and the machine-readable corpus should describe the same collection. A change is not presented as shipped until its source is committed, its relevant checks pass, and the deployed content is verified.
+
+Phone Size adds phone-screen briefs with progressive disclosure. See the [guide](/phone-size/introduction/).

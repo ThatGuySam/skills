@@ -8,5 +8,5 @@
   "repository": "https://github.com/thatguysam/skills",
   "license": "MIT",
   "skills": "./skills",
-  "version": "0.10.1"
+  "version": "0.11.0"
 }
