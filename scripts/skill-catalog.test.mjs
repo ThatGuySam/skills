@@ -32,8 +32,8 @@ function fixture(t) {
 }
 
 test('sync is idempotent and check accepts current files without writing', t => {
-  const { root } = fixture(t)
-  assert.equal(syncCatalog(root).skills, 12)
+  const { root, catalog } = fixture(t)
+  assert.equal(syncCatalog(root).skills, catalog.skills.length)
   assert.deepEqual(syncCatalog(root).updated, [])
   assert.deepEqual(syncCatalog(root, { check: true }).updated, [])
 })
@@ -127,7 +127,7 @@ test('a complete added catalog entry updates every exhaustive listing', t => {
   write('skills/new-skill/SKILL.md', '---\nname: new-skill\n---\n')
   write(docs + 'new-skill/introduction.md', '---\ntitle: New skill fixture\n---\n')
   save()
-  assert.equal(syncCatalog(root).skills, 13)
+  assert.equal(syncCatalog(root).skills, catalog.skills.length)
   for (const path of new Set(generatedRegions(catalog, root).map(([path]) => path))) assert.match(read(path), /new-skill/, path)
   assert.deepEqual(syncCatalog(root, { check: true }).updated, [])
 })
