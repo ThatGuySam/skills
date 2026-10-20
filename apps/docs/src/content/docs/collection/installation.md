@@ -17,58 +17,111 @@ The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices ma
 npx skills add thatguysam/skills --list
 ```
 
-The current repository publishes `phone-size`, `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sam-ux-audit`, `zach-prompting`, and `htma-measure`.
-
-Env Example is documented in its [guide](/env-example/introduction/).
-Install it with `npx skills add ThatGuySam/skills --skill env-example`.
-Its invocation names are `/env-example`, `/sam:env-example`, and `$env-example`.
+<!-- skills:start:installation-names -->
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
+<!-- skills:end:installation-names -->
 
 ## Install one skill
 
+Choose a command below. Add `-g` to install globally. Each guide explains the skill's first task and requirements.
+
+<!-- skills:start:installation-commands -->
+### Phone Size
+
+Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail. [Read the guide](/phone-size/introduction/).
+
 ```bash
-npx skills add ThatGuySam/skills --skill phone-size -g
+npx skills add ThatGuySam/skills --skill phone-size
 ```
 
-Phone Size creates short mobile briefs with supporting detail. See the [guide](/phone-size/introduction/). Invoke `$phone-size`, `/phone-size`, or `/sam:phone-size` according to your installation.
+### Sam's Tree
+
+Organize notes and other material into familiar, scannable trees. [Read the guide](/tree-status/introduction/).
 
 ```bash
 npx skills add ThatGuySam/skills --skill sams-tree
+```
+
+### Sam's Status
+
+Show project work as a status tree with sources, progress, and missing information. [Read the guide](/tree-status/introduction/).
+
+```bash
 npx skills add ThatGuySam/skills --skill sams-status
 ```
 
-Either skill works independently. See the [tree and status guide](/tree-status/introduction/).
+### Env Example
+
+Draft annotated environment examples with useful setup guidance and a static checker. [Read the guide](/env-example/introduction/).
 
 ```bash
-npx skills add thatguysam/skills --skill andrej-explain
+npx skills add ThatGuySam/skills --skill env-example
 ```
 
-See the [Andrej Explain quickstart](/andrej-explain/introduction/) for the first example and tool requirements.
+### Andrej Explain
+
+Explain complex material and agent work through useful text, diagrams, HTML, or video. [Read the guide](/andrej-explain/introduction/).
 
 ```bash
-npx skills add thatguysam/skills --skill migrate-cgpt
+npx skills add ThatGuySam/skills --skill andrej-explain
 ```
 
-See the [migration guide](/migrate-cgpt/introduction/) for supported targets and known gaps.
+### Migrate Custom GPTs
+
+Back up GPT workflows privately and convert them to portable skills while tracking migration gaps. [Read the guide](/migrate-cgpt/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill migrate-cgpt
+```
+
+### Sales Research
+
+Research sales decisions and draft buyer communication using relevant practitioner sources. [Read the guide](/sales-research/introduction/).
 
 ```bash
 npx skills add ThatGuySam/skills --skill sales-research
 ```
 
-See the [Sales Research guide](/sales-research/introduction/) for examples and a tester checklist.
+### Sam's Gen Writing
+
+Draft, review, or plan AI-assisted pages using Google's published Search guidance. [Read the guide](/sams-gen-writing/introduction/).
 
 ```bash
-npx skills add thatguysam/skills --skill sams-gen-writing
+npx skills add ThatGuySam/skills --skill sams-gen-writing
 ```
 
-See the [Sam's Gen Writing guide](/sams-gen-writing/introduction/) for modes, sources, and limits.
+### Sam's Skill Creator
 
-```bash
-npx skills add thatguysam/skills --skill zach-prompting
-```
+Create and improve agent skills with locked authoring sources and behavioral validation. [Read the guide](/sams-skill-creator/introduction/).
 
 ```bash
-npx skills add thatguysam/skills --skill htma-measure
+npx skills add ThatGuySam/skills --skill sams-skill-creator
 ```
+
+### Sam UX Audit
+
+Audit websites and repository UX with locked review dependencies and evidence-backed findings. [Read the guide](/sam-ux-audit/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill sam-ux-audit
+```
+
+### Zach Prompting
+
+Improve prompts and agent instructions while preserving their intent and safeguards. [Read the guide](/zach-prompting/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill zach-prompting
+```
+
+### HTMA Measure
+
+Estimate uncertain quantities with ranges, sources, and decision recommendations. [Read the guide](/overview/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill htma-measure
+```
+<!-- skills:end:installation-commands -->
 
 ## Install the collection in Codex
 
@@ -77,7 +130,7 @@ codex plugin marketplace add thatguysam/skills
 codex plugin add htma-measure@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`; individual Codex skill selectors include `$phone-size`, `$sams-tree`, `$sams-status`, `$env-example`, `$andrej-explain`, `$migrate-cgpt`, `$sales-research`, `$sams-gen-writing`, `$sam-ux-audit`, `$zach-prompting`, and `$htma-measure`.
+The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`. See the invocation table below for each skill's name.
 
 ## Install the collection in Claude Code
 
@@ -88,8 +141,10 @@ claude plugin install htma-measure@thatguysam-skills
 
 The HTTPS repository URL avoids depending on a configured GitHub SSH key. The stable install key preserves compatibility. Skills inside the bundle use the `sam` command prefix.
 
+<!-- skills:start:installation-invocations -->
 | Skill | Standalone Claude Code | Bundled Claude Code | Codex |
 | --- | --- | --- | --- |
+| Phone Size | `/phone-size` | `/sam:phone-size` | `$phone-size` |
 | Sam's Tree | `/sams-tree` | `/sam:sams-tree` | `$sams-tree` |
 | Sam's Status | `/sams-status` | `/sam:sams-status` | `$sams-status` |
 | Env Example | `/env-example` | `/sam:env-example` | `$env-example` |
@@ -97,8 +152,11 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 | Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
 | Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |
 | Sam's Gen Writing | `/sams-gen-writing` | `/sam:sams-gen-writing` | `$sams-gen-writing` |
+| Sam's Skill Creator | `/sams-skill-creator` | `/sam:sams-skill-creator` | `$sams-skill-creator` |
+| Sam UX Audit | `/sam-ux-audit` | `/sam:sam-ux-audit` | `$sam-ux-audit` |
 | Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
 | HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
+<!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.
 
@@ -113,13 +171,3 @@ codex plugin list --json
 ```
 
 For file-level verification, each installed skill should contain the same `SKILL.md` and supporting resources as its canonical directory in the public repository.
-
-## Skill authoring mixer
-
-Install the authoring workflow independently:
-
-```sh
-npx skills add ThatGuySam/skills --skill sams-skill-creator
-```
-
-For global installation, add `-g`. See [Sam's Skill Creator](/sams-skill-creator/introduction/) for private dependency restoration and explicit refreshes.

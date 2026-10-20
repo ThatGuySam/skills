@@ -1,0 +1,309 @@
+{
+  "skills": [
+    {
+      "id": "phone-size",
+      "title": "Phone Size",
+      "summary": "Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail.",
+      "guide": "phone-size/introduction"
+    },
+    {
+      "id": "sams-tree",
+      "title": "Sam's Tree",
+      "summary": "Organize notes and other material into familiar, scannable trees.",
+      "guide": "tree-status/introduction"
+    },
+    {
+      "id": "sams-status",
+      "title": "Sam's Status",
+      "summary": "Show project work as a status tree with sources, progress, and missing information.",
+      "guide": "tree-status/introduction"
+    },
+    {
+      "id": "env-example",
+      "title": "Env Example",
+      "summary": "Draft annotated environment examples with useful setup guidance and a static checker.",
+      "guide": "env-example/introduction"
+    },
+    {
+      "id": "andrej-explain",
+      "title": "Andrej Explain",
+      "summary": "Explain complex material and agent work through useful text, diagrams, HTML, or video.",
+      "guide": "andrej-explain/introduction"
+    },
+    {
+      "id": "migrate-cgpt",
+      "title": "Migrate Custom GPTs",
+      "summary": "Back up GPT workflows privately and convert them to portable skills while tracking migration gaps.",
+      "guide": "migrate-cgpt/introduction"
+    },
+    {
+      "id": "sales-research",
+      "title": "Sales Research",
+      "summary": "Research sales decisions and draft buyer communication using relevant practitioner sources.",
+      "guide": "sales-research/introduction"
+    },
+    {
+      "id": "sams-gen-writing",
+      "title": "Sam's Gen Writing",
+      "summary": "Draft, review, or plan AI-assisted pages using Google's published Search guidance.",
+      "guide": "sams-gen-writing/introduction"
+    },
+    {
+      "id": "sams-skill-creator",
+      "title": "Sam's Skill Creator",
+      "summary": "Create and improve agent skills with locked authoring sources and behavioral validation.",
+      "guide": "sams-skill-creator/introduction"
+    },
+    {
+      "id": "sam-ux-audit",
+      "title": "Sam UX Audit",
+      "summary": "Audit websites and repository UX with locked review dependencies and evidence-backed findings.",
+      "guide": "sam-ux-audit/introduction"
+    },
+    {
+      "id": "zach-prompting",
+      "title": "Zach Prompting",
+      "summary": "Improve prompts and agent instructions while preserving their intent and safeguards.",
+      "guide": "zach-prompting/introduction"
+    },
+    {
+      "id": "htma-measure",
+      "title": "HTMA Measure",
+      "summary": "Estimate uncertain quantities with ranges, sources, and decision recommendations.",
+      "guide": "overview/introduction"
+    }
+  ],
+  "navigationGroups": [
+    {
+      "skills": [
+        "phone-size"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "phone-size/introduction"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sams-tree",
+        "sams-status"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "tree-status/introduction"
+        },
+        {
+          "label": "Design",
+          "slug": "tree-status/design"
+        },
+        {
+          "label": "Glossary",
+          "slug": "tree-status/glossary"
+        },
+        {
+          "label": "Verification",
+          "slug": "tree-status/verification"
+        }
+      ],
+      "label": "Tree and Status"
+    },
+    {
+      "skills": [
+        "env-example"
+      ],
+      "items": [
+        {
+          "label": "Draft and example",
+          "slug": "env-example/introduction"
+        },
+        {
+          "label": "Verification",
+          "slug": "env-example/verification"
+        },
+        {
+          "label": "Agent checker",
+          "slug": "env-example/checker"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "andrej-explain"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "andrej-explain/introduction"
+        },
+        {
+          "label": "Examples",
+          "slug": "andrej-explain/examples"
+        },
+        {
+          "label": "Behavior and formats",
+          "slug": "andrej-explain/reference"
+        },
+        {
+          "label": "Testing and troubleshooting",
+          "slug": "andrej-explain/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "migrate-cgpt"
+      ],
+      "items": [
+        {
+          "label": "Introduction",
+          "slug": "migrate-cgpt/introduction"
+        },
+        {
+          "label": "Backup and install",
+          "slug": "migrate-cgpt/backup-and-install"
+        },
+        {
+          "label": "Verification",
+          "slug": "migrate-cgpt/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sales-research"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "sales-research/introduction"
+        },
+        {
+          "label": "Examples",
+          "slug": "sales-research/examples"
+        },
+        {
+          "label": "Sources",
+          "slug": "sales-research/sources"
+        },
+        {
+          "label": "Testing and verification",
+          "slug": "sales-research/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sams-gen-writing"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "sams-gen-writing/introduction"
+        },
+        {
+          "label": "Verification",
+          "slug": "sams-gen-writing/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sams-skill-creator"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "sams-skill-creator/introduction"
+        },
+        {
+          "label": "Examples",
+          "slug": "sams-skill-creator/examples"
+        },
+        {
+          "label": "Workflow reference",
+          "slug": "sams-skill-creator/reference"
+        },
+        {
+          "label": "Verification",
+          "slug": "sams-skill-creator/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sam-ux-audit"
+      ],
+      "items": [
+        {
+          "label": "Introduction",
+          "slug": "sam-ux-audit/introduction"
+        },
+        {
+          "label": "Verification",
+          "slug": "sam-ux-audit/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "zach-prompting"
+      ],
+      "items": [
+        {
+          "label": "Introduction",
+          "slug": "zach-prompting/introduction"
+        },
+        {
+          "label": "Verification",
+          "slug": "zach-prompting/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "htma-measure"
+      ],
+      "items": [
+        {
+          "label": "Introduction",
+          "slug": "overview/introduction"
+        },
+        {
+          "label": "Who it's for",
+          "slug": "overview/who-its-for"
+        },
+        {
+          "label": "Problems it solves",
+          "slug": "overview/problems-it-solves"
+        },
+        {
+          "label": "How it works",
+          "slug": "overview/how-it-works"
+        },
+        {
+          "label": "Installation",
+          "slug": "guides/installation"
+        },
+        {
+          "label": "Your first measurement",
+          "slug": "guides/first-measurement"
+        },
+        {
+          "label": "Prompt recipes",
+          "slug": "guides/prompt-recipes"
+        },
+        {
+          "label": "Command reference",
+          "slug": "guides/command-reference"
+        },
+        {
+          "label": "Troubleshooting",
+          "slug": "guides/troubleshooting"
+        }
+      ]
+    }
+  ]
+}

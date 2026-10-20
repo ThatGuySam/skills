@@ -4,175 +4,38 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 
 ## Skills
 
-### Phone Size
+<!-- skills:start:readme-catalog -->
+| Skill | Use it for | Guide |
+| --- | --- | --- |
+| Phone Size | Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail. | [phone-size](apps/docs/src/content/docs/phone-size/introduction.md) |
+| Sam's Tree | Organize notes and other material into familiar, scannable trees. | [sams-tree](apps/docs/src/content/docs/tree-status/introduction.md) |
+| Sam's Status | Show project work as a status tree with sources, progress, and missing information. | [sams-status](apps/docs/src/content/docs/tree-status/introduction.md) |
+| Env Example | Draft annotated environment examples with useful setup guidance and a static checker. | [env-example](apps/docs/src/content/docs/env-example/introduction.mdx) |
+| Andrej Explain | Explain complex material and agent work through useful text, diagrams, HTML, or video. | [andrej-explain](apps/docs/src/content/docs/andrej-explain/introduction.md) |
+| Migrate Custom GPTs | Back up GPT workflows privately and convert them to portable skills while tracking migration gaps. | [migrate-cgpt](apps/docs/src/content/docs/migrate-cgpt/introduction.md) |
+| Sales Research | Research sales decisions and draft buyer communication using relevant practitioner sources. | [sales-research](apps/docs/src/content/docs/sales-research/introduction.md) |
+| Sam's Gen Writing | Draft, review, or plan AI-assisted pages using Google's published Search guidance. | [sams-gen-writing](apps/docs/src/content/docs/sams-gen-writing/introduction.md) |
+| Sam's Skill Creator | Create and improve agent skills with locked authoring sources and behavioral validation. | [sams-skill-creator](apps/docs/src/content/docs/sams-skill-creator/introduction.md) |
+| Sam UX Audit | Audit websites and repository UX with locked review dependencies and evidence-backed findings. | [sam-ux-audit](apps/docs/src/content/docs/sam-ux-audit/introduction.md) |
+| Zach Prompting | Improve prompts and agent instructions while preserving their intent and safeguards. | [zach-prompting](apps/docs/src/content/docs/zach-prompting/introduction.md) |
+| HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](apps/docs/src/content/docs/overview/introduction.md) |
+<!-- skills:end:readme-catalog -->
 
-Condense tasks, decisions, research, and updates into a comfortable phone-screen brief with useful detail one tap away. Preserves scope, uncertainty, evidence, and authority while adapting to the destination. Supersedes the earlier phone-roll workflow.
+Install a listed skill with `npx skills add ThatGuySam/skills --skill <id>`. Each linked guide includes usage examples and verification limits. Sam's Skill Creator and Sam UX Audit restore their locked dependencies on first use.
 
-```bash
-npx skills add ThatGuySam/skills --skill phone-size -g
-```
+## Try a skill
 
-Ask: `Use $phone-size to make this long task readable on my phone without hiding its blockers.`
-
-Read the [guide](apps/docs/src/content/docs/phone-size/introduction.md) and [scoped validation](skills/phone-size/evals/results.md). No companion skills are required.
-
-### Sam's Skill Creator
-
-Create and improve agent skills by mixing authoring, instruction design, preference evidence, and validation methods at each decision. The workflow keeps one owner and uses version-locked sources.
-
-```bash
-npx skills add ThatGuySam/skills --skill sams-skill-creator
-```
-
-Ask: `Use $sams-skill-creator to turn this workflow into a focused, tested skill.`
-
-Read the [guide](apps/docs/src/content/docs/sams-skill-creator/introduction.md) and [validation record](skills/sams-skill-creator/evals/results.md). First use restores private dependencies with Node.js, npm, and Git; ordinary runs retain the lock, while refreshes are explicit.
-
-### Sam's Tree and Sam's Status
-
-Turn large amounts of material into familiar, scannable trees. Sam's Tree owns the three-level view, collapsed branches, and short familiar labels. Sam's Status adds project sources, phase-relative progress, missing-information flags, and likely-stale markers.
-
-```bash
-npx skills add ThatGuySam/skills --skill sams-tree sams-status
-```
-
-Ask: `Use $sams-tree to organize these notes.` Or: `Use $sams-status to show where the current project stands.` Either skill installs independently.
-
-Read the [guide](apps/docs/src/content/docs/tree-status/introduction.md), [design](apps/docs/src/content/docs/tree-status/design.md), and [verification](apps/docs/src/content/docs/tree-status/verification.md).
-
-### Env Example
-
-Draft environment templates from project configuration, with useful docs links,
-dashboard links, commands, and accurate missing/empty-value guidance.
-
-Ask: `Use $env-example to draft this project's .env.example.`
-
-Read the [guide](apps/docs/src/content/docs/env-example/introduction.mdx)
-and [synthetic test contract](skills/env-example/evals/contract.md).
-```bash
-npx skills add ThatGuySam/skills --skill env-example
-```
-
-
-### Andrej Explain
-
-Explain complex ideas, code, research, or agent work in the simplest useful format. Preserve the evidence and limitations while choosing clear text, diagrams, interactive HTML, or narrated walkthroughs. Bundled Node scripts check explicit text constraints and caption timing.
-
-```bash
-npx skills add thatguysam/skills --skill andrej-explain
-```
-
-Ask: `Use $andrej-explain to explain this change, including the mechanism, important boundary case, and what remains untested.`
-
-Read the [quickstart](apps/docs/src/content/docs/andrej-explain/introduction.md), [examples](apps/docs/src/content/docs/andrej-explain/examples.md), [research](apps/docs/src/content/docs/research/andrej-explain-2026-10-01.md), and [verification](apps/docs/src/content/docs/andrej-explain/verification.md).
-
-### Migrate Custom GPTs
-
-Back up the original details of a user-owned Custom GPT privately, then convert its instructions, knowledge, and integration requirements into a portable skill folder or Git repository. ChatGPT Web delivery uses a supported plugin route. Missing files and Actions remain explicit migration gaps.
-
-```bash
-npx skills add thatguysam/skills --skill migrate-cgpt
-```
-
-Ask: `Use $migrate-cgpt to back up this GPT privately, then convert it into my skills repository.`
-
-For ChatGPT Web, private backups, manual folder installation, and revision-pinned installation, see the [backup and installation guide](apps/docs/src/content/docs/migrate-cgpt/backup-and-install.md).
-
-Read the [migration guide](apps/docs/src/content/docs/migrate-cgpt/introduction.md) and [verification limits](apps/docs/src/content/docs/migrate-cgpt/verification.md).
-### Sales Research
-
-Research sales decisions and draft buyer communication using relevant practitioner
-sources. Covers discovery, positioning, paid diagnostics, pricing, proposals,
-AI proof of concept, and sales-call reviews.
-
-```bash
-npx skills add ThatGuySam/skills --skill sales-research
-```
-
-Ask: `Use $sales-research to help me decide the next step in this sales conversation.`
-Include your offer, buyer context, constraints, and the decision you need.
-No private corpus or companion skill is required.
-
-Read the [install and usage guide](apps/docs/src/content/docs/sales-research/introduction.md),
-[examples](apps/docs/src/content/docs/sales-research/examples.md), and
-[tester checklist](apps/docs/src/content/docs/sales-research/verification.md).
-
-### Sam's Gen Writing
-
-Draft, review, or plan AI-assisted web content meant for Google Search. It applies Google's published policy on scaled content abuse, human review, disclosure, and authorship, plus attributed Search Off the Record commentary. It marks missing first-hand material instead of inventing it and does not promise rankings.
-
-```bash
-npx skills add thatguysam/skills --skill sams-gen-writing
-```
-
-Ask: `Use $sams-gen-writing to review this AI-assisted page against Google's guidance before I publish it.`
-
-Read the [guide](apps/docs/src/content/docs/sams-gen-writing/introduction.md) and [smoke scenarios](skills/sams-gen-writing/evals/README.md).
-
-### Sam UX Audit
-
-Audit websites and GitHub repositories through locked UX, accessibility, HIG, motion, and performance review skills. Findings include evidence, scope limits, and actionable acceptance checks.
-
-```bash
-npx skills add thatguysam/skills --skill sam-ux-audit
-```
-
-Ask: `Use $sam-ux-audit to audit this URL or GitHub repository.` The agent restores the skill's locked dependencies on first use. Request a dependency update explicitly when you want the latest upstream instructions.
-
-Read the [guide](apps/docs/src/content/docs/sam-ux-audit/introduction.md) and [smoke evals](skills/sam-ux-audit/evals/README.md).
-
-### Zach Prompting
-
-Improve prompts, skills, system instructions, agent definitions, tool descriptions, `CLAUDE.md`, and `AGENTS.md` files without weakening their intent or safeguards.
-
-```bash
-npx skills add thatguysam/skills --skill zach-prompting
-```
-
-Invoke a standalone installation as `/zach-prompting` in Claude Code or `$zach-prompting` in Codex.
-
-Example prompts:
+These examples show a few ways to start after installation:
 
 ```text
-Use $zach-prompting to tighten this AGENTS.md while preserving its safety,
-permission, validation, and repository-boundary rules.
-
-Use $zach-prompting to migrate this working prompt to GPT-6 Astra one measured
-change at a time.
-```
-
-Read the [Zach Prompting guide](apps/docs/src/content/docs/zach-prompting/introduction.md).
-
-### HTMA Measure
-
-Estimate uncertain costs, budgets, rates, risks, ROI, and market size with ranges, sources, and recommendations.
-
-```bash
-npx skills add thatguysam/skills --skill htma-measure
-```
-
-Situations it helps with:
-
-- you need a planning budget before vendor quotes exist;
-- a stakeholder wants one number even though the evidence supports a range;
-- unfamiliar work or hidden subcomponents keep making estimates too optimistic;
-- "cost" could mean public price, budget allowance, likely quote, or paid amount;
-- only a few observations are available, but ignoring them would waste evidence; or
-- research keeps expanding without a rule for when to decide.
-
-Example prompts:
-
-```text
+Use $sams-skill-creator to turn this workflow into a focused, tested skill.
+Use $env-example to draft this project's .env.example.
 Use $htma-measure to create a planning allowance for this project before quotes arrive.
-Use $htma-measure to turn this point estimate into a calibrated decision range.
-Use $htma-measure to estimate this unfamiliar project by decomposing the hidden work.
-Use $htma-measure to update our risk estimate from these few observations.
-Use $htma-measure to tell us whether more research could still change the decision.
 ```
 
-Read the [HTMA Measure README](skills/htma-measure/README.md), [guide](https://skills.samcarlton.com/overview/introduction/), and source-backed [problems it solves](https://skills.samcarlton.com/overview/problems-it-solves/).
+For skill authoring, review the [validation record](skills/sams-skill-creator/evals/results.md). First use requires Node.js, npm, and Git to restore the private dependency set. Ordinary runs keep that set locked. Request a refresh explicitly.
 
-Review or rerun the [HTMA Measure evaluation suite](skills/htma-measure/evals/README.md).
+For measurement, the [HTMA Measure README](skills/htma-measure/README.md) explains the workflow, and its [evaluation suite](skills/htma-measure/evals/README.md) records verification. For environment templates, the [synthetic test contract](skills/env-example/evals/contract.md) documents the checker limits.
 
 ## Documentation
 
@@ -188,7 +51,7 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships version `0.11.0` of a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
 
 <details>
 <summary><b>Codex</b></summary>
@@ -214,63 +77,23 @@ Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompti
 
 ## Repository structure
 
+<!-- skills:start:readme-tree -->
 ```text
 skills/
-  sams-skill-creator/
-    SKILL.md
-    skills-lock.json
-    references/
-    scripts/
-  sams-tree/
-  sams-status/
-  env-example/
-    SKILL.md
-    agents/openai.yaml
-    references/
-    scripts/
-    evals/
-  andrej-explain/
-    SKILL.md
-    agents/openai.yaml
-    references/
-    scripts/
-  migrate-cgpt/
-    SKILL.md
-    agents/openai.yaml
-    references/
-    assets/
-    scripts/
-  sales-research/
-    SKILL.md
-    README.md
-    agents/openai.yaml
-    references/
-    evals/
-  sams-gen-writing/
-    SKILL.md
-    agents/openai.yaml
-    references/
-    evals/
-  sam-ux-audit/
-    SKILL.md
-    package.json
-    package-lock.json
-    skills-lock.json
-    scripts/
-    references/
-    evals/
-  htma-measure/
-    README.md
-    SKILL.md
-    agents/openai.yaml
-    assets/
-    evals/
-    references/
-  zach-prompting/
-    SKILL.md
-    agents/openai.yaml
-    references/vendor-guidance.md
+├── phone-size/
+├── sams-tree/
+├── sams-status/
+├── env-example/
+├── andrej-explain/
+├── migrate-cgpt/
+├── sales-research/
+├── sams-gen-writing/
+├── sams-skill-creator/
+├── sam-ux-audit/
+├── zach-prompting/
+└── htma-measure/
 ```
+<!-- skills:end:readme-tree -->
 
 Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with conditional detail in supporting resources.
 

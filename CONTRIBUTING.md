@@ -26,3 +26,16 @@ checks before pushing.
 - Verify YAML frontmatter, JSON manifests, links, and every changed output field before publishing a change.
 
 By contributing, you agree that your contribution will be licensed under the MIT License.
+
+## Update the skill catalog
+
+`skill-catalog.json` owns each skill's title, summary, guide route, and navigation group. Keep one entry for every canonical `skills/*/SKILL.md`. The skill's frontmatter name must match its directory and catalog ID. Tree and Status share one navigation group while remaining independently installable skills.
+
+1. Add or edit the skill in `skill-catalog.json` and create its guide pages.
+2. Run `node scripts/skill-catalog.mjs` from the repository root to refresh generated listings.
+3. Run `node scripts/skill-catalog.mjs --check` and `node --test scripts/skill-catalog.test.mjs`.
+4. From `apps/docs`, run `bun install --frozen-lockfile`, `bun run test`, and `bun run build`.
+
+The generator updates bounded sections in the README, homepage, collection pages, installation guide, and repository trees. Edit the catalog rather than those sections. Astro reads the same catalog for skill navigation. The checker independently discovers canonical skills and rejects missing or extra catalog entries, missing guide routes, incomplete navigation, changed discovery contracts, and stale generated sections.
+
+The Documentation GitHub Actions workflow runs on every push and pull request. It installs frozen docs dependencies, checks the catalog, runs the catalog and docs tests, and builds the site and agent corpus. It has read-only repository permissions and does not deploy. Production publication still requires the docs-spec gate and live content verification.

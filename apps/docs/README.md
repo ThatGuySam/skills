@@ -11,7 +11,7 @@ This Astro Starlight app documents Sam's public skills and generates `llms-full.
 From `apps/docs`:
 
 ```bash
-bun install --minimum-release-age 604800
+bun install --frozen-lockfile
 bun run dev
 ```
 
@@ -29,6 +29,9 @@ site rather than building it. If the original checker cannot be obtained,
 report this gate as unavailable. A build or link scan does not replace it.
 
 ```bash
+node ../../scripts/skill-catalog.mjs --check
+node --test ../../scripts/skill-catalog.test.mjs
+bun run test
 bun run build
 bash "$HOME/.codex/skills/docs-spec/scripts/check.sh" "$(pwd)"
 ```
@@ -64,3 +67,11 @@ https://skills.samcarlton.com
 - Collection-level packaging pages document repository layout, compatibility, and distribution.
 - `project/` records the shared roadmap, open questions, decisions, and changes.
 - `research/` carries source-backed evidence when published.
+
+## Maintain skill listings
+
+Edit the root `skill-catalog.json` for skill titles, summaries, guide routes, and navigation. Run `node scripts/skill-catalog.mjs` from the repository root, then commit the catalog and generated changes together. Do not edit text between `skills:start` and `skills:end` markers by hand.
+
+The homepage, collection table, installation commands and invocation names, README, and repository trees come from that catalog. Astro consumes its navigation groups directly. The build checks that the catalog matches every canonical `skills/*/SKILL.md` and that generated listings are current.
+
+The Documentation workflow runs the catalog checks, catalog tests, docs tests, and production build on every push and pull request. It has read-only permissions and no deployment credentials. See the root [contribution guide](../../CONTRIBUTING.md#update-the-skill-catalog) for the full update workflow.

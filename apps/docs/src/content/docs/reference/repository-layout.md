@@ -5,87 +5,25 @@ description: The public skill collection, plugin manifests, docs app, and progre
 
 Each skill has one directory under `skills/`. Root manifests package the collection, and `apps/docs` contains the public guide. Keep reusable skill instructions in the skill directory.
 
-```text
-./
-├── .agents/plugins/marketplace.json
-├── .claude-plugin/
-│   ├── marketplace.json
-│   └── plugin.json
-├── .codex-plugin/plugin.json
-├── apps/docs/
-│   ├── src/content/docs/
-│   ├── astro.config.mjs
-│   └── wrangler.jsonc
-├── skills/
-│   ├── sams-skill-creator/
-│   │   ├── SKILL.md
-│   │   ├── skills-lock.json
-│   │   ├── references/
-│   │   └── scripts/
-│   ├── sams-tree/
-│   │   ├── SKILL.md
-│   │   └── references/tree-format.md
-│   ├── sams-status/
-│   │   ├── SKILL.md
-│   │   └── references/tree-format.md
-│   ├── env-example/
-│   │   ├── SKILL.md
-│   │   ├── agents/openai.yaml
-│   │   ├── scripts/check-env-example.mjs
-│   │   ├── scripts/check-env-example.test.mjs
-│   │   ├── references/checker.md
-│   │   └── evals/
-│   │       ├── annotated-example.md
-│   │       ├── contract.md
-│   │       ├── proposed-example.md
-│   │       └── concise-forward-test.md
+<!-- skills:start:repository-tree -->
+Collection files include `skill-catalog.json`, `scripts/skill-catalog.mjs`, the plugin manifests, and `apps/docs/`. Canonical skill directories are:
 
-│   ├── andrej-explain/
-│   │   ├── SKILL.md
-│   │   ├── agents/openai.yaml
-│   │   ├── references/
-│   │   └── scripts/
-│   ├── migrate-cgpt/
-│   │   ├── SKILL.md
-│   │   ├── agents/openai.yaml
-│   │   └── references/
-│   ├── sales-research/
-│   │   ├── SKILL.md
-│   │   ├── README.md
-│   │   ├── agents/openai.yaml
-│   │   ├── references/
-│   │   └── evals/
-│   ├── sams-gen-writing/
-│   │   ├── SKILL.md
-│   │   ├── agents/openai.yaml
-│   │   ├── references/
-│   │   └── evals/
-│   ├── sam-ux-audit/
-│   │   ├── SKILL.md
-│   │   ├── package.json
-│   │   ├── package-lock.json
-│   │   ├── skills-lock.json
-│   │   ├── scripts/
-│   │   ├── references/
-│   │   └── evals/
-│   ├── htma-measure/
-│   │   ├── README.md
-│   │   ├── SKILL.md
-│   │   ├── agents/openai.yaml
-│   │   ├── assets/measurement-brief-template.md
-│   │   └── references/
-│   │       ├── local-paid-quote-adjustment.md
-│   │       ├── method-map.md
-│   │       └── output-rubric.md
-│   └── zach-prompting/
-│       ├── SKILL.md
-│       ├── agents/openai.yaml
-│       └── references/vendor-guidance.md
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-└── plugin.json
+```text
+skills/
+├── phone-size/
+├── sams-tree/
+├── sams-status/
+├── env-example/
+├── andrej-explain/
+├── migrate-cgpt/
+├── sales-research/
+├── sams-gen-writing/
+├── sams-skill-creator/
+├── sam-ux-audit/
+├── zach-prompting/
+└── htma-measure/
 ```
+<!-- skills:end:repository-tree -->
 
 ## Progressive disclosure
 

@@ -1,0 +1,33 @@
+name: Documentation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.14'
+      - name: Install frozen docs dependencies
+        working-directory: apps/docs
+        run: bun install --frozen-lockfile
+      - name: Check generated skill listings
+        run: node scripts/skill-catalog.mjs --check
+      - name: Test catalog drift checks
+        run: node --test scripts/skill-catalog.test.mjs
+      - name: Test docs commands
+        working-directory: apps/docs
+        run: bun run test
+      - name: Build documentation and agent corpus
+        working-directory: apps/docs
+        run: bun run build

@@ -2,6 +2,13 @@
 import starlight from "@astrojs/starlight"
 import { defineConfig } from "astro/config"
 import starlightLlmsTxt from "starlight-llms-txt"
+import { readFileSync } from "node:fs"
+
+const catalog = JSON.parse(readFileSync(new URL("../../skill-catalog.json", import.meta.url), "utf8"))
+const skillNavigation = catalog.navigationGroups.map(group => ({
+  label: group.label ?? catalog.skills.find(skill => skill.id === group.skills[0]).title,
+  items: group.items,
+}))
 
 export default defineConfig({
   site: "https://skills.samcarlton.com",
@@ -32,46 +39,7 @@ export default defineConfig({
       },
       lastUpdated: true,
       sidebar: [
-        {
-          label: "Phone Size",
-          items: [{ label: "Install and use", slug: "phone-size/introduction" }],
-        },
-        {
-          label: "Tree and Status",
-          items: [
-            { label: "Install and use", slug: "tree-status/introduction" },
-            { label: "Design", slug: "tree-status/design" },
-            { label: "Glossary", slug: "tree-status/glossary" },
-            { label: "Verification", slug: "tree-status/verification" },
-          ],
-        },
-        {
-          label: "Env Example",
-          items: [
-            { label: "Draft and example", slug: "env-example/introduction" },
-            { label: "Verification", slug: "env-example/verification" },
-            { label: "Agent checker", slug: "env-example/checker" },
-          ],
-        },
-        {
-          label: "Andrej Explain",
-          badge: { text: "New", variant: "tip" },
-          items: [
-            { label: "Install and use", slug: "andrej-explain/introduction" },
-            { label: "Examples", slug: "andrej-explain/examples" },
-            { label: "Behavior and formats", slug: "andrej-explain/reference" },
-            { label: "Testing and troubleshooting", slug: "andrej-explain/verification" },
-          ],
-        },
-        {
-          label: "Sales Research",
-          items: [
-            { label: "Install and use", slug: "sales-research/introduction" },
-            { label: "Examples", slug: "sales-research/examples" },
-            { label: "Sources", slug: "sales-research/sources" },
-            { label: "Testing and verification", slug: "sales-research/verification" },
-          ],
-        },
+        ...skillNavigation,
         {
           label: "Collection",
           items: [
@@ -80,55 +48,6 @@ export default defineConfig({
             { label: "Compatibility", slug: "reference/compatibility" },
             { label: "Repository layout", slug: "reference/repository-layout" },
             { label: "Distribution model", slug: "architecture/distribution-model" },
-          ],
-        },
-        {
-          label: "Migrate Custom GPTs",
-          items: [
-            { label: "Introduction", slug: "migrate-cgpt/introduction" },
-            { label: "Backup and install", slug: "migrate-cgpt/backup-and-install" },
-            { label: "Verification", slug: "migrate-cgpt/verification" },
-          ],
-        },
-        {
-          label: "Sam's Gen Writing",
-          badge: { text: "New", variant: "tip" },
-          items: [
-            { label: "Install and use", slug: "sams-gen-writing/introduction" },
-            { label: "Verification", slug: "sams-gen-writing/verification" },
-          ],
-        },
-        {
-          label: "Sam's Skill Creator",
-          items: [{ label: "Install and use", slug: "sams-skill-creator/introduction" }],
-        },
-        {
-          label: "Sam UX Audit",
-          items: [
-            { label: "Introduction", slug: "sam-ux-audit/introduction" },
-            { label: "Verification", slug: "sam-ux-audit/verification" },
-          ],
-        },
-        {
-          label: "Zach Prompting",
-          badge: { text: "New", variant: "tip" },
-          items: [
-            { label: "Introduction", slug: "zach-prompting/introduction" },
-            { label: "Verification", slug: "zach-prompting/verification" },
-          ],
-        },
-        {
-          label: "HTMA Measure",
-          items: [
-            { label: "Introduction", slug: "overview/introduction" },
-            { label: "Who it's for", slug: "overview/who-its-for" },
-            { label: "Problems it solves", slug: "overview/problems-it-solves" },
-            { label: "How it works", slug: "overview/how-it-works" },
-            { label: "Installation", slug: "guides/installation" },
-            { label: "Your first measurement", slug: "guides/first-measurement" },
-            { label: "Prompt recipes", slug: "guides/prompt-recipes" },
-            { label: "Command reference", slug: "guides/command-reference" },
-            { label: "Troubleshooting", slug: "guides/troubleshooting" },
           ],
         },
         {

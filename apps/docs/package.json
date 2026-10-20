@@ -8,7 +8,7 @@
     "test": "node --test src/scripts/*.test.mjs",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node ../../scripts/skill-catalog.mjs --check && astro build",
     "preview": "astro preview",
     "deploy": "bun run build && wrangler deploy"
   },

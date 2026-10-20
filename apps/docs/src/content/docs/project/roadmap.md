@@ -3,13 +3,12 @@ title: Roadmap
 description: What is available now and the evidence required before expanding the public skill collection.
 ---
 
-Maintain the two published skills, improve their evidence, and automate installation checks before adding more skills.
+Maintain the published skills, improve their evidence, and automate installation checks before adding more skills.
 
 ## Available now
 
 - Public `ThatGuySam/skills` repository.
-- Standalone `htma-measure` skill.
-- Standalone `zach-prompting` skill.
+- Independently installable skills listed in the [collection catalog](/collection/about/#current-skills).
 - Open Skills CLI discovery and installation.
 - Codex marketplace and plugin installation.
 - Claude Code marketplace and plugin installation.
@@ -20,7 +19,7 @@ Maintain the two published skills, improve their evidence, and automate installa
 
 1. Collect real-world HTMA Measure memos and calibration outcomes.
 2. Review whether repeated HTMA Measure failure modes belong in its core skill or a reference.
-3. Add installation smoke tests to continuous integration.
+3. Extend clean-room installer smoke tests beyond the catalog and docs checks in continuous integration.
 4. Publish versioned releases when a published skill's contract changes.
 5. Consider publishing more skills only when each works independently and has a clear public use case.
 
