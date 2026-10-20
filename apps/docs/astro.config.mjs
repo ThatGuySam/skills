@@ -87,6 +87,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
+            { label: "Developer docs and catalog", slug: "research/developer-docs-and-skill-catalog-2026-10-20" },
             {
               label: "Concise env examples",
               slug: "research/concise-env-example-writing-2026-10-09",

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-20",
+  "scope": "Skill Creator documentation and collection catalog; canonical skill behavior unchanged",
+  "baseCommit": "110bf90",
+  "checks": {
+    "catalogCases": 15,
+    "docsCommandCases": 3,
+    "creatorIntegrityCases": 7,
+    "frozenCreatorSources": 6,
+    "strictClaudePluginValidation": "passed",
+    "strictClaudeMarketplaceValidation": "passed",
+    "docsBuildPages": 59,
+    "docsSpecGate": "passed; 38 static-sidebar orphan warnings because navigation is imported",
+    "builtCatalogCoverage": "12 canonical skill guide links on homepage, collection and installation; all four creator pages contain complete sidebar links",
+    "agentCorpus": "new creator and research pages present",
+    "skillsCliQuickstart": "documented project-local Codex command installed the intended skill"
+  },
+  "limits": [
+    "No new runtime discovery or downstream business-action evaluation.",
+    "Existing dated behavioral evidence remains separate from docs checks.",
+    "Deployment and production verification are separate from these local checks."
+  ]
+}

@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-20
+
+### Skill Creator docs and a shared collection catalog
+
+- Split Skill Creator guidance into a first-use path, task examples, behavior and dependency reference, and verification and troubleshooting.
+- Publish the documentation research behind these changes, with primary Stripe, Cloudflare, and Google sources.
+- Drive complete skill listings and navigation from one catalog, checked against canonical skill directories and guide routes.
+- Add CI checks for missing skills, stale generated lists, route failures, docs tests, and the production build.
+- Keep skill instructions and plugin versions unchanged. Documentation checks do not establish new skill behavior or automatic discovery.
+
 ## 2026-10-16
 
 ### Phone Size, collection 0.11.0
