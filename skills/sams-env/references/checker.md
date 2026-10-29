@@ -44,3 +44,19 @@ Tests use only newly authored synthetic strings and a temporary synthetic Git re
 ## Sources
 
 Supported annotation spelling and semantics were checked on 2026-10-09 against the [syntax reference](https://varlock.dev/env-spec/reference/), [item decorators](https://varlock.dev/reference/item-decorators/), [types](https://varlock.dev/reference/data-types/), and [root defaults](https://varlock.dev/reference/root-decorators/). This is a local static checker, not an upstream conformance implementation.
+
+## Layout Check and Formatter
+
+Run from the skill's `scripts/` directory with newly authored text on stdin:
+
+```sh
+node format-env-example.mjs --check --stdin
+node format-env-example.mjs --format --stdin
+node --test format-env-example.test.mjs
+```
+
+Check mode exits 0 for clean spacing, 1 for missing block spacing, and 2 for unsupported input. Diagnostics contain line numbers and fixed messages, never source text. Format mode prints the revised candidate; it has no file-reading or file-writing mode. Never pipe an actual runtime env file into it.
+
+The rule separates a new prose-comment block from an immediately preceding active or commented assignment when another assignment follows the block. Annotation-only groups stay compact. Existing whitespace and nonblank text remain unchanged; formatting is idempotent. Shared group design and trailing-note placement remain editorial decisions. Multiline, escaped, and dynamic assignment syntax is refused conservatively.
+
+Dashboard review is separate: check that a link targets the right credential or setting, not merely the provider's home page. Public documentation can establish the route pattern; it does not prove an authenticated page was opened. The formatter does not invent or verify URLs.

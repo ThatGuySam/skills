@@ -7,7 +7,7 @@ These questions concern the collection and shared packaging. None currently bloc
 
 ## Open questions
 
-### Env Example
+### Sam's Env
 
 The initial two review questions are settled below. Unknown provider permissions remain explicit gaps; they do not justify invented values.
 

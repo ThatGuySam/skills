@@ -19,9 +19,9 @@
       "guide": "tree-status/introduction"
     },
     {
-      "id": "env-example",
-      "title": "Env Example",
-      "summary": "Draft annotated environment examples with useful setup guidance and a static checker.",
+      "id": "sams-env",
+      "title": "Sam's Env",
+      "summary": "Draft environment examples with setup links, value guidance, annotation checks, and consistent spacing.",
       "guide": "env-example/introduction"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "skills": [
-        "env-example"
+        "sams-env"
       ],
       "items": [
         {

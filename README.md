@@ -10,7 +10,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 | Phone Size | Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail. | [phone-size](apps/docs/src/content/docs/phone-size/introduction.md) |
 | Sam's Tree | Organize notes and other material into familiar, scannable trees. | [sams-tree](apps/docs/src/content/docs/tree-status/introduction.md) |
 | Sam's Status | Show project work as a status tree with sources, progress, and missing information. | [sams-status](apps/docs/src/content/docs/tree-status/introduction.md) |
-| Env Example | Draft annotated environment examples with useful setup guidance and a static checker. | [env-example](apps/docs/src/content/docs/env-example/introduction.mdx) |
+| Sam's Env | Draft environment examples with setup links, value guidance, annotation checks, and consistent spacing. | [sams-env](apps/docs/src/content/docs/env-example/introduction.mdx) |
 | Andrej Explain | Explain complex material and agent work through useful text, diagrams, HTML, or video. | [andrej-explain](apps/docs/src/content/docs/andrej-explain/introduction.md) |
 | Migrate Custom GPTs | Back up GPT workflows privately and convert them to portable skills while tracking migration gaps. | [migrate-cgpt](apps/docs/src/content/docs/migrate-cgpt/introduction.md) |
 | Sales Research | Research sales decisions and draft buyer communication using relevant practitioner sources. | [sales-research](apps/docs/src/content/docs/sales-research/introduction.md) |
@@ -29,13 +29,13 @@ These examples show a few ways to start after installation:
 
 ```text
 Use $sams-skill-creator to turn this workflow into a focused, tested skill.
-Use $env-example to draft this project's .env.example.
+Use $sams-env to draft this project's .env.example.
 Use $htma-measure to create a planning allowance for this project before quotes arrive.
 ```
 
 For skill authoring, review the [validation record](skills/sams-skill-creator/evals/results.md). First use requires Node.js, npm, and Git to restore the private dependency set. Ordinary runs keep that set locked. Request a refresh explicitly.
 
-For measurement, the [HTMA Measure README](skills/htma-measure/README.md) explains the workflow, and its [evaluation suite](skills/htma-measure/evals/README.md) records verification. For environment templates, the [synthetic test contract](skills/env-example/evals/contract.md) documents the checker limits.
+For measurement, the [HTMA Measure README](skills/htma-measure/README.md) explains the workflow, and its [evaluation suite](skills/htma-measure/evals/README.md) records verification. For environment templates, the [synthetic test contract](skills/sams-env/evals/contract.md) documents the checker limits.
 
 ## Documentation
 
@@ -83,7 +83,7 @@ skills/
 ├── phone-size/
 ├── sams-tree/
 ├── sams-status/
-├── env-example/
+├── sams-env/
 ├── andrej-explain/
 ├── migrate-cgpt/
 ├── sales-research/

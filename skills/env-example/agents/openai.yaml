@@ -1,4 +1,0 @@
-interface:
-  display_name: "Env Example"
-  short_description: "Draft environment templates with useful setup guidance"
-  default_prompt: "Use $env-example to draft this project's environment template with verified setup links, commands, and value guidance."

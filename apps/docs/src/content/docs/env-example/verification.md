@@ -1,7 +1,14 @@
 ---
-title: Env Example Verification
+title: Sam's Env Verification
 description: Checks and limits for the environment-template drafting skill.
 ---
+
+## Collection 0.12.0 checks, October 28, 2026
+
+The renamed `sams-env` package passed 11 annotation-checker tests and 15 formatter tests. Skills CLI 1.7.2 discovered twelve skills in the release checkout and installed only `sams-env` into an isolated temporary Codex project. The installed package matched the source directory exactly. No global installation changed.
+
+The formatter checks spacing around explanatory comment blocks while preserving assignments and newline style. These tests do not verify live credentials, provider access, or the quality of generated templates in real projects. Earlier evaluation results below describe their original release state.
+
 
 Date: 2026-10-09. Status: two bounded drafting evaluations passed. The second uses the accepted tracked-example boundary and pragmatic comment style.
 
@@ -23,11 +30,11 @@ The bundled skill validator passed after integration. The installed checker pass
 
 ## Concise Revision
 
-After the user restricted existing env input to Git-tracked `.env.example` files, Git confirmed that the earlier fixture was untracked. It was not reread or modified. The new proposed text is stored in `skills/env-example/evals/proposed-example.md`; docs import that text instead of opening an untracked env file.
+After the user restricted existing env input to Git-tracked `.env.example` files, Git confirmed that the earlier fixture was untracked. It was not reread or modified. The new proposed text is stored in `skills/sams-env/evals/proposed-example.md`; docs import that text instead of opening an untracked env file.
 
 Node.js v26.6.0 parsed the newly authored candidate string in memory. All five expected values matched. The `lsof -nP -iTCP:3000 -sTCP:LISTEN` one-liner also executed without option errors; process output was suppressed. This verifies the local inspection operation, not application readiness.
 
-A fresh independent agent received the revised skill and Markdown contract, without prior examples. Its output is retained in `skills/env-example/evals/concise-forward-test.md`. It preserved all five variables, missing/empty behavior, quoted hash, conditional credential, restart note, and unresolved permissions. In-memory parsing and duplicate checks passed. The primary reviewer inspected and independently parsed the candidate text. No env files were read or created in that evaluation.
+A fresh independent agent received the revised skill and Markdown contract, without prior examples. Its output is retained in `skills/sams-env/evals/concise-forward-test.md`. It preserved all five variables, missing/empty behavior, quoted hash, conditional credential, restart note, and unresolved permissions. In-memory parsing and duplicate checks passed. The primary reviewer inspected and independently parsed the candidate text. No env files were read or created in that evaluation.
 
 The bundled skill validator passed for this revision. The docs build passed, and the docs-spec gate reported 11 passes with no gate warnings or failures. The build emitted the previously observed Markdown deprecation and custom 404 notices. Direct inspection confirmed the revised skill, port one-liner, and research page in `llms-full.txt`. Filename-only inspection found no env files in the docs build directory; the page no longer imports the untracked env fixture. Broader loader coverage and live provider behavior remain untested.
 

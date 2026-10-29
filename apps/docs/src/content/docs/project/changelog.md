@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-28
+
+### Homepage and Sam's Env, collection 0.12.0
+
+- Rebuilt the homepage with large Geist typography, a dark grid, restrained entrance motion, and accessible copy feedback. Every published skill card comes from the checked catalog, so new catalog entries appear automatically.
+- Renamed the canonical `env-example` package to `sams-env`, matching Sam's Env's current invocation. Existing `/env-example/` documentation routes remain available; installation and invocation examples use the new skill name.
+- Added the environment-example spacing checker and formatter, including checks for explanatory blocks, annotation adjacency, and commented assignments. Clarified setting-specific dashboard links and app-secret versus provider-token guidance.
+- Phone Size was already published in collection 0.11.0; it requires no duplicate package or draft label. Commit, push, deployment, and live verification remain separate states.
+
 ## 2026-10-20
 
 ### Skill Creator docs and a shared collection catalog

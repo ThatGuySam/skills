@@ -1,0 +1,15 @@
+---
+interface Props {
+  skill: string;
+  title: string;
+  href: string;
+  description: string;
+}
+const { skill, title, href, description } = Astro.props;
+---
+<a class="home-skill-card" data-skill={skill} href={href}>
+  <span class="home-card-label">{skill}</span>
+  <h3>{title} <span aria-hidden="true">↗</span></h3>
+  <p>{description}</p>
+  <span class="home-card-link">Read the guide <span aria-hidden="true">→</span></span>
+</a>

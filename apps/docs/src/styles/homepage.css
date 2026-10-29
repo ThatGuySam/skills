@@ -1,0 +1,122 @@
+:root:has(.skills-home) {
+  color-scheme: dark;
+  --sl-color-bg: #030303;
+  --sl-color-text: #a1a1a1;
+  --sl-color-white: #f5f5f5;
+  --sl-color-text-accent: #63b3f4;
+  --sl-content-width: 100%;
+  --sl-main-pad: 0;
+  --sl-nav-height: 0rem;
+}
+:root:has(.skills-home) .page > .header,
+:root:has(.skills-home) .hero,
+:root:has(.skills-home) .sl-container > footer { display: none; }
+:root:has(.skills-home) .content-panel { padding: 0; border: 0; }
+:root:has(.skills-home) .sl-container { max-width: none; margin: 0; }
+:root:has(.skills-home) .sl-container > .sl-markdown-content { margin: 0; }
+.skills-home { color: #a1a1a1; background: #030303; font-family: var(--sl-font); }
+.skills-home :where(h1,h2,h3,p,div,nav,section,footer,a,span,code,button,svg) { margin-block: 0; }
+.skills-home a { color: inherit; text-decoration: none; }
+.skills-home :focus-visible { outline: 2px solid #63b3f4; outline-offset: 6px; }
+.skills-home .home-nav { position: relative; display: flex; align-items: center; gap: 2rem; min-height: 80px; max-width: 1200px; padding: 16px 24px; margin-inline: auto; }
+.skills-home .home-nav::before { content: ''; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 1px; transform: translateX(-50%); background: #1b1b1b; }
+.skills-home .home-brand { display: inline-flex; align-items: center; gap: 12px; color: #eee; font-size: 18px; font-weight: 650; letter-spacing: -.025em; white-space: nowrap; }
+.home-brand svg { color: #46a6e9; }
+.home-nav-links { display: flex; align-items: center; gap: 28px; margin-left: 24px; font-size: 15px; }
+.home-github { margin-left: auto; padding-block: 10px; font-size: 14px; }
+.skills-home .home-button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 49px; padding: 12px 23px; border: 1px solid #303030; border-radius: 11px; font-size: 15px; font-weight: 550; line-height: 1.4; }
+.skills-home .home-button-primary { color: #111; background: #fff; border-color: #fff; }
+.skills-home .home-button-secondary { color: #e5e5e5; background: #030303; }
+.skills-home .home-nav-cta { min-height: 40px; padding: 10px 17px; font-size: 14px; }
+.home-hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; padding: clamp(95px, 10vw, 148px) 24px 136px; text-align: center; overflow: hidden; }
+.home-grid { position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse 34% 42% at 50% 12%, #0c2234a3, transparent 100%); }
+.home-grid::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(#ffffff07 1px, transparent 1px), linear-gradient(90deg, #ffffff07 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(#000 0%, transparent 72%); }
+.skills-home .home-pill { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #303439; border-radius: 99px; padding: 7px 14px; color: #a2a7ac; background: #0d1116a8; font-size: 13px; line-height: 1.5; }
+.home-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4cce69; box-shadow: 0 0 12px #4cce6970; }
+.skills-home .home-hero h1 { max-width: 1100px; margin-top: 29px; font-size: clamp(48px, 6vw, 86px); line-height: 1.02; letter-spacing: -.04em; font-weight: 600; color: #f7f7f7; }
+.home-hero h1 span { color: #aaa; }
+.skills-home .home-description { max-width: 660px; margin-top: 28px; font-size: clamp(17px, 1.65vw, 21px); line-height: 1.65; text-wrap: pretty; }
+.home-install { position: relative; width: min(100%, 500px); margin-top: 38px; }
+.home-command { display: flex; align-items: center; gap: 22px; min-height: 64px; padding: 8px 12px 8px 20px; border: 1px solid #2a2a2a; border-radius: 11px; background: #101010; text-align: left; }
+.home-prompt { color: #48a9f1; font-family: var(--sl-font-mono); }
+.skills-home .home-command code { padding: 0; background: transparent; color: #d0d0d0; border: none; font-size: 14px; white-space: normal; overflow-wrap: anywhere; line-height: 1.65; }
+.home-command button { position: relative; display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; margin-left: auto; padding: 0; border: 0; border-radius: 6px; background: transparent; color: #939393; cursor: pointer; }
+.home-command button svg { grid-area: 1 / 1; }
+.home-copy-check { opacity: 0; }
+.home-command button[data-state="copied"] .home-copy-icon { opacity: 0; }
+.home-command button[data-state="copied"] .home-copy-check { opacity: 1; color: #65d582; }
+.home-command button:disabled { cursor: progress; }
+.home-copy-status { position: absolute; top: 100%; left: 0; right: 0; padding-top: 3px; font-size: 11px; color: #b0c8da; }
+.home-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px; margin-top: 24px; }
+.home-compatibility { margin-top: 62px; }
+.skills-home .home-compatibility p, .skills-home .home-eyebrow { color: #838383; font-family: var(--sl-font-mono); font-size: 10px; letter-spacing: .12em; }
+.home-compatibility > div { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 28px; margin-top: 22px; font-size: 15px; color: #959595; }
+.home-details { max-width: 1050px; margin-inline: auto; padding: 70px 24px 0; border-top: 1px solid #202020; }
+.home-section-heading { max-width: 630px; }
+.skills-home h2 { color: #ededed; font-size: clamp(28px, 3.3vw, 40px); font-weight: 550; line-height: 1.15; letter-spacing: -.045em; margin-top: 16px; }
+.skills-home .home-section-heading > p:last-child, .home-agent-docs > p:last-child { margin-top: 20px; font-size: 16px; line-height: 1.8; }
+.skills-home .home-details p a { color: #d7d7d7; text-decoration: underline; text-underline-offset: 4px; }
+.home-skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.skills-home .home-skill-card { display: flex; flex-direction: column; padding: 30px; border: 1px solid #262626; border-radius: 12px; background: #0a0a0a; }
+.home-card-label { color: #8d8d8d; font-family: var(--sl-font-mono); font-size: 10px; letter-spacing: .08em; }
+.skills-home .home-skill-card h3 { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; color: #eee; font-size: 23px; font-weight: 550; letter-spacing: -.035em; }
+.home-skill-card h3 span { color: #707070; font-size: 20px; }
+.skills-home .home-skill-card p { margin-top: 14px; margin-bottom: 30px; line-height: 1.75; font-size: 15px; }
+.home-card-link { margin-top: auto; color: #cacaca; font-size: 13px; }
+.home-card-link span { display: inline-block; margin-left: 8px; }
+.home-agent-docs { margin-top: 80px; padding-block: 45px 70px; border-top: 1px solid #202020; }
+.home-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1002px; margin-inline: auto; padding: 28px 0 40px; border-top: 1px solid #202020; font-size: 12px; }
+.home-footer p { margin-left: auto; }
+@media (hover: hover) and (pointer: fine) {
+  .home-nav a:hover, .home-compatibility a:hover, .home-footer a:hover { color: #fff; }
+  .skills-home .home-button-primary:hover { color: #111; background: #dedede; border-color: #dedede; }
+  .home-button-secondary:hover, .home-command button:hover { background: #181818; color: #fff; }
+  .skills-home .home-skill-card:hover { border-color: #4c4c4c; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-reveal { animation: home-enter .5s var(--ease-out) both; }
+  .home-hero h1 { animation-delay: 40ms; }
+  .home-description { animation-delay: 80ms; }
+  .home-compatibility { animation-delay: 120ms; }
+  .home-install, .home-actions, .home-reveal:focus-within { animation: none; }
+  .home-button, .home-command button { transition: transform var(--dur-fast) var(--ease-out); }
+  .home-button:active:not(:focus-visible),
+  .home-command button:active:not(:focus-visible) { transform: scale(.98); }
+  .home-command button[data-input="pointer"] svg {
+    transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .home-command button[data-state="copied"] .home-copy-icon { transform: scale(.9); }
+  .home-command button:not([data-state="copied"]) .home-copy-check { transform: scale(.9); }
+  .home-card-link span { transition: transform var(--dur) var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .home-skill-card:hover:not(:focus-visible) .home-card-link span { transform: translateX(3px); }
+  }
+  @keyframes home-enter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+.skills-home :focus-visible,
+.skills-home :focus-visible * { transition: none; }
+@media (max-width: 640px) {
+  .skills-home .home-nav { gap: 12px; padding-inline: 20px; flex-wrap: wrap; }
+  .home-nav-links { order: 4; width: 100%; justify-content: center; margin-left: 0; gap: 32px; padding-top: 5px; }
+  .home-github { margin-left: auto; }
+  .skills-home .home-nav-cta { display: none; }
+  .home-hero { padding: 75px 20px 85px; }
+  .skills-home .home-hero h1 { font-size: clamp(43px, 9vw, 58px); }
+  .home-command { gap: 12px; padding-left: 14px; }
+  .skills-home .home-command code { font-size: 12px; }
+  .home-skill-grid { grid-template-columns: 1fr; }
+  .home-details { padding-top: 48px; }
+  .home-footer { margin-inline: 24px; }
+  .home-footer p { margin-left: 0; }
+}
+
+:root:has(.skills-home) body > a[href="#_top"] { display: none; }
+.skills-home .home-skip { position: absolute; top: 12px; left: 20px; z-index: 10; padding: 12px 18px; background: #fff; color: #111; border-radius: 6px; transform: translateY(-200%); }
+.skills-home .home-skip:focus { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal { animation: none; }
+  .home-command button svg { transform: none; }
+}

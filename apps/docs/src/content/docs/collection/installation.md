@@ -18,7 +18,7 @@ npx skills add thatguysam/skills --list
 ```
 
 <!-- skills:start:installation-names -->
-The repository publishes `phone-size`, `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
 <!-- skills:end:installation-names -->
 
 ## Install one skill
@@ -50,12 +50,12 @@ Show project work as a status tree with sources, progress, and missing informati
 npx skills add ThatGuySam/skills --skill sams-status
 ```
 
-### Env Example
+### Sam's Env
 
-Draft annotated environment examples with useful setup guidance and a static checker. [Read the guide](/env-example/introduction/).
+Draft environment examples with setup links, value guidance, annotation checks, and consistent spacing. [Read the guide](/env-example/introduction/).
 
 ```bash
-npx skills add ThatGuySam/skills --skill env-example
+npx skills add ThatGuySam/skills --skill sams-env
 ```
 
 ### Andrej Explain
@@ -147,7 +147,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 | Phone Size | `/phone-size` | `/sam:phone-size` | `$phone-size` |
 | Sam's Tree | `/sams-tree` | `/sam:sams-tree` | `$sams-tree` |
 | Sam's Status | `/sams-status` | `/sam:sams-status` | `$sams-status` |
-| Env Example | `/env-example` | `/sam:env-example` | `$env-example` |
+| Sam's Env | `/sams-env` | `/sam:sams-env` | `$sams-env` |
 | Andrej Explain | `/andrej-explain` | `/sam:andrej-explain` | `$andrej-explain` |
 | Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
 | Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |

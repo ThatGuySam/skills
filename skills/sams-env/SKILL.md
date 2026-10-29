@@ -1,9 +1,9 @@
 ---
-name: env-example
+name: sams-env
 description: Draft or improve .env.example files from project code and Git-tracked examples, with concise setup links, commands, and value guidance.
 ---
 
-# Env Example
+# Sam's Env
 
 Write a `.env.example` that helps developers configure the project with minimal searching. Keep comments that help them choose, obtain, set, inspect, or troubleshoot a value.
 
@@ -22,7 +22,7 @@ Group related variables. Put core settings first and optional integrations after
 Include whichever details help that variable:
 
 - Exact documentation URLs, preferably the relevant section.
-- Dashboard or admin links for setting and inspecting values, without private account identifiers.
+- The exact dashboard page for creating, setting, or inspecting that value. A provider dashboard homepage is not enough. Resolve the value's owner first: an app-owned ADMIN_TOKEN stored as a Worker secret belongs in that Worker's settings, while a Cloudflare API token belongs on the API Tokens page. Use verified deep links or documented account-selector routes without private identifiers. If a precise URL is unavailable, state that and give the exact navigation path; do not guess a route or present a homepage as the answer.
 - Verified single-line commands for useful set, get, generate, or check operations. State prerequisites and consequential effects. For secrets, prefer presence checks over commands that print values.
 - Non-obvious accepted values or examples, including units, format, and meaningful defaults.
 - Required permissions, dependencies, missing/empty behavior, or restart/rebuild rules when they prevent likely mistakes.
@@ -32,6 +32,14 @@ Write direct instructions with the project's actual names. Delete comments that 
 Use safe defaults supported by code. Leave secrets blank with acquisition guidance. Comment out optional assignments when an active blank would override the intended default. Label any necessary placeholders unmistakably. Derive permissions and example values from source or provider docs, not guesswork.
 
 Match the loader's quoting, comments, and expansion rules. Keep command snippets as comments. Documenting commands does not authorize executing them.
+
+## Space Variable Blocks
+
+Add a blank line before each new explanatory comment block, with its variable directly below. Apply the same rule to commented-out assignments such as `# FEATURE_FLAG=`. Keep consecutive comment lines together; never add blank lines inside an annotation block or between annotations and their variable.
+
+Keep short related groups compact when they share one explanation. Annotation-only lines do not force a blank between neighboring assignments. Split long optional lists by purpose during drafting; the formatter cannot infer those groups. Put explanations above their variable or group, including fallback-alias notes.
+
+Run the bundled `scripts/format-env-example.mjs --check --stdin` on newly authored text. Use `--format --stdin` to insert missing block spacing. It preserves assignment text, values, order, commented state, and newline style. It refuses ambiguous or multiline syntax. This layout check complements the static annotation checker; neither verifies dashboard destinations or live credentials.
 
 ## Use @env-spec Annotations
 
@@ -49,4 +57,4 @@ Preserve unrelated files. If updating an untracked example would require inspect
 
 Report changes, checks, and unresolved inputs briefly. Distinguish parsing, application-schema validation, and provider verification. Commit, push, installation, publication, and provider mutations require separate authorization.
 
-For the current annotation style, read the [annotated example](evals/annotated-example.md). For the earlier drafting evaluation, read the [synthetic contract](evals/contract.md). These synthetic examples are drafting references, not universal starters.
+For the current annotation style, read the [annotated example](evals/annotated-example.md). For the earlier drafting evaluation, read the [synthetic contract](evals/contract.md). Its example is usable as an input only after it satisfies the tracked-example rule; it is not a universal starter.

@@ -78,7 +78,7 @@ export function generatedRegions(catalog, root = repositoryRoot) {
     [docs + 'collection/installation.md', 'installation-names', `The repository publishes ${names}.`],
     [docs + 'collection/installation.md', 'installation-commands', skills.map(skill => `### ${skill.title}\n\n${skill.summary} [Read the guide](/${skill.guide}/).\n\n\`\`\`bash\nnpx skills add ThatGuySam/skills --skill ${skill.id}\n\`\`\``).join('\n\n')],
     [docs + 'collection/installation.md', 'installation-invocations', ['| Skill | Standalone Claude Code | Bundled Claude Code | Codex |', '| --- | --- | --- | --- |', ...skills.map(skill => `| ${skill.title} | \`/${skill.id}\` | \`/sam:${skill.id}\` | \`$${skill.id}\` |`)].join('\n')],
-    [docs + 'index.mdx', 'homepage-cards', '<CardGrid>\n' + skills.map(skill => `  <LinkCard title=${escapeAttribute(skill.title)} href="/${skill.guide}/" description=${escapeAttribute(skill.summary)} />`).join('\n') + '\n</CardGrid>'],
+    [docs + 'index.mdx', 'homepage-cards', '<div className="home-skill-grid">\n' + skills.map(skill => `  <HomeSkillCard skill=${escapeAttribute(skill.id)} title=${escapeAttribute(skill.title)} href="/${skill.guide}/" description=${escapeAttribute(skill.summary)} />`).join('\n') + '\n</div>'],
   ]
 }
 

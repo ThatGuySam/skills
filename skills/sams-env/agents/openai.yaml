@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Env"
+  short_description: "Draft environment templates with useful setup guidance"
+  default_prompt: "Use $sams-env to draft this project's environment template with verified setup links, commands, and value guidance."

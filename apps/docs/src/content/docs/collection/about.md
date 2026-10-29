@@ -25,7 +25,7 @@ A skill belongs here when it is:
 | Phone Size | Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail. | [phone-size](/phone-size/introduction/) |
 | Sam's Tree | Organize notes and other material into familiar, scannable trees. | [sams-tree](/tree-status/introduction/) |
 | Sam's Status | Show project work as a status tree with sources, progress, and missing information. | [sams-status](/tree-status/introduction/) |
-| Env Example | Draft annotated environment examples with useful setup guidance and a static checker. | [env-example](/env-example/introduction/) |
+| Sam's Env | Draft environment examples with setup links, value guidance, annotation checks, and consistent spacing. | [sams-env](/env-example/introduction/) |
 | Andrej Explain | Explain complex material and agent work through useful text, diagrams, HTML, or video. | [andrej-explain](/andrej-explain/introduction/) |
 | Migrate Custom GPTs | Back up GPT workflows privately and convert them to portable skills while tracking migration gaps. | [migrate-cgpt](/migrate-cgpt/introduction/) |
 | Sales Research | Research sales decisions and draft buyer communication using relevant practitioner sources. | [sales-research](/sales-research/introduction/) |
@@ -42,7 +42,7 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 
 - **Repository:** `ThatGuySam/skills`
 <!-- skills:start:about-names -->
-Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `env-example`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
+Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
 <!-- skills:end:about-names -->
 - **Marketplace:** `thatguysam-skills`
 - **Stable plugin install key:** `htma-measure@thatguysam-skills`

@@ -1,74 +1,52 @@
 ---
 title: Sam's Skills
-description: Browse the portable agent skills Sam uses and shares.
+description: Practical skills for AI agents. Install the workflows Sam uses for sales research, UX audits, prompt improvement, and uncertain decisions.
 head:
   - tag: title
     content: "Sam's Skills for AI agents"
 template: splash
 hero:
-  tagline: Install the skills Sam uses for explanations, GPT migration, sales research, UX audits, prompt improvement, and uncertain decisions.
-  actions:
-    - text: About the collection
-      link: /collection/about/
-      icon: right-arrow
-      variant: primary
-    - text: Install a skill
-      link: /collection/installation/
-      icon: right-arrow
-      variant: minimal
-    - text: View on GitHub
-      link: https://github.com/ThatGuySam/skills
-      icon: external
-      variant: minimal
+  title: Sam's Skills
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Homepage from '../../components/Homepage.astro';
+import HomeSkillCard from '../../components/HomeSkillCard.astro';
 
-:::tip[Used by Sam, packaged to share]
-The canonical skill source lives at [`ThatGuySam/skills`](https://github.com/ThatGuySam/skills). Install each skill independently and check its verification page for tested behavior and known limits.
-:::
+<Homepage>
 
-<CardGrid>
-  <Card title="Sales Research" icon="document">
-    Use buyer context and practitioner sources to choose the next question, offer, or reply.
-  </Card>
-  <Card title="Zach Prompting" icon="seti:config">
-    Tighten prompts, skills, agent definitions, tool descriptions, and repository instructions without weakening their contract.
-  </Card>
-  <Card title="HTMA Measure" icon="approve-check">
-    Turn uncertain costs, risks, ROI, and market questions into sourced ranges and measurement memos that explain the decision.
-  </Card>
-  <Card title="Built from use" icon="approve-check">
-    Sam publishes skills he uses to solve recurring problems.
-  </Card>
-  <Card title="Portable by default" icon="document">
-    Canonical skill directories keep the core workflow compact and load detailed references only when needed.
-  </Card>
-</CardGrid>
+<div className="home-section-heading">
+<p className="home-eyebrow">THE COLLECTION</p>
 
-## Choose a skill
+<h2 id="skills">All the skills, in one place.</h2>
+
+Skills for research, writing, development, and decisions. Start with a guide, or use `npx skills add ThatGuySam/skills` to choose what to install. Every published skill in the collection is listed below.
+
+</div>
 
 {/* skills:start:homepage-cards */}
-<CardGrid>
-  <LinkCard title="Phone Size" href="/phone-size/introduction/" description="Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail." />
-  <LinkCard title="Sam's Tree" href="/tree-status/introduction/" description="Organize notes and other material into familiar, scannable trees." />
-  <LinkCard title="Sam's Status" href="/tree-status/introduction/" description="Show project work as a status tree with sources, progress, and missing information." />
-  <LinkCard title="Env Example" href="/env-example/introduction/" description="Draft annotated environment examples with useful setup guidance and a static checker." />
-  <LinkCard title="Andrej Explain" href="/andrej-explain/introduction/" description="Explain complex material and agent work through useful text, diagrams, HTML, or video." />
-  <LinkCard title="Migrate Custom GPTs" href="/migrate-cgpt/introduction/" description="Back up GPT workflows privately and convert them to portable skills while tracking migration gaps." />
-  <LinkCard title="Sales Research" href="/sales-research/introduction/" description="Research sales decisions and draft buyer communication using relevant practitioner sources." />
-  <LinkCard title="Sam's Gen Writing" href="/sams-gen-writing/introduction/" description="Draft, review, or plan AI-assisted pages using Google's published Search guidance." />
-  <LinkCard title="Sam's Skill Creator" href="/sams-skill-creator/introduction/" description="Create and improve agent skills with locked authoring sources and behavioral validation." />
-  <LinkCard title="Sam UX Audit" href="/sam-ux-audit/introduction/" description="Audit websites and repository UX with locked review dependencies and evidence-backed findings." />
-  <LinkCard title="Zach Prompting" href="/zach-prompting/introduction/" description="Improve prompts and agent instructions while preserving their intent and safeguards." />
-  <LinkCard title="HTMA Measure" href="/overview/introduction/" description="Estimate uncertain quantities with ranges, sources, and decision recommendations." />
-</CardGrid>
+<div className="home-skill-grid">
+  <HomeSkillCard skill="phone-size" title="Phone Size" href="/phone-size/introduction/" description="Condense tasks, decisions, research, and updates into a phone-screen brief with supporting detail." />
+  <HomeSkillCard skill="sams-tree" title="Sam's Tree" href="/tree-status/introduction/" description="Organize notes and other material into familiar, scannable trees." />
+  <HomeSkillCard skill="sams-status" title="Sam's Status" href="/tree-status/introduction/" description="Show project work as a status tree with sources, progress, and missing information." />
+  <HomeSkillCard skill="sams-env" title="Sam's Env" href="/env-example/introduction/" description="Draft environment examples with setup links, value guidance, annotation checks, and consistent spacing." />
+  <HomeSkillCard skill="andrej-explain" title="Andrej Explain" href="/andrej-explain/introduction/" description="Explain complex material and agent work through useful text, diagrams, HTML, or video." />
+  <HomeSkillCard skill="migrate-cgpt" title="Migrate Custom GPTs" href="/migrate-cgpt/introduction/" description="Back up GPT workflows privately and convert them to portable skills while tracking migration gaps." />
+  <HomeSkillCard skill="sales-research" title="Sales Research" href="/sales-research/introduction/" description="Research sales decisions and draft buyer communication using relevant practitioner sources." />
+  <HomeSkillCard skill="sams-gen-writing" title="Sam's Gen Writing" href="/sams-gen-writing/introduction/" description="Draft, review, or plan AI-assisted pages using Google's published Search guidance." />
+  <HomeSkillCard skill="sams-skill-creator" title="Sam's Skill Creator" href="/sams-skill-creator/introduction/" description="Create and improve agent skills with locked authoring sources and behavioral validation." />
+  <HomeSkillCard skill="sam-ux-audit" title="Sam UX Audit" href="/sam-ux-audit/introduction/" description="Audit websites and repository UX with locked review dependencies and evidence-backed findings." />
+  <HomeSkillCard skill="zach-prompting" title="Zach Prompting" href="/zach-prompting/introduction/" description="Improve prompts and agent instructions while preserving their intent and safeguards." />
+  <HomeSkillCard skill="htma-measure" title="HTMA Measure" href="/overview/introduction/" description="Estimate uncertain quantities with ranges, sources, and decision recommendations." />
+</div>
 {/* skills:end:homepage-cards */}
 
-## Machine-readable documentation
+<div className="home-agent-docs">
+<p className="home-eyebrow">FOR YOUR AGENT, TOO</p>
 
-Agents can read the entire documentation corpus in one request:
+## Give your agent the documentation.
 
-- [`/llms.txt`](/llms.txt). A guide to the documentation.
-- [`/llms-full.txt`](/llms-full.txt). Every documentation page in one file.
-- [`/llms-small.txt`](/llms-small.txt). A compact version.
+Read the [complete documentation](/llms-full.txt) in one request, start with the [documentation index](/llms.txt), or use the [compact version](/llms-small.txt).
+
+</div>
+
+</Homepage>

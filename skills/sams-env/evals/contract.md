@@ -16,7 +16,7 @@ The hypothetical process loads an env file once at startup using Node.js dotenv 
 
 There are no browser variables or build-time settings. Changes take effect on the next process start. The hypothetical GitHub integration has no defined API operation, so its required permissions remain unknown. Do not guess scopes or claim provider readiness. The example should leave it disabled and explain the unresolved permission requirement.
 
-The original test targeted `.env.example`; a developer's local copy would be `.env.local`. Do not overwrite an existing copy. No local copy or real token is needed for this test.
+The target example is `.env.example`; a developer's local copy would be `.env.local`. Do not overwrite an existing copy. No local copy or real token is needed for this test.
 
 Use these public references for acquisition and parser behavior:
 

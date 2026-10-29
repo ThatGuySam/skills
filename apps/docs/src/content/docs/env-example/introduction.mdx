@@ -1,24 +1,30 @@
 ---
-title: Env Example
+title: Sam's Env
 description: Draft environment templates with setup links, commands, and verified configuration behavior.
 ---
 
 import { Code } from '@astrojs/starlight/components';
-import skill from '../../../../../../skills/env-example/SKILL.md?raw';
-import example from '../../../../../../skills/env-example/evals/annotated-example.md?raw';
+import skill from '../../../../../../skills/sams-env/SKILL.md?raw';
+import example from '../../../../../../skills/sams-env/evals/annotated-example.md?raw';
 
-Env Example drafts environment templates from a project's actual configuration contract. It puts documentation links, dashboard entry points, and useful commands beside the settings they explain.
+Sam's Env drafts environment templates from a project's actual configuration contract. It puts documentation links, dashboard entry points, and useful commands beside the settings they explain.
 
 Install the standalone skill:
 
 ```sh
-npx skills add ThatGuySam/skills --skill env-example
+npx skills add ThatGuySam/skills --skill sams-env
 ```
+
+## Upgrade from Env Example
+
+Collection 0.12.0 renames the standalone skill from `env-example` to `sams-env`. Install it with `npx skills add ThatGuySam/skills --skill sams-env`, then replace `$env-example` with `$sams-env` in Codex, `/env-example` with `/sams-env` in standalone Claude Code, or `/sam:env-example` with `/sam:sams-env` in the collection bundle. After verifying the new installation, remove the older `env-example` installation to avoid loading both. Existing installed copies remain until you remove them. Documentation URLs under `/env-example/` remain valid.
+
+The updated skill adds a spacing checker and formatter for newly authored examples. It also asks for setting-specific dashboard links and distinguishes app-owned secrets from provider API tokens. These checks do not verify provider connectivity.
 
 ## Use
 
 ```text
-Use $env-example to draft this project's .env.example from its source and
+Use $sams-env to draft this project's .env.example from its source and
 configuration schema. Include useful docs links, dashboard links, and commands.
 ```
 
@@ -48,12 +54,12 @@ Each variable has a name, purpose, requiredness, value format, missing/empty beh
 
 This block imports the actual skill file at build time. It is the artifact used for design review.
 
-<Code code={skill} lang="markdown" title="skills/env-example/SKILL.md" />
+<Code code={skill} lang="markdown" title="skills/sams-env/SKILL.md" />
 
 ## Test Environment Example
 
 This annotated synthetic example is newly authored text. The block imports the example text directly from the skill package.
 
-<Code code={example} lang="markdown" title="skills/env-example/evals/annotated-example.md" />
+<Code code={example} lang="markdown" title="skills/sams-env/evals/annotated-example.md" />
 
 Read the [verification record](/env-example/verification/) for checks and their limits. Review questions are tracked in [open questions](/project/open-questions/).

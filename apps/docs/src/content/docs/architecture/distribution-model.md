@@ -14,7 +14,7 @@ skills/
 ├── phone-size/
 ├── sams-tree/
 ├── sams-status/
-├── env-example/
+├── sams-env/
 ├── andrej-explain/
 ├── migrate-cgpt/
 ├── sales-research/
