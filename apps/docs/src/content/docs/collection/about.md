@@ -34,6 +34,7 @@ A skill belongs here when it is:
 | Sam UX Audit | Audit websites and repository UX with locked review dependencies and evidence-backed findings. | [sam-ux-audit](/sam-ux-audit/introduction/) |
 | Zach Prompting | Improve prompts and agent instructions while preserving their intent and safeguards. | [zach-prompting](/zach-prompting/introduction/) |
 | HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](/overview/introduction/) |
+| Agent Verify | Verify agent or skill behavior with isolated subagents, artifact checks, and independent QA. | [agent-verify](/agent-verify/introduction/) |
 <!-- skills:end:about-catalog -->
 
 Each skill remains canonical in its own `skills/<name>/` directory. Collection packaging points to those directories instead of copying their instructions.
@@ -42,7 +43,7 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 
 - **Repository:** `ThatGuySam/skills`
 <!-- skills:start:about-names -->
-Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
+Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`.
 <!-- skills:end:about-names -->
 - **Marketplace:** `thatguysam-skills`
 - **Stable plugin install key:** `htma-measure@thatguysam-skills`

@@ -71,6 +71,12 @@
       "title": "HTMA Measure",
       "summary": "Estimate uncertain quantities with ranges, sources, and decision recommendations.",
       "guide": "overview/introduction"
+    },
+    {
+      "id": "agent-verify",
+      "title": "Agent Verify",
+      "summary": "Verify agent or skill behavior with isolated subagents, artifact checks, and independent QA.",
+      "guide": "agent-verify/introduction"
     }
   ],
   "navigationGroups": [
@@ -302,6 +308,21 @@
         {
           "label": "Troubleshooting",
           "slug": "guides/troubleshooting"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "agent-verify"
+      ],
+      "items": [
+        {
+          "label": "Introduction",
+          "slug": "agent-verify/introduction"
+        },
+        {
+          "label": "Verification",
+          "slug": "agent-verify/verification"
         }
       ]
     }

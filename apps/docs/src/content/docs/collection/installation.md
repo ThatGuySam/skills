@@ -18,7 +18,7 @@ npx skills add thatguysam/skills --list
 ```
 
 <!-- skills:start:installation-names -->
-The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`.
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`.
 <!-- skills:end:installation-names -->
 
 ## Install one skill
@@ -121,6 +121,14 @@ Estimate uncertain quantities with ranges, sources, and decision recommendations
 ```bash
 npx skills add ThatGuySam/skills --skill htma-measure
 ```
+
+### Agent Verify
+
+Verify agent or skill behavior with isolated subagents, artifact checks, and independent QA. [Read the guide](/agent-verify/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill agent-verify
+```
 <!-- skills:end:installation-commands -->
 
 ## Install the collection in Codex
@@ -156,6 +164,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. The st
 | Sam UX Audit | `/sam-ux-audit` | `/sam:sam-ux-audit` | `$sam-ux-audit` |
 | Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
 | HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
+| Agent Verify | `/agent-verify` | `/sam:agent-verify` | `$agent-verify` |
 <!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.

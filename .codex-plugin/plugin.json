@@ -1,6 +1,6 @@
 {
   "name": "htma-measure",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "A portable collection of agent skills Sam uses and shares.",
   "author": {
     "name": "ThatGuySam",
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Sam's Skills",
     "shortDescription": "Portable workflows Sam uses and shares.",
-    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision. Includes phone-sized briefs with progressively disclosed detail.",
+    "longDescription": "Portable agent workflows for calibrated measurement, prompt improvement, evidence-backed UX audits, sales research, AI-assisted writing for Google Search, private-backup-first Custom GPT migration, and source-grounded explanations. Includes familiar plain-text trees and project status views. Includes version-locked skill authoring that blends methods at each decision. Includes phone-sized briefs with progressively disclosed detail. Includes agent and skill verification with isolated subagents and independent QA.",
     "developerName": "ThatGuySam",
     "category": "Productivity",
     "capabilities": [
@@ -33,7 +33,8 @@
       "Organize this material into a familiar, scannable tree.",
       "Show current project work as a brief status tree.",
       "Turn this workflow into a focused, tested agent skill using the locked authoring methods.",
-      "Condense this content into a readable phone-screen brief with useful supporting detail."
+      "Condense this content into a readable phone-screen brief with useful supporting detail.",
+      "Verify this skill's behavior with isolated subagents and independent QA before I trust the change."
     ]
   }
 }

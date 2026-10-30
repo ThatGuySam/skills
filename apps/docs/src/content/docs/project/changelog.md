@@ -5,6 +5,13 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-30
+
+### Agent Verify, collection 0.13.0
+
+- Published Agent Verify: verify, compare, and progressive-audit modes for agent or skill behavior, using isolated subagents, blinded QA, and an optional receipt checker for evidence integrity.
+- Added a synthetic structural smoke test for `scripts/check_receipt.py` confirming it catches artifact hash tampering; see the [verification page](/agent-verify/verification/) for what that does and does not establish. No new behavioral audit of the skill's own judgment accompanied this packaging change.
+
 ## 2026-10-28
 
 ### Homepage and Sam's Env, collection 0.12.0

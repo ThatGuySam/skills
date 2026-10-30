@@ -1,0 +1,23 @@
+# Matched comparison
+
+## Freeze what changes
+
+Choose the baseline that matches the question: actual old skill versus edited skill for a revision; no skill versus skill for added value; two model configurations for a model-selection question. Keep external task inputs, tools, external context access, model, reasoning effort and generation settings the same across a skill-version pair. Declare whether the treatment is instructions alone or the entire skill package. Added bundled references are an intentional treatment when comparing complete packages, not automatically a confound; they prevent attributing the gain to instructions alone. Keep reviewer-only references distinct from each worker's bundle. If one also changes, report a confounded comparison rather than attribute the difference to the skill. Record requested and observed model settings separately when the runtime exposes them.
+
+Snapshot skills and supporting files, input artifacts and source fixtures before dispatch. Record content hashes. A live shared repo can change during a trial; use a relevant read-only snapshot where practical. If an old skill hardcodes a path, preserve that version honestly and record whether environment isolation is instruction-only. Do not fix the baseline to make the test convenient. Prevent unintended global discovery from reloading the current skill into a no-skill/old-skill run; disclose any runtime context you cannot isolate.
+
+Create natural user tasks in separate workspaces. Workers see the task and its real acceptance requirements, not answer keys, variant labels, grader prompts or tuning history. Keep rubric, identities and expected answers outside their access boundary. Do not hide tools/instructions the actual user workflow requires. Pair launches close in time and alternate order so one side does not systematically inherit warm caches or changed services. A model failure, timeout and no-output run count in the denominator; preserve them.
+
+## Match the evidence to the claim
+
+For each important task category, include routine and difficult cases, common failure modes and scope boundaries. Skill-selection/trigger behavior requires a runtime discovery trial; explicitly loading a path only tests execution after selection. A standalone test requires a standalone package. Existing transcript analysis is retrospective evidence, not a new execution. Repeat stochastic cases according to a declared budget and uncertainty; do not rerun only failures until one passes. Retain every attempt and distinguish first-pass success from eventual repaired success.
+
+A first small run is a pilot. Before generalizing, add repetitions and unseen representative cases, report per-category variation and denominator, and use an analysis suited to paired data if making a statistical claim. No fixed number of trials makes an improvement universal. Cases used to revise instructions are no longer held out. When the suite saturates, add discriminating tasks instead of treating 100% as a ceiling-proof superiority result.
+
+## Decide what improved
+
+List observed wins, losses, ties and unknowns with the criterion that changed. Maintain separate verdicts when evidence covers different layers: output-quality improvement can be observed while tool-use compliance remains unverified. This does not authorize an overall pass on a user-required execution condition. If new evidence makes a narrower follow-up possible, preserve the original contract and label the new scope as a separate assessment, not a retroactive pass. Improvements can be structural, factual, behavioral, preference-based or efficiency-related; keep those categories separate. Cost/time comparisons require measured telemetry and comparable complete work; word count is not token usage or actual spend.
+
+Use **improved on tested cases** only for a supported gain over the named baseline, with mandatory criteria met and no unresolved material regression in that declared scope. If portability improves but home grounding weakens, the overall result is **mixed**. If both are adequate, report **no demonstrated improvement**, not failure. If environment, labels, grader reliability or missing output prevents a fair conclusion, use **inconclusive** and name the next discriminating observation. An ordinal score difference is not a calibrated percentage quality gain.
+
+Repairs belong to a new version/run. Retest the affected criteria and relevant regression cases without deleting the original failure. If comparing progressive pipelines, apply the same repair/escalation policy and limits to both variants; report initial-only and full-pipeline results separately.

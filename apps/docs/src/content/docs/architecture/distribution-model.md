@@ -22,7 +22,8 @@ skills/
 ├── sams-skill-creator/
 ├── sam-ux-audit/
 ├── zach-prompting/
-└── htma-measure/
+├── htma-measure/
+└── agent-verify/
 ```
 <!-- skills:end:distribution-tree -->
 
