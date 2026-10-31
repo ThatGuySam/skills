@@ -34,7 +34,7 @@ A skill belongs here when it is:
 | Sam UX Audit | Audit websites and repository UX with locked review dependencies and evidence-backed findings. | [sam-ux-audit](/sam-ux-audit/introduction/) |
 | Zach Prompting | Improve prompts and agent instructions while preserving their intent and safeguards. | [zach-prompting](/zach-prompting/introduction/) |
 | HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](/overview/introduction/) |
-| Agent Verify | Measure useful agent improvements with discriminating cases, tested graders, isolated trials, and independent QA. | [agent-verify](/agent-verify/introduction/) |
+| Agent Verify | Verify new work and compare before/after improvements with fresh subagents and independent QA. | [agent-verify](/agent-verify/introduction/) |
 <!-- skills:end:about-catalog -->
 
 Each skill remains canonical in its own `skills/<name>/` directory. Collection packaging points to those directories instead of copying their instructions.

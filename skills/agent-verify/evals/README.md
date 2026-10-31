@@ -16,3 +16,7 @@ See [evidence records](../references/evidence.md) for the full receipt format an
 ## Behavioral comparison
 
 The [October 31 comparison summary](2026-10-31-comparison.md) records a bounded actual previous-versus-updated verifier pilot. It is separate from these synthetic receipt fixtures. Raw private task material and worker outputs are not distributed, so the public summary is not a replayable behavioral benchmark.
+
+## Required Subagent Verification
+
+The [required-subagent pilot](2026-10-31-subagent-verification.md) records actual fresh executor and independent QA runs on constructed Python fixtures. It covers new-work verification and a mixed before/after update. This is distinct from comparing versions of Agent Verify itself.

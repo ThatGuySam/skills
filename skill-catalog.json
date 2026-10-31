@@ -75,7 +75,7 @@
     {
       "id": "agent-verify",
       "title": "Agent Verify",
-      "summary": "Measure useful agent improvements with discriminating cases, tested graders, isolated trials, and independent QA.",
+      "summary": "Verify new work and compare before/after improvements with fresh subagents and independent QA.",
       "guide": "agent-verify/introduction"
     }
   ],

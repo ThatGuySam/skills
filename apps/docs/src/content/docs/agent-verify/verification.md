@@ -30,6 +30,10 @@ Generation requested GPT-6.1 Terra with high reasoning; launches accepted that s
 
 The study included exposed development diagnostics, an explicitly constructed representation control around a real report, and an adaptively selected design case. Raw source material and worker artifacts remain private and are not bundled here. Public readers cannot independently replay the behavioral study from this repository. See the [sanitized study record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-comparison.md) for scope and limitations.
 
+## Required Subagent Pilot
+
+A separate bounded pilot explicitly loaded the revised skill in two fresh coordinators. Each spawned a fresh executor and independent QA. New-work verification passed its checked word-count requirements. The update comparison reported a comment-filtering gain together with a critical literal-text regression, yielding **mixed** and blocking candidate acceptance. See the [public synthetic fixtures and sanitized record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-subagent-verification.md). This tests the two execution paths, not improvement over the previous verifier.
+
 ## What remains unverified
 
 There is no broad cross-model comparison, measured real-world time saving, calibration against independently submitted human preferences, automatic skill-selection test, or measurement of escalation accuracy. The actual proposed research experiment was not executed. Full native worker tool traces were unavailable. Treat the instructions as a workflow to apply and verify, rather than relying on this page as a guarantee.

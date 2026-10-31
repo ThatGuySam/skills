@@ -7,6 +7,12 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-10-31
 
+### Standalone Agent Verify and required subagent QA, collection 0.13.2
+
+- Clarified verification of new and existing code, skills, prompts, documents, and agent behavior through one standalone `agent-verify` skill with no HTMA dependency.
+- Required fresh independent QA for completed verification verdicts and actual previous-version baselines for update comparisons. Runs without subagents report independent verification as inconclusive.
+- Kept the legacy collection install key for compatibility. Individual installation uses `--skill agent-verify`.
+
 ### Agent Verify improvement design, collection 0.13.1
 
 - Made the public `skills/agent-verify/` package the canonical authoring source.

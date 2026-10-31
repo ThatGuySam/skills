@@ -19,7 +19,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 | Sam UX Audit | Audit websites and repository UX with locked review dependencies and evidence-backed findings. | [sam-ux-audit](apps/docs/src/content/docs/sam-ux-audit/introduction.md) |
 | Zach Prompting | Improve prompts and agent instructions while preserving their intent and safeguards. | [zach-prompting](apps/docs/src/content/docs/zach-prompting/introduction.md) |
 | HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](apps/docs/src/content/docs/overview/introduction.md) |
-| Agent Verify | Measure useful agent improvements with discriminating cases, tested graders, isolated trials, and independent QA. | [agent-verify](apps/docs/src/content/docs/agent-verify/introduction.md) |
+| Agent Verify | Verify new work and compare before/after improvements with fresh subagents and independent QA. | [agent-verify](apps/docs/src/content/docs/agent-verify/introduction.md) |
 <!-- skills:end:readme-catalog -->
 
 Install a listed skill with `npx skills add ThatGuySam/skills --skill <id>`. Each linked guide includes usage examples and verification limits. Sam's Skill Creator and Sam UX Audit restore their locked dependencies on first use.
