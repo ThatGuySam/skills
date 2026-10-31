@@ -124,7 +124,7 @@ npx skills add ThatGuySam/skills --skill htma-measure
 
 ### Agent Verify
 
-Verify agent or skill behavior with isolated subagents, artifact checks, and independent QA. [Read the guide](/agent-verify/introduction/).
+Measure useful agent improvements with discriminating cases, tested graders, isolated trials, and independent QA. [Read the guide](/agent-verify/introduction/).
 
 ```bash
 npx skills add ThatGuySam/skills --skill agent-verify

@@ -2,12 +2,15 @@
 
 Use the area's existing verification directory or a named local run directory. No specific repo or installed sibling is required. Keep sensitive user records out of distributable skill files. A minimal durable run contains:
 
-- A contract with claim, scope, settings, budget, critical criteria and acceptance policy.
+- A contract with claim, scope, settings, budget, critical criteria and acceptance policy; for improvement claims, the user-visible benefit, observed shortfall, primary outcome and justified decision threshold or explicit uncertainty.
 - Frozen skill/input snapshots or hashes plus explicit access limits.
 - Natural task prompts, separate rubric/reference labels, per-output source-access inventories, and isolated output directories.
 - Actual artifacts, available tool-event logs and command/check outputs, including failed attempts.
 - Original QA grades, optional order-swapped grades, corrections and escalation decisions.
+- Grader controls and their expected relationships, actual control grades, human-label provenance and calibration limits. Keep constructed controls and natural task cases distinct.
 - A final report separating structural checks, behavior, comparison, sampled audits and remaining uncertainty.
+
+Report unique task units, attempts, repairs and grader judgments separately, with regression and improvement cohorts and the real per-trial input boundary. A count of reviews is not a count of independently sampled tasks. Preserve failed controls and exposed holdouts when revising a measurement; do not overwrite them with the repaired run.
 
 Use opaque IDs for worker directories and grading labels. Keep the ID-to-variant mapping private from workers/QA. Do not put evaluation instructions into the skill under assessment. If private records cannot be copied, keep secure pointers and record that replay is incomplete. Missing trace or model telemetry is `unavailable`, never zero or invented. Store tool actions/results, not hidden reasoning.
 

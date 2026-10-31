@@ -1,9 +1,9 @@
 ---
 title: Agent Verify verification
-description: What has actually been checked about this skill's packaging, and what remains unverified.
+description: Packaging checks, the bounded old-versus-updated pilot, and remaining verification limits.
 ---
 
-This publication moved Agent Verify's working instructions into this repository unchanged and added its documentation and distribution metadata. It is a packaging and docs migration, not a new behavioral audit of the skill's own judgment — the honest state to report is what that migration actually checked.
+The October 30 publication checked packaging and receipt integrity. The October 31 update adds a bounded old-versus-updated behavioral pilot. Neither the structural checks nor the small pilot establish general reliability.
 
 ## What was checked
 
@@ -16,6 +16,20 @@ The optional receipt checker, `scripts/check_receipt.py`, was run against two sy
 
 This confirms the checker actually verifies artifact hashes rather than trusting a receipt's self-reported status — a structural guarantee, not a judgment of any skill's output quality. Replay it from [the evals directory](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/README.md).
 
+## October 31 behavioral pilot
+
+The complete previous and updated runtime packages were compared using the frozen previous verification workflow. Four tasks received two repetitions per version, producing 16 verifier outputs. Three initially frozen tasks yielded six paired ties. A separately frozen, adaptively added experiment-design task yielded one tie and one updated-version win after bounded adjudication.
+
+| Outcome | Previous | Updated |
+|---|---:|---:|
+| Outputs judged usable without material repair | 7/8 | 8/8 |
+
+The updated version's one win supplied concrete grader-control fixtures where the old protocol left the operator to create them. Both versions handled the evidence-audit and executable representation-check tasks. The scoped verdict was **improved on tested cases**, limited to this protocol-completeness gain. This is not a percentage-quality or broad reliability claim.
+
+Generation requested GPT-6.1 Terra with high reasoning; launches accepted that setting, but native executed-model telemetry and actual token/cost data were unavailable. Two blinded review orders were used for each stage, with constructed calibration controls. One adjudication resolved a targeted-versus-broader task-coverage disagreement as a tie and preserved the supported narrower-coverage argument. There was no model escalation or human preference calibration.
+
+The study included exposed development diagnostics, an explicitly constructed representation control around a real report, and an adaptively selected design case. Raw source material and worker artifacts remain private and are not bundled here. Public readers cannot independently replay the behavioral study from this repository. See the [sanitized study record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-comparison.md) for scope and limitations.
+
 ## What remains unverified
 
-No fresh multi-agent trial of Agent Verify's own verify/compare/progressive-audit workflow accompanied this publication — doing so would itself require the coordinator/worker/QA dispatch the skill describes, which is outside the scope of a packaging change. There is no cross-model comparison, no calibration of its QA role against independently labeled cases, and no measurement of escalation accuracy in the progressive-audit ladder. Treat its guidance as instructions to follow, and verify its output the way the skill itself prescribes: with fresh, blinded QA against the actual artifact, not against this page.
+There is no broad cross-model comparison, measured real-world time saving, calibration against independently submitted human preferences, automatic skill-selection test, or measurement of escalation accuracy. The actual proposed research experiment was not executed. Full native worker tool traces were unavailable. Treat the instructions as a workflow to apply and verify, rather than relying on this page as a guarantee.

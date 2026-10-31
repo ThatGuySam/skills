@@ -1,4 +1,4 @@
 interface:
   display_name: "Agent Verify"
-  short_description: "Verify skill changes with evidence and progressive QA"
-  default_prompt: "Use $agent-verify to assess this skill with independent QA and evidence, comparing the previous version when available."
+  short_description: "Measure useful improvements with tested graders and QA"
+  default_prompt: "Use $agent-verify to assess this skill with evidence and independent QA. For a comparison, identify a meaningful user benefit, check the grader can detect relevant failures, and compare the previous version on realistic improvement and regression cases."

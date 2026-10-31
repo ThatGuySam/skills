@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-10-31
+
+### Agent Verify improvement design, collection 0.13.1
+
+- Made the public `skills/agent-verify/` package the canonical authoring source.
+- Added practical improvement targets, separate regression and improvement cases, grader controls, realistic task units and explicit preference-evidence limits.
+- Added a sanitized previous-versus-updated pilot summary: one updated-version win and seven paired ties across sixteen verifier runs. The narrow gain was protocol completeness; private source material and worker artifacts are not published.
+- Source publication and a successful documentation build do not imply a production website deployment.
+
 ## 2026-10-30
 
 ### Agent Verify, collection 0.13.0

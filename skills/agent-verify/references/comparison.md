@@ -14,6 +14,8 @@ For each important task category, include routine and difficult cases, common fa
 
 A first small run is a pilot. Before generalizing, add repetitions and unseen representative cases, report per-category variation and denominator, and use an analysis suited to paired data if making a statistical claim. No fixed number of trials makes an improvement universal. Cases used to revise instructions are no longer held out. When the suite saturates, add discriminating tasks instead of treating 100% as a ceiling-proof superiority result.
 
+Apply the [improvement design](improvement.md) distinction between preserving existing behavior and improving a user-relevant shortfall. Keep those cohorts visible. Judge a meaningful gain against the frozen primary outcome and required conditions, not merely a small change in a secondary score. If a new rubric is explored on existing outputs, label that evaluator development rather than fresh confirmation.
+
 ## Decide what improved
 
 List observed wins, losses, ties and unknowns with the criterion that changed. Maintain separate verdicts when evidence covers different layers: output-quality improvement can be observed while tool-use compliance remains unverified. This does not authorize an overall pass on a user-required execution condition. If new evidence makes a narrower follow-up possible, preserve the original contract and label the new scope as a separate assessment, not a retroactive pass. Improvements can be structural, factual, behavioral, preference-based or efficiency-related; keep those categories separate. Cost/time comparisons require measured telemetry and comparable complete work; word count is not token usage or actual spend.
