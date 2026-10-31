@@ -20,3 +20,7 @@ The [October 31 comparison summary](2026-10-31-comparison.md) records a bounded 
 ## Required Subagent Verification
 
 The [required-subagent pilot](2026-10-31-subagent-verification.md) records actual fresh executor and independent QA runs on constructed Python fixtures. It covers new-work verification and a mixed before/after update. This is distinct from comparing versions of Agent Verify itself.
+
+## Standalone Installation
+
+The [installation regression check](2026-10-31-installation.md) records an actual same-process CLI selector check before and after replacing direct checkout links with a standalone copy. It distinguishes runtime discovery from source equality.

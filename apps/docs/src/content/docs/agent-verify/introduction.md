@@ -17,6 +17,17 @@ Use `$agent-verify` in Codex, `/agent-verify` for a standalone Claude Code insta
 
 The skill works independently of any particular repo or skill creator. It needs a runtime that can spawn fresh subagents for independent trials; without that, it still runs useful checks and returns an inconclusive independent-verification verdict. Self-review cannot satisfy the subagent requirement. The optional receipt checker (`scripts/check_receipt.py`) requires Python 3.9+, has no network access, and writes no files.
 
+## Global Codex Installation
+
+For a global Codex copy installation:
+
+```sh
+npx skills add ThatGuySam/skills --skill agent-verify --agent codex --global --copy
+```
+
+This copy consumes the canonical source independently. Update or reinstall it after source changes.
+Check `$agent-verify` in the target Codex app. If an existing Codex process does not discover the installation, restart Codex and check again. See OpenAI's [skill installation and reload guidance](https://learn.chatgpt.com/docs/build-skills).
+
 ## Examples
 
 ```text

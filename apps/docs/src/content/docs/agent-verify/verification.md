@@ -34,6 +34,10 @@ The study included exposed development diagnostics, an explicitly constructed re
 
 A separate bounded pilot explicitly loaded the revised skill in two fresh coordinators. Each spawned a fresh executor and independent QA. New-work verification passed its checked word-count requirements. The update comparison reported a comment-filtering gain together with a critical literal-text regression, yielding **mixed** and blocking candidate acceptance. See the [public synthetic fixtures and sanitized record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-subagent-verification.md). This tests the two execution paths, not improvement over the previous verifier.
 
+## Standalone Installation Check
+
+A separate Codex CLI 0.166.0 process reproduced the HTMA-prefixed skill insertion before repair. After standalone copy installation, the same running selector inserted `$agent-verify` without a restart or model request. See the [installation regression record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-installation.md). This result is limited to that runtime and process, not a guarantee for every already-open app.
+
 ## What remains unverified
 
 There is no broad cross-model comparison, measured real-world time saving, calibration against independently submitted human preferences, automatic skill-selection test, or measurement of escalation accuracy. The actual proposed research experiment was not executed. Full native worker tool traces were unavailable. Treat the instructions as a workflow to apply and verify, rather than relying on this page as a guarantee.

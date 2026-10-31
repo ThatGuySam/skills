@@ -7,6 +7,12 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-10-31
 
+### Agent Verify installation and discovery checks, collection 0.13.3
+
+- Added installation verification that distinguishes source equality, fresh-process discovery and existing-process selector refresh.
+- Documented standalone Codex copy installation and explicit update/reinstall handling, avoiding plugin ancestry inherited through direct checkout links.
+- Added shared-installation ownership and before/after path checks after a concurrent writer replaced a tested installation.
+
 ### Standalone Agent Verify and required subagent QA, collection 0.13.2
 
 - Clarified verification of new and existing code, skills, prompts, documents, and agent behavior through one standalone `agent-verify` skill with no HTMA dependency.
