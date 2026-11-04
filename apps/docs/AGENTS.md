@@ -2,6 +2,8 @@
 
 This app documents the skills and their expected behavior.
 
+Before writing, editing, reviewing, or planning any docs page, read [How we write docs](README.md#how-we-write-docs). It defines the phone-first layout for skill introduction pages and where detail belongs.
+
 ## Read the docs first
 
 - Authoritative working source: `apps/docs/src/content/docs/`
@@ -11,7 +13,7 @@ This app documents the skills and their expected behavior.
 ## Editing rules
 
 - Keep installation commands aligned with commands actually supported by the current CLIs.
-- Keep feature pages' **Behavior**, **Inputs & outputs**, **States & edge cases**, and **Data shape** sections complete when those contracts apply.
+- Keep feature pages' **Behavior**, **Inputs & outputs**, **States & edge cases**, and **Data shape** sections complete when those contracts apply. For skills, they live on reference pages, not introduction pages.
 - Keep each skill's examples, source references, and installation command aligned with its canonical directory under `skills/`.
 - Record unresolved forks in `project/open-questions.md`; move resolved items to **Decided**.
 - Update `project/changelog.md` with public behavior, packaging, or documentation changes.

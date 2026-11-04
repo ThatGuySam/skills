@@ -6,7 +6,7 @@ This repository contains the agent skills Sam uses and publishes.
 
 - Read `README.md` for the collection and installation paths.
 - Read `skills/<name>/SKILL.md` before changing a skill.
-- Read `apps/docs/README.md` and `apps/docs/AGENTS.md` before changing or deploying the documentation site.
+- Read `apps/docs/README.md` and `apps/docs/AGENTS.md` before any docs work: writing, editing, reviewing, planning, or deploying pages. The README's **How we write docs** section sets the page layout.
 
 ## Contribution workflow
 
