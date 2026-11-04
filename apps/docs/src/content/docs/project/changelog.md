@@ -7,6 +7,14 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-04
 
+### Phone-first skill introductions and dependency refresh, collection 0.15.0
+
+- Every skill introduction now opens with the install command and a copyable example prompt that both fit on a 375 by 667 phone screen, followed by a short "Why use it" brief. A docs test enforces that opening.
+- Moved behavior contracts, edge cases, data shapes, and maintainer setup into reference, setup, and design pages, so the full detail remains for agents and `llms-full.txt`.
+- Fixed example prompts losing their frame and copy button: the install picker removed Expressive Code's page stylesheet along with the first code block. Install commands now wrap only between arguments.
+- Refreshed Sam's Skill Creator dependencies (Anthropic creator, Automate Me, Poteto mode, Zach Prompting) and Sam UX Audit dependencies (Apple HIG, motion review) to their current upstream commits after reviewing the changes. Sam UX Audit now ignores a lens's standalone greeting rule. Both pass preflight and their tests.
+- Upgraded the docs site to Astro 7.4, Starlight 0.42, starlight-llms-txt 0.12, and Wrangler 4.157.
+
 ### Zach Prompting guidance refresh and skill Quick starts, collection 0.14.0
 
 - Refreshed Zach Prompting's vendor reference against the current OpenAI GPT-6 family (Astra, GPT-6.1 Sol, GPT-6.1 Terra, Luna) and Anthropic Claude 5.x family (Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5) guides, checked November 4, 2026.
