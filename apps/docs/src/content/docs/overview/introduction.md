@@ -5,6 +5,18 @@ description: What HTMA Measure does, why calibrated ranges matter, and what the 
 
 HTMA Measure is a portable agent skill for estimating uncertain quantities when a decision depends on the answer. It works for project costs, budgets, vendor quotes, rates, risks, ROI, market size, revenue, and similar questions where a precise-looking guess would be misleading.
 
+## Quick start
+
+```bash
+npx skills add thatguysam/skills --skill htma-measure
+```
+
+```text
+Use $htma-measure to create a planning allowance for this project before quotes arrive.
+```
+
+Use `$htma-measure` in Codex, `/htma-measure` as a standalone Claude Code skill, or `/sam:htma-measure` in the collection bundle. See [installation](/guides/installation/) for agent-specific, global, and bundle installs.
+
 The skill converts a vague question into a measurement memo with:
 
 - a precise decision and threshold;

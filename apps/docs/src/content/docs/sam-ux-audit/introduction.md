@@ -5,10 +5,15 @@ description: Audit websites and GitHub repositories using locked review skills a
 
 Sam UX Audit combines a portable audit method with version-locked accessibility, HIG, motion, performance, and Core Web Vitals skills. It produces one prioritized report with evidence, confidence, and acceptance checks.
 
-## Install
+## Quick start
 
 ```sh
 npx skills add thatguysam/skills --skill sam-ux-audit
+```
+
+```text
+Use $sam-ux-audit to audit [website URL] for a first-time visitor trying to
+[task]. Return prioritized findings with evidence and acceptance checks.
 ```
 
 Use `$sam-ux-audit` in Codex, `/sam-ux-audit` for a standalone Claude Code installation, or `/sam:sam-ux-audit` through the collection bundle.

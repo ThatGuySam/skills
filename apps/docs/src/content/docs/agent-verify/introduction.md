@@ -5,12 +5,16 @@ description: Verify new work and compare before/after improvements with fresh su
 
 Agent Verify uses fresh subagents to verify code, skills, prompts, documents, and agent behavior, and to compare before/after improvements. It is independently installable and has no HTMA dependency. Comparisons start with a practical user benefit and a shortfall or uncertainty the test can resolve. A valid outcome may be no improvement, a regression, or insufficient evidence.
 
-The canonical maintained source is [`skills/agent-verify/` in this public repository](https://github.com/ThatGuySam/skills/tree/main/skills/agent-verify). Runtime installations, local links and forwarding entrypoints consume that package; they are not separate authoring sources.
-
-## Install
+## Quick start
 
 ```sh
 npx skills add thatguysam/skills --skill agent-verify
+```
+
+```text
+Use $agent-verify to verify this new feature against its requirements.
+Use $agent-verify to compare this update with the previous version.
+Use $agent-verify to check this document against its source material.
 ```
 
 Use `$agent-verify` in Codex, `/agent-verify` for a standalone Claude Code installation, or `/sam:agent-verify` through the collection bundle.
@@ -28,13 +32,9 @@ npx skills add ThatGuySam/skills --skill agent-verify --agent codex --global --c
 This copy consumes the canonical source independently. Update or reinstall it after source changes.
 Check `$agent-verify` in the target Codex app. If an existing Codex process does not discover the installation, restart Codex and check again. See OpenAI's [skill installation and reload guidance](https://learn.chatgpt.com/docs/build-skills).
 
-## Examples
+## Canonical source
 
-```text
-Use $agent-verify to verify this new feature against its requirements.
-Use $agent-verify to compare this update with the previous version.
-Use $agent-verify to check this document against its source material.
-```
+The canonical maintained source is [`skills/agent-verify/` in this public repository](https://github.com/ThatGuySam/skills/tree/main/skills/agent-verify). Runtime installations, local links and forwarding entrypoints consume that package; they are not separate authoring sources.
 
 ## Behavior
 

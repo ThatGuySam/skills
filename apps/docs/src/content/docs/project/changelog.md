@@ -5,6 +5,15 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-04
+
+### Zach Prompting guidance refresh and skill Quick starts, collection 0.14.0
+
+- Refreshed Zach Prompting's vendor reference against the current OpenAI GPT-6 family (Astra, GPT-6.1 Sol, GPT-6.1 Terra, Luna) and Anthropic Claude 5.x family (Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5) guides, checked November 4, 2026.
+- Added portable editing rules for removing older-model workarounds, delivering the requested scope, counting only checks that exercise a change, separating untrusted content from instructions, checking time-sensitive facts, and controlling thinking through effort settings.
+- Every skill introduction now opens with a Quick start containing an install command and an example prompt. A docs test keeps each catalog guide in that shape.
+- Structural checks only. Whether the revised skill produces better revisions than the previous version remains `awaiting-evals`.
+
 ## 2026-10-31
 
 ### Agent Verify installation and discovery checks, collection 0.13.3

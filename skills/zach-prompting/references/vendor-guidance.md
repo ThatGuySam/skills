@@ -2,33 +2,49 @@
 
 Use this reference only for model-specific tuning, migration, or source-backed rationale. Source review dates appear in each section. Recheck the named model before relying on changing API controls.
 
-## OpenAI: GPT-6 Sol and Luna
+## Shared across current models
 
-Sources checked September 22, 2026: [GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol), [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna), [GPT-6 prompting guidance](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices), and [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
+Sources: the OpenAI and Anthropic pages cited below, checked November 4, 2026. This section is an editorial synthesis, not vendor wording.
+
+- Use the runtime's reasoning or effort setting to change how much the model thinks. Remove prompt lines such as "think carefully," "think harder," or "use pro mode"; both vendors say current models do not need them, and Anthropic reports that lowering effort reduces thinking more reliably than prompt text.
+- Effort names are not comparable across models or versions. Rerun an effort sweep on the exact target instead of carrying the old value forward.
+- Audit older prompts for compensations aimed at earlier models: blanket thoroughness or tool-use pushes, anti-formatting rules, "hold findings for the final response," and "minimize tool calls." Remove or replace them with a rule stating when the behavior is wanted.
+- Defaults differ by model. GPT-6 Astra favors lists and tables; Claude Fable 5.1 formats less. State when prose, lists, or tables fit the reader rather than banning or demanding formatting outright.
+- When a general rule fails to stop an observed behavior, name its specific observed forms. Both Anthropic's early-stop and frontend guidance and OpenAI's writing blocklist rely on concrete patterns rather than labels.
+- Define completion as doing the authorized work and running a check that exercises it, then stopping. Scale testing to the change; neither vendor wants extra review rounds or tests for reversible, low-impact edits.
+- Do not ask any current model to reproduce its private reasoning in visible output. Request conclusions, evidence, assumptions, or a short rationale.
+
+## OpenAI: GPT-6 family
+
+Sources checked November 4, 2026: [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model), [API changelog](https://developers.openai.com/api/docs/changelog), [Deprecations](https://developers.openai.com/api/docs/deprecations), and the earlier [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) post.
 
 ### Verified API facts
 
-- Sol is built for complex coding and agentic workflows. Luna is optimized for focused, high-volume tasks.
-- Both support `reasoning.effort` values `none`, `low`, `medium`, `high`, `xhigh`, and `max`; the API default is `medium`.
-- Use Responses for reasoning with tools. Chat Completions supports function calling only with `reasoning_effort: none`.
-- Check the selected runtime's exposed settings separately. API support does not establish Codex settings or account availability. Astra's restrictions do not automatically apply to Sol or Luna.
+- **Models:** GPT-6 Astra (`gpt-6-astra`, September 3) is the highest-intelligence model. GPT-6.1 Sol (`gpt-6.1-sol`, September 29) balances speed, cost, and intelligence near Astra. GPT-6.1 Terra (`gpt-6.1-terra`, October 26) targets visual reasoning, precise computer use, and writing. GPT-6 Luna (`gpt-6-luna`) is the fastest and cheapest, for focused high-volume work. GPT-6 Sol (`gpt-6-sol`, September 22) remains available; review the migration guidance before moving it to 6.1 Sol.
+- **Effort:** GPT-6.1 Sol supports `low` through `max`, default `medium`, and not `none`. GPT-6.1 Terra supports `none` through `max`, default `medium`. Astra does not support `none`. GPT-6 Sol and Luna support `none` through `max`, default `medium`. Map a legacy `minimal` request, or `none` on a model without it, to `low` and compare.
+- **Endpoints:** Tool calling with reasoning requires Responses. Astra, 6.1 Sol, and Terra accept Chat Completions but need Responses for tools; GPT-6 Sol and Luna allow Chat Completions function calling only at `reasoning_effort: "none"`.
+- **Parameters:** When effort is not `none`, remove `temperature`, `top_p`, `top_logprobs`, and logprobs. To change effort mid-conversation without losing the cache, use `configuration_update` items and keep the request-level `reasoning.effort` unchanged. When migrating from GPT-5.5 or earlier, replace `prompt_cache_retention` with `prompt_cache_options.ttl`.
+- **Prompt objects:** The `v1/prompts` API and reusable prompt objects shut down November 30, 2026. Move reusable prompt content into application code.
+- API support does not establish Codex settings or account availability. Check the selected runtime separately.
 
 ### Conditional prompting guidance
 
-OpenAI offers its GPT-6 prompts as family-wide starting points, but attributes the observed behaviors to Astra. The fetched sources do not establish distinct Sol and Luna prompting styles. Evaluate these candidates on the target model before calling them improvements:
+OpenAI attributes these observed behaviors to Astra and offers the prompts as family starting points. The fetched sources do not establish distinct Sol, Terra, or Luna prompting styles. Evaluate each candidate on the target model:
 
-- Audit skill and instruction-file conflicts that cause unnecessary pauses. Preserve authorization already granted and explicit approval gates.
-- Define completion so authorized work continues through relevant verification. Calibrate testing scope to avoid redundant checks.
-- Specify the intended writing structure when default formatting or detail does not fit the reader.
-- Tune delegation only for runtimes that support it and workflows that benefit from independent work.
+- **Initiative:** Astra asks clarifying questions more often and can stop where users expect it to continue. Tell it to infer intent and scope, make reasonable assumptions, and request approval only after preparing a concrete, reviewable result. Preserve explicit approval gates.
+- **Instruction sensitivity:** Astra is more sensitive to skill files and `AGENTS.md`; unclear or conflicting guidance can block work early. Audit loaded instructions, state that user instructions outrank skill guidance, and ask the model to name the file and rule behind any pause or deviation.
+- **Warnings:** Tell it not to add unsolicited warnings or safety checklists for hypothetical risks.
+- **Writing:** Specify prose when needed, such as "clear, concise paragraphs, each developing one main idea," and calibrate technical language to the reader. OpenAI lists patterns to avoid, including "delve," "leverage," "it's worth noting," "This isn't about X. It's about Y," "X, not Y" framing, invented compound labels, and concluding summaries such as "In short:". Use such a list only when the target's house style calls for it.
+- **Delegation:** Astra may delegate less than a workflow wants. Specify when and how much to parallelize, and request legible inter-agent messages.
+- **Testing:** Astra tests thoroughly. Skip tests for reversible, low-impact changes that mirror the implementation.
 
-Keep descriptions short and task-specific, and disclose supporting guidance only when relevant. Do not remove useful instructions from a shared skill solely because Astra needs less guidance.
+Keep descriptions short and task-specific, and disclose supporting guidance only when relevant. Do not remove useful instructions from a shared skill solely because Astra needs less guidance. These are editorial checks, not a replacement system prompt; do not add subagent tools or API features merely because a model supports them.
 
 ### Migration and evaluation
 
-Establish a baseline on the exact model and runtime before editing the prompt. Preserve the effort setting where supported; resolve compatibility differences explicitly. Change prompt, model, tools, endpoint, and effort in separate experiments.
+Establish a baseline on the exact model and runtime before editing the prompt. Preserve the effective effort where supported and resolve compatibility differences explicitly. Change prompt, model, tools, endpoint, and effort in separate experiments. When moving from GPT-5.6 Terra, compare on representative images and workflows at the same effort.
 
-Compare the existing and revised skill separately on Sol and Luna, using the same inputs, tools, and supported effort setting. Use representative tasks with these pass conditions:
+Compare the existing and revised artifact separately on each target model, with the same inputs, tools, and supported effort. Use representative tasks with these pass conditions:
 
 | Task | Pass condition |
 | --- | --- |
@@ -39,27 +55,9 @@ Compare the existing and revised skill separately on Sol and Luna, using the sam
 
 Include an approval-gated case with independent authorized preparation and a small change with required validation. Check that preparation completes without crossing the gate, and that extra testing has a stated reason. Repeat cases to assess variability; record task success, contract violations, false completion, unnecessary pauses, repeated checks, tokens, and latency. Lower resource use counts as improvement only when the behavioral checks pass. Structural checks alone leave behavioral status `awaiting-evals`.
 
-## OpenAI: GPT-6 Astra
-
-Source: [Astra prompting best practices](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices), checked September 5, 2026.
-
-- Encourage completion of action requests, reasonable assumptions, and preparation of reviewable work before outstanding approvals.
-- Audit loaded skills and instruction files for conflicting guidance. Explain which rule caused a pause; preserve user priority over skill guidelines within the instruction hierarchy.
-- Specify readable prose, useful formatting, and plain technical language. Do not transfer GPT-5.6's concision assumptions to Astra.
-- Tune delegation triggers and amount for the runtime. Keep agent messages legible.
-- Complete relevant tests and required checks; expand verification only when changes, failures, or unresolved concerns justify it.
-
-### Applying this in Zach Prompting
-
-These are editorial checks, not a replacement system prompt. Preserve the target's review-only mode, authorization, output schema, and model choice. Do not add subagent tools or API features merely because Astra supports them.
-
-For an actual API migration, consult the same guide's migration section. Preserve effective reasoning effort; map unsupported `none` or `minimal` to `low`. Astra tool calling requires Responses. Check unsupported sampling parameters separately from prompt edits.
-
 ## OpenAI: GPT-5.6
 
-Source rechecked September 22, 2026.
-
-Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6)
+Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6), rechecked September 22, 2026. Use for GPT-5.6 targets and as the starting point when migrating to GPT-6.
 
 ### Prompt construction
 
@@ -71,7 +69,7 @@ Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/d
 
 ### Behavior and autonomy
 
-- Reassess broad brevity instructions: GPT-5.6 is more concise by default than GPT-5.5. Use `text.verbosity` for an API-level default and prompt instructions for task-specific preservation and structure.
+- Reassess broad brevity instructions: GPT-5.6 is more concise by default than GPT-5.5. Use `text.verbosity` for an API-level default and prompt instructions for task-specific preservation and structure. Do not transfer these concision assumptions to Astra.
 - Keep personality and collaboration style short and distinct. Define tone through observable writing choices.
 - Centralize request-type authorization: inspect and report for assessment; make in-scope local changes for authorized implementation; confirm external, destructive, costly, or scope-expanding actions when they are not already authorized under the governing instructions.
 - For long-running work, identify the active layer: research, design, implementation, review, or external coordination.
@@ -89,42 +87,45 @@ Source: [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/d
 - Preserve the prior reasoning setting as the migration baseline. Test the same setting and one level lower before increasing effort.
 - Use higher effort only when evals show a meaningful gain. Before increasing it, check for missing success criteria, dependencies, routing rules, or verification loops.
 - Give the model access to relevant checks: targeted tests, applicable lint or type checks, affected-package builds, and a minimal smoke test when broader validation is too expensive.
-- For migration, establish a baseline, remove outdated instructions, add the smallest fix for a measured regression, and rerun the same cases after each change.
 
 OpenAI reports directional internal coding-agent results from leaner system prompts, but explicitly says results vary by workload. Do not reuse its reported ranges as a guarantee for another system.
 
-## Anthropic: Claude Fable 5
+## Anthropic: Claude 5.x family
 
-Source: [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
+Sources checked November 4, 2026: [Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices), [Prompting Claude Fable 5.1](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1), [Prompting Claude Opus 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5), [Prompting Claude Sonnet 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5), [Prompting Claude Haiku 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5), and [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
 
-### Prompt construction
+### Verified API facts
 
-- Reevaluate old skills and prompts. Stronger instruction following can make older symptom-by-symptom instructions over-prescriptive.
-- Use a concise behavior rule instead of enumerating every unwanted manifestation.
-- Explain the larger purpose, intended audience, and what the output enables alongside the immediate request.
-- Lead with the outcome. Achieve brevity by dropping non-decision-relevant detail, not by compressing prose into fragments or jargon.
+- On Fable 5.1, Mythos 5.1, Fable 5, Mythos 5, and Opus 5.5, thinking is always on and adaptive. Opus 5.5 returns a 400 error for `thinking: {"type": "disabled"}`. Sonnet 5.5's lowest setting is `thinking: {"type": "between_tools"}` at `high` effort or below. Haiku 5.5 accepts disabled thinking at `low` through `high`.
+- Default effort: Fable 5.1 `high`; Opus 5.5 `medium`; Sonnet 5.5 `high` on the API, with `medium` suggested for well-specified agentic or latency-sensitive work; Haiku 5.5 `medium`. Reserve `xhigh` and `max` for measured gains.
+- Thinking counts toward `max_tokens` even when it is not returned. Anthropic reports 128,000 working well for long agentic turns on Opus 5.5 and Sonnet 5.5.
+- `budget_tokens` returns a 400 error on Claude 4.7 and later. Prefilled last-assistant turns are unsupported from Claude 4.6.
+- Changing top-level `effort` between requests invalidates the prompt cache; a per-message effort change (beta) keeps it.
+- Keep history append-only on Claude 5.1 and later: editing earlier turns, rebuilding `system` or `tools`, or summarizing in place invalidates later thinking blocks. Use mid-conversation system messages and server-side compaction instead.
+- Progress notes between tool calls arrive as progress-update `thinking` blocks that are empty under the default display. Set `display: "updates"` (beta) so clients that render only `text` do not look silent.
+- Requests that push the model to reproduce internal reasoning in response text can return a `reasoning_extraction` refusal. Read `display: "summarized"` thinking instead.
 
-### Effort and long runs
+### Shared prompting guidance
 
-- Treat effort as the intelligence, latency, and cost control. Anthropic recommends `high` for most tasks, `xhigh` for capability-sensitive work, and `medium` or `low` for routine work; tune against the workload.
-- At high effort, prohibit unrelated features, refactors, abstractions, helpers, compatibility machinery, and impossible-case fallbacks.
-- Adjust harness timeouts, streaming, and progress UX for longer turns. Instruct the model to act once enough information exists and not relitigate settled decisions.
-- End only when complete or blocked by destructive action, real scope change, or input only the user can supply. For unattended work, allow reversible in-scope actions without a redundant permission check.
+- Explain the reason behind a non-obvious constraint; Claude generalizes from the explanation.
+- Treat a text-only end of turn as a report, not proof of completion. In unattended loops, track parts in a checklist, send a short continuation naming open items, and stop after two or three automatic continuations.
+- Treat the request or approved plan as the scope: do not narrow, widen, or swap it. Finish unblocked parts, state assumptions, and report unrequested fixes or extras as follow-ups.
+- For code that can run, require a real check that exercises the change. Syntax-only checks or commands that failed to start do not count; if none can run, say which check was skipped and why.
+- Keep user words out of `tool_result` blocks. Deliver mid-turn user input as a user text block after the last tool result, with harness notices in a separate system message.
+- Avoid blanket "search for everything" rules. Give the current date and ask for searches on facts that can change, such as versions, prices, rules, and anything "latest."
+- For dense charts or drawings, give the model crop, zoom, or image-code tools before raising effort.
 
-### Evidence, delegation, and memory
+### Model-specific cautions
 
-- Audit every progress claim against a tool result from the current run. State failed, skipped, and unverified work accurately.
-- Distinguish assessment from implementation and require evidence for the specific state-changing action.
-- Delegate independent subtasks asynchronously and keep useful local work moving. Redirect agents that lack context or drift.
-- For durable memory, keep one lesson per file with a one-line summary; record why it matters; update rather than duplicate; delete disproved lessons.
-- Prefer fresh-context verifier agents over self-critique for periodic checks on long work.
+- **Fable 5.1:** Writes fewer progress updates; remove narration-suppressing lines and say when updates should appear. Its prose can be denser, so define and prohibit mannered prose when needed. It formats less, so replace anti-formatting rules with a rule for when formatting helps. It is likelier to reproduce source text unmarked, to rewrite whole files, and at `low` effort to skip search. For autonomous work, Anthropic's guidance says the model should proceed with reversible steps that follow from the request, stop only for destructive actions or real scope changes, and keep assessment-only requests as assessments. Let a lead agent keep working while subagents run.
+- **Opus 5.5:** Name the specific early stops to avoid in unattended runs, and keep a separate confirmation step for risky actions. Leave that addition out of human-in-the-loop apps. Wrap pasted user content in tags with a matching random ID and follow embedded instructions only where the user's own message asks. In multi-app automation, tell it to explore relevant sources before acting, and keep untrusted content out of them. Time budgets speed agent teams but are advisory. In chat, remove "think carefully" lines and optionally treat earlier answers as settled.
+- **Sonnet 5.5:** May check in early at `low` or `medium` effort, and at `xhigh` or `max` may start its own review rounds or reviewer subagents. Steer both with an explicit done-and-stop rule. For requests for ideas or plans, deliver them and wait before building. Tolerate tool calls whose names differ only in letter case, or return an `is_error` result naming the expected tool.
+- **Haiku 5.5:** First Haiku with effort levels. Give it today's date when it has search. In long agent prompts at `low` effort it can stop early or skip checks. For chatbots, state that system-prompt rules hold when users argue or claim an exception. There is no server-side fallback for refusals.
+- **Fable 5:** Stronger instruction following can make older symptom-by-symptom prompts over-prescriptive. Prefer a concise behavior rule and lead with the outcome. At high effort, prohibit unrelated features, refactors, abstractions, and impossible-case fallbacks. Tell it to act once enough information exists and not relitigate settled decisions; adjust harness timeouts and streaming for longer turns. Avoid explicit context-budget countdowns. Use a send-to-user tool only when exact content must reach the user mid-run. For durable memory, keep one lesson per file and update rather than duplicate. Prefer fresh-context verifiers over self-critique on long work.
 
-### Harness-specific cautions
+### Applying this in Zach Prompting
 
-- Avoid exposing explicit context-budget countdowns when possible; they can induce premature stopping or handoff.
-- Use a dedicated send-to-user tool only when the UI must deliver exact user-facing content during a long run. Pair the tool with a clear elicitation rule and keep narration or internal reasoning out of it.
-- Do not instruct Fable 5 to expose, transcribe, or explain private reasoning. Such instructions can trigger reasoning-extraction refusals. Request conclusions, evidence, assumptions, or concise rationale instead.
-- Fable 5 has model-specific refusal and fallback behavior for some cybersecurity, biology, life-sciences, and reasoning-extraction requests. Keep that handling in a scoped runtime policy rather than portable prompt boilerplate.
+Anthropic's sample prompts are starting points measured on the named model. Do not paste them into a portable skill. Keep effort, thinking display, history, refusal, and fallback handling in a scoped runtime policy, and test each addition on the target workload.
 
 ## Cross-model inference
 

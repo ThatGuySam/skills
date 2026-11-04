@@ -1,11 +1,29 @@
 ---
 title: Verification
-description: The structural, installation, and forward-use checks run for Zach Prompting on July 15, 2026.
+description: The structural, installation, and forward-use checks run for Zach Prompting, most recently for the November 4, 2026 guidance refresh.
 ---
+
+## November 4, 2026 guidance refresh
+
+The skill's vendor reference and portable editing rules were updated against the current OpenAI GPT-6 and Anthropic Claude 5.x prompting guides. Zach Prompting was applied to its own files in migrate mode; the existing contract of modes, preservation steps, conditional vendor guidance, and result statuses was kept.
+
+| Surface | Check | Result |
+| --- | --- | --- |
+| Skill structure | `quick_validate.py` against `skills/zach-prompting` | Passed: `Skill is valid!` |
+| Agent metadata | YAML parse of `agents/openai.yaml` | Passed |
+| Distribution manifests | JSON parsing plus `claude plugin validate . --strict` at collection 0.14.0 | Passed |
+| Skill catalog | `skill-catalog.mjs --check` and catalog tests | Passed: 13 skills, 15 tests |
+| Intro Quick starts | New docs test requiring each catalog guide to open with an install command and example prompt | Passed for 12 guides; failed as expected against the previous Zach Prompting page |
+| Docs build | `bun run build` in `apps/docs` | Passed; `llms-full.txt` contains the refreshed guidance |
+| Docs-spec gate | Canonical `docs-spec/scripts/check.sh` | Passed: 11 checks, 0 failures; 40 sidebar-orphan warnings from catalog-generated navigation |
+
+No forward-use trials or before/after comparison ran for this refresh. Behavioral status is `awaiting-evals`; the comparison set in the [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md#migration-and-evaluation) defines the cases and pass conditions.
+
+## July 15, 2026 release
 
 On July 15, 2026, Zach Prompting passed the structural checks, clean local Skills CLI installation, and docs gate listed below. Four fresh-context trials exercised its rewrite, migration, and review modes. These checks do not establish that its revised prompts outperform their baselines.
 
-## Results
+### Results
 
 | Surface | Check | Result |
 | --- | --- | --- |
@@ -22,35 +40,35 @@ On July 15, 2026, Zach Prompting passed the structural checks, clean local Skill
 | Docs-spec gate | Canonical `docs-spec/scripts/check.sh` | Passed: 11 checks, 0 warnings, 0 failures |
 | Forward use | Four fresh-context agent runs described below | Passed for workflow adherence; behavioral superiority remains awaiting evals |
 
-## Collection namespace verification
+### Collection namespace verification
 
 After the collection namespace changed to `sam`, a fresh remote Claude marketplace install at public commit [`8405b24`](https://github.com/ThatGuySam/skills/commit/8405b244fc09) retained the existing install key, loaded the plugin as `sam`, listed both published skills in `claude plugin details`, and matched both canonical skill directories without differences.
 
 This verifies the packaging behind `/sam:zach-prompting`. It does not replace a behavioral model eval of a prompt revised with the skill.
 
-## Forward-use cases
+### Forward-use cases
 
-### Rewrite a contradictory `AGENTS.md`
+#### Rewrite a contradictory `AGENTS.md`
 
 A synthetic fixture mixed incompatible rules about approvals, diagnosis versus implementation, tool use, response length, and test frequency. The skill produced a smaller instruction file that preserved safe read authority, diagnosis-only behavior, relevant-tool selection, targeted tests, secret protection, sensitive-action approval, and the user-only-input stop rule.
 
 Static scenario checks covered diagnosis, authorized changes, destructive or external actions, and missing user input. No executable model-eval harness was available, so the output correctly reported `awaiting-evals`.
 
-### Review without editing
+#### Review without editing
 
 A synthetic release skill asked for immediate deployment and prior approval, required every tool, promised never to fail, and lacked measurable completion criteria. In assessment-only mode, Zach Prompting did not rewrite or modify the artifact. It identified the contradictions and returned a minimal patch plan plus eight representative eval scenarios.
 
-### Migrate a legacy prompt to Claude Fable 5
+#### Migrate a legacy prompt to Claude Fable 5
 
 A synthetic legacy prompt required private chain-of-thought disclosure, every tool, endless searching, repository edits for every request, false completion after failed tests, and maximum effort for all work. The migration read the conditional vendor reference, removed those directives, preserved the coding-assistant purpose, and separated portable instructions from runtime effort configuration.
 
 The result statically covered read-only explanation, authorized edits, failing tests, user-only missing information, and destructive or external actions. It remained `awaiting-evals` because a live Fable 5 comparison was not available.
 
-### Review a real repository instruction file
+#### Review a real repository instruction file
 
 The skill reviewed `apps/docs/AGENTS.md` without editing it. It found that the file listed the deployed corpus before the authoritative working source and relied on header-only checks, even though the live deployment did not yet contain the new Zach Prompting page. It recommended distinguishing source, build artifact, and production snapshot, then checking changed content after deployment. That narrow correction was applied separately after the review.
 
-## Limitations
+### Limitations
 
 - The forward uses validate workflow adherence and reveal whether the skill produces useful, bounded outputs; they are not controlled comparisons of downstream model quality.
 - No live GPT-5.6 or Claude Fable 5 API eval suite was available in this repository.

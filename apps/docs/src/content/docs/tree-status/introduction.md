@@ -5,12 +5,17 @@ description: Scan large amounts of material or project work through familiar pla
 
 Use Sam's Tree to organize material you already have. Use Sam's Status to see where the current project's work stands, using the conversation and relevant available trackers.
 
-## Install
+## Quick start
 
 Install either skill independently, or install both:
 
 ```bash
 npx skills add ThatGuySam/skills --skill sams-tree sams-status
+```
+
+```text
+Use $sams-tree to organize these notes. Focus on the algebra exercises.
+Use $sams-status to show where the current project stands.
 ```
 
 | Skill | Codex | Standalone Claude | Collection bundle |

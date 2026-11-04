@@ -5,10 +5,16 @@ description: Draft, review, or plan AI-assisted web content for Google Search us
 
 Sam's Gen Writing helps you publish AI-assisted pages that readers value and that stay inside Google Search policy. It judges a page by its purpose and added value, not by whether a model wrote it. It never invents the human parts of a page, and it does not promise rankings.
 
-## Install
+## Quick start
 
 ```bash
 npx skills add thatguysam/skills --skill sams-gen-writing
+```
+
+```text
+Use $sams-gen-writing to review this AI-assisted product roundup before I
+publish it. Give findings by severity and tell me what first-hand material
+I still need.
 ```
 
 The canonical directory is [`skills/sams-gen-writing`](https://github.com/ThatGuySam/skills/tree/main/skills/sams-gen-writing). Invoke a standalone installation as `/sams-gen-writing` in Claude Code or `$sams-gen-writing` in Codex. The collection bundle uses `/sam:sams-gen-writing`.

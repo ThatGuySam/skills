@@ -8,6 +8,21 @@ a sales conversation. It adapts to consulting, SaaS, enterprise buying, recruiti
 and partnerships. It is most useful when you have real buyer context and an
 unclear next step.
 
+## Quick start
+
+```bash
+npx skills add ThatGuySam/skills --skill sales-research
+```
+
+```text
+Use $sales-research to draft my reply. I sell [service or product] to [buyer].
+They asked: [paste their redacted message]. We are at [stage]. My constraints
+are [constraints]. I want to decide [decision]. Give me the reply first, then
+explain any assumptions that materially affect it. Draft only.
+```
+
+Use `$sales-research` in Codex, `/sales-research` as a standalone Claude Code skill, or `/sam:sales-research` in the collection bundle. Replace the bracketed fields with your own facts.
+
 ## Install with npx
 
 You need Node.js and npm, an agent that supports skills, and network access for

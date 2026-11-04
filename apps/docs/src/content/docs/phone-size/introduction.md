@@ -5,10 +5,16 @@ description: Turn dense content into a readable phone-screen brief with optional
 
 Phone Size puts the outcome, completion condition and material caveat on the first screen, with requirements and evidence easy to reach. It supersedes phone-roll's fixed card format.
 
-## Install
+## Quick start
 
 ```bash
 npx skills add ThatGuySam/skills --skill phone-size -g
+```
+
+```text
+Use $phone-size to turn this long issue into a clear mobile brief. Keep its
+acceptance criteria and unresolved dependency visible, and put implementation
+detail below.
 ```
 
 Use `$phone-size` in Codex, `/phone-size` as a standalone Claude skill, or `/sam:phone-size` in the collection bundle. No companion skills or runtime packages are required.

@@ -5,7 +5,7 @@ description: Convert Custom GPT workflows into portable skills with explicit kno
 
 `migrate-cgpt` backs up a user-owned Custom GPT privately, then converts it into a skill folder, Git repository, or supported ChatGPT plugin. It preserves required behavior and reports anything the destination cannot yet do.
 
-## Install and invoke
+## Quick start
 
 ```bash
 npx skills add thatguysam/skills --skill migrate-cgpt

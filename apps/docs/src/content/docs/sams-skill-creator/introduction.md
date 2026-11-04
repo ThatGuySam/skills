@@ -7,6 +7,18 @@ Sam's Skill Creator turns a repeatable workflow into a portable agent skill. It 
 
 Use it when you want to **create or improve a skill**. For a standalone prompt review, use [Zach Prompting](/zach-prompting/introduction/). For a business task, use the relevant task skill directly.
 
+## Quick start
+
+```sh
+npx skills add ThatGuySam/skills --skill sams-skill-creator
+```
+
+```text
+Use $sams-skill-creator to turn this workflow into a focused, tested skill.
+```
+
+Use `$sams-skill-creator` in Codex, `/sams-skill-creator` as a standalone Claude Code skill, or `/sam:sams-skill-creator` in the collection bundle. First use restores the skill's locked dependencies with Node.js, npm, and Git. The walkthrough below installs it for Codex, checks the dependency receipt, and builds a first skill.
+
 ## Before you start
 
 You need an agent that supports skills, Node.js 18 or later, npm, Git, and network access to the declared source repositories. Codex structural validation also requires Python 3 and PyYAML. The recorded release checks used Python 3.12 and PyYAML 6.0.3.

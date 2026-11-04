@@ -5,6 +5,20 @@ description: Improve prompts, skills, agent instructions, and AGENTS.md files wi
 
 Zach Prompting edits prompts, skills, tool descriptions, and repository instructions. It preserves the task's requirements while removing repetition and conflicting directions. Model-specific advice stays in a separate reference; claims of improvement require representative evaluations.
 
+## Quick start
+
+```bash
+npx skills add thatguysam/skills --skill zach-prompting
+```
+
+```text
+Use $zach-prompting to tighten this AGENTS.md without weakening its safety,
+permission, validation, or repository-boundary rules. Return the revised file
+and a short change map.
+```
+
+Use `$zach-prompting` in Codex, `/zach-prompting` as a standalone Claude Code skill, or `/sam:zach-prompting` in the collection bundle. The canonical directory is [`skills/zach-prompting`](https://github.com/ThatGuySam/skills/tree/main/skills/zach-prompting).
+
 ## The short version
 
 Use Zach Prompting when instructions have accumulated over time or need adapting to a newer model.
@@ -12,21 +26,11 @@ Use Zach Prompting when instructions have accumulated over time or need adapting
 The workflow has four steps:
 
 1. **Preserve the contract.** Keep the user-visible outcome, success criteria, invariants, evidence rules, permissions, required output, and stop conditions.
-2. **Prune the noise.** Remove repetition, outdated instructions, behavior-neutral examples, irrelevant tools, and contradictions.
+2. **Prune the noise.** Remove repetition, outdated instructions, behavior-neutral examples, irrelevant tools, contradictions, and workarounds written for older models.
 3. **Clarify judgment.** Replace unnecessary absolutes and keyword shortcuts with contextual decision rules. State what the agent may do, when it must pause, and what proof completion requires.
 4. **Verify the change.** Test representative tasks, compare against the prior artifact, and make one targeted change at a time when causal attribution matters.
 
 This is an editing workflow, not a promise that every shorter prompt is better. A compact prompt still needs enough context to make the right decision.
-
-## Install
-
-Install only this skill with the open Skills CLI:
-
-```bash
-npx skills add thatguysam/skills --skill zach-prompting
-```
-
-The canonical directory is [`skills/zach-prompting`](https://github.com/ThatGuySam/skills/tree/main/skills/zach-prompting). Invoke a standalone installation as `/zach-prompting` in Claude Code or `$zach-prompting` in Codex. The collection bundle uses the Claude namespace `/sam:zach-prompting`.
 
 ## What it improves
 
@@ -48,11 +52,11 @@ For a complex artifact, make these decisions visible when they materially change
 | --- | --- |
 | Context | Why does this task exist, who is it for, and what does the output enable? |
 | Outcome | What user-visible result should exist? |
-| Success | What must be true before the work is complete? |
-| Evidence | Which claims require support, and what happens when evidence is missing? |
-| Boundaries | What is in scope, what is forbidden, and which actions require approval? |
+| Success | What must be true before the work is complete, and which check proves it? |
+| Evidence | Which claims require support, and what happens when evidence is missing or stale? |
+| Boundaries | What is in scope, which content is untrusted, and which actions require approval? |
 | Tools | Which tools apply, what prerequisites come first, and how should failures be handled? |
-| Output | What shape, length, tone, and preserved content does the reader need? |
+| Output | What shape, length, tone, formatting, and preserved content does the reader need? |
 | Stop rules | When should the agent retry, fall back, ask, abstain, or finish? |
 
 Do not force every small prompt into eight headings. Add structure only where it changes behavior.
@@ -61,48 +65,39 @@ Do not force every small prompt into eight headings. Add structure only where it
 
 The source guides converge on several practical ideas:
 
-- lead with the intended outcome rather than an exhaustive procedure;
+- lead with the intended outcome rather than an exhaustive procedure, and explain the reason behind non-obvious constraints;
 - keep true invariants, but express judgment calls as compact decision rules;
-- state authorization and scope boundaries once;
-- ground research, progress, and completion claims in retrieved evidence or tool results;
-- expose only relevant tools and distinguish independent work from dependent sequences;
-- preserve readability by removing low-value detail instead of compressing prose into shorthand;
-- give agents access to the checks that determine whether the work is complete; and
+- state authorization and scope boundaries once, and treat the request as the scope to deliver in full;
+- remove workarounds written for older models, such as "think harder" lines, blanket thoroughness pushes, and bans on formatting or progress updates;
+- control thinking depth with the runtime's effort setting rather than prompt wording;
+- ground research, progress, and completion claims in evidence, and count only checks that exercise the change;
+- keep pasted or retrieved content separate from instructions;
+- expose only relevant tools and distinguish independent work from dependent sequences; and
 - revise working prompts surgically, then test them on representative work.
 
 These are cross-source editorial conclusions, not claims that the vendors use identical wording or defaults.
 
 ## Keep model-specific advice conditional
 
-### GPT-6 Sol and Luna
+### OpenAI GPT-6 family
 
-Sol targets complex coding and agent workflows; Luna targets focused, high-volume work. Both support API reasoning effort from `none` through `max`, with `medium` as the default. For tool use with reasoning, use the Responses API. Confirm the settings exposed by the actual runtime before changing a prompt.
+GPT-6 Astra is the highest-intelligence model. GPT-6.1 Sol balances speed and cost near Astra, GPT-6.1 Terra targets visual reasoning, computer use, and writing, and GPT-6 Luna handles focused, high-volume work. Effort support differs: 6.1 Sol and Astra do not accept `none`, while 6.1 Terra, GPT-6 Sol, and Luna do. Tool calling with reasoning requires the Responses API. Reusable prompt objects shut down November 30, 2026.
 
-OpenAI presents GPT-6 prompts as family-wide starting points, but its observed behaviors come from Astra. Test completion, approval timing, writing, delegation, and verification guidance separately on Sol and Luna. The [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) gives a small comparison set with pass conditions. These are proposed checks, not measured improvements.
+OpenAI's observed prompting behaviors come from Astra. It asks more clarifying questions, reacts strongly to conflicting skill files, favors lists and tables, delegates less than some workflows want, and tests thoroughly. The guide recommends auditing loaded instructions, requesting approval only after preparing reviewable work, specifying prose where needed, and skipping tests for low-impact changes. Test these candidates separately on each target model.
 
-### GPT-6 Astra
+### OpenAI GPT-5.6
 
-The Astra update adds checks for unnecessary approval pauses, instruction conflicts, delegation rules, writing preferences, and excessive verification. The canonical [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) keeps these checks conditional and records its source-review date.
+OpenAI recommends simplifying a working prompt one instruction group at a time, preserving the current reasoning effort as a migration baseline, and testing the same tasks after each change. GPT-5.6 is more concise by default than GPT-5.5; do not carry that concision assumption to GPT-6 Astra.
 
-### GPT-5.6
+### Claude 5.x family
 
-OpenAI recommends simplifying a working prompt one instruction group at a time, preserving the current reasoning effort as a migration baseline, and testing the same tasks after each change. Its guide also emphasizes explicit success and stopping conditions, contextual tool routing, retrieval budgets, citation behavior, approval boundaries, and targeted validation.
+On Claude Fable 5.1, Fable 5, and Opus 5.5, thinking is always on and effort is the main control. Defaults differ: Fable 5.1 `high`, Opus 5.5 `medium`, Sonnet 5.5 `high` on the API, and Haiku 5.5 `medium`. Thinking counts toward `max_tokens`, and on Claude 5.1 and later models editing earlier turns invalidates thinking blocks. Prompts that ask the model to reproduce its reasoning can be refused.
 
-GPT-5.6 is more concise by default than GPT-5.5, so broad brevity instructions may over-compress an answer. Use API-level verbosity controls for the default detail level when available, then keep task-specific preservation and output rules in the prompt.
+Anthropic's guides address unattended runs that stop early, quiet tool-calling turns, scope creep and unrequested tests, unverified coding claims, instructions hidden in pasted text, and stale facts at low effort. Their sample prompts are measured on named models; Zach Prompting keeps them in scoped runtime sections rather than portable boilerplate.
 
-### Claude Fable 5
-
-Anthropic recommends revisiting older prompts because stronger instruction following can make symptom-by-symptom rules unnecessary. For long or high-effort work, its guide recommends acting once enough information exists and staying within scope. Ground progress claims in tool results and use parallel subagents for independent work. Continue until the task is complete or requires information only the user can provide.
-
-Fable-specific controls should not become universal prompt boilerplate. In particular, effort defaults, long-run harness behavior, memory instructions, fallback behavior, and instructions related to reasoning-extraction refusals belong only where that model and runtime require them.
+The [vendor reference](https://github.com/ThatGuySam/skills/blob/main/skills/zach-prompting/references/vendor-guidance.md) records the details, a comparison set with pass conditions, and the source-review dates. These are proposed checks, not measured improvements.
 
 ## Example requests
-
-```text
-Use $zach-prompting to tighten this AGENTS.md without weakening its safety,
-permission, validation, or repository-boundary rules. Return the revised file
-and a short change map.
-```
 
 ```text
 Use $zach-prompting to review this skill for repeated rules, contradictions,
@@ -111,9 +106,15 @@ edit it; give me a minimal patch plan and a representative eval set.
 ```
 
 ```text
-Use $zach-prompting to migrate this working agent prompt to GPT-5.6. Preserve
-the current reasoning setting, establish the baseline first, and change one
-instruction group at a time so regressions remain attributable.
+Use $zach-prompting to migrate this working agent prompt to Claude Opus 5.5.
+Establish the baseline first, keep effort settings out of the portable prompt,
+and change one instruction group at a time so regressions remain attributable.
+```
+
+```text
+Use $zach-prompting to audit this skill for instructions that make GPT-6 Astra
+pause unnecessarily. Name each rule that causes a pause and preserve the real
+approval gates.
 ```
 
 ## What a good revision returns
@@ -128,12 +129,12 @@ Do not claim a rewrite is better merely because it is shorter or cleaner. Report
 
 ## Sources and origin
 
-The Sol, Luna, and GPT-5.6 sources were checked September 22, 2026. The Astra guidance was checked September 5, 2026. The Claude section retains its July 15, 2026 review:
+The OpenAI GPT-6 and Anthropic Claude 5.x sources were checked November 4, 2026. The GPT-5.6 guide was rechecked September 22, 2026.
 
-- OpenAI, [GPT-6 Sol model page](https://developers.openai.com/api/docs/models/gpt-6-sol) and [GPT-6 Luna model page](https://developers.openai.com/api/docs/models/gpt-6-luna).
+- OpenAI, [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model), [API changelog](https://developers.openai.com/api/docs/changelog), and [Deprecations](https://developers.openai.com/api/docs/deprecations).
 - OpenAI, [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
-- OpenAI, [GPT-6 Astra prompting best practices](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices).
 - OpenAI, [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6).
-- Anthropic, [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
+- Anthropic, [Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices).
+- Anthropic, [Prompting Claude Fable 5.1](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1), [Opus 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5), [Sonnet 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5), [Haiku 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5), and [Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
 
 The name and original spark were inspired by [Zach Miles and his site, *An Option — with Zach*](https://zachmil.es/). The implementation is an independent synthesis of the cited vendor guidance and is not affiliated with or endorsed by Zach Miles, OpenAI, or Anthropic.
