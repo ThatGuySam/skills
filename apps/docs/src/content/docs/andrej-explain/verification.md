@@ -3,6 +3,17 @@ title: Andrej Explain testing and troubleshooting
 description: Retained forward-use outputs, package checks, known limits, and recovery steps.
 ---
 
+## Quick smoke check
+
+Use this self-contained example to confirm an installation works:
+
+```text
+Use $andrej-explain to explain cache TTL in two sentences.
+No diagram or quiz.
+```
+
+A successful response explains how long a cached value can be reused before it becomes stale, stays within two sentences, and respects the requested format.
+
 ## Behavioral checks
 
 Six synthetic fixtures ran on October 2, 2026 in three fresh-context agents: text cases A–C, inspection/media cases D–E, and HTML case F. They received the skill path and prompts, with no development conversation. Cases sharing one agent were not isolated from each other. The agents inherited the session model; an immutable model snapshot identifier and token/timing telemetry were not exposed. These are forward-use smoke checks, not a baseline comparison or a learning study.

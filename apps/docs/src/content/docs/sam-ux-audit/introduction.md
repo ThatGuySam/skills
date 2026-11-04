@@ -3,39 +3,25 @@ title: Sam UX Audit
 description: Audit websites and GitHub repositories using locked review skills and observable evidence.
 ---
 
-Sam UX Audit combines a portable audit method with version-locked accessibility, HIG, motion, performance, and Core Web Vitals skills. It produces one prioritized report with evidence, confidence, and acceptance checks.
-
-## Quick start
-
-```sh
-npx skills add thatguysam/skills --skill sam-ux-audit
+```bash
+npx skills add ThatGuySam/skills --skill sam-ux-audit
 ```
 
-```text
-Use $sam-ux-audit to audit [website URL] for a first-time visitor trying to
-[task]. Return prioritized findings with evidence and acceptance checks.
+```text title="Example prompt" wrap
+Use $sam-ux-audit to audit [website URL] for a first-time visitor trying to [task]. Return prioritized findings with evidence and acceptance checks.
 ```
 
-Use `$sam-ux-audit` in Codex, `/sam-ux-audit` for a standalone Claude Code installation, or `/sam:sam-ux-audit` through the collection bundle.
+## Why use it
 
-On first use, the agent runs `npm ci --ignore-scripts` and `npm run skills:install` from the installed skill directory. Node 18+, npm, Git, and source-network access are needed for a cold install. Browser tooling is separate; repository review can use local files or read-only GitHub access. The skill uses no private workspace paths or credentials.
+**One prioritized UX report, backed by evidence you can check.**
 
-## Behavior
+- **Use it when:** you want a website or GitHub repository reviewed for accessibility, platform fit, motion, and performance in one pass.
+- **You get:** findings ranked by impact, each with evidence, confidence, and an acceptance check, plus the versions of the review skills used.
+- **Limit:** without browser access it reviews artifacts only and says so. Source code alone cannot prove runtime contrast, focus, or timing.
 
-A website audit follows a concrete user journey and inspects relevant states and interactions. Repository mode pins a commit, reads the project's instructions and user-facing code, and cites file lines. It distinguishes source risks from browser-tested failures. Backend-only repositories receive an applicable developer-journey review or an explicit explanation that no visual target exists.
+Invoke it as `$sam-ux-audit` in Codex, `/sam-ux-audit` in Claude Code, or `/sam:sam-ux-audit` with the collection bundle. First use restores its locked review skills with Node.js 18+, npm, and Git.
 
-Normal audits restore the existing lock. An explicit update request resolves newer upstream revisions once, reviews changes, and freezes the set for that audit. It does not edit or deploy the audited product.
+## Go deeper
 
-## Inputs & outputs
-
-Provide a URL or GitHub repository, the intended user/task if known, and any constraints. The output contains scope, per-lens coverage, findings with evidence and acceptance checks, strengths, unresolved hypotheses, and a version receipt. Screenshots support appearance claims; source code alone cannot establish runtime focus, contrast, timing, or successful task completion.
-
-## States & edge cases
-
-Missing browser access produces an artifact-limited review, not a claim of a completed live audit. Missing or modified dependencies fail preflight. No-motion and backend-only targets do not trigger invented animation problems or web performance scores. The agent resolves disagreements using actual task evidence and current standards.
-
-## Data shape
-
-`package.json` declares five upstream skills; `package-lock.json` pins the installer; `skills-lock.json` records exact commits and content hashes. Disposable dependencies live under `.runtime/skills/`. `skill-versions.json` records wrapper fingerprints and installed integrities for the report. Updates are explicit; third-party instructions remain unchanged.
-
-See [verification](/sam-ux-audit/verification/) for the actual smoke checks and limits.
+- [Reference](/sam-ux-audit/reference/): behavior, inputs and outputs, edge cases, and the dependency lock.
+- [Verification](/sam-ux-audit/verification/): the smoke checks that ran and their limits.

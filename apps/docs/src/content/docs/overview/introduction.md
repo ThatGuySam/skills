@@ -1,23 +1,27 @@
 ---
-title: Introduction
+title: HTMA Measure
 description: What HTMA Measure does, why calibrated ranges matter, and what the skill produces.
 ---
 
-HTMA Measure is a portable agent skill for estimating uncertain quantities when a decision depends on the answer. It works for project costs, budgets, vendor quotes, rates, risks, ROI, market size, revenue, and similar questions where a precise-looking guess would be misleading.
-
-## Quick start
-
 ```bash
-npx skills add thatguysam/skills --skill htma-measure
+npx skills add ThatGuySam/skills --skill htma-measure
 ```
 
-```text
-Use $htma-measure to create a planning allowance for this project before quotes arrive.
+```text title="Example prompt" wrap
+Use $htma-measure to set a planning allowance for this project before quotes arrive. Give me a calibrated range and the uncertainty worth checking first.
 ```
 
-Use `$htma-measure` in Codex, `/htma-measure` as a standalone Claude Code skill, or `/sam:htma-measure` in the collection bundle. See [installation](/guides/installation/) for agent-specific, global, and bundle installs.
+## Why use it
 
-The skill converts a vague question into a measurement memo with:
+**A defensible range for an uncertain number, tied to the decision it affects.**
+
+- **Use it when:** a decision depends on a cost, budget, rate, risk, ROI, or market size you can't pin down yet.
+- **You get:** a measurement memo with low, central, and high values, the assumptions behind them, and the evidence worth collecting next.
+- **Limit:** a range is only as good as its inputs. It shows which assumptions drive the answer rather than hiding them behind a single number.
+
+Invoke it as `$htma-measure` in Codex, `/htma-measure` in Claude Code, or `/sam:htma-measure` with the collection bundle.
+
+## What the memo contains
 
 - a precise decision and threshold;
 - an explicit quantity, unit, and time horizon;
@@ -28,23 +32,14 @@ The skill converts a vague question into a measurement memo with:
 - a recommendation tied to the decision; and
 - a machine-readable `HTMA_RESULT` JSON appendix.
 
-## The key difference
+## Go deeper
 
-HTMA Measure asks which range the evidence supports, how that range affects the decision, and what evidence would be worth collecting next.
-
-The workflow addresses these common failures:
-
-1. **False precision:** a single number disguises uncertainty.
-2. **Research without a stopping rule:** the agent gathers easy facts that cannot change the decision.
-3. **Simulation laundering:** Monte Carlo output makes weak assumptions look rigorous.
+- [Installation](/guides/installation/): agent-specific, global, and bundle installs.
+- [Your first measurement](/guides/first-measurement/): a guided first run.
+- [Prompt recipes](/guides/prompt-recipes/): prompts for common estimates.
+- [Problems it solves](/overview/problems-it-solves/): the estimation failures it targets.
+- [Output contract](/reference/output-contract/): the complete memo and JSON format.
 
 ## What HTMA means here
 
 The workflow draws on decision-focused measurement and calibrated estimation ideas popularized by Douglas W. Hubbard's *How to Measure Anything*. This repository is an independent implementation and is not affiliated with or endorsed by the author or publisher.
-
-## Start using it
-
-- [Install the skill](/guides/installation/).
-- [Run your first measurement](/guides/first-measurement/).
-- [See prompt recipes](/guides/prompt-recipes/).
-- [Inspect the complete output contract](/reference/output-contract/).

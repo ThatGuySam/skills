@@ -3,24 +3,23 @@ title: Sam's Env
 description: Draft environment templates with setup links, commands, and verified configuration behavior.
 ---
 
-import { Code } from '@astrojs/starlight/components';
-import skill from '../../../../../../skills/sams-env/SKILL.md?raw';
-import example from '../../../../../../skills/sams-env/evals/annotated-example.md?raw';
-
-Sam's Env drafts environment templates from a project's actual configuration contract. It puts documentation links, dashboard entry points, and useful commands beside the settings they explain.
-
-## Quick start
-
-```sh
+```bash
 npx skills add ThatGuySam/skills --skill sams-env
 ```
 
-```text
-Use $sams-env to draft this project's .env.example from its source and
-configuration schema. Include useful docs links, dashboard links, and commands.
+```text title="Example prompt" wrap
+Use $sams-env to draft this project's .env.example from its source and configuration schema. Include useful docs links, dashboard links, and commands.
 ```
 
-Use `$sams-env` in Codex, `/sams-env` as a standalone Claude Code skill, or `/sam:sams-env` in the collection bundle.
+## Why use it
+
+**An `.env.example` that tells the next developer where every value comes from.**
+
+- **Use it when:** a project needs a new or better environment template.
+- **You get:** a template built from the code that reads each setting, with docs links, dashboard links, and commands beside the values they explain.
+- **Limit:** it never reads real env files, and a template that parses does not prove provider credentials work.
+
+Invoke it as `$sams-env` in Codex, `/sams-env` in Claude Code, or `/sam:sams-env` with the collection bundle.
 
 ## Upgrade from Env Example
 
@@ -28,38 +27,9 @@ Collection 0.12.0 renames the standalone skill from `env-example` to `sams-env`.
 
 The updated skill adds a spacing checker and formatter for newly authored examples. It also asks for setting-specific dashboard links and distinguishes app-owned secrets from provider API tokens. These checks do not verify provider connectivity.
 
-## Behavior
+## Go deeper
 
-The skill inspects the loader and configuration consumers, drafts the template, and distinguishes parsing checks from application validation and provider verification. It preserves the difference between missing and empty settings and marks unknown requirements rather than guessing.
-
-## Inputs and Outputs
-
-Input is a repository or explicit configuration contract. Output is an environment template, needed setup-doc changes, and an evidence report. Only Git-tracked `.env.example` files supply existing env content. Code, schemas, and public provider docs supply the rest. Actual env files are never inspected.
-
-## States and Edge Cases
-
-Incomplete contracts produce a draft with explicit gaps. Optional integrations remain optional. Blank required credentials leave application setup incomplete even if the template parses. Loader-specific syntax and public browser prefixes are resolved from the target project.
-
-Read the [research](/research/concise-env-example-writing-2026-10-09/) behind this revision.
-
-## Agent Checker
-
-The skill includes a dependency-free Node.js checker for a documented static subset of `@env-spec`. It checks types, required values, annotation syntax, and duplicates without printing values. See [checker usage](/env-example/checker/).
-
-## Data Shape
-
-Each variable has a name, purpose, requiredness, value format, missing/empty behavior, and exposure. Acquisition links, commands, permissions, and restart rules are added only where relevant.
-
-## Canonical Skill
-
-This block imports the actual skill file at build time. It is the artifact used for design review.
-
-<Code code={skill} lang="markdown" title="skills/sams-env/SKILL.md" />
-
-## Test Environment Example
-
-This annotated synthetic example is newly authored text. The block imports the example text directly from the skill package.
-
-<Code code={example} lang="markdown" title="skills/sams-env/evals/annotated-example.md" />
-
-Read the [verification record](/env-example/verification/) for checks and their limits. Review questions are tracked in [open questions](/project/open-questions/).
+- [Example and reference](/env-example/reference/): behavior, edge cases, data shape, the canonical skill file, and an annotated example.
+- [Agent checker](/env-example/checker/): the dependency-free checker for a static subset of `@env-spec`.
+- [Verification](/env-example/verification/): checks and their limits.
+- [Research](/research/concise-env-example-writing-2026-10-09/): the sources behind this revision.

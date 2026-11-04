@@ -44,7 +44,7 @@ code {
 .install-command-toolbar {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem 1rem;
   padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--sl-color-gray-5);
@@ -81,8 +81,19 @@ code {
   padding: 1rem;
   border: 0;
   background: transparent;
-  white-space: pre;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.install-command-token {
+  white-space: nowrap;
+}
+.sl-markdown-content > .install-command-picker:first-child {
+  margin-top: 0;
+}
+@media (max-width: 50rem) {
+  h1#_top {
+    font-size: var(--sl-text-3xl);
+  }
 }
 .install-command-picker code {
   font-family: var(--sl-font-mono);

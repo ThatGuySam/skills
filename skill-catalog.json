@@ -88,6 +88,10 @@
         {
           "label": "Install and use",
           "slug": "phone-size/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "phone-size/reference"
         }
       ]
     },
@@ -122,16 +126,20 @@
       ],
       "items": [
         {
-          "label": "Draft and example",
+          "label": "Install and use",
           "slug": "env-example/introduction"
         },
         {
-          "label": "Verification",
-          "slug": "env-example/verification"
+          "label": "Example and reference",
+          "slug": "env-example/reference"
         },
         {
           "label": "Agent checker",
           "slug": "env-example/checker"
+        },
+        {
+          "label": "Verification",
+          "slug": "env-example/verification"
         }
       ]
     },
@@ -164,12 +172,16 @@
       ],
       "items": [
         {
-          "label": "Introduction",
+          "label": "Install and use",
           "slug": "migrate-cgpt/introduction"
         },
         {
           "label": "Backup and install",
           "slug": "migrate-cgpt/backup-and-install"
+        },
+        {
+          "label": "Reference",
+          "slug": "migrate-cgpt/reference"
         },
         {
           "label": "Verification",
@@ -191,6 +203,10 @@
           "slug": "sales-research/examples"
         },
         {
+          "label": "Setup and limits",
+          "slug": "sales-research/setup"
+        },
+        {
           "label": "Sources",
           "slug": "sales-research/sources"
         },
@@ -208,6 +224,10 @@
         {
           "label": "Install and use",
           "slug": "sams-gen-writing/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "sams-gen-writing/reference"
         },
         {
           "label": "Verification",
@@ -244,8 +264,12 @@
       ],
       "items": [
         {
-          "label": "Introduction",
+          "label": "Install and use",
           "slug": "sam-ux-audit/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "sam-ux-audit/reference"
         },
         {
           "label": "Verification",
@@ -259,8 +283,12 @@
       ],
       "items": [
         {
-          "label": "Introduction",
+          "label": "Install and use",
           "slug": "zach-prompting/introduction"
+        },
+        {
+          "label": "How it works",
+          "slug": "zach-prompting/reference"
         },
         {
           "label": "Verification",
@@ -317,8 +345,12 @@
       ],
       "items": [
         {
-          "label": "Introduction",
+          "label": "Install and use",
           "slug": "agent-verify/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "agent-verify/reference"
         },
         {
           "label": "Verification",

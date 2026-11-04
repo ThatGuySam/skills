@@ -87,3 +87,44 @@ These criteria define the checks; observed outcomes and remaining limits are rec
 - Delivery and validation: see [verification](/tree-status/verification/).
 
 See the [glossary](/tree-status/glossary/) for settled terms and [open questions](/project/open-questions/) for unresolved decisions.
+
+## Tree output
+
+Every tree uses a meaningful emoji or visual marker on each row. Category markers describe what an item is, without inventing work status. If you ask for no emoji, compact text markers preserve scanability.
+
+The tree uses familiar names, at most three displayed levels by default, and `->` to combine deeper paths. An ellipsis marks collapsed detail. Ask to expand a branch or show more levels when useful. The subject or project stays implied rather than taking a level.
+
+This is historical output from the October 10 synthetic evaluation, not a real course record. It predates the October 14 requirement for visual markers on every row:
+
+```text
+├── Mathematics
+│   ├── Algebra -> Equations
+│   │   ├── Linear equations -> Practice
+│   │   └── Quadratics …
+│   └── Geometry …
+└── Writing …
+```
+
+The skill can suggest up to three simple grouping names outside the tree. It keeps the main view familiar until you request a new grouping.
+
+## Status output
+
+The skill follows known navigation and screens where available. Otherwise it uses the team's familiar work hierarchy. It starts with the conversation's relevant tasks and searches relevant linked sources and connected trackers within the current project.
+
+Done depends on the phase, such as on dev, ready for review, or in production. The snail is a separate freshness judgment and can appear alongside a work status. Missing information uses blue so you can supply the detail or point to a source.
+
+Tracker IDs appear beside relevant items, with clickable links below the tree. Parent summaries stay brief and account for collapsed child work. Status reading does not change tasks or send messages.
+
+## Develop From a Repository Checkout
+
+The repository is the source of truth for local edits. Link local installations to its skill directories so edits take effect without maintaining separate copies.
+
+From the repository root, when the destination paths do not already exist:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+ln -s "$PWD/skills/sams-tree" "$HOME/.agents/skills/sams-tree"
+ln -s "$PWD/skills/sams-status" "$HOME/.agents/skills/sams-status"
+```
+
+For an existing copied installation, compare it with the repository first and preserve any differences before replacing the copy with a link. Keep the checkout at a stable location. The standalone packages remain self-contained for other users.

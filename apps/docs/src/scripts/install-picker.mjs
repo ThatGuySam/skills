@@ -5,11 +5,22 @@ const storage = () => window.localStorage
 let selected = readPreference(storage)
 let pickers = []
 
+// Wrap lines only between arguments, never inside a flag such as --skill.
+function renderCommand(code, text) {
+  code.replaceChildren(...text.split(/(\s+)/).filter(Boolean).map((part) => {
+    if (/^\s+$/.test(part)) return document.createTextNode(part)
+    const token = document.createElement("span")
+    token.className = "install-command-token"
+    token.textContent = part
+    return token
+  }))
+}
+
 function updatePickers(id) {
   selected = runnerFor(id).id
   for (const picker of pickers) {
     picker.runnerMenu.setValue(selected)
-    picker.code.textContent = formatCommand(picker.command, selected)
+    renderCommand(picker.code, formatCommand(picker.command, selected))
     picker.status.textContent = ""
   }
 }
@@ -38,7 +49,8 @@ function initialize() {
     label.append(runnerMenu.element)
     const copy = document.createElement("button")
     copy.type = "button"
-    copy.textContent = "Copy command"
+    copy.textContent = "Copy"
+    copy.setAttribute("aria-label", "Copy install command")
     const pre = document.createElement("pre")
     const code = document.createElement("code")
     pre.append(code)
@@ -63,6 +75,8 @@ function initialize() {
         status.textContent = "Select and copy the command"
       }
     })
+    // Expressive Code ships its page-wide stylesheet and script inside the first block.
+    block.before(...block.querySelectorAll(":scope > link, :scope > script"))
     block.replaceWith(panel)
     pickers.push({ panel, runnerMenu, code, command, status })
   }

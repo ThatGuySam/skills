@@ -7,6 +7,16 @@ Use Measure when quotes are missing, the scope is unfamiliar, evidence is sparse
 
 These are researched scenario patterns, not quotations or claims that the skill eliminates forecasting error. The prompts are templates; bracketed fields are intentionally unfilled, and none of the examples below presents a measured result.
 
+## The failures it targets
+
+HTMA Measure asks which range the evidence supports, how that range affects the decision, and what evidence would be worth collecting next.
+
+The workflow addresses these common failures:
+
+1. **False precision:** a single number disguises uncertainty.
+2. **Research without a stopping rule:** the agent gathers easy facts that cannot change the decision.
+3. **Simulation laundering:** Monte Carlo output makes weak assumptions look rigorous.
+
 ## Common estimation problems
 
 | What people are stuck on | What Measure is designed to do |
