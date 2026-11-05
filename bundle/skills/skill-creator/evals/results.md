@@ -1,5 +1,7 @@
 # Initial validation
 
+Later evidence: the [Agent Verify step comparison](2026-11-05-agent-verify-step.md) of November 5, 2026.
+
 Checked October 12, 2026. Status: validated for the bounded authoring and review behavior below; downstream use of generated skills and automatic discovery remain untested.
 
 Three tasks ran with the mixer and three matching tasks ran with normal guidance, using fresh gpt-6.1-sol agents at high reasoning effort. They could write only to separate temporary output directories. Deployment, global installation, additional history reads, and child agents were excluded from these authoring trials.

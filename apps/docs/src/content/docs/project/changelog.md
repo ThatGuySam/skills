@@ -7,6 +7,14 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-05
 
+### Sam's Skill Creator verifies with Agent Verify
+
+- Every created skill, and every update that can change behavior, now goes through Agent Verify before the creator calls it working. Fresh workers try the skill in temporary directories, a separate QA agent grades the results, and the creator repairs and reruns. Review-only requests and corrections that cannot change behavior get structural checks only.
+- Delivery status now follows the verdict: `validated` only for **meets checked criteria** or **improved on tested cases**, and `awaiting-evals` when verification is inconclusive.
+- Agent Verify is a seventh locked dependency, pinned to `thatguysam/skills` commit `a2948b3`. Preflight and its tests now cover it.
+- The delivery rule that uses `$global-skill-install`, when available, moved from a local copy into the published skill.
+- A matched comparison on the three acceptance cases reported **improved on tested cases** as a one-run pilot. Creating a skill takes noticeably longer.
+
 ### `sams` bundle with short names, collection 0.17.0
 
 - The marketplace plugin is now `sams` instead of `htma-measure`. Codex had listed every bundled skill as `htma-measure:<skill>`.

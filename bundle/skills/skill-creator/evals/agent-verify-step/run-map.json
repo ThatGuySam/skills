@@ -1,0 +1,10 @@
+{
+ "r1": "create / previous",
+ "r2": "review / previous",
+ "r3": "preferences / previous",
+ "r4": "create / candidate",
+ "r5": "review / candidate",
+ "r6": "preferences / candidate",
+ "r7": "constructed control (self-graded preferences)",
+ "r8": "constructed control (empty create output)"
+}

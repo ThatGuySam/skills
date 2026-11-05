@@ -16,7 +16,7 @@ Use $sams-skill-creator to turn this workflow into a focused, tested skill: [des
 **A repeatable workflow becomes a portable skill, with proof of what was tested.**
 
 - **Use it when:** you want to create or improve a skill, or find out why one triggers poorly or stops short.
-- **You get:** the skill, a dependency receipt, and a report that separates structural checks from tested behavior.
+- **You get:** the skill, a dependency receipt, and an independent Agent Verify verdict from fresh subagents that tried it.
 - **Limit:** first use restores locked authoring sources and needs Node.js 18+, npm, and Git. For a standalone prompt review, use [Zach Prompting](/zach-prompting/introduction/).
 
 Invoke it as `$sams-skill-creator` in Codex, `/sams-skill-creator` in Claude Code, or `/sams:skill-creator` with the collection bundle.
@@ -56,7 +56,7 @@ npm run skills:install
 npm run preflight --silent
 ```
 
-The last command prints a JSON receipt with `status` set to `installed-content-verified` and six dependency entries. Save it with your task evidence. If a command fails, follow [troubleshooting](/sams-skill-creator/verification/#troubleshoot-setup).
+The last command prints a JSON receipt with `status` set to `installed-content-verified` and seven dependency entries. Save it with your task evidence. If a command fails, follow [troubleshooting](/sams-skill-creator/verification/#troubleshoot-setup).
 
 These commands belong in the installed skill directory, which has its own `package.json`. Return to your project before starting the agent task.
 
@@ -85,4 +85,4 @@ This is an example request, not a recorded evaluation result. The agent should p
 
 Confirm that the artifact exists at your requested path. One fixture's findings should identify the unsupported speed claim. The other should identify missing migration steps. The trial must leave the supplied notes unchanged.
 
-The report must separate structural validation from actual behavior. A valid `SKILL.md` alone does not prove that the review works. Any required check that could not run must remain an explicit gap.
+The report must separate structural validation from actual behavior and include Agent Verify's verdict with its evidence directory. A valid `SKILL.md` alone does not prove that the review works. Any required check that could not run must remain an explicit gap.

@@ -38,6 +38,10 @@
     "codex-creator": {
       "source": "file:./.sources/codex-creator",
       "path": "."
+    },
+    "agent-verify": {
+      "source": "thatguysam/skills",
+      "path": "skills/agent-verify"
     }
   },
   "skillsConfig": {
