@@ -1,6 +1,6 @@
 ---
 title: Agent Verify
-description: Verify new work and compare before/after improvements with fresh subagents and independent QA.
+description: Verify new work, compare before/after changes, or improve a prompt step by step with fresh subagents and independent QA.
 ---
 
 ```bash
@@ -8,25 +8,25 @@ npx skills add ThatGuySam/skills --skill agent-verify
 ```
 
 ```text title="Example prompt" wrap
-Use $agent-verify to compare this update with the previous version on realistic tasks and tell me whether it actually improved.
+Use $agent-verify to improve [prompts/reply.md] with red-green-refactor. Prove its score out of 10 on [my examples], then show before and after on unseen cases.
 ```
 
 ## Why use it
 
-**An independent answer to "did this actually work, or get better?"**
+**Independent proof that work meets its requirements, or that a prompt actually got better.**
 
-- **Use it when:** you need to check new work against its requirements, or compare a change with the version before it.
-- **You get:** one scoped verdict, such as improved, mixed, regressed, or inconclusive, with the baseline, settings, trial count, and evidence behind it.
-- **Limit:** it needs a runtime that can start fresh subagents. Without them, independent verification is reported as inconclusive.
+- **Use it when:** you need to check new work, compare a change with the version before it, or improve a prompt or skill step by step.
+- **You get:** a scoped verdict with its evidence. In the improvement loop, you also get the starting score, every kept and rejected change, and a check on cases the editor never saw.
+- **Limit:** it needs fresh subagents. Without them, independent verification is inconclusive.
 
 Invoke it as `$agent-verify` in Codex, `/agent-verify` in Claude Code, or `/sam:agent-verify` with the collection bundle.
 
 ## More prompts
 
 ```text wrap
+Use $agent-verify to compare this update with the previous version on realistic tasks and tell me whether it actually improved.
 Use $agent-verify to verify this new feature against its requirements.
 Use $agent-verify to check this document against its source material.
-Use $agent-verify to improve [prompt file] with red-green-refactor rounds. Prove its score out of 10 first, then improve it until the gains plateau.
 ```
 
 ## Go deeper

@@ -36,3 +36,9 @@ This repository contains the agent skills Sam uses and publishes.
 - Update `apps/docs/src/content/docs/project/changelog.md` for public behavior, packaging, or documentation changes.
 - Run the narrowest relevant skill validation, strict plugin validation, the docs build, and the docs-spec gate before publishing.
 - Verify deployments by checking changed page content and `llms-full.txt`, not only status headers.
+
+## Deploying the docs site
+
+- `skills.samcarlton.com` is a personal side project, not a business production app. Sam decided on 2026-11-05 that agents may deploy it without asking, as the last step of a pushed docs change.
+- Deploy only content that is already on remote `main`. Build from a clean checkout or worktree of `origin/main`, not from a tree holding someone else's uncommitted work.
+- From `apps/docs`, pass the validation gates above, then run `bun run deploy`, which builds and runs `wrangler deploy`. Verify the live pages and `llms-full.txt` afterward.
