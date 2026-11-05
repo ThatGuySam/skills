@@ -1,0 +1,1 @@
+Synthetic worker output used only to produce a real SHA-256 hash for the receipt-checker smoke test.

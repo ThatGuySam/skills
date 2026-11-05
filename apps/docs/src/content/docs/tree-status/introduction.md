@@ -20,7 +20,7 @@ Use $sams-status to show where the current project stands.
 - **You get:** a plain-text tree with familiar names, a marker on every row, and at most three levels until you ask for more.
 - **Limit:** status reads your conversation and connected trackers but never changes tasks or sends messages. Missing information is marked, not invented.
 
-Install either skill alone or both together. Invoke them as `$sams-tree` and `$sams-status` in Codex, `/sams-tree` and `/sams-status` in Claude Code, or `/sam:sams-tree` and `/sam:sams-status` with the collection bundle.
+Install either skill alone or both together. Invoke them as `$sams-tree` and `$sams-status` in Codex, `/sams-tree` and `/sams-status` in Claude Code, or `/sams:tree` and `/sams:status` with the collection bundle.
 
 ## Reading status
 

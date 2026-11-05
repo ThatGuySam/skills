@@ -1,0 +1,21 @@
+{
+  "baseline": {
+    "variant": "baseline",
+    "case_count": 10,
+    "numeric_case_count": 6,
+    "parse_valid": 10,
+    "status_valid": 10,
+    "status_correct": 10,
+    "target_clarity": 10,
+    "privacy_failures": 0,
+    "coverage_count": 6,
+    "mean_abs_central_error": 0.06550397615429498,
+    "mean_signed_bias": -0.04155247545860824,
+    "mean_width_actual": 0.5755288636407353,
+    "mean_evidence_score": 0.85,
+    "mean_voi_score": 1.0,
+    "mean_burden_score": 0.65,
+    "mean_words_per_case": 468.3,
+    "block_count": 10
+  }
+}

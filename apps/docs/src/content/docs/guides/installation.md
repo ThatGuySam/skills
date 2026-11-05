@@ -5,7 +5,7 @@ description: Install HTMA Measure with npx skills, Codex plugins, Claude Code pl
 
 Every installation path below uses `skills/htma-measure`. The Skills CLI installs HTMA Measure alone; the marketplace bundle installs all published skills.
 
-The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle keeps the stable install ID `htma-measure` and loads every skill currently published in this repository. Claude Code uses the collection-level `sam` namespace after installation.
+The Skills CLI can install only HTMA Measure. The Codex and Claude marketplace bundle installs as `sams@thatguysam-skills` and loads every skill currently published in this repository. Both agents list bundled skills as `sams:<name>`.
 
 ## Open Skills CLI
 
@@ -63,7 +63,7 @@ Register the public marketplace, then install the plugin:
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
 Verify that it is installed and enabled:
@@ -80,7 +80,7 @@ Add the marketplace and install the plugin:
 
 ```bash
 claude plugin marketplace add thatguysam/skills
-claude plugin install htma-measure@thatguysam-skills
+claude plugin install sams@thatguysam-skills
 ```
 
 Verify the installation:
@@ -91,7 +91,7 @@ claude plugin list --json
 
 The marketplace uses a same-repository relative source. Claude clones the public marketplace over HTTPS and copies the plugin from that checkout, so installing it does not require a GitHub SSH key.
 
-The bundle invokes this skill as `/sam:htma-measure`. A standalone Claude Code installation invokes it as `/htma-measure`.
+The bundle invokes this skill as `/sams:htma-measure` in Claude Code and `$sams:htma-measure` in Codex. A standalone installation invokes it as `/htma-measure` or `$htma-measure`.
 
 ## Manual installation
 

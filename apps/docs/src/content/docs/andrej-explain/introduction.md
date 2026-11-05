@@ -19,7 +19,7 @@ Use $andrej-explain to explain this diff to a junior developer: what changed, wh
 - **You get:** an explanation grounded in the actual material, as text, a diagram, interactive HTML, or video, whichever fits the question.
 - **Limit:** it separates what was tested from what is inferred, and does not build an interactive page just because it can.
 
-Invoke it as `$andrej-explain` in Codex, `/andrej-explain` in Claude Code, or `/sam:andrej-explain` with the collection bundle. The core workflow needs no API key; diagrams, rendering, and narration depend on your agent's tools.
+Invoke it as `$andrej-explain` in Codex, `/andrej-explain` in Claude Code, or `/sams:andrej-explain` with the collection bundle. The core workflow needs no API key; diagrams, rendering, and narration depend on your agent's tools.
 
 ## Go deeper
 

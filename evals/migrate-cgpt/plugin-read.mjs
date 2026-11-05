@@ -45,7 +45,7 @@ try {
   child.stdin.write(JSON.stringify({ jsonrpc: '2.0', method: 'initialized', params: {} }) + '\n');
   const { plugin } = await request('plugin/read', {
     marketplacePath: root + '/.agents/plugins/marketplace.json',
-    pluginName: 'htma-measure',
+    pluginName: 'sams',
   });
   console.log(JSON.stringify({
     marketplaceName: plugin.marketplaceName,
@@ -53,8 +53,8 @@ try {
     skills: plugin.skills.map(({ name, path }) => ({ name, path })),
     mcpServers: plugin.mcpServers,
   }, null, 2));
-  if (!plugin.skills.some(skill => skill.name === 'htma-measure:migrate-cgpt'
-    && skill.path === root + '/skills/migrate-cgpt/SKILL.md')) {
+  if (!plugin.skills.some(skill => skill.name === 'sams:migrate-cgpt'
+    && skill.path === root + '/bundle/skills/migrate-cgpt/SKILL.md')) {
     throw new Error('The loader did not find canonical migrate-cgpt');
   }
 } finally {

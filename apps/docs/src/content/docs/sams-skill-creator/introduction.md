@@ -19,7 +19,7 @@ Use $sams-skill-creator to turn this workflow into a focused, tested skill: [des
 - **You get:** the skill, a dependency receipt, and a report that separates structural checks from tested behavior.
 - **Limit:** first use restores locked authoring sources and needs Node.js 18+, npm, and Git. For a standalone prompt review, use [Zach Prompting](/zach-prompting/introduction/).
 
-Invoke it as `$sams-skill-creator` in Codex, `/sams-skill-creator` in Claude Code, or `/sam:sams-skill-creator` with the collection bundle.
+Invoke it as `$sams-skill-creator` in Codex, `/sams-skill-creator` in Claude Code, or `/sams:skill-creator` with the collection bundle.
 
 ## Go deeper
 
@@ -77,7 +77,7 @@ breaking change that lacks migration steps. Try the skill on both fixtures.
 Report the findings, dependency receipt, and any untested behavior.
 ```
 
-For a standalone Claude Code installation, use `/sams-skill-creator`. The collection bundle uses `/sam:sams-skill-creator`.
+For a standalone Claude Code installation, use `/sams-skill-creator`. The collection bundle uses `/sams:skill-creator`.
 
 This is an example request, not a recorded evaluation result. The agent should produce `release-notes-review/SKILL.md`, fixtures, trial outputs, and a validation report.
 

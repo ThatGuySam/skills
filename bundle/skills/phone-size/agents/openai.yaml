@@ -1,0 +1,4 @@
+interface:
+  display_name: "Phone Size"
+  short_description: "Phone-sized briefs with useful detail one tap away"
+  default_prompt: "Use $phone-size to condense this content into a readable phone-screen brief with progressively disclosed detail."

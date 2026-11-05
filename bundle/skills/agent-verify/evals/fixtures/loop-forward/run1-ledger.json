@@ -1,0 +1,638 @@
+{
+ "version": 1,
+ "policy": {
+  "max_rounds": 3
+ },
+ "criteria": [
+  {
+   "id": "C1",
+   "critical": true
+  },
+  {
+   "id": "C2",
+   "critical": false
+  },
+  {
+   "id": "C3",
+   "critical": false
+  },
+  {
+   "id": "C4",
+   "critical": false
+  },
+  {
+   "id": "C5",
+   "critical": false
+  },
+  {
+   "id": "C6",
+   "critical": false
+  },
+  {
+   "id": "C7",
+   "critical": true
+  },
+  {
+   "id": "C8",
+   "critical": false
+  },
+  {
+   "id": "C9",
+   "critical": true
+  },
+  {
+   "id": "C10",
+   "critical": true
+  }
+ ],
+ "versions": [
+  {
+   "id": "v0",
+   "kind": "baseline",
+   "parent": null,
+   "round": 0,
+   "note": "unchanged prompt.md",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-078ba6"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-6bbe95"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-99b087"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-7b7f4d"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-7d718d"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-a87aec"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-104a95"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     },
+     "trial_id": "T-4eda9f"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     },
+     "trial_id": "T-5a92e6"
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-5e06a6"
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-8dadd0"
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-bc537b"
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-29745c"
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-92a99d"
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-c5cc4c"
+    }
+   ]
+  },
+  {
+   "id": "v1",
+   "kind": "green",
+   "parent": "v0",
+   "round": 1,
+   "note": "target C1: state the reply is saved verbatim as the commit message; no fences/intro/notes",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-6b0781"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-ebd288"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-ec417b"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-4b9563"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-989156"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-fd43ba"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-0cf60f"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     },
+     "trial_id": "T-46278d"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-db210f"
+    }
+   ]
+  },
+  {
+   "id": "v2",
+   "kind": "green",
+   "parent": "v0",
+   "round": 2,
+   "note": "target C1 again: reply passed straight to git commit; no code block or text addressed to requester; all message parts still belong",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-2a44f2"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-a0c291"
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-ed8cce"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-7bd11e"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-8fd894"
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     },
+     "trial_id": "T-e49ce6"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-66d0aa"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-e5f3c9"
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "fail"
+     },
+     "trial_id": "T-fc2957"
+    }
+   ]
+  }
+ ]
+}

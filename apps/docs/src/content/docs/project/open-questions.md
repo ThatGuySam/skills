@@ -66,6 +66,12 @@ The docs Worker serves static assets directly. There is no authentication Worker
 
 The marketplace keeps its stable `htma-measure` install key so existing installations continue to resolve. The plugin manifest uses `sam` as the collection namespace, so bundled Claude Code skills appear as `/sam:<skill>`.
 
+Superseded on 2026-11-05 by the `sams` bundle below.
+
+### 2026-11-05. Name the bundle `sams` and generate short names
+
+Codex prefixes bundled skills with the plugin name, so the `htma-measure` key showed every skill as `htma-measure:<skill>`. Sam chose `sams`, meaning a skill Sam made or owns, in both forms: `sams-research` standalone and `sams:research` in the bundle. The bundle is generated in `bundle/` with each leading `sams-` dropped, so it never shows `sams:sams-research`. Existing installations move by removing `htma-measure@thatguysam-skills` and installing `sams@thatguysam-skills`. `sam-ux-audit` keeps its standalone name for now.
+
 ### 2026-10-02. Publish Andrej Explain as a bounded workflow
 
 Name the skill `andrej-explain`. Keep format selection and factual fidelity in the core; load media and STE details conditionally. Do not require paid narration, a learning database, or strict STE for ordinary explanation. Merge the two research threads into one public research memo and retain evidence limits.

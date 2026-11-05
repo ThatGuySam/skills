@@ -1,0 +1,37 @@
+{
+  "checkedOn": "2026-10-12",
+  "baseCommit": "0ce3185ef0c754c75580404c7dff99a9bda5681e",
+  "skillsCliVersion": "1.7.2",
+  "cleanInstall": {
+    "scope": "isolated project-local Codex copy",
+    "discoveredSkills": 1,
+    "copiedBundledSnapshot": true,
+    "coldFrozenDependencyRestore": true,
+    "preflight": "passed",
+    "dependencyTests": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "packageChecks": {
+    "codexStructuralValidation": "passed",
+    "claudePluginStrictValidation": "passed",
+    "docsBuild": "passed",
+    "docsTests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "docsSpecGate": {
+      "passed": 11,
+      "warnings": 0,
+      "failed": 0
+    },
+    "machineSpecificPaths": "removed from public evidence",
+    "cachedRuntimeAndNodeModules": "excluded"
+  },
+  "limits": [
+    "Public Git ref update is verified separately after push.",
+    "Documentation website deployment is outside this publication.",
+    "Actual automatic skill discovery and downstream generated-skill execution remain untested."
+  ]
+}

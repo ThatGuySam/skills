@@ -19,7 +19,7 @@ Use $migrate-cgpt to back up this Custom GPT and convert it into a local Codex s
 - **You get:** a private backup, the converted skill, and a report mapping each part of the GPT to preserved, adapted, or missing.
 - **Limit:** a missing knowledge file or Action stays missing. It is reported, not reconstructed from guesses.
 
-Invoke it as `$migrate-cgpt` in Codex, `/migrate-cgpt` in Claude Code, or `/sam:migrate-cgpt` with the collection bundle.
+Invoke it as `$migrate-cgpt` in Codex, `/migrate-cgpt` in Claude Code, or `/sams:migrate-cgpt` with the collection bundle.
 
 ## More prompts
 

@@ -24,7 +24,7 @@ function fixture(t) {
     const extension = existsSync(resolve(repository, docs, item.slug + '.mdx')) ? '.mdx' : '.md'
     write(docs + item.slug + extension, '---\ntitle: Fixture\n---\n')
   }
-  for (const path of ['.claude-plugin/plugin.json', '.codex-plugin/plugin.json', 'plugin.json', '.claude-plugin/marketplace.json', '.agents/plugins/marketplace.json', ...new Set(generatedRegions(catalog).map(([path]) => path))]) {
+  for (const path of ['bundle/.claude-plugin/plugin.json', 'bundle/.codex-plugin/plugin.json', 'bundle/plugin.json', '.claude-plugin/marketplace.json', '.agents/plugins/marketplace.json', ...new Set(generatedRegions(catalog).map(([path]) => path))]) {
     mkdirSync(dirname(resolve(root, path)), { recursive: true })
     cpSync(resolve(repository, path), resolve(root, path))
   }
@@ -134,15 +134,34 @@ test('a complete added catalog entry updates every exhaustive listing', t => {
 
 test('manifest discovery and version drift are rejected', t => {
   const { root, write } = fixture(t)
-  const path = '.claude-plugin/plugin.json'
+  const path = 'bundle/.claude-plugin/plugin.json'
   const manifest = JSON.parse(readFileSync(resolve(root, path), 'utf8'))
-  manifest.skills = './copied-skills'
-  write(path, JSON.stringify(manifest))
-  assert.throws(() => syncCatalog(root), /canonical skills directory/)
   manifest.skills = './skills'
+  write(path, JSON.stringify(manifest))
+  assert.throws(() => syncCatalog(root), /generated bundle\/skills directory/)
+  delete manifest.skills
   manifest.version = '0.0.0'
   write(path, JSON.stringify(manifest))
   assert.throws(() => syncCatalog(root), /versions do not match/)
+})
+
+test('bundle copies use sams: names, stay internal, and fail check when stale', t => {
+  const { root, read, write } = fixture(t)
+  write('skills/sams-tree/references/guide.md', 'Guide.\n')
+  write('skills/sams-tree/agents/openai.yaml', 'prompt: "Use $sams-tree; see `sams-status`, not skills/sams-status/ or `sams-statuses`."\n')
+  syncCatalog(root)
+  assert.equal(read('bundle/skills/tree/agents/openai.yaml'), 'prompt: "Use $sams:tree; see `sams:status`, not skills/sams-status/ or `sams-statuses`."\n')
+  assert.match(read('bundle/skills/tree/SKILL.md'), /^---\nname: tree\nmetadata:\n  internal: true\n---\n/)
+  assert.equal(read('bundle/skills/tree/references/guide.md'), 'Guide.\n')
+  assert.match(read('bundle/skills/ux-audit/SKILL.md'), /^name: ux-audit$/m)
+  assert.match(read('bundle/skills/agent-verify/SKILL.md'), /^name: agent-verify$/m)
+  write('skills/sams-tree/references/guide.md', 'Changed.\n')
+  write('bundle/skills/leftover/SKILL.md', 'Old.\n')
+  assert.throws(() => syncCatalog(root, { check: true }), /Stale bundle/)
+  syncCatalog(root)
+  assert.equal(read('bundle/skills/tree/references/guide.md'), 'Changed.\n')
+  assert.equal(existsSync(resolve(root, 'bundle/skills/leftover')), false)
+  assert.deepEqual(syncCatalog(root, { check: true }).updated, [])
 })
 
 test('unexpected generated regions fail without modifying files', t => {

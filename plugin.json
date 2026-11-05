@@ -1,6 +1,0 @@
-{
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "htma-measure",
-  "version": "0.16.0",
-  "description": "A portable collection of agent skills Sam uses and shares."
-}

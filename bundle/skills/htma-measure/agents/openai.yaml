@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTMA Measure"
+  short_description: "End-to-end calibrated estimate memo"
+  default_prompt: "Use $htma-measure to estimate this uncertain decision and produce a calibrated measurement memo."

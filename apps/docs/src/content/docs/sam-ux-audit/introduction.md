@@ -19,7 +19,7 @@ Use $sam-ux-audit to audit [website URL] for a first-time visitor trying to [tas
 - **You get:** findings ranked by impact, each with evidence, confidence, and an acceptance check, plus the versions of the review skills used.
 - **Limit:** without browser access it reviews artifacts only and says so. Source code alone cannot prove runtime contrast, focus, or timing.
 
-Invoke it as `$sam-ux-audit` in Codex, `/sam-ux-audit` in Claude Code, or `/sam:sam-ux-audit` with the collection bundle. First use restores its locked review skills with Node.js 18+, npm, and Git.
+Invoke it as `$sam-ux-audit` in Codex, `/sam-ux-audit` in Claude Code, or `/sams:ux-audit` with the collection bundle. First use restores its locked review skills with Node.js 18+, npm, and Git.
 
 ## Go deeper
 

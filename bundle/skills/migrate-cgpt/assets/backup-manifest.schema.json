@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Private GPT capture and backup manifest (project format, not Agent Skills metadata)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "secrets_reviewed",
+    "source",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "secrets_reviewed": {
+      "const": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description",
+        "url",
+        "captured_at",
+        "capture_method",
+        "version",
+        "owner_confirmation",
+        "model",
+        "capabilities",
+        "sharing",
+        "conversation_starters",
+        "context_notes",
+        "owner"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "capture_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "owner_confirmation": {
+          "const": true
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capabilities": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          ]
+        },
+        "sharing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conversation_starters": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "context_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "status",
+          "path",
+          "note"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "instructions",
+              "knowledge",
+              "action_schema",
+              "example",
+              "configuration",
+              "image"
+            ]
+          },
+          "status": {
+            "enum": [
+              "captured",
+              "missing",
+              "excluded",
+              "not_applicable"
+            ]
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "captured"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "path": {
+                  "type": "null"
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sha256"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "size_bytes"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

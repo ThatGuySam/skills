@@ -25,7 +25,7 @@ what to ask, what to defer, and what decision to reach by the end of the call.
 
 Bracketed fields are inputs to replace, not facts. Codex uses `$sales-research`;
 standalone Claude Code uses `/sales-research`. The collection's Claude plugin
-uses `/sam:sales-research`. Other agents can use the plain-language request
+uses `/sams:sales-research`. Other agents can use the plain-language request
 "Use the sales-research skill".
 
 Read the [installation and usage guide](https://github.com/ThatGuySam/skills/blob/main/apps/docs/src/content/docs/sales-research/introduction.md),

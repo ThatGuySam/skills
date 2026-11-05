@@ -47,10 +47,10 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`.
 <!-- skills:end:about-names -->
 - **Marketplace:** `thatguysam-skills`
-- **Stable plugin install key:** `htma-measure@thatguysam-skills`
-- **Claude Code bundle namespace:** `/sam:<skill>`
+- **Plugin install key:** `sams@thatguysam-skills`
+- **Bundle names:** `/sams:<name>` in Claude Code and `$sams:<name>` in Codex, where `<name>` drops a leading `sams-`, such as `/sams:tree`
 
-The install key is retained so existing marketplace users keep working. The `sam` namespace is the human-facing prefix for skills inside the collection.
+The bundle is named for the collection, not for any one skill. Before 0.17.0 it was installed as `htma-measure@thatguysam-skills`; see [Troubleshooting](/guides/troubleshooting/) to move an older installation.
 
 ## Publishing contract
 

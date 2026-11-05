@@ -1,0 +1,11 @@
+diff --git a/src/cart/total.ts b/src/cart/total.ts
+index 7c8d9e0..2f3a4b5 100644
+--- a/src/cart/total.ts
++++ b/src/cart/total.ts
+@@ -3,6 +3,7 @@ export function cartTotal(items: Item[]): number {
+   return items.reduce((sum, item) => {
+-    return sum + item.price * item.quantity;
++    // Gift cards arrive with price: null from the catalog service.
++    return sum + (item.price ?? 0) * item.quantity;
+   }, 0);
+ }

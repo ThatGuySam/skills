@@ -19,7 +19,7 @@ Use $zach-prompting to tighten this AGENTS.md without weakening its safety, perm
 - **You get:** the revised artifact, a map of what was kept, removed, or clarified, and the checks that actually ran.
 - **Limit:** shorter is not automatically better. It calls a change an improvement only after representative tests.
 
-Invoke it as `$zach-prompting` in Codex, `/zach-prompting` in Claude Code, or `/sam:zach-prompting` with the collection bundle.
+Invoke it as `$zach-prompting` in Codex, `/zach-prompting` in Claude Code, or `/sams:zach-prompting` with the collection bundle.
 
 ## More prompts
 

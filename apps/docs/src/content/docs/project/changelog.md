@@ -7,6 +7,15 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-05
 
+### `sams` bundle with short names, collection 0.17.0
+
+- The marketplace plugin is now `sams` instead of `htma-measure`. Codex had listed every bundled skill as `htma-measure:<skill>`.
+- Bundled skills drop their own `sams-` or `sam-` prefix: `/sams:tree` in Claude Code and `$sams:tree` in Codex, never `sams:sams-tree`. Standalone installs keep `sams-tree`.
+- The bundle is generated into `bundle/` by `node scripts/skill-catalog.mjs`, and the docs build fails if it is stale. Manifests moved there too.
+- With no Codex manifest at the repository root, a standalone skill symlinked into a clone keeps its plain name.
+- The install command is now `sams@thatguysam-skills`. Remove `htma-measure@thatguysam-skills` before installing it. [Troubleshooting](/guides/troubleshooting/) has the commands.
+- The installation table now lists standalone and bundled Codex selectors separately.
+
 ### Agent Verify improvement loop, collection 0.16.0
 
 - Added a red-green-refactor improvement loop for prompts, skills, and instructions. It proves a poor score out of 10 on the unchanged artifact before any edit, keeps only single-change or linked rounds that break no passing check, stops on a plateau, a target, or a five-round cap, and confirms on holdout cases.

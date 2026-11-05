@@ -19,7 +19,7 @@ Use $agent-verify to improve [prompts/reply.md] with red-green-refactor. Prove i
 - **You get:** a scoped verdict with its evidence. In the improvement loop, you also get the starting score, every kept and rejected change, and a check on cases the editor never saw.
 - **Limit:** it needs fresh subagents. Without them, independent verification is inconclusive.
 
-Invoke it as `$agent-verify` in Codex, `/agent-verify` in Claude Code, or `/sam:agent-verify` with the collection bundle.
+Invoke it as `$agent-verify` in Codex, `/agent-verify` in Claude Code, or `/sams:agent-verify` with the collection bundle.
 
 ## More prompts
 

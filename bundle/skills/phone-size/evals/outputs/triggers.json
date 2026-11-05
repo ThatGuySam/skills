@@ -1,0 +1,32 @@
+[
+  {
+    "request": "Make this long issue readable on my phone, with the evidence tucked away.",
+    "trigger": true,
+    "rationale": "The description includes dense issue descriptions, phone-sized summaries, and progressively disclosed detail."
+  },
+  {
+    "request": "Give me a one-screen decision brief and optional methods section.",
+    "trigger": true,
+    "rationale": "The description includes decisions, one-screen summaries, and progressively disclosed detail."
+  },
+  {
+    "request": "Summarize this migration for mobile review without hiding the failed check.",
+    "trigger": true,
+    "rationale": "A migration summary for mobile review fits the description's tasks, updates, handoffs, and mobile review content."
+  },
+  {
+    "request": "Fix the CSS breakpoint on our phone layout; keep all copy unchanged.",
+    "trigger": false,
+    "rationale": "The description explicitly excludes responsive CSS alone."
+  },
+  {
+    "request": "Shorten this contract without changing or hiding any clause.",
+    "trigger": false,
+    "rationale": "The description explicitly excludes lossless shortening of a full document."
+  },
+  {
+    "request": "What is 12 times 14? Keep it short.",
+    "trigger": false,
+    "rationale": "A short arithmetic answer is neither a condensed task, update, decision, research note, or handoff nor a phone-screen or mobile-review request."
+  }
+]

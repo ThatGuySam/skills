@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "variant": "baseline",
+    "case_count": 6,
+    "parse_valid": 6,
+    "state_consistent": 6,
+    "status_expected": 6,
+    "blocker_expected": 6,
+    "threshold_consistent": 4,
+    "passed": 4
+  },
+  "candidate_v1": {
+    "variant": "candidate_v1",
+    "case_count": 6,
+    "parse_valid": 6,
+    "state_consistent": 6,
+    "status_expected": 6,
+    "blocker_expected": 6,
+    "threshold_consistent": 6,
+    "passed": 6
+  },
+  "candidate_v2": {
+    "variant": "candidate_v2",
+    "case_count": 6,
+    "parse_valid": 6,
+    "state_consistent": 6,
+    "status_expected": 6,
+    "blocker_expected": 6,
+    "threshold_consistent": 6,
+    "passed": 6
+  }
+}

@@ -8,8 +8,8 @@
   },
   "plugins": [
     {
-      "name": "htma-measure",
-      "source": "./",
+      "name": "sams",
+      "source": "./bundle",
       "description": "A portable collection of agent skills Sam uses and shares.",
       "homepage": "https://github.com/thatguysam/skills",
       "license": "MIT",

@@ -49,7 +49,7 @@ selling-is-leading references.
 | --- | --- |
 | Standalone Codex | `$sales-research` |
 | Standalone Claude Code | `/sales-research` |
-| Claude collection plugin | `/sam:sales-research` |
+| Claude collection plugin | `/sams:sales-research` |
 | Other compatible agents | Ask to use the `sales-research` skill by name |
 
 If the skill is missing, check whether you installed it for the right agent and

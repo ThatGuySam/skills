@@ -36,7 +36,7 @@ Adding a marketplace does not install its plugins. Run both commands:
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
 Then check:
@@ -53,23 +53,34 @@ Refresh and update the current collection bundle:
 
 ```bash
 claude plugin marketplace update thatguysam-skills
-claude plugin update htma-measure@thatguysam-skills
+claude plugin update sams@thatguysam-skills
 ```
 
 If a stale cache persists, remove and reinstall the plugin.
 
-## An old command uses the `/htma-measure:` command prefix
+## Skills appear as `htma-measure:<skill>`
 
-The marketplace install ID remains `htma-measure@thatguysam-skills`, but the installed collection's Claude namespace is `sam`.
-
-Refresh the marketplace, update the plugin, then reload plugins or start a new session:
+Before 0.17.0, the bundle was installed as `htma-measure@thatguysam-skills`, so Codex listed every bundled skill under that prefix. Starting with 0.17.0, the bundle is the `sams` plugin. Remove the old plugin, then install the new one:
 
 ```bash
-claude plugin marketplace update thatguysam-skills
-claude plugin update htma-measure@thatguysam-skills
+codex plugin remove htma-measure@thatguysam-skills
+codex plugin marketplace upgrade thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
-Bundled Claude Code commands use `/sam:<skill>`. The standalone HTMA Measure skill keeps its `/htma-measure` name.
+```bash
+claude plugin uninstall htma-measure@thatguysam-skills
+claude plugin marketplace update thatguysam-skills
+claude plugin install sams@thatguysam-skills
+```
+
+Start a new session or run `/reload-plugins` afterward. Bundled skills then use `/sams:<name>` in Claude Code and `$sams:<name>` in Codex, such as `/sams:tree`.
+
+A standalone skill linked into a clone older than 0.17.0 shows the same prefix, because that clone kept `.codex-plugin/plugin.json` at its root. Update the clone, or reinstall the skill from GitHub:
+
+```bash
+npx skills add ThatGuySam/skills --skill sams-tree --global --agent claude-code --agent codex --yes
+```
 
 ## The skill asks for clarification instead of estimating
 

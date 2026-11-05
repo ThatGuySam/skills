@@ -1,0 +1,34 @@
+{
+  "headings": [
+    "Welcome to CityLights",
+    "Heat wave linked to temperatures",
+    "Man Gets Nine Months in Violin Case",
+    "Lack of brains hinders research",
+    "Elsewhere on the Web",
+    "Citylights Concert",
+    "Citylights Survey"
+  ],
+  "navigation": [
+    {
+      "href": null,
+      "text": "Home"
+    },
+    {
+      "href": "news.html",
+      "text": "News"
+    },
+    {
+      "href": "tickets.html",
+      "text": "Tickets"
+    },
+    {
+      "href": "survey.html",
+      "text": "Survey"
+    }
+  ],
+  "url": "https://www.w3.org/WAI/demos/bad/after/home.html",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

@@ -19,7 +19,7 @@ Use $sales-research to draft my reply. I sell [offer] to [buyer]. They wrote: [r
 - **You get:** the draft or recommendation first, then the one to three practitioner sources it relied on and any assumptions that matter.
 - **Limit:** drafts only. Installing it does not authorize sending messages or changing a CRM, and its sales results have not been measured.
 
-Invoke it as `$sales-research` in Codex, `/sales-research` in Claude Code, or `/sam:sales-research` with the collection bundle. Replace the bracketed fields with your own redacted facts.
+Invoke it as `$sales-research` in Codex, `/sales-research` in Claude Code, or `/sams:sales-research` with the collection bundle. Replace the bracketed fields with your own redacted facts.
 
 ## Go deeper
 

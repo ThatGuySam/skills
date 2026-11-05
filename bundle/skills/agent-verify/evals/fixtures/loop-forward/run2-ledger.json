@@ -1,0 +1,1078 @@
+{
+ "version": 1,
+ "not_prompt_fixable": [],
+ "criteria": [
+  {
+   "id": "C1",
+   "critical": true
+  },
+  {
+   "id": "C2",
+   "critical": false
+  },
+  {
+   "id": "C3",
+   "critical": false
+  },
+  {
+   "id": "C4",
+   "critical": false
+  },
+  {
+   "id": "C5",
+   "critical": false
+  },
+  {
+   "id": "C6",
+   "critical": true
+  },
+  {
+   "id": "C7",
+   "critical": false
+  },
+  {
+   "id": "C8",
+   "critical": true
+  },
+  {
+   "id": "C9",
+   "critical": true
+  },
+  {
+   "id": "C10",
+   "critical": false
+  }
+ ],
+ "versions": [
+  {
+   "id": "v0",
+   "kind": "baseline",
+   "parent": null,
+   "round": 0,
+   "note": "unchanged prompt.md; dev trials from red, holdout trials from the confirmation batch launched alongside v4 (red-phase holdout trials are kept in qa/red and ledger/score-after-red.json)",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t1b8252c6",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t22197948",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t33c5d236",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t01ef5172",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t5424a5f4",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "ta71e6240",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t32c28013",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t9497a3b2",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "ta0fe39b9",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "t004abf1c",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "t920d75b0",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "tf5d03561",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "t1254c793",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "t7e5b2869",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "tce385c5c",
+     "results": {
+      "C1": "fail",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v1",
+   "kind": "green",
+   "parent": "v0",
+   "round": 1,
+   "targets": [
+    "C1"
+   ],
+   "note": "Add output contract: raw message only, no code block, no notes before/after, with reason.",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t27f81047",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t42a10352",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "tff9c809f",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t01a52b24",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t56f665f7",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "td6076684",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t4a1f72b6",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t997fd6be",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "te8059fd5",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v2",
+   "kind": "green",
+   "parent": "v1",
+   "round": 2,
+   "targets": [
+    "C8",
+    "C9"
+   ],
+   "note": "Add breaking-change rule: ! before colon and BREAKING CHANGE footer, with reason. C8 and C9 are the two checks of one user rule.",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t6a505c3a",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "tbc79baff",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "te1449ead",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t3b463b15",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t61141871",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "te5b477ab",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t3e07c455",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t6ca97c26",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t9ece6c9c",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v3",
+   "kind": "green",
+   "parent": "v1",
+   "round": 3,
+   "targets": [
+    "C8",
+    "C9",
+    "C6"
+   ],
+   "note": "Linked change after v2 rejection: keep v2's breaking-change rule (C8, C9) and add an explicit no-invented-details rule (C6), which v1 met on the typo case only by accident.",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t16de5a39",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t2439a45f",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "tb4060e5b",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t054a9c6c",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t2f9692ff",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "tc2ead90c",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "tbaf065a4",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "tc6839342",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "td58978b3",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v4",
+   "kind": "green",
+   "parent": "v3",
+   "round": 4,
+   "targets": [
+    "C7",
+    "C6"
+   ],
+   "note": "Linked change: rewrite v3's grounding paragraph so it asks for the diff's stated reason (C7, which v3's rule suppressed and no earlier instruction requested) while keeping and tightening the no-invention rule (C6: match counts/limits/timings to the code).",
+   "trials": [
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t3ba37121",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "t7bf98bcf",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "01-retry",
+     "split": "dev",
+     "trial_id": "taa4dbaa2",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t26e0ac7b",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "t68641c24",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "02-typo",
+     "split": "dev",
+     "trial_id": "tcc485b00",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "fail"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t178218d9",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t30ab0f74",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "03-remove-endpoint",
+     "split": "dev",
+     "trial_id": "t955965e7",
+     "results": {
+      "C1": "pass",
+      "C2": "fail",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "t2908960c",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "t5f82123a",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "04-config-and-test",
+     "split": "holdout",
+     "trial_id": "t67c86ea1",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "t3c15dbd3",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "t8c592e10",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "05-fix-null",
+     "split": "holdout",
+     "trial_id": "tde102ee5",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  }
+ ]
+}

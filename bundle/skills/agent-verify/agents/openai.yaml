@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Verify"
+  short_description: "Verify work and compare improvements with subagents"
+  default_prompt: "Use $agent-verify to verify this work with fresh subagents and independent QA. For an update, compare the actual previous version with the candidate on matched tasks and report improvements, regressions, and unknowns."

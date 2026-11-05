@@ -1,0 +1,23 @@
+diff --git a/src/http/client.ts b/src/http/client.ts
+index 3f2a1c0..8b9d4e2 100644
+--- a/src/http/client.ts
++++ b/src/http/client.ts
+@@ -12,9 +12,22 @@ export async function getJson(url: string): Promise<unknown> {
+-  const res = await fetch(url);
+-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+-  return res.json();
++  for (let attempt = 0; attempt < 3; attempt++) {
++    const res = await fetch(url);
++    if (res.ok) return res.json();
++    // Upstream rate-limits bursts; 429 and 503 usually clear within a second.
++    if (res.status !== 429 && res.status !== 503) {
++      throw new Error(`HTTP ${res.status}`);
++    }
++    await sleep(250 * 2 ** attempt);
++  }
++  throw new Error('HTTP retry limit reached');
+ }
++
++function sleep(ms: number) {
++  return new Promise((resolve) => setTimeout(resolve, ms));
++}

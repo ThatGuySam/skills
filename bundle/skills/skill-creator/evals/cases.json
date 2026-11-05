@@ -1,0 +1,44 @@
+{
+  "skill": "sams-skill-creator",
+  "cases": [
+    {
+      "id": "create",
+      "prompt": "Create a reusable skill named preview-finish for updating a finite list of website pages. Inputs supply exact preview environment, accepted reference, protected content, and authorization. The skill should carry authorized work through deployed review URLs, preserve existing copy/media, and check desktop and phone behavior. It must stop before a production action that lacks authorization while finishing independent preparation. Do not deploy any actual website while authoring the skill. Deliver a usable skill folder in the assigned output directory; do not install it globally.",
+      "assertions": [
+        "Delivers actual skill files rather than only advice",
+        "Concrete deployment and verification completion bar",
+        "Preserves content and existing authorization without granting production",
+        "References resolve or dependencies are explicitly declared",
+        "Reports actual validation without claiming downstream live deployment"
+      ]
+    },
+    {
+      "id": "review",
+      "prompt": "Review the supplied existing-skill.md for why it stops too early or asks too many questions. Do not edit that file. Return prioritized findings with evidence and a minimal proposed correction.",
+      "files": [
+        "evals/fixtures/existing-skill.md"
+      ],
+      "assertions": [
+        "Input remains unchanged",
+        "Finds conflicting production authority and redundant read approvals",
+        "Finds plan-only false completion",
+        "Does not execute or publish the business workflow",
+        "Respects review-only output"
+      ]
+    },
+    {
+      "id": "preferences",
+      "prompt": "Create a personal working-style skill from preferences.md only. Preserve explicit approval for deployments and messages to other people. Read no other history, do not make the style universal, and do not change global/default skills. Deliver the skill in the assigned output directory without global installation.",
+      "files": [
+        "evals/fixtures/preferences.md"
+      ],
+      "assertions": [
+        "Uses only supplied evidence",
+        "Distinguishes recurring brevity from detailed analysis exception",
+        "Does not universalize the one-off no-deploy exception",
+        "Preserves deployment and external-message approval",
+        "Produces one usable skill without modifying other global skills"
+      ]
+    }
+  ]
+}

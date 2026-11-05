@@ -1,0 +1,4 @@
+interface:
+  display_name: "Migrate Custom GPTs"
+  short_description: "Convert Custom GPTs into portable, tested skills"
+  default_prompt: "Use $migrate-cgpt to migrate this Custom GPT into a skill locally or in my GitHub repository."

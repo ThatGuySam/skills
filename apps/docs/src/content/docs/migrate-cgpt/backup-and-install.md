@@ -41,7 +41,7 @@ in the installer. Installing the migrator does not install the new skill it will
 create.
 
 Invoke `$migrate-cgpt` in Codex, `/migrate-cgpt` in standalone Claude Code, or
-`/sam:migrate-cgpt` in the Claude collection. Example:
+`/sams:migrate-cgpt` in the Claude collection. Example:
 
 ```text
 Back up the original details and available files of this GPT I own to my private
@@ -112,7 +112,7 @@ installation. [Current skill guidance](https://learn.chatgpt.com/docs/build-skil
   [Official migration steps](https://learn.chatgpt.com/docs/migrate-custom-gpts)
 - For a converted folder, use the account's supported plugin-authoring/install
   route. `@plugin-creator` can help where available. A portable package uses root
-  `plugin.json` and `skills/<name>/SKILL.md`; this repository also retains the
+  `plugin.json` and `skills/<name>/SKILL.md`; this repository's `bundle/` also retains the
   supported Codex compatibility manifest. Manifest validation is separate from
   actual installation. [Plugin packaging](https://developers.openai.com/plugins/build/plugins)
 - Enterprise admins have a documented GitHub route: Admin → Plugins → Add →

@@ -1,0 +1,46 @@
+{
+  "name": "sam-ux-audit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "skills:install": "skills-lock install --frozen",
+    "skills:update": "skills-lock update",
+    "skills:list": "skills-lock list",
+    "audit:preflight": "node scripts/preflight.mjs",
+    "test": "node --test scripts/preflight.test.mjs"
+  },
+  "devDependencies": {
+    "skills-lock": "https://codeload.github.com/luisalima/skills-lock/tar.gz/4e37719a163b6022d4a2828850567421f9de7825"
+  },
+  "skills": {
+    "a11y": {
+      "source": "addyosmani/web-quality-skills",
+      "path": "skills/accessibility"
+    },
+    "hig": {
+      "source": "dickwu/apple-design-skill",
+      "path": "."
+    },
+    "motion": {
+      "source": "emilkowalski/skills",
+      "path": "skills/review-animations"
+    },
+    "performance": {
+      "source": "addyosmani/web-quality-skills",
+      "path": "skills/performance"
+    },
+    "core-web-vitals": {
+      "source": "addyosmani/web-quality-skills",
+      "path": "skills/core-web-vitals"
+    }
+  },
+  "skillsConfig": {
+    "agents": [
+      "audit-suite"
+    ],
+    "agentDirs": {
+      "audit-suite": ".runtime/skills"
+    }
+  }
+}

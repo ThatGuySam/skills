@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-12T22:30:15.160Z",
+  "wrapper": {
+    "skillSha256": "06b7145ebcb43e14a198f3d75441363f0d274b5f37c14754935642ec68b2deaa",
+    "referencesIntegrity": "sha256-pmocrkN9FKB2Zu2UIFWwTEsiiwiVl64G8e0vvEQYlr0=",
+    "scriptsIntegrity": "sha256-ViIHkuET1fEy+l4HiCAyVnxdxukPeeJG650XMVfYbN0="
+  },
+  "lockSha256": "e0bd6e6430a2a52844bf2723f74dd16103d72afe78fa4bb0bfc0f86deed89c37",
+  "manager": "https://codeload.github.com/luisalima/skills-lock/tar.gz/4e37719a163b6022d4a2828850567421f9de7825",
+  "status": "installed-content-verified",
+  "skills": [
+    {
+      "name": "anthropic-creator",
+      "source": "anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/skill-creator",
+      "integrity": "sha256-0/maBUS8ozMHTw50KJ08RMBJ9JJX+82jY1XIW7MU4mg=",
+      "entrypoint": "<skill-root>/.runtime/skills/anthropic-creator/SKILL.md"
+    },
+    {
+      "name": "automate-me",
+      "source": "michael-denyer/pstack-claude",
+      "commit": "1bfdab4219d41c4d0bb28d1e7832de6128373611",
+      "path": "plugins/pstack/skills/automate-me",
+      "integrity": "sha256-k8OKQ6Rdr8iz3sICDIHMa0i57qhk5HXReKA1kOOQZ4M=",
+      "entrypoint": "<skill-root>/.runtime/skills/automate-me/SKILL.md"
+    },
+    {
+      "name": "codex-creator",
+      "source": "file:./.sources/codex-creator",
+      "commit": null,
+      "path": ".",
+      "integrity": "sha256-BFcML/+bzzj2vb1pn3rwlPhgciNzyb5in3L5QAy7sYg=",
+      "entrypoint": "<skill-root>/.runtime/skills/codex-creator/SKILL.md"
+    },
+    {
+      "name": "poteto-mode",
+      "source": "michael-denyer/pstack-claude",
+      "commit": "1bfdab4219d41c4d0bb28d1e7832de6128373611",
+      "path": "plugins/pstack/skills/poteto-mode",
+      "integrity": "sha256-ZWe76lz7yP1vKqhqVXpHCVMNH2bp8+Vc0AyZk1DMJMo=",
+      "entrypoint": "<skill-root>/.runtime/skills/poteto-mode/SKILL.md"
+    },
+    {
+      "name": "writing-for-agents",
+      "source": "mattpocock/skills",
+      "commit": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/writing-for-agents",
+      "integrity": "sha256-AHESSpI1WUk7yJJKkPuHvOsEjTGtLOeF+kKB18UGv6c=",
+      "entrypoint": "<skill-root>/.runtime/skills/writing-for-agents/SKILL.md"
+    },
+    {
+      "name": "zach-prompting",
+      "source": "thatguysam/skills",
+      "commit": "0ce3185ef0c754c75580404c7dff99a9bda5681e",
+      "path": "skills/zach-prompting",
+      "integrity": "sha256-Ai5IRm5ZM2tWuK3r8E9Bkk9jrgEg4/hbpq+0p2iUDOI=",
+      "entrypoint": "<skill-root>/.runtime/skills/zach-prompting/SKILL.md"
+    }
+  ]
+}

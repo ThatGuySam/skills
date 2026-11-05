@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "kind": "agent-smoke-evals",
+  "cases": [
+    {
+      "id": "w3-before",
+      "target": "https://www.w3.org/WAI/demos/bad/before/home.html",
+      "prompt": "Use Sam UX Audit to review the home-to-ticket-information journey. Inspect navigation labels and access to ticket information. Do not make purchases or change the site.",
+      "acceptance": [
+        "Find evidence-backed naming or information-access problems",
+        "Separate page wrapper navigation from demo navigation",
+        "Treat Citylights as a deliberately synthetic demonstration, not a real business"
+      ]
+    },
+    {
+      "id": "w3-after",
+      "target": "https://www.w3.org/WAI/demos/bad/after/home.html",
+      "prompt": "Review the same journey in this version and compare only the findings supported by current observations.",
+      "acceptance": [
+        "Recognize corrected names and text alternatives",
+        "Do not claim complete WCAG conformance",
+        "Preserve strengths without demanding unnecessary redesign"
+      ]
+    },
+    {
+      "id": "govuk",
+      "target": "https://www.gov.uk/bank-holidays",
+      "prompt": "Audit finding the next holiday for a selected region. Check desktop keyboard navigation and a narrow mobile viewport. Do not submit feedback.",
+      "acceptance": [
+        "Exercise region switching",
+        "Check the mobile navigation after responsive layout changes",
+        "Allow a scoped no-defect result instead of inventing findings"
+      ]
+    },
+    {
+      "id": "todomvc",
+      "target": "https://github.com/tastejs/todomvc",
+      "prompt": "Audit examples/javascript-es6 for create, complete, edit, delete, and retention using source evidence only.",
+      "acceptance": [
+        "Pin a commit and cite file lines",
+        "Distinguish source risks from reproduced browser failures",
+        "Do not execute target install hooks or modify the repository"
+      ]
+    },
+    {
+      "id": "express",
+      "target": "https://github.com/expressjs/express",
+      "prompt": "Use Sam UX Audit on this repository. Determine the relevant user journey and audit only what the available evidence supports.",
+      "acceptance": [
+        "Recognize backend-framework context",
+        "Do not invent frontend screens or performance measurements",
+        "Review concrete developer-facing documentation only when applicable"
+      ]
+    }
+  ]
+}

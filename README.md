@@ -53,14 +53,14 @@ Clone the repository and copy the required directory from `skills/` into your ag
 git clone https://github.com/thatguysam/skills.git
 ```
 
-The repository also ships a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its stable install ID remains `htma-measure`, while Claude Code uses the collection-level `sam` command namespace.
+The repository also ships a marketplace bundle for Codex and Claude Code. The bundle loads every published skill; use the Skills CLI when you want only one. Its install ID is `sams@thatguysam-skills`, and both agents list bundled skills as `sams:<name>`.
 
 <details>
 <summary><b>Codex</b></summary>
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
 </details>
@@ -70,10 +70,10 @@ codex plugin add htma-measure@thatguysam-skills
 
 ```text
 /plugin marketplace add thatguysam/skills
-/plugin install htma-measure@thatguysam-skills
+/plugin install sams@thatguysam-skills
 ```
 
-Claude Code namespaces bundled skills with `sam`, for example `/sam:zach-prompting` and `/sam:htma-measure`. Standalone installations keep their unbundled names. Codex skill selectors remain `$zach-prompting` and `$htma-measure`.
+Bundled skills drop their own `sams-` prefix, so `sams-tree` becomes `/sams:tree` in Claude Code and `$sams:tree` in Codex. Other skills keep their names, such as `/sams:zach-prompting`. Standalone installations use the canonical names, such as `sams-tree`.
 
 </details>
 

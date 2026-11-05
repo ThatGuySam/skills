@@ -19,7 +19,7 @@ Use $phone-size to turn this long issue into a phone-sized brief. Keep the accep
 - **You get:** a short brief with the outcome, done condition, and main caveat first, plus the supporting detail below or behind disclosures.
 - **Limit:** it never drops a requirement to fit, and says when phone fit was not actually checked.
 
-Invoke it as `$phone-size` in Codex, `/phone-size` in Claude Code, or `/sam:phone-size` with the collection bundle. Add `-g` to the install command to install it globally.
+Invoke it as `$phone-size` in Codex, `/phone-size` in Claude Code, or `/sams:phone-size` with the collection bundle. Add `-g` to the install command to install it globally.
 
 ## What it looks like
 

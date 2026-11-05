@@ -1,0 +1,22 @@
+diff --git a/src/config.ts b/src/config.ts
+index 5e6f7a8..9b0c1d2 100644
+--- a/src/config.ts
++++ b/src/config.ts
+@@ -8,7 +8,9 @@ export const config = {
+-  sessionTtlMinutes: 30,
++  // Support asked for longer sessions; security approved 8h max (ticket SEC-114).
++  sessionTtlMinutes: Number(process.env.SESSION_TTL_MINUTES ?? 480),
+ };
+diff --git a/test/config.test.ts b/test/config.test.ts
+index 1a2b3c4..5d6e7f8 100644
+--- a/test/config.test.ts
++++ b/test/config.test.ts
+@@ -4,3 +4,8 @@ test('defaults', () => {
+-  expect(config.sessionTtlMinutes).toBe(30);
++  expect(config.sessionTtlMinutes).toBe(480);
+ });
++
++test('env override', () => {
++  process.env.SESSION_TTL_MINUTES = '60';
++  expect(reloadConfig().sessionTtlMinutes).toBe(60);
++});

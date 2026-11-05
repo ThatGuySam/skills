@@ -19,7 +19,7 @@ Use $htma-measure to set a planning allowance for this project before quotes arr
 - **You get:** a measurement memo with low, central, and high values, the assumptions behind them, and the evidence worth collecting next.
 - **Limit:** a range is only as good as its inputs. It shows which assumptions drive the answer rather than hiding them behind a single number.
 
-Invoke it as `$htma-measure` in Codex, `/htma-measure` in Claude Code, or `/sam:htma-measure` with the collection bundle.
+Invoke it as `$htma-measure` in Codex, `/htma-measure` in Claude Code, or `/sams:htma-measure` with the collection bundle.
 
 ## What the memo contains
 

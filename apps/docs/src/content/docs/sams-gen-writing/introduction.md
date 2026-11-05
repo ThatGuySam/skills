@@ -19,7 +19,7 @@ Use $sams-gen-writing to review this AI-assisted product roundup before I publis
 - **You get:** a draft or findings tied to Google's published guidance, with `[NEEDS: …]` markers for experience, data, or bylines only you can supply.
 - **Limit:** it covers Google Search only, never invents authors, reviews, or test results, and does not promise rankings.
 
-Invoke it as `$sams-gen-writing` in Codex, `/sams-gen-writing` in Claude Code, or `/sam:sams-gen-writing` with the collection bundle.
+Invoke it as `$sams-gen-writing` in Codex, `/sams-gen-writing` in Claude Code, or `/sams:gen-writing` with the collection bundle.
 
 ## More prompts
 

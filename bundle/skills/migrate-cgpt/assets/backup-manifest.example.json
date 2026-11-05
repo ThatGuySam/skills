@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "secrets_reviewed": true,
+  "source": {
+    "name": "SYNTHETIC DEMO GPT",
+    "description": "Synthetic backup example; replace with authorized original details.",
+    "url": null,
+    "captured_at": "2026-10-01T00:00:00Z",
+    "capture_method": "Synthetic test fixture",
+    "version": null,
+    "owner_confirmation": true,
+    "model": null,
+    "capabilities": {
+      "web_search": null,
+      "code_execution": null,
+      "image_generation": null
+    },
+    "sharing": null,
+    "conversation_starters": [
+      "Summarize these synthetic meeting notes."
+    ],
+    "context_notes": "No real GPT data. Null means unknown; an empty list means verified absent. Record audience, purpose, recurring inputs, output requirements, and approval boundaries here or in an inventoried configuration file.",
+    "owner": null
+  },
+  "artifacts": [
+    {
+      "id": "instructions",
+      "kind": "instructions",
+      "status": "captured",
+      "path": "instructions.md",
+      "note": "Synthetic source instructions, copied byte-for-byte."
+    },
+    {
+      "id": "knowledge-not-provided",
+      "kind": "knowledge",
+      "status": "missing",
+      "path": null,
+      "note": "Synthetic missing dependency: owner has not supplied the file."
+    },
+    {
+      "id": "actions",
+      "kind": "action_schema",
+      "status": "not_applicable",
+      "path": null,
+      "note": "Synthetic case has no Actions."
+    }
+  ]
+}

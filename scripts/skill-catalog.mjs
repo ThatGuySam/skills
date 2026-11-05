@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { bundleName, syncBundle } from './bundle.mjs'
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const docs = 'apps/docs/src/content/docs/'
@@ -46,18 +47,20 @@ export function validateCatalog(root, catalog) {
       if (!group.items.some(item => item.slug === skill.guide)) fail(`Navigation omits guide for ${id}`)
     }
   }
-  const claude = readJson(resolve(root, '.claude-plugin/plugin.json'))
-  const codex = readJson(resolve(root, '.codex-plugin/plugin.json'))
-  const portable = readJson(resolve(root, 'plugin.json'))
-  if (claude.skills !== './skills' || codex.skills !== './skills/') fail('Plugin discovery must use the canonical skills directory')
-  if (claude.name !== 'sam' || codex.name !== 'htma-measure' || portable.name !== 'htma-measure') fail('Plugin naming contract changed')
+  const claude = readJson(resolve(root, 'bundle/.claude-plugin/plugin.json'))
+  const codex = readJson(resolve(root, 'bundle/.codex-plugin/plugin.json'))
+  const portable = readJson(resolve(root, 'bundle/plugin.json'))
+  // Claude Code always adds the plugin root's skills/ folder, so the bundle
+  // relies on that default rather than a custom path.
+  if (claude.skills !== undefined || codex.skills !== './skills/') fail('Plugin discovery must use the generated bundle/skills directory')
+  if (claude.name !== 'sams' || codex.name !== 'sams' || portable.name !== 'sams') fail('Plugin naming contract changed')
   if (new Set([claude.version, codex.version, portable.version]).size !== 1) fail('Plugin versions do not match')
   for (const path of ['.claude-plugin/marketplace.json', '.agents/plugins/marketplace.json']) {
     const marketplace = readJson(resolve(root, path))
-    const plugin = marketplace.plugins.find(entry => entry.name === 'htma-measure')
+    const plugin = marketplace.plugins.find(entry => entry.name === 'sams')
     if (marketplace.name !== 'thatguysam-skills' || !plugin) fail(`Marketplace naming contract changed: ${path}`)
     const source = typeof plugin.source === 'string' ? plugin.source : plugin.source?.path
-    if (source !== './') fail(`Marketplace must discover this checkout: ${path}`)
+    if (source !== './bundle') fail(`Marketplace must install the generated bundle: ${path}`)
   }
 }
 
@@ -77,7 +80,7 @@ export function generatedRegions(catalog, root = repositoryRoot) {
     [docs + 'collection/about.md', 'about-names', `Standalone skills: ${names}.`],
     [docs + 'collection/installation.md', 'installation-names', `The repository publishes ${names}.`],
     [docs + 'collection/installation.md', 'installation-commands', skills.map(skill => `### ${skill.title}\n\n${skill.summary} [Read the guide](/${skill.guide}/).\n\n\`\`\`bash\nnpx skills add ThatGuySam/skills --skill ${skill.id}\n\`\`\``).join('\n\n')],
-    [docs + 'collection/installation.md', 'installation-invocations', ['| Skill | Standalone Claude Code | Bundled Claude Code | Codex |', '| --- | --- | --- | --- |', ...skills.map(skill => `| ${skill.title} | \`/${skill.id}\` | \`/sam:${skill.id}\` | \`$${skill.id}\` |`)].join('\n')],
+    [docs + 'collection/installation.md', 'installation-invocations', ['| Skill | Standalone Claude Code | Bundled Claude Code | Standalone Codex | Bundled Codex |', '| --- | --- | --- | --- | --- |', ...skills.map(skill => `| ${skill.title} | \`/${skill.id}\` | \`/sams:${bundleName(skill.id)}\` | \`$${skill.id}\` | \`$sams:${bundleName(skill.id)}\` |`)].join('\n')],
     [docs + 'index.mdx', 'homepage-cards', '<div className="home-skill-grid">\n' + skills.map(skill => `  <HomeSkillCard skill=${escapeAttribute(skill.id)} title=${escapeAttribute(skill.title)} href="/${skill.guide}/" description=${escapeAttribute(skill.summary)} />`).join('\n') + '\n</div>'],
   ]
 }
@@ -103,7 +106,8 @@ export function syncCatalog(root = repositoryRoot, { check = false } = {}) {
   const stale = [...files].filter(([path, output]) => readFileSync(resolve(root, path), 'utf8') !== output)
   if (check && stale.length) fail(`Stale skill listings. Run node scripts/skill-catalog.mjs:\n${stale.map(([path]) => path).join('\n')}`)
   if (!check) for (const [path, output] of stale) writeFileSync(resolve(root, path), output)
-  return { skills: catalog.skills.length, updated: stale.map(([path]) => path) }
+  const bundle = syncBundle(root, catalog, { check })
+  return { skills: catalog.skills.length, updated: [...stale.map(([path]) => path), ...bundle] }
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "mode": "verify",
+  "criteria": [
+    { "id": "answers-the-question", "critical": true },
+    { "id": "cites-a-source", "critical": false }
+  ],
+  "artifacts": [
+    { "id": "worker-output", "path": "sample-output.txt", "sha256": "0000000000000000000000000000000000000000000000000000000000000" }
+  ],
+  "trials": [
+    {
+      "id": "trial-1",
+      "case": "synthetic-smoke-case",
+      "variant": "current",
+      "input_id": "fixture-input-1",
+      "config_id": "fixture-config-1",
+      "artifact_ids": ["worker-output"],
+      "results": [
+        { "criterion": "answers-the-question", "status": "pass", "evidence_ids": ["worker-output"] },
+        { "criterion": "cites-a-source", "status": "unknown", "evidence_ids": [] }
+      ]
+    }
+  ]
+}

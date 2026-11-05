@@ -34,7 +34,7 @@ Or install Sam's complete collection:
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
 Use `$htma-measure` after installation.
@@ -46,10 +46,10 @@ Use `$htma-measure` after installation.
 
 ```text
 /plugin marketplace add thatguysam/skills
-/plugin install htma-measure@thatguysam-skills
+/plugin install sams@thatguysam-skills
 ```
 
-Use `/sam:htma-measure` from the collection or `/htma-measure` from a standalone installation.
+Use `/sams:htma-measure` from the collection or `/htma-measure` from a standalone installation.
 
 </details>
 

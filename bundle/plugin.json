@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sams",
+  "version": "0.17.0",
+  "description": "A portable collection of agent skills Sam uses and shares."
+}

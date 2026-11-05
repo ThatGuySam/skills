@@ -1,0 +1,50 @@
+{
+  "lockfileVersion": 1,
+  "skills": {
+    "anthropic-creator": {
+      "spec": "anthropics/skills",
+      "resolved": "https://github.com/anthropics/skills.git",
+      "ref": null,
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "path": "skills/skill-creator",
+      "integrity": "sha256-0/maBUS8ozMHTw50KJ08RMBJ9JJX+82jY1XIW7MU4mg="
+    },
+    "automate-me": {
+      "spec": "michael-denyer/pstack-claude",
+      "resolved": "https://github.com/michael-denyer/pstack-claude.git",
+      "ref": null,
+      "commit": "e02c723637ab1184aac003ac5bbc2212a51269b3",
+      "path": "plugins/pstack/skills/automate-me",
+      "integrity": "sha256-+QgIvoQpnSLcG/KWDwXbPjRbtIvhUspvfx3zgnNurFU="
+    },
+    "codex-creator": {
+      "spec": "file:./.sources/codex-creator",
+      "path": ".",
+      "integrity": "sha256-BFcML/+bzzj2vb1pn3rwlPhgciNzyb5in3L5QAy7sYg="
+    },
+    "poteto-mode": {
+      "spec": "michael-denyer/pstack-claude",
+      "resolved": "https://github.com/michael-denyer/pstack-claude.git",
+      "ref": null,
+      "commit": "e02c723637ab1184aac003ac5bbc2212a51269b3",
+      "path": "plugins/pstack/skills/poteto-mode",
+      "integrity": "sha256-l1WzNfMIe41C1rXuAtTOH//YrA6GsZGR/hlY0b+LePY="
+    },
+    "writing-for-agents": {
+      "spec": "mattpocock/skills",
+      "resolved": "https://github.com/mattpocock/skills.git",
+      "ref": null,
+      "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+      "path": "skills/productivity/writing-for-agents",
+      "integrity": "sha256-AHESSpI1WUk7yJJKkPuHvOsEjTGtLOeF+kKB18UGv6c="
+    },
+    "zach-prompting": {
+      "spec": "thatguysam/skills",
+      "resolved": "https://github.com/thatguysam/skills.git",
+      "ref": null,
+      "commit": "96ec13a822a915ad54d47a4052e4acbb7243e42d",
+      "path": "skills/zach-prompting",
+      "integrity": "sha256-TjX/AvOpnMlSM5IT4fXbYbuWyK/oyM112VSsHTi2aAA="
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zach Prompting"
+  short_description: "Tighten prompts without weakening their contract"
+  default_prompt: "Use $zach-prompting to improve this instruction artifact while preserving its outcome, boundaries, and validation contract."

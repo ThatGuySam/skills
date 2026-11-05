@@ -1,0 +1,42 @@
+# Agent Verify smoke test
+
+This directory holds a synthetic structural smoke test for `scripts/check_receipt.py`, the skill's optional receipt checker. It is not a behavioral audit of the skill's judgment, and the fixture artifact and results are synthetic, not a real agent trial.
+
+## Replay
+
+```sh
+python3 scripts/check_receipt.py evals/fixtures/valid-receipt.json
+python3 scripts/check_receipt.py evals/fixtures/tampered-receipt.json
+```
+
+`valid-receipt.json` references `fixtures/sample-output.txt` with its actual SHA-256 hash and exits `0`. `tampered-receipt.json` points at the same file with a corrupted hash and exits `1` with `artifact worker-output hash mismatch`, demonstrating that the checker catches evidence tampering rather than trusting a receipt's claims.
+
+See [evidence records](../references/evidence.md) for the full receipt format and what the checker does and does not establish.
+
+## Improvement loop ledger
+
+Three synthetic ledgers exercise `scripts/score_loop.py`. Their statuses are constructed for replay, not real agent trials.
+
+```sh
+python3 scripts/score_loop.py evals/fixtures/loop-ledger.json
+python3 scripts/score_loop.py evals/fixtures/loop-no-red.json
+python3 scripts/score_loop.py evals/fixtures/loop-premature-green.json
+```
+
+- `loop-ledger.json` exits `0`. Red is proven on two dev cases, including a critical failure capped at 4/10. Round 1 gains 2.0 and its refactor ties. Round 2, a linked change, is rejected for a per-case regression despite a higher mean. Round 3 gains 0.33. With C7 and C8 recorded as not fixable in the prompt and every other failing criterion targeted, the stop is `plateau`. Holdout-1 moves from 6 to 7.
+- `loop-no-red.json` exits `0` with `no-headroom`, because a capable baseline yields no red.
+- `loop-premature-green.json` exits `1`, because it records a green round without a proven red.
+
+The [November 5 forward tests](2026-11-05-improvement-loop.md) record two real loop runs on the bundled synthetic task in `fixtures/loop-forward/`. They include the defects the runs exposed and how they were repaired.
+
+## Behavioral comparison
+
+The [October 31 comparison summary](2026-10-31-comparison.md) records a bounded actual previous-versus-updated verifier pilot. It is separate from these synthetic receipt fixtures. Raw private task material and worker outputs are not distributed, so the public summary is not a replayable behavioral benchmark.
+
+## Required Subagent Verification
+
+The [required-subagent pilot](2026-10-31-subagent-verification.md) records actual fresh executor and independent QA runs on constructed Python fixtures. It covers new-work verification and a mixed before/after update. This is distinct from comparing versions of Agent Verify itself.
+
+## Standalone Installation
+
+The [installation regression check](2026-10-31-installation.md) records an actual same-process CLI selector check before and after replacing direct checkout links with a standalone copy. It distinguishes runtime discovery from source equality.

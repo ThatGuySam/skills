@@ -3,7 +3,7 @@ title: Repository layout
 description: The public skill collection, plugin manifests, docs app, and progressive-disclosure boundaries.
 ---
 
-Each skill has one directory under `skills/`. Root manifests package the collection, and `apps/docs` contains the public guide. Keep reusable skill instructions in the skill directory.
+Each skill has one directory under `skills/`. The generated `bundle/` packages the collection, and `apps/docs` contains the public guide. Keep reusable skill instructions in the skill directory.
 
 <!-- skills:start:repository-tree -->
 Collection files include `skill-catalog.json`, `scripts/skill-catalog.mjs`, the plugin manifests, and `apps/docs/`. Canonical skill directories are:
@@ -50,12 +50,11 @@ The agent reads only the resource needed for the current step. For example:
 
 ## Distribution manifests
 
-- `.agents/plugins/marketplace.json` exposes the repository to Codex's plugin marketplace.
-- `.codex-plugin/plugin.json` declares the Codex plugin and version.
-- `.claude-plugin/marketplace.json` exposes the same repository as a Claude marketplace.
-- `.claude-plugin/plugin.json` points Claude to the canonical `skills/` directory.
-- `plugin.json` supplies portable root metadata.
-
-The distribution manifests reference the skill directories without duplicating their content.
+- `.agents/plugins/marketplace.json` exposes the repository to Codex's plugin marketplace and points at `./bundle`.
+- `.claude-plugin/marketplace.json` exposes the same repository as a Claude marketplace and points at `./bundle`.
+- `bundle/.codex-plugin/plugin.json` declares the Codex plugin and version.
+- `bundle/.claude-plugin/plugin.json` declares the Claude plugin.
+- `bundle/plugin.json` supplies portable metadata.
+- `bundle/skills/` holds generated copies with `sams:` names. Edit `skills/` and run `node scripts/skill-catalog.mjs`.
 
 Sam’s Tree owns the shared tree-format reference. Sam’s Status bundles an identical copy so either skill installs independently. Both include synthetic evaluation requests and optional Codex UI metadata.

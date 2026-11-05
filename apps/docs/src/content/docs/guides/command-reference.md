@@ -47,7 +47,7 @@ Add and install:
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
 Inspect:
@@ -66,7 +66,7 @@ codex plugin marketplace upgrade thatguysam-skills --json
 Remove the plugin:
 
 ```bash
-codex plugin remove htma-measure@thatguysam-skills --json
+codex plugin remove sams@thatguysam-skills --json
 ```
 
 ## Claude Code plugin
@@ -75,7 +75,7 @@ Add and install:
 
 ```bash
 claude plugin marketplace add thatguysam/skills
-claude plugin install htma-measure@thatguysam-skills
+claude plugin install sams@thatguysam-skills
 ```
 
 Inspect:
@@ -87,13 +87,13 @@ claude plugin list --json
 Update:
 
 ```bash
-claude plugin update htma-measure@thatguysam-skills
+claude plugin update sams@thatguysam-skills
 ```
 
 Remove:
 
 ```bash
-claude plugin uninstall htma-measure@thatguysam-skills --yes
+claude plugin uninstall sams@thatguysam-skills --yes
 ```
 
 ## Repository

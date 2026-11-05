@@ -143,37 +143,37 @@ npx skills add ThatGuySam/skills --skill activity-monitor
 
 ```bash
 codex plugin marketplace add thatguysam/skills
-codex plugin add htma-measure@thatguysam-skills
+codex plugin add sams@thatguysam-skills
 ```
 
-The stable plugin install key predates the multi-skill collection. Installing it loads every canonical directory under `skills/`. See the invocation table below for each skill's name.
+Installing the `sams` plugin loads every published skill as `sams:<name>`. See the invocation table below for each skill's name.
 
 ## Install the collection in Claude Code
 
 ```bash
 claude plugin marketplace add https://github.com/ThatGuySam/skills.git
-claude plugin install htma-measure@thatguysam-skills
+claude plugin install sams@thatguysam-skills
 ```
 
-The HTTPS repository URL avoids depending on a configured GitHub SSH key. The stable install key preserves compatibility. Skills inside the bundle use the `sam` command prefix.
+The HTTPS repository URL avoids depending on a configured GitHub SSH key. Skills inside the bundle use the `sams:` command prefix.
 
 <!-- skills:start:installation-invocations -->
-| Skill | Standalone Claude Code | Bundled Claude Code | Codex |
-| --- | --- | --- | --- |
-| Phone Size | `/phone-size` | `/sam:phone-size` | `$phone-size` |
-| Sam's Tree | `/sams-tree` | `/sam:sams-tree` | `$sams-tree` |
-| Sam's Status | `/sams-status` | `/sam:sams-status` | `$sams-status` |
-| Sam's Env | `/sams-env` | `/sam:sams-env` | `$sams-env` |
-| Andrej Explain | `/andrej-explain` | `/sam:andrej-explain` | `$andrej-explain` |
-| Migrate Custom GPTs | `/migrate-cgpt` | `/sam:migrate-cgpt` | `$migrate-cgpt` |
-| Sales Research | `/sales-research` | `/sam:sales-research` | `$sales-research` |
-| Sam's Gen Writing | `/sams-gen-writing` | `/sam:sams-gen-writing` | `$sams-gen-writing` |
-| Sam's Skill Creator | `/sams-skill-creator` | `/sam:sams-skill-creator` | `$sams-skill-creator` |
-| Sam UX Audit | `/sam-ux-audit` | `/sam:sam-ux-audit` | `$sam-ux-audit` |
-| Zach Prompting | `/zach-prompting` | `/sam:zach-prompting` | `$zach-prompting` |
-| HTMA Measure | `/htma-measure` | `/sam:htma-measure` | `$htma-measure` |
-| Agent Verify | `/agent-verify` | `/sam:agent-verify` | `$agent-verify` |
-| Activity Monitor | `/activity-monitor` | `/sam:activity-monitor` | `$activity-monitor` |
+| Skill | Standalone Claude Code | Bundled Claude Code | Standalone Codex | Bundled Codex |
+| --- | --- | --- | --- | --- |
+| Phone Size | `/phone-size` | `/sams:phone-size` | `$phone-size` | `$sams:phone-size` |
+| Sam's Tree | `/sams-tree` | `/sams:tree` | `$sams-tree` | `$sams:tree` |
+| Sam's Status | `/sams-status` | `/sams:status` | `$sams-status` | `$sams:status` |
+| Sam's Env | `/sams-env` | `/sams:env` | `$sams-env` | `$sams:env` |
+| Andrej Explain | `/andrej-explain` | `/sams:andrej-explain` | `$andrej-explain` | `$sams:andrej-explain` |
+| Migrate Custom GPTs | `/migrate-cgpt` | `/sams:migrate-cgpt` | `$migrate-cgpt` | `$sams:migrate-cgpt` |
+| Sales Research | `/sales-research` | `/sams:sales-research` | `$sales-research` | `$sams:sales-research` |
+| Sam's Gen Writing | `/sams-gen-writing` | `/sams:gen-writing` | `$sams-gen-writing` | `$sams:gen-writing` |
+| Sam's Skill Creator | `/sams-skill-creator` | `/sams:skill-creator` | `$sams-skill-creator` | `$sams:skill-creator` |
+| Sam UX Audit | `/sam-ux-audit` | `/sams:ux-audit` | `$sam-ux-audit` | `$sams:ux-audit` |
+| Zach Prompting | `/zach-prompting` | `/sams:zach-prompting` | `$zach-prompting` | `$sams:zach-prompting` |
+| HTMA Measure | `/htma-measure` | `/sams:htma-measure` | `$htma-measure` | `$sams:htma-measure` |
+| Agent Verify | `/agent-verify` | `/sams:agent-verify` | `$agent-verify` | `$sams:agent-verify` |
+| Activity Monitor | `/activity-monitor` | `/sams:activity-monitor` | `$activity-monitor` | `$sams:activity-monitor` |
 <!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.

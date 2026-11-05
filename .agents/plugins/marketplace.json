@@ -5,11 +5,11 @@
   },
   "plugins": [
     {
-      "name": "htma-measure",
+      "name": "sams",
       "description": "A portable collection of agent skills Sam uses and shares.",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./bundle"
       },
       "policy": {
         "installation": "AVAILABLE",

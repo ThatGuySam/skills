@@ -1,0 +1,8 @@
+{
+  "codex-creator": {
+    "kind": "local-runtime-snapshot",
+    "source": "~/.codex/skills/.system/skill-creator",
+    "capturedAt": "2026-10-12T22:19:35.613656+00:00",
+    "version": "content integrity in skills-lock.json; no upstream commit asserted"
+  }
+}

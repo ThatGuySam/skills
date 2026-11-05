@@ -1,0 +1,153 @@
+{
+ "version": 1,
+ "synthetic": "Constructed statuses; capable baseline with no headroom.",
+ "criteria": [
+  {
+   "id": "C1",
+   "critical": true
+  },
+  {
+   "id": "C2",
+   "critical": true
+  },
+  {
+   "id": "C3",
+   "critical": false
+  },
+  {
+   "id": "C4",
+   "critical": false
+  },
+  {
+   "id": "C5",
+   "critical": false
+  },
+  {
+   "id": "C6",
+   "critical": false
+  },
+  {
+   "id": "C7",
+   "critical": false
+  },
+  {
+   "id": "C8",
+   "critical": false
+  },
+  {
+   "id": "C9",
+   "critical": false
+  },
+  {
+   "id": "C10",
+   "critical": false
+  }
+ ],
+ "versions": [
+  {
+   "id": "v0",
+   "kind": "baseline",
+   "parent": null,
+   "round": 0,
+   "note": "unchanged prompt",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  }
+ ]
+}

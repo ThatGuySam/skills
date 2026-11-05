@@ -1,0 +1,1020 @@
+{
+ "version": 1,
+ "not_prompt_fixable": [
+  "C7",
+  "C8"
+ ],
+ "synthetic": "Constructed statuses for helper replay; not real agent trials.",
+ "criteria": [
+  {
+   "id": "C1",
+   "critical": true
+  },
+  {
+   "id": "C2",
+   "critical": true
+  },
+  {
+   "id": "C3",
+   "critical": false
+  },
+  {
+   "id": "C4",
+   "critical": false
+  },
+  {
+   "id": "C5",
+   "critical": false
+  },
+  {
+   "id": "C6",
+   "critical": false
+  },
+  {
+   "id": "C7",
+   "critical": false
+  },
+  {
+   "id": "C8",
+   "critical": false
+  },
+  {
+   "id": "C9",
+   "critical": false
+  },
+  {
+   "id": "C10",
+   "critical": false
+  }
+ ],
+ "versions": [
+  {
+   "id": "v0",
+   "kind": "baseline",
+   "parent": null,
+   "round": 0,
+   "note": "unchanged prompt",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "fail",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v1",
+   "kind": "green",
+   "parent": "v0",
+   "round": 1,
+   "note": "state the critical requirement explicitly",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ],
+   "targets": [
+    "C1"
+   ]
+  },
+  {
+   "id": "v1r",
+   "kind": "refactor",
+   "parent": "v1",
+   "round": 1,
+   "note": "remove duplicated wording",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    }
+   ]
+  },
+  {
+   "id": "v2",
+   "kind": "green",
+   "parent": "v1r",
+   "round": 2,
+   "note": "linked change: define all output fields; regresses dev-near-miss",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    }
+   ],
+   "targets": [
+    "C4",
+    "C5",
+    "C6"
+   ]
+  },
+  {
+   "id": "v3",
+   "kind": "green",
+   "parent": "v1r",
+   "round": 3,
+   "note": "name the missing section; holdout trials added after the loop stopped",
+   "trials": [
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-ordinary",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-edge",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "dev-near-miss",
+     "split": "dev",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "fail",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-1",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "fail",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    },
+    {
+     "case": "holdout-2",
+     "split": "holdout",
+     "results": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+     }
+    }
+   ],
+   "targets": [
+    "C3"
+   ]
+  }
+ ]
+}
