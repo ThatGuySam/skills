@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-05",
+  "skill_validator": "passed",
+  "catalog_check": "passed",
+  "catalog_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "docs_tests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "strict_manifest_validation": "passed; nonblocking directory-listing icon warning is pre-existing",
+  "docs_build": "passed",
+  "docs_spec_gate": {
+    "passed": true,
+    "failures": 0,
+    "warnings": 52,
+    "limit": "static sidebar heuristic does not expand catalog-driven navigation; rendered links verified"
+  },
+  "clean_room_installer": {
+    "cli": "skills 1.7.4",
+    "package_files_equal": 4,
+    "scope": "empty temporary project"
+  },
+  "codex_inventory": {
+    "direct_link_name": "htma-measure:activity-monitor",
+    "standalone_snapshot_name": "activity-monitor",
+    "enabled": true,
+    "existing_session_reload": "unverified"
+  },
+  "global_installation": {
+    "shared_snapshot": "one",
+    "directory_links": 6,
+    "package_matches_public_source": true,
+    "source_updates": "explicit scoped refresh required"
+  },
+  "documentation_layout": {
+    "mobile": [
+      375,
+      667
+    ],
+    "example_bottom_css_px": 636.84375,
+    "scroll_width_css_px": 375,
+    "desktop": [
+      1440,
+      900
+    ],
+    "screenshots_inspected": true
+  },
+  "state": {
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  }
+}

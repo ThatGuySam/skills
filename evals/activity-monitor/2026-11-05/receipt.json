@@ -1,0 +1,1286 @@
+{
+  "version": 1,
+  "mode": "compare",
+  "criteria": [
+    {
+      "id": "C1",
+      "critical": true
+    },
+    {
+      "id": "C2",
+      "critical": true
+    },
+    {
+      "id": "C3",
+      "critical": true
+    },
+    {
+      "id": "C4",
+      "critical": true
+    },
+    {
+      "id": "C5",
+      "critical": false
+    },
+    {
+      "id": "C6",
+      "critical": true
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "contract.md",
+      "path": "contract.md",
+      "sha256": "6d0684bdf13003201bc2650a49c4cece3b23bc097798ecd5012935cf71156b9b"
+    },
+    {
+      "id": "grades/development-initial.json",
+      "path": "grades/development-initial.json",
+      "sha256": "9920d8e5a0af002d45187a6557fb5e0ece63d701b04e03b59765410f9482b639"
+    },
+    {
+      "id": "grades/followup.json",
+      "path": "grades/followup.json",
+      "sha256": "8a33b48c9e7c1c7344a9dd87a611722b18a9202f60d46900563f972128735a09"
+    },
+    {
+      "id": "inputs/p01.txt",
+      "path": "inputs/p01.txt",
+      "sha256": "c9a88251af46b39526d4f3c51225a7e13706490c6bdca3d13a9ce5867794eeb5"
+    },
+    {
+      "id": "inputs/p02.txt",
+      "path": "inputs/p02.txt",
+      "sha256": "400d8134484fc5da53e42c51c334186f73adf129cb782a57defdfd7aefcf9bc7"
+    },
+    {
+      "id": "inputs/p03.txt",
+      "path": "inputs/p03.txt",
+      "sha256": "cd6af889e51043720e4428f8c2d21751e4aceb185b47be0ab99ee7718934cb9a"
+    },
+    {
+      "id": "inputs/p04.txt",
+      "path": "inputs/p04.txt",
+      "sha256": "414658cce24c844dd58df1f34ddbeefebf602f0679b3280f215e00f742f77a89"
+    },
+    {
+      "id": "inputs/p05.txt",
+      "path": "inputs/p05.txt",
+      "sha256": "a7b4e618930d20cf35799611bcfc47123427effdb113910fb49dfc977c6eea58"
+    },
+    {
+      "id": "inputs/p06.txt",
+      "path": "inputs/p06.txt",
+      "sha256": "7c0aed5743dbac7668acec15dae05435cdef7661e55143bbdc92ee5d575f4618"
+    },
+    {
+      "id": "inputs/p07.txt",
+      "path": "inputs/p07.txt",
+      "sha256": "9055350a717e61b50cbb679c16947211d64ed54aebabe6d3566f009170c3a290"
+    },
+    {
+      "id": "inputs/p08.txt",
+      "path": "inputs/p08.txt",
+      "sha256": "c520225fbc53733b6bd9e6c8f87804d9d72d84341b609756b3a373dfff085152"
+    },
+    {
+      "id": "inputs/p09.txt",
+      "path": "inputs/p09.txt",
+      "sha256": "c1518bec734579973ad69721db93e185b42104852bbeb8998ebf3510d0ac1b29"
+    },
+    {
+      "id": "outputs/a01.md",
+      "path": "outputs/a01.md",
+      "sha256": "a372d080e28347daee1ee7c7f2478160ed06c4504adcbac8f9cb8985eb6fe857"
+    },
+    {
+      "id": "outputs/a02.md",
+      "path": "outputs/a02.md",
+      "sha256": "854fc691379bb3ec500ee4398d80e823dc6f58692ba1e6bb8bf17d60b065e452"
+    },
+    {
+      "id": "outputs/a03.md",
+      "path": "outputs/a03.md",
+      "sha256": "ebaf2904324737ecb4ace68fbd597836597824a0d2e0f718819ef6b406973e1a"
+    },
+    {
+      "id": "outputs/a04.md",
+      "path": "outputs/a04.md",
+      "sha256": "037dca1a90ecd5d73a372fbdb4228f3fef0496438a4adf80f91c0b6a80d36028"
+    },
+    {
+      "id": "outputs/a05.md",
+      "path": "outputs/a05.md",
+      "sha256": "9f393517cd199ae30f5d3572be65bf3b31a0f358cf9b9528ec282d0925157a58"
+    },
+    {
+      "id": "outputs/a06.md",
+      "path": "outputs/a06.md",
+      "sha256": "af7d8b625ce785982f5e1b8c67e83e4c04eae16fa3b58f0d9ddb8ee46a6bb606"
+    },
+    {
+      "id": "outputs/a07.md",
+      "path": "outputs/a07.md",
+      "sha256": "f19ec13b3dfdfd6aa73757ac4c7a206133930e0f4fd0e7ebccf18957198137bb"
+    },
+    {
+      "id": "outputs/a08.md",
+      "path": "outputs/a08.md",
+      "sha256": "b65a3bb4efc0ff9ad3b0d918f253f7fa36d1e702b5f6d68beea72b8341816160"
+    },
+    {
+      "id": "outputs/a09.md",
+      "path": "outputs/a09.md",
+      "sha256": "b7b09879a8dc4b4835997ddda8ddabaf4bfec48048e45c2e910338ae7324742a"
+    },
+    {
+      "id": "outputs/b01.md",
+      "path": "outputs/b01.md",
+      "sha256": "8fb138400658055d1ca9cbb6fb95775333de79f35ac086b76baf122f1e9571e5"
+    },
+    {
+      "id": "outputs/b02.md",
+      "path": "outputs/b02.md",
+      "sha256": "96069e0b52988eddc972ee3bdd15b69214d8a0e59bdff68bec825938f847b987"
+    },
+    {
+      "id": "outputs/b03.md",
+      "path": "outputs/b03.md",
+      "sha256": "f3ea360bec573148f2ec9a7336e9b85e5696e0cdb94c113f7e296ce73f1a1e50"
+    },
+    {
+      "id": "outputs/b04.md",
+      "path": "outputs/b04.md",
+      "sha256": "51d4b07da982152997ba1cb0f5ad551cd4b76e59d6a45b98513f781f2f2219a6"
+    },
+    {
+      "id": "outputs/b05.md",
+      "path": "outputs/b05.md",
+      "sha256": "b18743585d669f1fb3cae513ee6623d33f3c6e337ded75992852a3d65f748a3d"
+    },
+    {
+      "id": "outputs/b06.md",
+      "path": "outputs/b06.md",
+      "sha256": "311756685bcafb0696a211c8f4cab800bbd524cdd184b8b5e78efd3f24a3cd48"
+    },
+    {
+      "id": "outputs/b07.md",
+      "path": "outputs/b07.md",
+      "sha256": "aa25a838b6d94da688b8e5b804da03be0367c5cf99da5c4666d7ed7be977d36c"
+    },
+    {
+      "id": "outputs/b08.md",
+      "path": "outputs/b08.md",
+      "sha256": "6e4f4d6eb30778fd3d2a4cadb5c83ee1721a77ffde6c4528b52305587e8ab0d8"
+    },
+    {
+      "id": "outputs/b09.md",
+      "path": "outputs/b09.md",
+      "sha256": "0d743b590e92b15dbc0676439e432538cdbe2fbf44dbb195d44539049704effc"
+    }
+  ],
+  "trials": [
+    {
+      "id": "a01",
+      "case": "p01",
+      "variant": "no-skill",
+      "input_id": "inputs/p01.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a01.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a01.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b01",
+      "case": "p01",
+      "variant": "assigned-package",
+      "input_id": "inputs/p01.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b01.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b01.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a02",
+      "case": "p02",
+      "variant": "no-skill",
+      "input_id": "inputs/p02.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a02.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a02.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "case": "p02",
+      "variant": "assigned-package",
+      "input_id": "inputs/p02.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b02.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b02.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a03",
+      "case": "p03",
+      "variant": "no-skill",
+      "input_id": "inputs/p03.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a03.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a03.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "case": "p03",
+      "variant": "assigned-package",
+      "input_id": "inputs/p03.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b03.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b03.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a04",
+      "case": "p04",
+      "variant": "no-skill",
+      "input_id": "inputs/p04.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a04.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a04.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "case": "p04",
+      "variant": "assigned-package",
+      "input_id": "inputs/p04.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b04.md",
+        "grades/development-initial.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b04.md",
+            "grades/development-initial.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a05",
+      "case": "p05",
+      "variant": "no-skill",
+      "input_id": "inputs/p05.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a05.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "fail",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a05.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "case": "p05",
+      "variant": "assigned-package",
+      "input_id": "inputs/p05.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b05.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b05.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a06",
+      "case": "p06",
+      "variant": "no-skill",
+      "input_id": "inputs/p06.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a06.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a06.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "case": "p06",
+      "variant": "assigned-package",
+      "input_id": "inputs/p06.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b06.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b06.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a07",
+      "case": "p07",
+      "variant": "no-skill",
+      "input_id": "inputs/p07.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a07.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a07.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "case": "p07",
+      "variant": "assigned-package",
+      "input_id": "inputs/p07.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b07.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b07.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a08",
+      "case": "p08",
+      "variant": "no-skill",
+      "input_id": "inputs/p08.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a08.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a08.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "case": "p08",
+      "variant": "assigned-package",
+      "input_id": "inputs/p08.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b08.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b08.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a09",
+      "case": "p09",
+      "variant": "no-skill",
+      "input_id": "inputs/p09.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/a09.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "fail",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/a09.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "case": "p09",
+      "variant": "assigned-package",
+      "input_id": "inputs/p09.txt",
+      "config_id": "native-codex-inherited-fresh-context",
+      "artifact_ids": [
+        "outputs/b09.md",
+        "grades/followup.json"
+      ],
+      "results": [
+        {
+          "criterion": "C1",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C2",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C3",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C4",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C5",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        },
+        {
+          "criterion": "C6",
+          "status": "pass",
+          "evidence_ids": [
+            "outputs/b09.md",
+            "grades/followup.json"
+          ]
+        }
+      ]
+    }
+  ],
+  "pair_variants": [
+    "no-skill",
+    "assigned-package"
+  ]
+}

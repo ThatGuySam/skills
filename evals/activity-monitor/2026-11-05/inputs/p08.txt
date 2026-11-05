@@ -1,0 +1,21 @@
+SYNTHETIC CLI CAPTURE. NOT REAL MEASUREMENTS.
+Constructed for diagnostic practice; formatting is a condensed representation of macOS command output.
+
+User context: The browser freezes when switching between large tabs. Capture overlaps several freezes.
+Hardware: Apple Silicon Mac, 10 logical CPUs, 32 GiB RAM.
+$ top -l 3 -s 5 -n 3 -stats pid,command,cpu,mem,threads,state
+Sample 1, 16:00:00: CPU usage: 6% user, 6% sys, 88% idle
+Sample 2, 16:00:05: CPU usage: 7% user, 6% sys, 87% idle
+PID COMMAND %CPU MEM #TH STATE
+180 Safari 24.0 19G 40 sleeping
+Sample 3, 16:00:10: CPU usage: 6% user, 6% sys, 88% idle
+180 Safari 25.0 19G 40 sleeping
+$ vm_stat -c 3 5 [condensed to event columns only]
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+   pageins  pageout  swapins  swapouts
+   8000000   500000   900000   1500000
+      3000      100    60000     60000
+      3000      100    60000     60000
+$ sysctl vm.swapusage [both interval endpoints]
+vm.swapusage: total = 12288.00M used = 9216.00M free = 3072.00M (encrypted)
+Disk latency, thermal sensors, and network: not captured.

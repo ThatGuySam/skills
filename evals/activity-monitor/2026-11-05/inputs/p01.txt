@@ -1,0 +1,40 @@
+SYNTHETIC CLI CAPTURE. NOT REAL MEASUREMENTS.
+Constructed for diagnostic practice; formatting is a condensed representation of macOS command output.
+
+User context: The Mac felt slow earlier. Is something wrong now?
+Hardware: 8 logical CPUs, 16 GiB RAM. Capture duration: 10 seconds.
+$ top -l 3 -s 5 -n 4 -stats pid,command,cpu,mem,threads,state
+Sample 1, 10:00:00
+CPU usage: 4.0% user, 3.0% sys, 93.0% idle
+PID COMMAND %CPU MEM #TH STATE
+180 Safari 385.0 2200M 32 sleeping
+Sample 2, 10:00:05
+CPU usage: 4.0% user, 3.0% sys, 93.0% idle
+180 Safari 6.0 2200M 32 sleeping
+Sample 3, 10:00:10
+CPU usage: 5.0% user, 3.0% sys, 92.0% idle
+180 Safari 7.0 2200M 32 sleeping
+$ vm_stat [at 10:00:00 and 10:00:10]
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+counter                         before       after
+Pages free:                       4096        4096
+Pages active:                   250000      250000
+Pages inactive:                 300000      300000
+Pages wired down:               160000      160000
+Pages occupied by compressor:   100000      100000
+File-backed pages:              290000      290000
+Swapins:                         50000       50000
+Swapouts:                        90000       90000
+$ sysctl vm.swapusage [both endpoints]
+vm.swapusage: total = 4096.00M used = 3072.00M free = 1024.00M (encrypted)
+$ memory_pressure
+System-wide memory free percentage: 35%
+$ iostat -w 5 -c 3
+              disk0
+    KB/t  tps  MB/s
+   32.00  100  3.13
+   16.00    4  0.06
+   16.00    5  0.08
+$ df -h /System/Volumes/Data
+Filesystem Size Used Avail Capacity Mounted on
+/dev/disk3s5 460Gi 180Gi 250Gi 42% /System/Volumes/Data

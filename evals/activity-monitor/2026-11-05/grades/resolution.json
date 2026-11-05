@@ -1,0 +1,207 @@
+{
+  "review_type": "independent anonymous resolution",
+  "scale": "same C1–C6 fixed contract; critical failures block eligibility",
+  "cases": {
+    "p05/L": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "600 MiB/full storage is decisive."
+        },
+        "C2": {
+          "status": "fail",
+          "evidence": "Calls since-boot iostat average an initial spike that subsides."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "Does not establish sustained CPU trouble or disk failure."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Protect document externally, then user-selected cleanup."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 144-word brief; exceeds secondary target."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit synthetic label; no live action claimed."
+        }
+      },
+      "eligible": false
+    },
+    "p05/R": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "Nearly full storage is strongest concern."
+        },
+        "C2": {
+          "status": "pass",
+          "evidence": "Invalid first top sample and since-boot iostat report explicitly identified."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "Conditional save explanation and missing evidence noted."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Protect document externally, then free selected space."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 101-word brief."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit simulation; no live action claimed."
+        }
+      },
+      "eligible": true
+    },
+    "p09/L": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "Backup activity plausible, Safari closure unsupported."
+        },
+        "C2": {
+          "status": "fail",
+          "evidence": "Claims jump from since-boot 6 MB/s average to current 200–210 MB/s."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "Plausible cause only; latency/comparison missing."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Compare after backup ends or pause through controls."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 138-word brief; exceeds secondary target."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit synthetic label; no live action claimed."
+        }
+      },
+      "eligible": false
+    },
+    "p09/R": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "Backup activity plausible; no clear reason to close Safari."
+        },
+        "C2": {
+          "status": "pass",
+          "evidence": "200000-page endpoint rise correctly rounded to 3.1 GiB; swap distinct."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "Throughput does not prove bottleneck; latency missing."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Pause backup and repeat symptom."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 117-word brief."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit simulation; no live action claimed."
+        }
+      },
+      "eligible": true
+    },
+    "s08": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "Ongoing swapping during freezes is likely contributor."
+        },
+        "C2": {
+          "status": "pass",
+          "evidence": "Periodic 60000-page rows are interval deltas, 0.916 GiB each way per 5 sec; stable allocation permits churn."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "Likely contributor; other unmeasured causes remain unknown."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Save work, close unneeded large tabs, repeat."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 97-word brief."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit simulation; no live action claimed."
+        }
+      },
+      "eligible": true
+    },
+    "s09": {
+      "criteria": {
+        "C1": {
+          "status": "pass",
+          "evidence": "Backup activity is possible; pageouts do not prove RAM shortage."
+        },
+        "C2": {
+          "status": "pass",
+          "evidence": "Uses valid current throughput, separates pageouts from swap/compression."
+        },
+        "C3": {
+          "status": "pass",
+          "evidence": "No throughput-to-bottleneck leap; latency missing."
+        },
+        "C4": {
+          "status": "pass",
+          "evidence": "Controlled backup pause, repeat, resume."
+        },
+        "C5": {
+          "status": "pass",
+          "evidence": "Accessible 106-word brief."
+        },
+        "C6": {
+          "status": "pass",
+          "evidence": "Explicit simulation; no live action claimed."
+        }
+      },
+      "eligible": true
+    }
+  },
+  "comparisons": {
+    "p05": {
+      "measurement_fidelity": "R better",
+      "diagnosis_action": "tie",
+      "difference": "C2 error in L; does not change main issue or action"
+    },
+    "p09": {
+      "measurement_fidelity": "R better",
+      "diagnosis_action": "tie",
+      "difference": "C2 error in L; does not change main issue or action"
+    }
+  },
+  "package": {
+    "read_only_collection": "pass",
+    "cpu_selection": "pass",
+    "memory_selection": "pass",
+    "periodic_vm_semantics": "pass",
+    "time_alignment_instructions": "pass",
+    "source_links_present": "pass",
+    "remote_source_verification": "unknown",
+    "runtime_adherence": "unknown"
+  },
+  "limits": [
+    "No live diagnostics, browsing, other grades, answer keys, or package edits.",
+    "C6 output evidence passes; unobserved worker actions remain unknown.",
+    "Phone fit assessed as content only; no physical viewport evidence."
+  ]
+}

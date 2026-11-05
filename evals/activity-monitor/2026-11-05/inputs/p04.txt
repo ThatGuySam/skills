@@ -1,0 +1,25 @@
+SYNTHETIC CLI CAPTURE. NOT REAL MEASUREMENTS.
+Constructed for diagnostic practice; formatting is a condensed representation of macOS command output.
+
+User context: The laptop is hot, fans loud, and work feels slow.
+Hardware: Intel MacBook Pro, 8 logical CPUs, 16 GiB RAM. Capture duration: 10 seconds.
+$ top -l 3 -s 5 -n 4 -stats pid,command,cpu,mem,threads,state
+Sample 1, 13:00:00
+CPU usage: 12.0% user, 72.0% sys, 16.0% idle
+PID COMMAND %CPU MEM #TH STATE
+Sample 2, 13:00:05
+CPU usage: 11.0% user, 73.0% sys, 16.0% idle
+0 kernel_task 560.0 1200M 400 running
+180 Safari 24.0 1600M 30 sleeping
+Sample 3, 13:00:10
+CPU usage: 12.0% user, 72.0% sys, 16.0% idle
+0 kernel_task 565.0 1200M 400 running
+$ powermetrics --samplers thermal -i 5000 -n 2 [previously authorized capture]
+Sample 1: Current pressure level: Serious
+Sample 2: Current pressure level: Serious
+$ vm_stat [same interval]
+Mach Virtual Memory Statistics: (page size of 4096 bytes)
+counter     before after
+Swapins:     20000 20000
+Swapouts:    30000 30000
+Charger port and external display configuration: not recorded.

@@ -22,7 +22,8 @@ skills/
 ├── sam-ux-audit/
 ├── zach-prompting/
 ├── htma-measure/
-└── agent-verify/
+├── agent-verify/
+└── activity-monitor/
 ```
 <!-- skills:end:repository-tree -->
 

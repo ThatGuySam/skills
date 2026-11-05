@@ -16,6 +16,13 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 - Two forward tests on one synthetic task: the first exposed deadlocks that were then fixed, and the second reported **improved on tested cases** as a pilot. A later helper tightening was checked by replay only.
 - The Agent Verify introduction now leads with the improvement-loop prompt. The repository instructions record that agents may deploy the docs site after a pushed change.
 
+### Activity Monitor
+
+- Add a portable read-only macOS resource diagnosis skill with a short, plain-language brief and a targeted next step.
+- Ground interpretation in Apple documentation and practitioner investigations. Distinguish current contention, expected activity, historical counters, and unavailable measurements.
+- Preserve clearly labeled synthetic captures, original responses, independent QA, and comparative limits. No expert-equivalence, statistical-significance, or physical chat-viewport claim is made.
+- Source changes, local installation, remote publication, and documentation deployment remain separate states.
+
 ## 2026-11-04
 
 ### Phone-first skill introductions and dependency refresh, collection 0.15.0

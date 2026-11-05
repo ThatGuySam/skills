@@ -1,0 +1,25 @@
+SYNTHETIC CLI CAPTURE. NOT REAL MEASUREMENTS.
+Constructed for diagnostic practice; formatting is a condensed representation of macOS command output.
+
+User context: Video calls sometimes stutter. I am downloading a large archive now.
+Hardware: Apple Silicon Mac, 10 logical CPUs, 32 GiB RAM. Capture duration: 10 seconds; no call was active.
+$ top -l 3 -s 5 -n 3 -stats pid,command,cpu,mem,threads,state
+Sample 1: CPU usage: 5% user, 4% sys, 91% idle
+Sample 2: CPU usage: 5% user, 4% sys, 91% idle
+PID COMMAND %CPU MEM #TH STATE
+900 curl 12.0 30M 1 sleeping
+450 Zoom 2.0 450M 35 sleeping
+Sample 3: CPU usage: 6% user, 4% sys, 90% idle
+900 curl 13.0 30M 1 sleeping
+450 Zoom 2.0 450M 35 sleeping
+$ nettop -P -L 3 -d -n -s 5 -J bytes_in,bytes_out
+time,process,bytes_in,bytes_out
+15:00:00,curl.900,100000000,1500000
+15:00:05,curl.900,120000000,1600000
+15:00:10,curl.900,120000000,1600000
+$ vm_stat [same interval]
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+counter    before after
+Swapins:     1000 1000
+Swapouts:    2000 2000
+Network capacity, latency, packet loss, radio quality, and thermal metrics: not measured.

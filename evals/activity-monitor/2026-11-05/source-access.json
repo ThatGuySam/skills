@@ -1,0 +1,202 @@
+[
+  {
+    "id": "a01",
+    "case": "p01",
+    "capture": "inputs/p01.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a01.md"
+  },
+  {
+    "id": "a02",
+    "case": "p02",
+    "capture": "inputs/p02.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a02.md"
+  },
+  {
+    "id": "a03",
+    "case": "p03",
+    "capture": "inputs/p03.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a03.md"
+  },
+  {
+    "id": "a04",
+    "case": "p04",
+    "capture": "inputs/p04.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a04.md"
+  },
+  {
+    "id": "a05",
+    "case": "p05",
+    "capture": "inputs/p05.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a05.md"
+  },
+  {
+    "id": "a06",
+    "case": "p06",
+    "capture": "inputs/p06.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a06.md"
+  },
+  {
+    "id": "a07",
+    "case": "p07",
+    "capture": "inputs/p07.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a07.md"
+  },
+  {
+    "id": "a08",
+    "case": "p08",
+    "capture": "inputs/p08.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a08.md"
+  },
+  {
+    "id": "a09",
+    "case": "p09",
+    "capture": "inputs/p09.txt",
+    "allowed_skill_snapshot": null,
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/a09.md"
+  },
+  {
+    "id": "b01",
+    "case": "p01",
+    "capture": "inputs/p01.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b01.md"
+  },
+  {
+    "id": "b02",
+    "case": "p02",
+    "capture": "inputs/p02.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b02.md"
+  },
+  {
+    "id": "b03",
+    "case": "p03",
+    "capture": "inputs/p03.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b03.md"
+  },
+  {
+    "id": "b04",
+    "case": "p04",
+    "capture": "inputs/p04.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b04.md"
+  },
+  {
+    "id": "b05",
+    "case": "p05",
+    "capture": "inputs/p05.txt",
+    "allowed_skill_snapshot": "snapshots/revised",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b05.md"
+  },
+  {
+    "id": "b06",
+    "case": "p06",
+    "capture": "inputs/p06.txt",
+    "allowed_skill_snapshot": "snapshots/revised",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b06.md"
+  },
+  {
+    "id": "b07",
+    "case": "p07",
+    "capture": "inputs/p07.txt",
+    "allowed_skill_snapshot": "snapshots/revised",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b07.md"
+  },
+  {
+    "id": "b08",
+    "case": "p08",
+    "capture": "inputs/p08.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b08.md"
+  },
+  {
+    "id": "b09",
+    "case": "p09",
+    "capture": "inputs/p09.txt",
+    "allowed_skill_snapshot": "snapshots/initial",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/b09.md"
+  },
+  {
+    "id": "c08",
+    "case": "p08",
+    "capture": "inputs/p08.txt",
+    "allowed_skill_snapshot": "snapshots/revised",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/c08.md"
+  },
+  {
+    "id": "c09",
+    "case": "p09",
+    "capture": "inputs/p09.txt",
+    "allowed_skill_snapshot": "snapshots/revised",
+    "tools": "Read assigned capture/package and write assigned response only. No browsing or live diagnostics.",
+    "observed_tool_trace": "unavailable",
+    "prompt_goal": "Explain CPU and resource activity, likely slowdown and useful next step in a short plain-language phone-friendly summary.",
+    "output": "outputs/c09.md"
+  }
+]

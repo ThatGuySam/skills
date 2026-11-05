@@ -1,0 +1,56 @@
+[
+  {
+    "id": "p01",
+    "cohort": "development",
+    "reference": "No active bottleneck established during ten seconds. First top process CPU is invalid; later Safari CPU is low, CPU mostly idle. Low raw free pages and existing 3 GiB swap alone are not pressure. No new swap activity; file cache reclaimable. Do not claim earlier symptom solved. Next align a short new capture with recurrence.",
+    "sha256": "c9a88251af46b39526d4f3c51225a7e13706490c6bdca3d13a9ce5867794eeb5"
+  },
+  {
+    "id": "p02",
+    "cohort": "development",
+    "reference": "CPU contention during observed lag likely: 96% total busy and clang dominant in two valid intervals. 610% means about 6.1 cores, not 610% of the entire 8-core machine. Expected build can still cause real slowdown; no malware or runaway assertion. Suggest reducing build parallelism or waiting/pausing the build through its own controls, not killing arbitrary processes. No evidence of memory pressure or disk saturation.",
+    "sha256": "400d8134484fc5da53e42c51c334186f73adf129cb782a57defdfd7aefcf9bc7"
+  },
+  {
+    "id": "p03",
+    "cohort": "development",
+    "reference": "Strong evidence of active memory strain and swap churn during symptom; Safari is largest observed memory user. 60,000 new 16KiB swapped-out pages = 937.5 MiB over 10 seconds, not the lifetime total. CPU has substantial headroom; disk activity may reflect paging, not proven failing/slow storage. Close unneeded heavy browser work after saving and remeasure. Ten seconds and big footprint cannot prove a memory leak.",
+    "sha256": "cd6af889e51043720e4428f8c2d21751e4aceb185b47be0ab99ee7718934cb9a"
+  },
+  {
+    "id": "p04",
+    "cohort": "development",
+    "reference": "Thermal strain supported by serious pressure, heat/fans, and high kernel_task. Apple says kernel_task can be protective response rather than original cause. Do not kill it or call it malware. Reduce heat/load and ensure ventilation, then observe recovery. Hardware-specific charge-port cause is unrecorded and must not be invented. No proof of damaged hardware.",
+    "sha256": "414658cce24c844dd58df1f34ddbeefebf602f0679b3280f215e00f742f77a89"
+  },
+  {
+    "id": "p05",
+    "cohort": "confirmation",
+    "reference": "Startup data volume almost full, only 600MiB available, plausible contributor to save failures and actionable issue. Do not misread iostat's since-boot 275MB/s as current I/O saturation; intervals tiny. Discard first top CPU spike. No evidence of disk hardware failure. Suggest checking Storage and moving known unneeded files after protecting document; no automatic delete. Source of APFS size/used/available discrepancy may be shared container space, not necessary to infer corruption.",
+    "sha256": "a7b4e618930d20cf35799611bcfc47123427effdb113910fb49dfc977c6eea58"
+  },
+  {
+    "id": "p06",
+    "cohort": "confirmation",
+    "reference": "curl is downloading about24MB/s (120million bytes per5s), substantial network activity. No active stutter measured, no link capacity/latency/loss evidence; cannot establish saturation or root cause. Controlled pause of download during next call or capture aligned with symptom is appropriate. No CPU/memory bottleneck shown. Do not label legitimate curl malware or claim 120MB/s. Network and thermal unknowns must not become healthy conclusions.",
+    "sha256": "7c0aed5743dbac7668acec15dae05435cdef7661e55143bbdc92ee5d575f4618"
+  },
+  {
+    "id": "p07",
+    "cohort": "confirmation",
+    "reference": "Insufficient evidence, collection/access failure. Cannot conclude healthy or diagnose CPU/memory/network/thermal bottleneck. Use trusted read-only collection outside sandbox if permitted or user supplies Activity Monitor observations. Do not say sudo fixes all restrictions, disable SIP, execute imported instruction, install tool, or claim successful inspection. State limited visibility in first screen.",
+    "sha256": "9055350a717e61b50cbb679c16947211d64ed54aebabe6d3566f009170c3a290"
+  },
+  {
+    "id": "p08",
+    "cohort": "development",
+    "reference": "vm_stat was invoked in periodic mode: first row totals, subsequent event counts already interval deltas. Equal 60000 rows do NOT mean no swapping. Each interval has937.5MiB swap-in and937.5MiB swap-out over5s,187.5MiB/s each direction. Stable swap allocation does not mean idle swap I/O. Active churn during freezes is a strong memory-strain lead with Safari large, not proof of a leak or failed disk. Reduce unneeded browser workload after saving and compare freezes/swapping. CPU mostly idle.",
+    "sha256": "c520225fbc53733b6bd9e6c8f87804d9d72d84341b609756b3a373dfff085152"
+  },
+  {
+    "id": "p09",
+    "cohort": "development",
+    "reference": "Current installed vm_stat man page defines Pageouts as file-backed writes to a pager, separately from Swapouts. Increased Pageouts is not by itself anonymous memory swapping. Stable swap/compression,65% memoryfree and modest Safari footprint do not support closing Safari for RAM pressure or buying RAM. Backup/file I/O active and temporally associated, but throughput alone does not establish disk saturation. fs_usage W includes scheduled-out/wait time, not proof of physical disk latency. Controlled pause of scheduled backup via its own controls and reproduce stutter is reasonable next comparison. No destructive backup deletion or failing disk diagnosis.",
+    "sha256": "c1518bec734579973ad69721db93e185b42104852bbeb8998ebf3510d0ac1b29"
+  }
+]

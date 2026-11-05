@@ -1,0 +1,37 @@
+SYNTHETIC CLI CAPTURE. NOT REAL MEASUREMENTS.
+Constructed for diagnostic practice; formatting is a condensed representation of macOS command output.
+
+User context: App switching briefly stutters during a scheduled backup. Someone told me the pageouts prove I need more RAM. Should I close Safari?
+Hardware: Apple Silicon Mac, 10 logical CPUs, 32 GiB RAM. Capture overlaps stutters for 10 seconds.
+$ top -l 3 -s 5 -n 3 -stats pid,command,cpu,mem,threads,state
+Sample 1: CPU usage: 7% user, 6% sys, 87% idle
+Sample 2: CPU usage: 8% user, 6% sys, 86% idle
+PID COMMAND %CPU MEM #TH STATE
+180 Safari 15.0 4G 30 sleeping
+910 backupd 28.0 300M 12 sleeping
+Sample 3: CPU usage: 8% user, 6% sys, 86% idle
+180 Safari 16.0 4G 30 sleeping
+910 backupd 30.0 300M 12 sleeping
+$ vm_stat [one-shot snapshots at interval endpoints]
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+counter                        before       after
+Pages free:                    300000      300000
+Pages occupied by compressor:   20000       20000
+Compressions:                  500000      500000
+Decompressions:                 20000       20000
+Pageouts:                     1000000     1200000
+Swapins:                        1000        1000
+Swapouts:                       2000        2000
+$ memory_pressure
+System-wide memory free percentage: 65%
+$ iostat -w 5 -c 3
+              disk2
+    KB/t  tps  MB/s
+   64.00  100   6.25
+  128.00 1600 200.00
+  128.00 1680 210.00
+$ fs_usage -w -f filesys -t 10 910 [selected lines]
+17:00:05.200 open /Volumes/Backup/... 0.000021 backupd.910
+17:00:05.240 write /Volumes/Backup/... 0.004100W backupd.910
+17:00:10.200 write /Volumes/Backup/... 0.003100W backupd.910
+Disk service-time distribution, errors, queue depth, and no-backup comparison: not captured.

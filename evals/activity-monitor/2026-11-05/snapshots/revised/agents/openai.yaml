@@ -1,0 +1,4 @@
+interface:
+  display_name: "Activity Monitor"
+  short_description: "Explain Mac slowdowns with a short resource-health brief"
+  default_prompt: "Use $activity-monitor to check my Mac's resource activity and explain what may be slowing it down."

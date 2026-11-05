@@ -77,6 +77,12 @@
       "title": "Agent Verify",
       "summary": "Verify new work and compare before/after improvements with fresh subagents and independent QA.",
       "guide": "agent-verify/introduction"
+    },
+    {
+      "id": "activity-monitor",
+      "title": "Activity Monitor",
+      "summary": "Explain Mac resource activity and likely slowdowns in a short actionable brief.",
+      "guide": "activity-monitor/introduction"
     }
   ],
   "navigationGroups": [
@@ -355,6 +361,29 @@
         {
           "label": "Verification",
           "slug": "agent-verify/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "activity-monitor"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "activity-monitor/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "activity-monitor/reference"
+        },
+        {
+          "label": "Verification",
+          "slug": "activity-monitor/verification"
+        },
+        {
+          "label": "Practitioner research",
+          "slug": "research/macos-resource-diagnosis-2026-11-05"
         }
       ]
     }
