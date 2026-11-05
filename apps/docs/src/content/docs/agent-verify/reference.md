@@ -1,13 +1,13 @@
 ---
 title: Agent Verify reference
-description: Requirements, installation options, modes, verdicts, edge cases, and package layout for Agent Verify.
+description: Requirements, installation options, modes including the improvement loop, verdicts, edge cases, and package layout for Agent Verify.
 ---
 
 Agent Verify uses fresh subagents to verify code, skills, prompts, documents, and agent behavior, and to compare before/after improvements. It is independently installable and has no HTMA dependency. Comparisons start with a practical user benefit and a shortfall or uncertainty the test can resolve. A valid outcome may be no improvement, a regression, or insufficient evidence.
 
 ## Requirements
 
-The skill works independently of any particular repo or skill creator. It needs a runtime that can spawn fresh subagents for independent trials; without that, it still runs useful checks and returns an inconclusive independent-verification verdict. Self-review cannot satisfy the subagent requirement. The optional receipt checker (`scripts/check_receipt.py`) requires Python 3.9+, has no network access, and writes no files.
+The skill works independently of any particular repo or skill creator. It needs a runtime that can spawn fresh subagents for independent trials; without that, it still runs useful checks and returns an inconclusive independent-verification verdict. Self-review cannot satisfy the subagent requirement. The optional helpers, `scripts/check_receipt.py` and `scripts/score_loop.py`, require Python 3.9+, have no network access, and write no files.
 
 ## Global Codex Installation
 
@@ -26,7 +26,7 @@ The canonical maintained source is [`skills/agent-verify/` in this public reposi
 
 ## Behavior
 
-Agent Verify runs in one of three modes. **Verify** checks new or existing artifacts against their requirements, or runs a skill on representative tasks, establishing scoped behavior rather than improvement over an absent baseline. **Compare** evaluates frozen versions against each other, or a skill against no skill, holding external inputs, tools, model, and settings constant across the pair. **Progressive audit** starts with cheap deterministic checks and escalates only unresolved judgments to a stronger approved model within a declared budget; it can wrap either verify or compare.
+Agent Verify runs in one of four modes. **Verify** checks new or existing artifacts against their requirements, or runs a skill on representative tasks, establishing scoped behavior rather than improvement over an absent baseline. **Compare** evaluates frozen versions against each other, or a skill against no skill, holding external inputs, tools, model, and settings constant across the pair. **Progressive audit** starts with cheap deterministic checks and escalates only unresolved judgments to a stronger approved model within a declared budget; it can wrap either verify or compare. The **improvement loop** improves a prompt, skill, or instruction in red-green-refactor rounds, described below.
 
 Before running trials, the coordinator records the question, success criteria, critical failures, case selection, baseline, provider/model settings per role, and side-effect boundaries. It dispatches fresh, blinded workers and QA so the author of a change is not the sole judge of its own output — QA inspects the actual artifact, not just a worker's summary of what it did.
 
@@ -35,6 +35,18 @@ Compare mode separates regression checks from cases that can reveal a useful imp
 New or changed interpretive graders run focused valid, defective and unknown-evidence controls before their decisions are trusted. Preference judges also check ties and ordering. Failed controls invalidate the affected verdicts until bounded repair and retesting, or leave the result unknown. Human preference claims need actual submitted labels; model agreement is not a substitute.
 
 The task setup matches real use. A one-request-at-a-time system receives one case per fresh context unless batching equivalence has been checked. Development cases remain separate from confirmation, and task counts remain separate from generation attempts and reviewer votes.
+
+## Improvement loop
+
+The loop starts with error analysis on development cases and freezes ten binary criteria drawn from observed failures and the user's requirements. A trial's score is the number of criteria passed. A failed critical criterion caps the reported score at 4/10; keep decisions also track the uncapped count, so fixing one of several critical failures still shows progress.
+
+- **Red.** Editing begins only after the unchanged artifact scores ≤6/10 on a dev case in at least 2 of 3 fresh trials, with the failing criteria named. A capable baseline ends the loop with no demonstrated headroom; failures are never manufactured.
+- **Green.** Each round makes one change aimed at a named failing criterion. The change is kept only if it raises the dev-case mean, lowers no case, breaks no previously passing criterion, and adds no critical failure. If a fix exposes a requirement the old prompt met only by accident, the next round may add that requirement explicitly as a linked change.
+- **Refactor.** After a kept change, a pruning pass removes duplication and wording tied to specific cases, and is kept only if no score drops.
+- **Stop.** The loop ends when every dev case reaches ≥9 with no critical failure, after five rounds, or when two consecutive rounds each gain less than 1 point once every still-failing criterion has been tried or recorded as not fixable in the prompt.
+- **Confirm.** Holdout cases the editor never saw decide whether the gain carries over.
+
+These are Sam's default constants, not research-established optima; user-supplied values override them. `scripts/score_loop.py` applies the arithmetic to recorded QA statuses and refuses a ledger that records rounds without a proven red. The [research memo](/research/prompt-improvement-loops-2026-11-05/) covers the sources and tools.
 
 ## Inputs & outputs
 
@@ -46,4 +58,4 @@ A critical failure blocks acceptance even when other scores improve; missing man
 
 ## Data shape
 
-`SKILL.md` holds the mode selection and execution/reporting sequence. `references/` carries conditional detail: [improvement design](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/improvement.md) for useful outcomes and discriminating cases, [comparison design](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/comparison.md) for matched baselines, [progressive audit](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/progressive-audit.md) for the escalation ladder, [QA roles and grading](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/qa.md), [evidence records](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/evidence.md), [research basis](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/research-basis.md), and [model providers](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/model-providers.md) for OpenAI/Google routing presets. `scripts/check_receipt.py` validates a run's receipt structure and artifact hashes; it does not judge behavioral quality.
+`SKILL.md` holds the mode selection and execution/reporting sequence. `references/` carries conditional detail: [improvement design](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/improvement.md) for useful outcomes and discriminating cases, [improvement loop](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/improvement-loop.md) for red-green-refactor rounds, [comparison design](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/comparison.md) for matched baselines, [progressive audit](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/progressive-audit.md) for the escalation ladder, [QA roles and grading](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/qa.md), [evidence records](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/evidence.md), [research basis](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/research-basis.md), and [model providers](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/references/model-providers.md) for OpenAI/Google routing presets. `scripts/check_receipt.py` validates a run's receipt structure and artifact hashes, and `scripts/score_loop.py` scores an improvement-loop ledger; neither judges behavioral quality.

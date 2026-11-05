@@ -13,6 +13,22 @@ python3 scripts/check_receipt.py evals/fixtures/tampered-receipt.json
 
 See [evidence records](../references/evidence.md) for the full receipt format and what the checker does and does not establish.
 
+## Improvement loop ledger
+
+Three synthetic ledgers exercise `scripts/score_loop.py`. Their statuses are constructed for replay, not real agent trials.
+
+```sh
+python3 scripts/score_loop.py evals/fixtures/loop-ledger.json
+python3 scripts/score_loop.py evals/fixtures/loop-no-red.json
+python3 scripts/score_loop.py evals/fixtures/loop-premature-green.json
+```
+
+- `loop-ledger.json` exits `0`. Red is proven on two dev cases, including a critical failure capped at 4/10. Round 1 gains 2.0 and its refactor ties. Round 2, a linked change, is rejected for a per-case regression despite a higher mean. Round 3 gains 0.33. With C7 and C8 recorded as not fixable in the prompt and every other failing criterion targeted, the stop is `plateau`. Holdout-1 moves from 6 to 7.
+- `loop-no-red.json` exits `0` with `no-headroom`, because a capable baseline yields no red.
+- `loop-premature-green.json` exits `1`, because it records a green round without a proven red.
+
+The [November 5 forward tests](2026-11-05-improvement-loop.md) record two real loop runs on the bundled synthetic task in `fixtures/loop-forward/`. They include the defects the runs exposed and how they were repaired.
+
 ## Behavioral comparison
 
 The [October 31 comparison summary](2026-10-31-comparison.md) records a bounded actual previous-versus-updated verifier pilot. It is separate from these synthetic receipt fixtures. Raw private task material and worker outputs are not distributed, so the public summary is not a replayable behavioral benchmark.

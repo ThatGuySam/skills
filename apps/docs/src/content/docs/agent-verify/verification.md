@@ -38,6 +38,16 @@ A separate bounded pilot explicitly loaded the revised skill in two fresh coordi
 
 A separate Codex CLI 0.166.0 process reproduced the HTMA-prefixed skill insertion before repair. After standalone copy installation, the same running selector inserted `$agent-verify` without a restart or model request. See the [installation regression record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-10-31-installation.md). This result is limited to that runtime and process, not a guarantee for every already-open app.
 
+## Improvement loop forward tests
+
+On November 5, two fresh coordinators ran the new improvement loop on a synthetic task: improve a one-line commit-message prompt for Claude Haiku 5.5. Workers were fresh Haiku calls, and blinded Opus 5.5 QA was validated on controls.
+
+- **Run 1** proved red (4/10 in all 15 baseline trials), then deadlocked. The 4/10 cap hid partial fixes, two linked criteria blocked each other, and the plateau fired with five failing criteria never tried. The coordinator followed the rules correctly and reported **no demonstrated improvement**. The rules were then revised.
+- **Run 2** used the revised rules. After four rounds (three kept, one rejected), the dev mean rose from 4.0 to 9.33. On two holdout diffs, the final prompt scored 10/10 in 6 of 6 trials and the original scored 4/10 in 6 of 6. Reported verdict: **improved on tested cases**, a pilot.
+- **Run 2 also exposed a helper gap.** Round 3 was kept even though it broke a passing check on two cases. The helper now rejects that. The repair was checked by replaying the recorded statuses, not by a fresh run.
+
+`scripts/score_loop.py` also passes three bundled synthetic ledgers and fourteen edge-case checks. See the [forward test record](https://github.com/ThatGuySam/skills/blob/main/skills/agent-verify/evals/2026-11-05-improvement-loop.md). This is one synthetic task with three trials per cell. It does not establish that the loop beats unstructured editing or generalizes to other prompts.
+
 ## What remains unverified
 
 There is no broad cross-model comparison, measured real-world time saving, calibration against independently submitted human preferences, automatic skill-selection test, or measurement of escalation accuracy. The actual proposed research experiment was not executed. Full native worker tool traces were unavailable. Treat the instructions as a workflow to apply and verify, rather than relying on this page as a guarantee.

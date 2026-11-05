@@ -87,6 +87,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
+            { label: "Red-green-refactor prompts", slug: "research/prompt-improvement-loops-2026-11-05" },
             { label: "Developer docs and catalog", slug: "research/developer-docs-and-skill-catalog-2026-10-20" },
             {
               label: "Concise env examples",

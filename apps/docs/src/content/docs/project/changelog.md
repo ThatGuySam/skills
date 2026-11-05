@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-05
+
+### Agent Verify improvement loop, collection 0.16.0
+
+- Added a red-green-refactor improvement loop for prompts, skills, and instructions. It proves a poor score out of 10 on the unchanged artifact before any edit, keeps only single-change or linked rounds that break no passing check, stops on a plateau, a target, or a five-round cap, and confirms on holdout cases.
+- The default policy follows Sam's choices: ten binary checks, a critical-failure cap of 4/10, red at ≤6/10 reproduced in 2 of 3 trials, and a plateau of two sub-1-point rounds once every failing check has been tried.
+- Added `scripts/score_loop.py` for the ledger arithmetic, with synthetic fixtures and a bundled forward-test task.
+- Published the [red-green-refactor research memo](/research/prompt-improvement-loops-2026-11-05/) on practitioner techniques, tools, and measurement rules. It notes that the Anthropic and OpenAI prompt improvers have been retired.
+- Two forward tests on one synthetic task: the first exposed deadlocks that were then fixed, and the second reported **improved on tested cases** as a pilot. A later helper tightening was checked by replay only.
+
 ## 2026-11-04
 
 ### Phone-first skill introductions and dependency refresh, collection 0.15.0

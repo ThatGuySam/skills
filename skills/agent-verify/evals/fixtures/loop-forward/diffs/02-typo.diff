@@ -1,0 +1,7 @@
+diff --git a/README.md b/README.md
+index 11aa2b3..44cc5d6 100644
+--- a/README.md
++++ b/README.md
+@@ -3,7 +3,7 @@
+-Run `npm run biuld` to create the production bundle.
++Run `npm run build` to create the production bundle.

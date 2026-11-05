@@ -26,6 +26,7 @@ Invoke it as `$agent-verify` in Codex, `/agent-verify` in Claude Code, or `/sam:
 ```text wrap
 Use $agent-verify to verify this new feature against its requirements.
 Use $agent-verify to check this document against its source material.
+Use $agent-verify to improve [prompt file] with red-green-refactor rounds. Prove its score out of 10 first, then improve it until the gains plateau.
 ```
 
 ## Go deeper
