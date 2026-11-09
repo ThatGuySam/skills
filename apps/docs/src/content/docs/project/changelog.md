@@ -16,6 +16,11 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 - The 80–120-word cap was replaced by required parts per symptom.
 - A replay of a real session, with Claude Sonnet 5.5 and GPT-6-Luna, reported **improved on tested cases**, including two holdout cases; GPT-6-Luna still misses required parts in some trials. [Verification](/activity-monitor/verification/) has the details and limits.
 
+### Private held-out evals and a leak check
+
+- Some skills are now also measured by maintainer-only held-out evals built from real sessions, kept in a private repository. Public verification pages summarize their method and scores; contributors do not need them.
+- CI and a new optional pre-push hook (`git config core.hooksPath .githooks`) run `scripts/check-private-leaks.mjs`, which blocks private eval canaries and raw macOS diagnostic files.
+
 ## 2026-11-05
 
 ### Sam's Skill Creator verifies with Agent Verify

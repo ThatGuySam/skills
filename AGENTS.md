@@ -39,6 +39,13 @@ This repository contains the agent skills Sam uses and publishes.
 - Run the narrowest relevant skill validation, strict plugin validation, the docs build, and the docs-spec gate before publishing.
 - Verify deployments by checking changed page content and `llms-full.txt`, not only status headers.
 
+## Private evals (maintainers only)
+
+- Some skills are also measured by held-out evals built from real, private sessions. They live in a private companion repository. Contributors do not need it and public CI does not run it: outside changes are gated by the public checks above, and the maintainer runs the private evals before releases.
+- Never copy private eval material here: fixtures from real machines, private cases, criteria, or grader files. Public verification pages summarize method and scores only. Public evals in `evals/` use labeled synthetic inputs.
+- `node scripts/check-private-leaks.mjs` blocks private canaries and raw macOS diagnostics in CI and in the pre-push hook (`git config core.hooksPath .githooks`). When the companion repository is checked out next to this one as `../skills-private`, or `SKILLS_PRIVATE_DIR` points to it, the check also applies that repository's private-term rules.
+- If that companion checkout exists, read its `AGENTS.md` before running, adding, or changing a private eval, or before promoting an experimental skill from it.
+
 ## Deploying the docs site
 
 - `skills.samcarlton.com` is a personal side project, not a business production app. Sam decided on 2026-11-05 that agents may deploy it without asking, as the last step of a pushed docs change.
