@@ -5,6 +5,17 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-09
+
+### Activity Monitor investigates freezes, hung apps, and hot daemons
+
+- The skill now keeps investigating until the culprit and its owning app, the affected apps, the mechanism, and the trigger are settled from evidence, instead of stopping after one follow-up check. Recorded evidence of a past episode is read before suggesting a capture during recurrence.
+- New recipes and four read-only scripts find apps that are not responding from WindowServer logs, re-check them so recovered apps are not reported as hung, count processes by name and owning ancestor, summarize wake times and recent reports, and condense `.diag` heaviest stacks.
+- Hot root daemons are explained from readable DiagnosticReports, with a user-run `sudo sample` when more is needed, and restart advice depends on whether the trigger has cleared.
+- Before explaining what a system component does, the skill checks a retrieved source: man pages and launchd jobs, Apple documentation and open source, then community forums, which count only as hypotheses. Looked-up claims are cited.
+- The 80–120-word cap was replaced by required parts per symptom.
+- A replay of a real session, with Claude Sonnet 5.5 and GPT-6-Luna, reported **improved on tested cases**, including two holdout cases; GPT-6-Luna still misses required parts in some trials. [Verification](/activity-monitor/verification/) has the details and limits.
+
 ## 2026-11-05
 
 ### Sam's Skill Creator verifies with Agent Verify
