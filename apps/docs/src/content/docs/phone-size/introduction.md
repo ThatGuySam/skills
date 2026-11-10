@@ -21,6 +21,14 @@ Use $phone-size to turn this long issue into a phone-sized brief. Keep the accep
 
 Invoke it as `$phone-size` in Codex, `/phone-size` in Claude Code, or `/sams:phone-size` with the collection bundle. Add `-g` to the install command to install it globally.
 
+<!-- demo:start:phone-size -->
+## See it run
+
+<video src="/demos/phone-size.mp4" poster="/demos/phone-size.png" aria-label="Codex running Phone Size with the prompt: Use $phone-size to condense this content into a readable phone-screen brief with progressively disclosed detail." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/phone-size.gif">Watch the Phone Size demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/phone-size/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:phone-size -->
+
 ## What it looks like
 
 These screenshots come from a synthetic decision brief at a 375 by 667 CSS-pixel viewport, not a real customer decision.

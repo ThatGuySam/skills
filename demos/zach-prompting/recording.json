@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $zach-prompting to improve this instruction artifact while preserving its outcome, boundaries, and validation contract.",
+  "speed": 1
+}

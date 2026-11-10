@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $activity-monitor to check my Mac's resource activity and explain what may be slowing it down.",
+  "speed": 1
+}

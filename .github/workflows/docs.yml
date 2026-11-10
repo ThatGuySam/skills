@@ -25,6 +25,8 @@ jobs:
         run: node scripts/skill-catalog.mjs --check
       - name: Test catalog drift checks
         run: node --test scripts/skill-catalog.test.mjs
+      - name: Test demo tooling and embeds
+        run: node --test scripts/demo.test.mjs
       - name: Test docs commands
         working-directory: apps/docs
         run: bun run test

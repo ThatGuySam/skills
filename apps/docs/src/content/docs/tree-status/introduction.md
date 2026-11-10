@@ -22,6 +22,22 @@ Use $sams-status to show where the current project stands.
 
 Install either skill alone or both together. Invoke them as `$sams-tree` and `$sams-status` in Codex, `/sams-tree` and `/sams-status` in Claude Code, or `/sams:tree` and `/sams:status` with the collection bundle.
 
+<!-- demo:start:sams-tree -->
+## See Sam's Tree run
+
+<video src="/demos/sams-tree.mp4" poster="/demos/sams-tree.png" aria-label="Codex running Sam's Tree with the prompt: Use $sams-tree to organize this material into a scannable tree." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/sams-tree.gif">Watch the Sam's Tree demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/sams-tree/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:sams-tree -->
+
+<!-- demo:start:sams-status -->
+## See Sam's Status run
+
+<video src="/demos/sams-status.mp4" poster="/demos/sams-status.png" aria-label="Codex running Sam's Status with the prompt: Use $sams-status to show the current project's relevant work and status." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/sams-status.gif">Watch the Sam's Status demo</a></video>
+
+A real Codex run of the default prompt on a [synthetic workspace](https://github.com/ThatGuySam/skills/tree/main/demos/sams-status), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:sams-status -->
+
 ## Reading status
 
 | Symbol | Meaning |

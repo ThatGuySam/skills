@@ -21,6 +21,14 @@ Use $migrate-cgpt to back up this Custom GPT and convert it into a local Codex s
 
 Invoke it as `$migrate-cgpt` in Codex, `/migrate-cgpt` in Claude Code, or `/sams:migrate-cgpt` with the collection bundle.
 
+<!-- demo:start:migrate-cgpt -->
+## See it run
+
+<video src="/demos/migrate-cgpt.mp4" poster="/demos/migrate-cgpt.png" aria-label="Codex running Migrate Custom GPTs with the prompt: Use $migrate-cgpt to migrate this Custom GPT into a skill locally or in my GitHub repository." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/migrate-cgpt.gif">Watch the Migrate Custom GPTs demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/migrate-cgpt/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:migrate-cgpt -->
+
 ## More prompts
 
 ```text wrap

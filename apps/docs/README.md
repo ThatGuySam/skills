@@ -20,6 +20,8 @@ On a 375 by 667 phone screen, a reader should see the page title, the install co
 4. **Invocation line.** `$<id>` in Codex, `/<id>` in Claude Code, and `/sam:<id>` with the collection bundle.
 5. **Then only what a person needs.** Optional `## More prompts`, sections that help someone read the output (screenshots, a status legend), and `## Go deeper` links to the skill's other pages.
 
+The **See it run** demo video is generated. Edit the recording under `demos/<id>/` and run `node scripts/demo.mjs embed` rather than editing between its `demo:` markers. See [`demos/README.md`](../../demos/README.md).
+
 Keep page titles short enough to fit on one line on a phone.
 
 ### Where detail goes
@@ -62,6 +64,7 @@ report this gate as unavailable. A build or link scan does not replace it.
 ```bash
 node ../../scripts/skill-catalog.mjs --check
 node --test ../../scripts/skill-catalog.test.mjs
+node --test ../../scripts/demo.test.mjs
 bun run test
 bun run build
 bash "$HOME/.codex/skills/docs-spec/scripts/check.sh" "$(pwd)"

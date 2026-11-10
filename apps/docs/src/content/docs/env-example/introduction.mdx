@@ -21,6 +21,14 @@ Use $sams-env to draft this project's .env.example from its source and configura
 
 Invoke it as `$sams-env` in Codex, `/sams-env` in Claude Code, or `/sams:env` with the collection bundle.
 
+{/* demo:start:sams-env */}
+## See it run
+
+<video src="/demos/sams-env.mp4" poster="/demos/sams-env.png" aria-label="Codex running Sam's Env with the prompt: Use $sams-env to draft this project's environment template with verified setup links, commands, and value guidance." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/sams-env.gif">Watch the Sam's Env demo</a></video>
+
+A real Codex run of the default prompt on a [synthetic workspace](https://github.com/ThatGuySam/skills/tree/main/demos/sams-env), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+{/* demo:end:sams-env */}
+
 ## Upgrade from Env Example
 
 Collection 0.12.0 renames the standalone skill from `env-example` to `sams-env`. Install it with `npx skills add ThatGuySam/skills --skill sams-env`, then replace `$env-example` with `$sams-env` in Codex, `/env-example` with `/sams-env` in standalone Claude Code, or `/sam:env-example` with `/sams:env` in the collection bundle. After verifying the new installation, remove the older `env-example` installation to avoid loading both. Existing installed copies remain until you remove them. Documentation URLs under `/env-example/` remain valid.

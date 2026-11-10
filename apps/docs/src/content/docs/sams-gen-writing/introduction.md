@@ -21,6 +21,14 @@ Use $sams-gen-writing to review this AI-assisted product roundup before I publis
 
 Invoke it as `$sams-gen-writing` in Codex, `/sams-gen-writing` in Claude Code, or `/sams:gen-writing` with the collection bundle.
 
+<!-- demo:start:sams-gen-writing -->
+## See it run
+
+<video src="/demos/sams-gen-writing.mp4" poster="/demos/sams-gen-writing.png" aria-label="Codex running Sam's Gen Writing with the prompt: Use $sams-gen-writing to review this AI-assisted page against Google's guidance and tell me what it needs before publishing." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/sams-gen-writing.gif">Watch the Sam's Gen Writing demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/sams-gen-writing/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:sams-gen-writing -->
+
 ## More prompts
 
 ```text wrap

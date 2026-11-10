@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $agent-verify to verify this work with fresh subagents and independent QA. For an update, compare the actual previous version with the candidate on matched tasks and report improvements, regressions, and unknowns.",
+  "speed": 1.5
+}

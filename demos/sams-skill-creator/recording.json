@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $sams-skill-creator to turn this workflow into a focused skill with clear completion criteria and appropriate validation.",
+  "speed": 1.5
+}

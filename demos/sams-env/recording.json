@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $sams-env to draft this project's environment template with verified setup links, commands, and value guidance.",
+  "speed": 1
+}

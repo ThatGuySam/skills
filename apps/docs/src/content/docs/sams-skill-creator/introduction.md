@@ -21,6 +21,14 @@ Use $sams-skill-creator to turn this workflow into a focused, tested skill: [des
 
 Invoke it as `$sams-skill-creator` in Codex, `/sams-skill-creator` in Claude Code, or `/sams:skill-creator` with the collection bundle.
 
+<!-- demo:start:sams-skill-creator -->
+## See it run
+
+<video src="/demos/sams-skill-creator.mp4" poster="/demos/sams-skill-creator.png" aria-label="Codex running Sam's Skill Creator with the prompt: Use $sams-skill-creator to turn this workflow into a focused skill with clear completion criteria and appropriate validation." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/sams-skill-creator.gif">Watch the Sam's Skill Creator demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/sams-skill-creator/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened, and playback runs at 1.5x.
+<!-- demo:end:sams-skill-creator -->
+
 ## Go deeper
 
 - [Task examples](/sams-skill-creator/examples/): prompts for creating, improving, and diagnosing skills.

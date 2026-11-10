@@ -21,6 +21,14 @@ Use $htma-measure to set a planning allowance for this project before quotes arr
 
 Invoke it as `$htma-measure` in Codex, `/htma-measure` in Claude Code, or `/sams:htma-measure` with the collection bundle.
 
+<!-- demo:start:htma-measure -->
+## See it run
+
+<video src="/demos/htma-measure.mp4" poster="/demos/htma-measure.png" aria-label="Codex running HTMA Measure with the prompt: Use $htma-measure to estimate this uncertain decision and produce a calibrated measurement memo." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/htma-measure.gif">Watch the HTMA Measure demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/htma-measure/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:htma-measure -->
+
 ## What the memo contains
 
 - a precise decision and threshold;

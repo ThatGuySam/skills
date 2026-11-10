@@ -4,6 +4,12 @@ HTMA Measure estimates uncertain costs, budgets, rates, risks, ROI, and market s
 
 This README is the human guide. [`SKILL.md`](SKILL.md) is the canonical instruction and output contract agents load.
 
+<!-- demo:start:htma-measure -->
+![Codex running HTMA Measure with the prompt: Use $htma-measure to estimate this uncertain decision and produce a calibrated measurement memo.](https://skills.samcarlton.com/demos/htma-measure.gif)
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/htma-measure/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:htma-measure -->
+
 ## When it helps
 
 | Situation | How Measure responds |

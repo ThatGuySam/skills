@@ -1,0 +1,5 @@
+{
+  "prompt": "Use $sam-ux-audit to audit this repository's signup page and report evidence-backed UX findings.",
+  "timeoutMinutes": 25,
+  "allowedText": ["username@company.com"]
+}

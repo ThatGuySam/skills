@@ -21,6 +21,14 @@ Use $agent-verify to improve [prompts/reply.md] with red-green-refactor. Prove i
 
 Invoke it as `$agent-verify` in Codex, `/agent-verify` in Claude Code, or `/sams:agent-verify` with the collection bundle.
 
+<!-- demo:start:agent-verify -->
+## See it run
+
+<video src="/demos/agent-verify.mp4" poster="/demos/agent-verify.png" aria-label="Codex running Agent Verify with the prompt: Use $agent-verify to verify this work with fresh subagents and independent QA. For an update, compare the actual previous version with the candidate on matched tasks and report improvements, regressions, and unknowns." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/agent-verify.gif">Watch the Agent Verify demo</a></video>
+
+A real Codex run of the default prompt on a [synthetic workspace](https://github.com/ThatGuySam/skills/tree/main/demos/agent-verify), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened, and playback runs at 1.5x.
+<!-- demo:end:agent-verify -->
+
 ## More prompts
 
 ```text wrap

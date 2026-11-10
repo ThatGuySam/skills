@@ -21,6 +21,14 @@ Use $zach-prompting to tighten this AGENTS.md without weakening its safety, perm
 
 Invoke it as `$zach-prompting` in Codex, `/zach-prompting` in Claude Code, or `/sams:zach-prompting` with the collection bundle.
 
+<!-- demo:start:zach-prompting -->
+## See it run
+
+<video src="/demos/zach-prompting.mp4" poster="/demos/zach-prompting.png" aria-label="Codex running Zach Prompting with the prompt: Use $zach-prompting to improve this instruction artifact while preserving its outcome, boundaries, and validation contract." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/zach-prompting.gif">Watch the Zach Prompting demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/zach-prompting/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:zach-prompting -->
+
 ## More prompts
 
 ```text wrap

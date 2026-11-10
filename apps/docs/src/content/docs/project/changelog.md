@@ -7,6 +7,12 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-05
 
+### Recorded skill demos
+
+- Skill introductions now show **See it run**: a real Codex recording of the skill's default prompt on synthetic input. Skill READMEs show the same run as a GIF, and the repository README shows Agent Verify.
+- `node scripts/demo.mjs` records each demo in a throwaway home with only that skill installed, renders a GIF and MP4, and embeds them. Captions state the recording date, Codex version, and playback speed. [`demos/README.md`](https://github.com/ThatGuySam/skills/tree/main/demos) explains fixtures and re-recording.
+- Recordings replace the local account name with `demo`. Recording and the Documentation workflow refuse casts that show home-directory paths, personal email addresses, or token-shaped strings. Every transcript was reviewed before publishing; outputs are single pilot runs, not evaluations.
+
 ### `sams` bundle with short names, collection 0.17.0
 
 - The marketplace plugin is now `sams` instead of `htma-measure`. Codex had listed every bundled skill as `htma-measure:<skill>`.

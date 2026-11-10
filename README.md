@@ -2,6 +2,12 @@
 
 Sam's Skills contains reusable workflows for Codex, Claude Code, and other agents that support the Agent Skills format. Install a single skill or the collection bundle. Each skill keeps its instructions in `SKILL.md` and loads supporting references when needed.
 
+<!-- demo:start:agent-verify -->
+![Codex running Agent Verify with the prompt: Use $agent-verify to verify this work with fresh subagents and independent QA. For an update, compare the actual previous version with the candidate on matched tasks and report improvements, regressions, and unknowns.](apps/docs/public/demos/agent-verify.gif)
+
+**Agent Verify in Codex.** A real Codex run of the default prompt on a [synthetic workspace](https://github.com/ThatGuySam/skills/tree/main/demos/agent-verify), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened, and playback runs at 1.5x.
+<!-- demo:end:agent-verify -->
+
 ## Skills
 
 <!-- skills:start:readme-catalog -->

@@ -4,6 +4,12 @@ Research a sales decision, prepare a discovery conversation, review a sales call
 or draft a prospect reply. The skill selects relevant practitioners, checks the
 evidence, and leads toward a concrete next step.
 
+<!-- demo:start:sales-research -->
+![Codex running Sales Research with the prompt: Use $sales-research to research this sales situation and recommend the next decision.](https://skills.samcarlton.com/demos/sales-research.gif)
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/sales-research/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:sales-research -->
+
 ## Install
 
 With Node.js and npm available, run this from the project where you want the skill:

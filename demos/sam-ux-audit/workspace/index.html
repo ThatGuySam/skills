@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Synthetic demo input: a small signup page invented for a skill demo. -->
+<html>
+<head>
+  <title>Page</title>
+  <style>
+    body { font-family: sans-serif; background: #fff; color: #aaa; margin: 0; }
+    .hero { padding: 80px 20px; text-align: center; }
+    .hero h1 { font-size: 22px; color: #bbb; }
+    input { border: 1px solid #eee; padding: 4px; }
+    .cta { background: #7fc8f8; color: #fff; font-size: 11px; padding: 4px 6px; border: 0; }
+    .cta:focus { outline: none; }
+    .banner { animation: slide 0.4s infinite alternate; }
+    @keyframes slide { from { transform: translateX(-10px); } to { transform: translateX(10px); } }
+  </style>
+</head>
+<body>
+  <div class="banner">Limited offer!</div>
+  <div class="hero">
+    <h1>Plan meals in minutes</h1>
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <div class="cta" onclick="signup()">Sign up</div>
+  </div>
+  <img src="hero.jpg">
+  <script>function signup() { alert('Thanks!') }</script>
+</body>
+</html>

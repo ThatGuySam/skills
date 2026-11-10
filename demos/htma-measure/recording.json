@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $htma-measure to estimate this uncertain decision and produce a calibrated measurement memo.",
+  "speed": 1
+}

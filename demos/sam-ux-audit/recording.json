@@ -1,0 +1,7 @@
+{
+  "recorded": "2026-11-05",
+  "codex": "0.166.0",
+  "model": "gpt-6.1-sol",
+  "prompt": "Use $sam-ux-audit to audit this repository's signup page and report evidence-backed UX findings.",
+  "speed": 1
+}

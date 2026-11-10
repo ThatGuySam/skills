@@ -23,6 +23,14 @@ short summary and the most useful next step.
 
 Invoke it as `$activity-monitor` in Codex, `/activity-monitor` in Claude Code, or `/sams:activity-monitor` with the collection bundle.
 
+<!-- demo:start:activity-monitor -->
+## See it run
+
+<video src="/demos/activity-monitor.mp4" poster="/demos/activity-monitor.png" aria-label="Codex running Activity Monitor with the prompt: Use $activity-monitor to check my Mac's resource activity and explain what may be slowing it down." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/activity-monitor.gif">Watch the Activity Monitor demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/activity-monitor/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:activity-monitor -->
+
 ## Go deeper
 
 - [Reference](/activity-monitor/reference/) explains collection, evidence, and boundaries.

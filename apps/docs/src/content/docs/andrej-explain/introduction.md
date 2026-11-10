@@ -21,6 +21,14 @@ Use $andrej-explain to explain this diff to a junior developer: what changed, wh
 
 Invoke it as `$andrej-explain` in Codex, `/andrej-explain` in Claude Code, or `/sams:andrej-explain` with the collection bundle. The core workflow needs no API key; diagrams, rendering, and narration depend on your agent's tools.
 
+<!-- demo:start:andrej-explain -->
+## See it run
+
+<video src="/demos/andrej-explain.mp4" poster="/demos/andrej-explain.png" aria-label="Codex running Andrej Explain with the prompt: Use $andrej-explain to explain this material in the simplest useful format while preserving evidence and caveats." autoplay loop muted playsinline controls preload="metadata" width="100%"><a href="/demos/andrej-explain.gif">Watch the Andrej Explain demo</a></video>
+
+A real Codex run of the default prompt on [synthetic input](https://github.com/ThatGuySam/skills/tree/main/demos/andrej-explain/workspace), recorded 2026-11-05 with Codex CLI 0.166.0. Waits are shortened.
+<!-- demo:end:andrej-explain -->
+
 ## Go deeper
 
 - [Examples](/andrej-explain/examples/): copyable prompts for rewriting, diagrams, HTML, and video.

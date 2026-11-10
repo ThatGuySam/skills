@@ -1,0 +1,20 @@
+SIMULATED CAPTURE (synthetic demo input, not from a real Mac)
+Symptom: typing lags and the fans are loud since this morning.
+Hardware: 10-core Apple silicon laptop, 16 GB memory. Captured with: top -l 3 -s 5 -o cpu -n 8
+
+Interval 3 of 3
+Load Avg: 9.81, 8.92, 7.40
+CPU usage: 71.20% user, 14.05% sys, 14.75% idle
+PhysMem: 15G used (2410M wired, 3105M compressor), 512M unused.
+VM: 1820(0) swapins, 41233(0) swapouts
+Disks: 9123441/210G read, 6012231/180G written
+
+PID    COMMAND          %CPU  TIME     MEM    STATE
+4211   node             312.4 48:12.55 2104M  running
+4198   Code Helper (Re  88.1  21:40.10 1650M  running
+612    WindowServer     34.7  95:22.01 410M   running
+3307   Google Chrome He 22.9  12:02.44 980M   sleeping
+1188   mds_stores       18.3  04:51.20 160M   running
+4402   Docker VM        12.0  33:10.90 4096M  running
+381    kernel_task      9.8   60:01.33 12M    running
+2210   Slack Helper     3.1   02:11.05 420M   sleeping

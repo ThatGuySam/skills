@@ -36,6 +36,7 @@ This repository contains the agent skills Sam uses and publishes.
 
 - Keep `README.md`, distribution manifests, and `apps/docs` installation examples aligned.
 - Update `apps/docs/src/content/docs/project/changelog.md` for public behavior, packaging, or documentation changes.
+- Demo recordings and their embeds come from `demos/` and `node scripts/demo.mjs`; read `demos/README.md` before changing them, and never edit between `demo:` markers by hand.
 - Run the narrowest relevant skill validation, strict plugin validation, the docs build, and the docs-spec gate before publishing.
 - Verify deployments by checking changed page content and `llms-full.txt`, not only status headers.
 
