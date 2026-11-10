@@ -5,7 +5,31 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-09
+
+### Activity Monitor investigates freezes, hung apps, and hot daemons
+
+- The skill now keeps investigating until the culprit and its owning app, the affected apps, the mechanism, and the trigger are settled from evidence, instead of stopping after one follow-up check. Recorded evidence of a past episode is read before suggesting a capture during recurrence.
+- New recipes and four read-only scripts find apps that are not responding from WindowServer logs, re-check them so recovered apps are not reported as hung, count processes by name and owning ancestor, summarize wake times and recent reports, and condense `.diag` heaviest stacks.
+- Hot root daemons are explained from readable DiagnosticReports, with a user-run `sudo sample` when more is needed, and restart advice depends on whether the trigger has cleared.
+- Before explaining what a system component does, the skill checks a retrieved source: man pages and launchd jobs, Apple documentation and open source, then community forums, which count only as hypotheses. Looked-up claims are cited.
+- The 80–120-word cap was replaced by required parts per symptom.
+- A replay of a real session, with Claude Sonnet 5.5 and GPT-6-Luna, reported **improved on tested cases**, including two holdout cases; GPT-6-Luna still misses required parts in some trials. [Verification](/activity-monitor/verification/) has the details and limits.
+
+### Private held-out evals and a leak check
+
+- Some skills are now also measured by maintainer-only held-out evals built from real sessions, kept in a private repository. Public verification pages summarize their method and scores; contributors do not need them.
+- CI and a new optional pre-push hook (`git config core.hooksPath .githooks`) run `scripts/check-private-leaks.mjs`, which blocks private eval canaries and raw macOS diagnostic files.
+
 ## 2026-11-05
+
+### Sam's Skill Creator verifies with Agent Verify
+
+- Every created skill, and every update that can change behavior, now goes through Agent Verify before the creator calls it working. Fresh workers try the skill in temporary directories, a separate QA agent grades the results, and the creator repairs and reruns. Review-only requests and corrections that cannot change behavior get structural checks only.
+- Delivery status now follows the verdict: `validated` only for **meets checked criteria** or **improved on tested cases**, and `awaiting-evals` when verification is inconclusive.
+- Agent Verify is a seventh locked dependency, pinned to `thatguysam/skills` commit `a2948b3`. Preflight and its tests now cover it.
+- The delivery rule that uses `$global-skill-install`, when available, moved from a local copy into the published skill.
+- A matched comparison on the three acceptance cases reported **improved on tested cases** as a one-run pilot. Creating a skill takes noticeably longer.
 
 ### Recorded skill demos
 

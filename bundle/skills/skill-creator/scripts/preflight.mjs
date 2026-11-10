@@ -26,7 +26,7 @@ export function preflight(root = suiteRoot) {
     "Dependency destination must remain private to the suite",
   )
   const names = Object.keys(manifest.skills).sort()
-  assert.deepEqual(names, ["anthropic-creator", "automate-me", "codex-creator", "poteto-mode", "writing-for-agents", "zach-prompting"], "Required mixer source set changed")
+  assert.deepEqual(names, ["agent-verify", "anthropic-creator", "automate-me", "codex-creator", "poteto-mode", "writing-for-agents", "zach-prompting"], "Required mixer source set changed")
   assert.deepEqual(Object.keys(lock.skills).sort(), names, "Manifest/lock dependency mismatch")
   const skills = names.map((name) => {
     assert.match(name, /^[a-z][a-z0-9-]*$/, "Unsafe dependency alias")
@@ -62,6 +62,8 @@ export function preflight(root = suiteRoot) {
     ".runtime/skills/zach-prompting/references/vendor-guidance.md",
     ".runtime/skills/anthropic-creator/references/schemas.md",
     ".runtime/skills/codex-creator/scripts/quick_validate.py",
+    ".runtime/skills/agent-verify/references/qa.md",
+    ".runtime/skills/agent-verify/references/evidence.md",
   ]) readFileSync(join(root, file))
   return {
     checkedAt: new Date().toISOString(),

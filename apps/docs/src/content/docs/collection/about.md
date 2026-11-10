@@ -35,7 +35,7 @@ A skill belongs here when it is:
 | Zach Prompting | Improve prompts and agent instructions while preserving their intent and safeguards. | [zach-prompting](/zach-prompting/introduction/) |
 | HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](/overview/introduction/) |
 | Agent Verify | Verify new work and compare before/after improvements with fresh subagents and independent QA. | [agent-verify](/agent-verify/introduction/) |
-| Activity Monitor | Explain Mac resource activity and likely slowdowns in a short actionable brief. | [activity-monitor](/activity-monitor/introduction/) |
+| Activity Monitor | Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. | [activity-monitor](/activity-monitor/introduction/) |
 <!-- skills:end:about-catalog -->
 
 Each skill remains canonical in its own `skills/<name>/` directory. Collection packaging points to those directories instead of copying their instructions.

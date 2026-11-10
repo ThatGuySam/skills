@@ -47,10 +47,24 @@ The [October 12 evaluation record](https://github.com/ThatGuySam/skills/blob/mai
 
 Automatic discovery through each runtime and generated skills acting on live business systems were not established. Description-only trigger judgments are proxies.
 
+### November 5: Agent Verify step
+
+The previous and new creator each ran the three acceptance cases once, with fresh Claude Code subagents. A fresh QA agent graded the actual files without knowing which version produced them. It also correctly failed two planted control runs.
+
+| Case | Previous | With the Agent Verify step |
+| --- | --- | --- |
+| Create a skill | Fresh trials, but the author graded them and called the result validated | Fresh trials, separate QA, a caught and fixed defect, and the verdict "meets checked criteria" |
+| Preferences skill | Same: graded by the author | Separate QA, a fix found by review, and a rerun |
+| Review only | Ran an extra trial | Structural checks only, as the new step says |
+
+Both versions passed all original acceptance assertions and side-effect checks. Verdict: **improved on tested cases** for independent verification, as a pilot with one run per cell.
+
+The cost is time: the create case took about 45 minutes instead of 13. One QA agent left scratch files outside its run directory; the record names this as the next fix. See the [comparison record](https://github.com/ThatGuySam/skills/blob/main/skills/sams-skill-creator/evals/2026-11-05-agent-verify-step.md).
+
 ## Check a new skill before relying on it
 
 Choose a representative task and a nearby request outside scope. Preserve raw inputs, the artifact, receipt, and observed results. Test helpers against real temporary fixtures, including a relevant failure.
 
-Use independent review for consequential workflows. Compare against the previous skill or no skill before claiming an improvement. Report unavailable telemetry and missing execution as gaps.
+The creator now runs [Agent Verify](/agent-verify/introduction/) on every created skill and every behavior-changing update. It compares against the previous skill, or against no skill only when added value is the claim. Report unavailable telemetry and missing execution as gaps.
 
 See [validation choices](https://github.com/ThatGuySam/skills/blob/main/skills/sams-skill-creator/references/validation.md) for the canonical guidance.

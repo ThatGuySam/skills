@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { preflight } from './preflight.mjs';
 const root=join(dirname(fileURLToPath(import.meta.url)),'..');
 function fixture(t){const dir=mkdtempSync(join(tmpdir(),'skill-mixer-test-'));t.after(()=>rmSync(dir,{recursive:true,force:true}));for(const name of ['package.json','skills-lock.json','SKILL.md','references','scripts','.sources','.runtime'])cpSync(join(root,name),join(dir,name),{recursive:true});return dir;}
-test('verified private sources yield a complete receipt',t=>{const r=preflight(fixture(t));assert.equal(r.status,'installed-content-verified');assert.equal(r.skills.length,6);assert(r.skills.filter(s=>s.commit).every(s=>/^[a-f0-9]{40}$/.test(s.commit)));});
+test('verified private sources yield a complete receipt',t=>{const r=preflight(fixture(t));assert.equal(r.status,'installed-content-verified');assert.equal(r.skills.length,7);assert(r.skills.filter(s=>s.commit).every(s=>/^[a-f0-9]{40}$/.test(s.commit)));});
 test('an edited installed instruction fails integrity',t=>{const r=fixture(t);appendFileSync(join(r,'.runtime/skills/zach-prompting/SKILL.md'),'\nChanged authority\n');assert.throws(()=>preflight(r),/installed content mismatch/);});
 test('a changed local adapter requires explicit relocking',t=>{const r=fixture(t);appendFileSync(join(r,'.sources/codex-creator/SKILL.md'),'\nChanged adapter\n');assert.throws(()=>preflight(r),/local source changed/);});
 test('removing a dependency cannot leave unpinned guidance loadable',t=>{const r=fixture(t);for(const file of ['package.json','skills-lock.json']){const p=join(r,file),j=JSON.parse(readFileSync(p));delete j.skills['zach-prompting'];writeFileSync(p,JSON.stringify(j));}assert.throws(()=>preflight(r),/Required mixer source set/);});

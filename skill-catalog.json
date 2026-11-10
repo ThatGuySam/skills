@@ -81,7 +81,7 @@
     {
       "id": "activity-monitor",
       "title": "Activity Monitor",
-      "summary": "Explain Mac resource activity and likely slowdowns in a short actionable brief.",
+      "summary": "Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief.",
       "guide": "activity-monitor/introduction"
     }
   ],

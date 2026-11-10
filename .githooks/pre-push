@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks private eval material from being pushed. Enable once per clone:
+#   git config core.hooksPath .githooks
+exec node scripts/check-private-leaks.mjs --pre-push

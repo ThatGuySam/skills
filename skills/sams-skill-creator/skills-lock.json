@@ -1,6 +1,14 @@
 {
   "lockfileVersion": 1,
   "skills": {
+    "agent-verify": {
+      "spec": "thatguysam/skills",
+      "resolved": "https://github.com/thatguysam/skills.git",
+      "ref": null,
+      "commit": "a2948b3c98d0c069e95c1544078b90b5147c3fb9",
+      "path": "skills/agent-verify",
+      "integrity": "sha256-6mzAgVI9jXhxCU1BJMfCTO+NAaFzwq+5fxdbi1bHNhY="
+    },
     "anthropic-creator": {
       "spec": "anthropics/skills",
       "resolved": "https://github.com/anthropics/skills.git",

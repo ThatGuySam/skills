@@ -15,6 +15,16 @@ Independent QA accepted the first four pairs as substantive ties. On a separate 
 
 The final package adds explicit CPU and memory sorting, serial-window limits, periodic vm_stat semantics, Pageouts versus Swapouts, and filesystem-wait interpretation. The sorting concern from document review was not reproduced as a current-host defect; explicit sorting removes ambiguity.
 
+## Replay evaluation, November 8–9, 2026
+
+A real freeze-and-recovery session on the maintainer's Mac was turned into a replay: agents received the user's original requests and a command that answers only from data recorded on that Mac that evening, including the process table, unified log, DiagnosticReports, and a privileged sample. Commands that were not recorded say so; nothing is synthesized. Four cases covered apps frozen after wake, busy efficiency cores, finding the process that leaked helpers while its state changed, and checking whether a daemon restart would hold. The recorded data contains private details, so the fixture and cases are kept outside this repository.
+
+Claude Sonnet 5.5 and GPT-6-Luna each ran three fresh trials per case and version. Fresh QA agents graded anonymous, shuffled outputs against ten frozen binary criteria per case, with a failed critical criterion capping a trial at 4/10; the grader was first checked against controls taken from the original session's own answers. Five improvement rounds were measured. Fresh editors saw only the two development cases.
+
+On the development cases, the unchanged skill scored median 2–4 capped. The current version scored 10/10 in all six Sonnet trials; GPT-6-Luna reached a median of 7 on the busy-core case and stayed capped at 4 on the frozen-apps case. On the two holdout cases, run with the unchanged and current versions side by side, the current version improved in all four model and case cells (Sonnet 4 to 9 on both; Luna 3 to 8 on one, 4 to 4 on the other with a higher uncapped count) with no regression.
+
+With web search available, the first lookup wording produced no lookups because the models felt certain; requiring a retrieved source before explaining a component's role produced cited lookups. One retrieved community report showed that a trigger the original session had only inferred could equally be explained by process count, and the criteria were corrected and the affected trials regraded. In two of twelve current-version trials a citation did not support its claim. Three trials per cell is a pilot, not a significance claim.
+
 ## Evidence and limits
 
 The collection source includes `evals/activity-monitor/2026-11-05/` with the frozen contract, deterministic fixture generator, raw simulated inputs, preserved responses, package snapshots, grades, and dependency receipt. Every synthetic capture is labeled, and the generator collects no host data.

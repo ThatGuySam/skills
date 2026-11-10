@@ -15,6 +15,10 @@ protections still apply; this workflow does not authorize weakening them. If
 `main` changes while you work, reconcile the new commits and repeat affected
 checks before pushing.
 
+## Private evals
+
+The maintainer also measures some skills with held-out evals built from real, private sessions. They live in a private repository; you do not need them, and public CI does not run them. Keep private data out of this repository: CI runs `node scripts/check-private-leaks.mjs`, which blocks private eval canaries and raw macOS diagnostic files. Public evals use labeled synthetic inputs.
+
 ## Guidelines
 
 - Make instructions actionable and outcome-relevant.

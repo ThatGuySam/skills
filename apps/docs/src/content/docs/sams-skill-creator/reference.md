@@ -9,6 +9,8 @@ This page describes the published [skill instructions](https://github.com/ThatGu
 
 The workflow establishes the requested outcome, designs instructions and conditional references, builds one working artifact, and exercises relevant behavior. It can begin with a new workflow, existing draft, focused correction, or review-only request.
 
+Every created skill, and every update that can change behavior, then goes through [Agent Verify](/agent-verify/introduction/). The creator freezes the draft and hands over realistic tasks, preserved requirements, the previous version for an update, and side-effect limits. Fresh workers try the skill in temporary directories, a separate QA agent grades the actual results, and the creator repairs and reruns until the verdict covers the request or names a gap. Review-only requests and corrections that cannot change behavior get structural checks only.
+
 The author consults source methods when they help resolve the current decision. Those methods do not become separate mandatory workflows.
 
 | Source | Contribution |
@@ -18,6 +20,7 @@ The author consults source methods when they help resolve the current decision. 
 | Poteto's Automate Me | History and preference evidence when the task requires it. |
 | Zach Prompting | Contract preservation, instruction conflicts, and draft review. |
 | Codex Skill Creator | Native packaging, metadata, structural validation, and proportionate scaffolding. |
+| Agent Verify | Independent trials with fresh subagents, blinded QA, and the scoped verdict that decides the delivery status. |
 | Poteto runtime support | Relative runtime-mapping references used by the locked methods. |
 
 Source authors retain their licenses and authorship. The bundled Codex snapshot retains its Apache-2.0 license. Inclusion does not imply endorsement.
@@ -34,7 +37,7 @@ Source authors retain their licenses and authorship. The bundled Codex snapshot 
 
 The result includes the artifact path, enabled behavior, consequential source contributions or disagreements, a dependency receipt, actual checks, and remaining gaps. Review-only requests return findings without editing the target.
 
-Delivery reports use `validated` for tested behavior, `awaiting-evals` for behavior awaiting trials, `no-change-needed` when no change is required, or `blocked` with a specific dependency gap. Comparative quality claims require comparative evidence.
+Delivery reports use `validated` only when Agent Verify reports **meets checked criteria** or **improved on tested cases**. A **mixed** or **regressed** verdict stays unresolved. An **inconclusive** verdict, such as a runtime without subagents, becomes `awaiting-evals` with the smallest next check. Reports otherwise use `no-change-needed` when no change is required, or `blocked` with a specific dependency gap. Comparative quality claims require comparative evidence.
 
 ## States & edge cases
 

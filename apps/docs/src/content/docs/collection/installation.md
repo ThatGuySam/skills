@@ -132,7 +132,7 @@ npx skills add ThatGuySam/skills --skill agent-verify
 
 ### Activity Monitor
 
-Explain Mac resource activity and likely slowdowns in a short actionable brief. [Read the guide](/activity-monitor/introduction/).
+Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. [Read the guide](/activity-monitor/introduction/).
 
 ```bash
 npx skills add ThatGuySam/skills --skill activity-monitor

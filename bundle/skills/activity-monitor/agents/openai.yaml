@@ -1,4 +1,4 @@
 interface:
   display_name: "Activity Monitor"
-  short_description: "Explain Mac slowdowns with a short resource-health brief"
+  short_description: "Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief"
   default_prompt: "Use $activity-monitor to check my Mac's resource activity and explain what may be slowing it down."

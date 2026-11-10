@@ -21,6 +21,10 @@ jobs:
       - name: Install frozen docs dependencies
         working-directory: apps/docs
         run: bun install --frozen-lockfile
+      - name: Check for private eval material
+        run: node scripts/check-private-leaks.mjs --all
+      - name: Test private-leak check
+        run: node --test scripts/check-private-leaks.test.mjs
       - name: Check generated skill listings
         run: node scripts/skill-catalog.mjs --check
       - name: Test catalog drift checks
