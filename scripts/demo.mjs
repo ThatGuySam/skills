@@ -74,7 +74,10 @@ const castProblems = (root, id) => {
   const cast = resolve(root, 'demos', id, 'recording.cast')
   const text = castText(readFileSync(cast, 'utf8'))
   const problems = privacyProblems(text, demoConfig(root, id).allowedText)
-  return new RegExp(account.source).test(text) ? [...problems, 'the local account name'] : problems
+  // CI accounts have generic names (GitHub's is `runner`) that match ordinary words, and the
+  // account that matters is the recording machine's, which is checked when recording.
+  const checkAccount = !process.env.CI && new RegExp(account.source).test(text)
+  return checkAccount ? [...problems, 'the local account name'] : problems
 }
 
 // asciicast v3 stores the interval since the previous event first.
