@@ -5,6 +5,17 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-11
+
+### Zach Prompting covers Claude Fable 5.2
+
+- The vendor reference has a Claude Fable 5.2 and Mythos 5.2 section from Anthropic's November 9 guide: effort calibration, turns that end early, approval rules applied as written, code ownership wording, progress updates, subagent cost, cautions that pile up in memory and notes, carried-over instructions to remove or test, and final reports.
+- Corrected API facts: Fable 5.2 enforces the history check on every account, so a changed prompt should start in new conversations. It rejects forced tool use. Progress updates need both the `display` setting and a client that renders thinking blocks.
+- New portable rules: name the exact actions an approval rule covers and keep its exception in the same rule; delete cautions whose reason no longer holds, including those in memory, notes, and messages between agents; separate ordinary obstacles from deliberate blockers; say when delegation is worth its cost; ask for reports that make sense to a reader who has not seen the work; and add a vendor's sample prompt only for an observed behavior, measuring its token cost.
+- Debug mode now reads the named model's section of the vendor reference before deciding whether a failure is a prompt problem or a runtime setting.
+- A recheck of OpenAI's changelog and Using GPT-6 page found no new prompting guidance.
+- An Agent Verify comparison with the November 4 version returned **mixed**: 10 of 10 against 7 of 10 on a Fable 5.2 migration case, a debug regression that was repaired and retested, and two unresolved items. [Verification](/zach-prompting/verification/) has the method and limits, and the [research memo](/research/zach-prompting-fable-5-2-guidance-2026-11-11/) has the sources.
+
 ## 2026-11-09
 
 ### Activity Monitor investigates freezes, hung apps, and hot daemons

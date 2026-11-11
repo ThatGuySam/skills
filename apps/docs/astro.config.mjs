@@ -87,6 +87,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/research/" },
+            { label: "Fable 5.2 prompting guidance", slug: "research/zach-prompting-fable-5-2-guidance-2026-11-11" },
             { label: "Red-green-refactor prompts", slug: "research/prompt-improvement-loops-2026-11-05" },
             { label: "Developer docs and catalog", slug: "research/developer-docs-and-skill-catalog-2026-10-20" },
             {

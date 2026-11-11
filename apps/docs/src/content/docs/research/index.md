@@ -22,6 +22,8 @@ The current documentation is grounded in:
 
 Future source-backed skill research can be published here as dated pages. Each memo becomes canonical at its deployed documentation path and appears as a separate Research sidebar entry.
 
+- [Fable 5.2 prompting guidance](/research/zach-prompting-fable-5-2-guidance-2026-11-11/), what Anthropic's Claude Fable 5.2 guide and a recheck of OpenAI's GPT-6 pages change in Zach Prompting.
+
 - [Red-green-refactor for prompts](/research/prompt-improvement-loops-2026-11-05/), practitioner techniques, tools, and measurement rules behind Agent Verify's improvement loop.
 
 - [Concise, useful environment examples](/research/concise-env-example-writing-2026-10-09/), user preferences and primary-source comparisons for Sam's Env.

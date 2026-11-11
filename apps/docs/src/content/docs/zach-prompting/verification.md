@@ -1,7 +1,47 @@
 ---
 title: Verification
-description: The structural, installation, and forward-use checks run for Zach Prompting, most recently for the November 4, 2026 guidance refresh.
+description: The structural, installation, and comparison checks run for Zach Prompting, most recently for the November 11, 2026 Claude Fable 5.2 refresh.
 ---
+
+## November 11, 2026 Claude Fable 5.2 refresh
+
+The vendor reference gained a Claude Fable 5.2 section and corrected API facts, and the skill gained six portable rule edits. The [research memo](/research/zach-prompting-fable-5-2-guidance-2026-11-11/) lists each finding and its source. An Agent Verify comparison against the November 4 version returned **mixed**: a clear gain on a Fable 5.2 migration, a repaired regression, and two unresolved items. Behavioral status is `awaiting-evals`.
+
+### Structural checks
+
+| Surface | Check | Result |
+| --- | --- | --- |
+| Skill structure | `quick_validate.py` against `skills/zach-prompting` | Passed: `Skill is valid!` |
+| Skill catalog | `skill-catalog.mjs --check` and catalog tests after regenerating the bundle | Passed: 14 skills |
+| Private-material check | `check-private-leaks.mjs --all` | Passed |
+| Docs tests and build | `bun run test` and `bun run build` in `apps/docs` | Passed |
+| Docs-spec gate | Canonical `docs-spec/scripts/check.sh` | Passed: 11 checks, 0 failures |
+
+### Comparison with the November 4 version
+
+Fresh workers ran each version on three simulated cases: migrating an agent's prompt, carried notes, and harness from Claude Fable 5.1 to Fable 5.2; a review-only request on an `AGENTS.md` shared by GPT-6 Astra and Claude runtimes; and debugging silent turns and early stops from a trace. Workers were Claude Sonnet 5.5 at `medium` effort with file tools only and no network, so the run measures the bundled guidance. A separate Claude Opus 5.5 agent graded anonymous outputs against criteria frozen before any worker ran. Each grading run included a deliberately defective control output, which the grader failed both times. A Claude Fable 5.2 agent adjudicated two disputed criteria. One trial ran per version and case, plus a second round for the repaired skill, so this is a pilot.
+
+| Case | November 4 version | November 11 version |
+| --- | --- | --- |
+| Fable 5.2 migration, ten non-critical checks | 7 of 10 in both gradings. It kept routine team messages behind an approval rule, did not say that history-editing requests will fail, and missed the self-correction risk in a carried-over line | 10 of 10 in both rounds |
+| Review-only shared file | Passed all checks but one in both gradings: it kept a stale "never" rule as an invariant | Handled the stale rule in both trials. One of two trials added an unscoped rule worded from one vendor's guidance |
+| Debug trace | Found the display setting but not that the client must render the blocks; ruled out effort; did not ask for added text to be measured | Round 1 missed the runtime cause entirely. After a repair, two trials passed those three checks. Both removed the narration ban without adding a progress-update rule |
+
+No version failed a critical check: required content and approval gates were kept, inputs were unchanged, and no output claimed a validated result.
+
+### What changed because of the comparison
+
+- Round 1 showed the new Debug instruction, "rule out a runtime cause first," let a worker dismiss the harness without opening the vendor reference. Debug mode now tells the agent to read the named model's section before deciding.
+- The reference said `display: "updates"` keeps a text-only client from looking silent. Anthropic's guide also requires the client to render the thinking blocks. The reference now names both halves.
+- A worker reported that the reference did not say whether Fable 5.2 reads Fable 5.1 thinking blocks. It does, and the reference now says so.
+
+### Unresolved
+
+- Graders disagreed on whether the review-case outputs kept model-specific advice conditional. Under one standard applied to both versions, both failed, and the November 11 output had one more unscoped line: the portable rule about ordinary obstacles and deliberate blockers. That rule's direction has support from both vendors; its wording and measured effect come from Anthropic's Fable 5.2 guide.
+- In the debug case the repaired skill relied on the harness fix and added no progress-update rule, citing token cost. The adjudicator judged the reported silence addressed, and noted that neither output considered Anthropic's lighter one-line option.
+- Not tested: workers with network access, GPT-6 or Codex workers, skill triggering, and any downstream model's behavior on a revised prompt.
+
+The smallest next check is three more review-case trials per version with a reworded criterion for rules that both vendors support in direction but only one has measured.
 
 ## November 4, 2026 guidance refresh
 
