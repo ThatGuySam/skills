@@ -27,6 +27,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 | HTMA Measure | Estimate uncertain quantities with ranges, sources, and decision recommendations. | [htma-measure](apps/docs/src/content/docs/overview/introduction.md) |
 | Agent Verify | Verify new work and compare before/after improvements with fresh subagents and independent QA. | [agent-verify](apps/docs/src/content/docs/agent-verify/introduction.md) |
 | Activity Monitor | Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. | [activity-monitor](apps/docs/src/content/docs/activity-monitor/introduction.md) |
+| Emily | Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check. | [emily](apps/docs/src/content/docs/emily/introduction.md) |
 <!-- skills:end:readme-catalog -->
 
 Install a listed skill with `npx skills add ThatGuySam/skills --skill <id>`. Each linked guide includes usage examples and verification limits. Sam's Skill Creator and Sam UX Audit restore their locked dependencies on first use.
@@ -101,7 +102,8 @@ skills/
 ├── zach-prompting/
 ├── htma-measure/
 ├── agent-verify/
-└── activity-monitor/
+├── activity-monitor/
+└── emily/
 ```
 <!-- skills:end:readme-tree -->
 
@@ -114,6 +116,8 @@ Each skill keeps discovery metadata and the core workflow in `SKILL.md`, with co
 - Sales Research uses original workflow instructions informed by the practitioners linked in its source guide. Their work remains with its publishers; inclusion does not imply endorsement.
 
 - Sam UX Audit composes the referenced skills from Addy Osmani, Emil Kowalski, and the community HIG reviewer by dickwu using Luisa Lima’s skills-lock. The HIG reviewer is not an Apple-authored package; each dependency retains its own provenance and terms.
+
+- Emily reasons from Emily Post's public-domain books, bundled from Project Gutenberg and the Internet Archive. It is not affiliated with or endorsed by the Emily Post Institute, and the bundled texts are distributed on a U.S. public-domain basis; see the skill's [license](skills/emily/LICENSE.md).
 
 - Zach Prompting's name and original spark were inspired by [Zach Miles](https://zachmil.es/). Its concrete prompting methods synthesize the cited OpenAI and Anthropic guidance; it is not affiliated with or endorsed by them.
 - HTMA Measure is inspired by measurement and uncertainty-management ideas popularized by Douglas W. Hubbard's *How to Measure Anything*. It is not affiliated with or endorsed by the author or publisher.

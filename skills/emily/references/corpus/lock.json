@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "generator_sha256": "08ea1c3dea91b06524450cc79358f60be09d88eb1a0173f3f889355f45fa43cd",
+  "content_identity_sha256": "76fa28cdd13bd6ef176e2a97252a0715fc3cecb90c26070707246eeb8234fea1",
+  "source_clean_sha256": {
+    "etiquette-1922": "95489a5f5a9097a51cf7150ba27fe6c2199fa7fbb911e1f752c4bcd94103a03d",
+    "personality-house-1930": "08e9179474ee6b3860e281f3b142f61b4e6cd390186c79290be47129c5596491",
+    "by-motor-1916": "2a80c47192f85c23c9a291d94227f930776392dae05cbe7390e4a4525f0172c4",
+    "title-market-1909": "88cbfc03deded249e886ccecc82a60158338ad612beb8e71ca5f114668c5f068"
+  },
+  "chunks": 1619,
+  "chunks_sha256": "afc2efb83c080dd1c7e3cf358de18a37f2564707ecd6a0fd69269ed279b52bff"
+}

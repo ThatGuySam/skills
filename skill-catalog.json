@@ -83,6 +83,12 @@
       "title": "Activity Monitor",
       "summary": "Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief.",
       "guide": "activity-monitor/introduction"
+    },
+    {
+      "id": "emily",
+      "title": "Emily",
+      "summary": "Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check.",
+      "guide": "emily/introduction"
     }
   ],
   "navigationGroups": [
@@ -384,6 +390,25 @@
         {
           "label": "Practitioner research",
           "slug": "research/macos-resource-diagnosis-2026-11-05"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "emily"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "emily/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "emily/reference"
+        },
+        {
+          "label": "Verification",
+          "slug": "emily/verification"
         }
       ]
     }

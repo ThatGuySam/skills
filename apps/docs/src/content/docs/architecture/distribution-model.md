@@ -24,7 +24,8 @@ skills/
 ├── zach-prompting/
 ├── htma-measure/
 ├── agent-verify/
-└── activity-monitor/
+├── activity-monitor/
+└── emily/
 ```
 <!-- skills:end:distribution-tree -->
 

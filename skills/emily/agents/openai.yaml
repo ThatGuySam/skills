@@ -1,0 +1,14 @@
+interface:
+  display_name: Emily
+  short_description: Source-grounded etiquette for modern situations
+  default_prompt: Use $emily to reason through this etiquette situation with historical
+    sources and a modern adaptation.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

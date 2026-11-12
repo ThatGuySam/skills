@@ -18,7 +18,7 @@ npx skills add thatguysam/skills --list
 ```
 
 <!-- skills:start:installation-names -->
-The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`.
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`.
 <!-- skills:end:installation-names -->
 
 ## Install one skill
@@ -137,6 +137,14 @@ Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief
 ```bash
 npx skills add ThatGuySam/skills --skill activity-monitor
 ```
+
+### Emily
+
+Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check. [Read the guide](/emily/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill emily
+```
 <!-- skills:end:installation-commands -->
 
 ## Install the collection in Codex
@@ -174,6 +182,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. Skills
 | HTMA Measure | `/htma-measure` | `/sams:htma-measure` | `$htma-measure` | `$sams:htma-measure` |
 | Agent Verify | `/agent-verify` | `/sams:agent-verify` | `$agent-verify` | `$sams:agent-verify` |
 | Activity Monitor | `/activity-monitor` | `/sams:activity-monitor` | `$activity-monitor` | `$sams:activity-monitor` |
+| Emily | `/emily` | `/sams:emily` | `$emily` | `$sams:emily` |
 <!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.

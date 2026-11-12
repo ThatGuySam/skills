@@ -5,6 +5,16 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-12
+
+### Emily joins the collection
+
+- Emily answers etiquette questions from a bundled corpus of Emily Post's public-domain books: *Etiquette* (1922) as primary advice, *The Personality of a House* (1930) as adjacent context, and two earlier works for voice only. Install it with `npx skills add ThatGuySam/skills --skill emily`.
+- Answers cite the passage, label it direct or inferred, and sort each historical rule as durable, contextual, or historical-only before recommending it. Safety, consent, accessibility, and honest boundaries override ceremony.
+- The skill ships a local search script, a corpus builder that verifies pinned source hashes, and 14 search tests. Its eval suites stay in the maintainer's private repository.
+- Retrieval measured on November 12: hit@5 of 0.9545 on the development suite and 1.0000 on the paraphrase suite, but 0.5714 on the sealed holdout against a 0.80 gate, so **the retrieval gate failed**. A behavior run recorded on August 9 passed 10 of 10 scenarios. [Verification](/emily/verification/) has the method and limits.
+- The bundled texts are distributed on a U.S. public-domain basis. The skill is not affiliated with or endorsed by the Emily Post Institute.
+
 ## 2026-11-11
 
 ### Zach Prompting covers Claude Fable 5.2

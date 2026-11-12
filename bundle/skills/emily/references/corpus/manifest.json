@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-17T16:39:19.288Z",
+  "generator": "build-corpus.ts",
+  "generator_sha256": "08ea1c3dea91b06524450cc79358f60be09d88eb1a0173f3f889355f45fa43cd",
+  "content_identity_sha256": "76fa28cdd13bd6ef176e2a97252a0715fc3cecb90c26070707246eeb8234fea1",
+  "chunking": {
+    "target_words": 620,
+    "minimum_words": 260
+  },
+  "rights_scope": "U.S. public-domain original publications through 1930; verify other jurisdictions",
+  "attribution_note": "Richard Duffy's introduction to Etiquette (1922) is excluded; the text begins at Chapter I.",
+  "authorship_boundary_note": "Indexes, publisher advertisements, and Project Gutenberg transcriber notes are excluded before chunking.",
+  "modernity_metadata_note": "Chunk modernity values are chapter-level defaults for triage, not passage-level judgments.",
+  "sources": [
+    {
+      "id": "etiquette-1922",
+      "title": "Etiquette: In Society, in Business, in Politics and at Home",
+      "author": "Emily Post",
+      "year": 1922,
+      "role": "primary-advice",
+      "landing_url": "https://www.gutenberg.org/ebooks/14314",
+      "text_url": "https://www.gutenberg.org/cache/epub/14314/pg14314.txt",
+      "retrieved_at": "2026-08-17T16:39:19.288Z",
+      "upstream_sha256": "e8a6668eafc4177158621a205c34f22db6d509508195aca74e65157a1911ccc3",
+      "clean_sha256": "95489a5f5a9097a51cf7150ba27fe6c2199fa7fbb911e1f752c4bcd94103a03d",
+      "text_file": "text/etiquette-1922.txt",
+      "bytes": 1105554,
+      "words": 197330,
+      "chunks": 753
+    },
+    {
+      "id": "personality-house-1930",
+      "title": "The Personality of a House",
+      "author": "Emily Post",
+      "year": 1930,
+      "role": "adjacent-advice",
+      "landing_url": "https://archive.org/details/personalityofhou0000post",
+      "text_url": "https://archive.org/download/personalityofhou0000post/personalityofhou0000post_djvu.txt",
+      "retrieved_at": "2026-08-17T16:39:19.288Z",
+      "upstream_sha256": "bd567f5c6af97d5f4166237833d68a3f43e16c4da8d7ba39774ffcd5ea483fab",
+      "clean_sha256": "08e9179474ee6b3860e281f3b142f61b4e6cd390186c79290be47129c5596491",
+      "text_file": "text/personality-house-1930.txt",
+      "bytes": 924413,
+      "words": 158991,
+      "chunks": 572
+    },
+    {
+      "id": "by-motor-1916",
+      "title": "By Motor to the Golden Gate",
+      "author": "Emily Post",
+      "year": 1916,
+      "role": "style-only",
+      "landing_url": "https://www.gutenberg.org/ebooks/73784",
+      "text_url": "https://www.gutenberg.org/cache/epub/73784/pg73784.txt",
+      "retrieved_at": "2026-08-17T16:39:19.288Z",
+      "upstream_sha256": "6aad6ca9908b5a2a71f99eec539e24568f724b1f955124ff45d602ee616b3649",
+      "clean_sha256": "2a80c47192f85c23c9a291d94227f930776392dae05cbe7390e4a4525f0172c4",
+      "text_file": "text/by-motor-1916.txt",
+      "bytes": 360463,
+      "words": 64410,
+      "chunks": 146
+    },
+    {
+      "id": "title-market-1909",
+      "title": "The Title Market",
+      "author": "Emily Post",
+      "year": 1909,
+      "role": "style-only",
+      "landing_url": "https://www.gutenberg.org/ebooks/17680",
+      "text_url": "https://www.gutenberg.org/cache/epub/17680/pg17680.txt",
+      "retrieved_at": "2026-08-17T16:39:19.288Z",
+      "upstream_sha256": "23d23539bd8a697ebaf31d497216e7a6ed3623c1e677d884c787cd55db8742b0",
+      "clean_sha256": "88cbfc03deded249e886ccecc82a60158338ad612beb8e71ca5f114668c5f068",
+      "text_file": "text/title-market-1909.txt",
+      "bytes": 440615,
+      "words": 79054,
+      "chunks": 148
+    }
+  ],
+  "chunks": 1619,
+  "chunks_sha256": "afc2efb83c080dd1c7e3cf358de18a37f2564707ecd6a0fd69269ed279b52bff"
+}
