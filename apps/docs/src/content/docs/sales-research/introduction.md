@@ -8,7 +8,10 @@ npx skills add ThatGuySam/skills --skill sales-research
 ```
 
 ```text title="Example prompt" wrap
-Use $sales-research to draft my reply. I sell [offer] to [buyer]. They wrote: [redacted message]. I need to decide [decision]. Give me the reply first, then the assumptions behind it. Draft only.
+Use $sales-research to draft my reply. Give me the reply first, then the assumptions behind it. Draft only.
+I sell: [offer and buyer]
+I need to decide: [decision]
+They wrote: [redacted message]
 ```
 
 ## Why use it

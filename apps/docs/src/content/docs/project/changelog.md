@@ -7,6 +7,12 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-12
 
+### Example prompts put the fill-in last
+
+- Every example prompt with a `[bracketed]` fill-in now ends with it, so you can paste the prompt and backspace straight into the part you change. For example, Emily's prompt ends `My situation: [situation]`.
+- Prompts with several fill-ins give the fixed instructions first and end with one labeled line for each fill-in. This covers the skill introduction pages, the Sales Research examples and setup, the Andrej Explain examples, and the HTMA Measure recipes.
+- The wording changed; what each prompt asks for did not. No skill behavior was re-measured for this.
+
 ### Install boxes: a prompt for your agent, runners as tabs, a sheet on phones
 
 - Every command that installs a named skill now opens on a **Prompt** tab: a short request to paste into an agent, which runs the install without questions, targets itself with `--agent`, confirms the skill's `SKILL.md` exists, and tells you to start a new session.

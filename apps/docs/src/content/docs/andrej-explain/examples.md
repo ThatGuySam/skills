@@ -21,8 +21,9 @@ Expect clearer language with unchanged meaning. Strict STE is a different reques
 
 ```text
 Use $andrej-explain to show how requests flow through this system.
-Read [files or architecture source]. Create a compact diagram with
-clear arrow meanings and explain the failure branch. Flag unknowns.
+Create a compact diagram with clear arrow meanings and explain the
+failure branch. Flag unknowns.
+Read: [files or architecture source]
 ```
 
 Expect a diagram that separates flow, dependency, and causation. The explanation should identify missing evidence rather than fill gaps with plausible architecture.

@@ -9,8 +9,9 @@ npx skills add ThatGuySam/skills --skill activity-monitor
 
 ```text title="Example prompt" wrap
 Use $activity-monitor to explain why my Mac
-feels slow during [app or task]. Give me a
-short summary and the most useful next step.
+feels slow. Give me a short summary and the
+most useful next step. It happens during
+[app or task]
 ```
 
 ## Why use it

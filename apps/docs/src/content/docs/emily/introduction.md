@@ -8,9 +8,9 @@ npx skills add ThatGuySam/skills --skill emily
 ```
 
 ```text title="Example prompt" wrap
-Use $emily to help me with [situation].
-Tell me what to do, what Emily Post
-actually wrote, and what to say.
+Use $emily to tell me what to do, what
+Emily Post actually wrote, and what to
+say. My situation: [situation]
 ```
 
 ## Why use it
@@ -26,11 +26,11 @@ Invoke it as `$emily` in Codex, `/emily` in Claude Code, or `/sams:emily` with t
 ## More prompts
 
 ```text wrap
-Use $emily in Historical mode. What did Emily Post write about [topic], and what in it no longer applies?
+Use $emily in Historical mode. What did Emily Post write, and what in it no longer applies? The topic is [topic]
 ```
 
 ```text wrap
-Use $emily in Voice mode to draft a short note declining [invitation].
+Use $emily in Voice mode to draft a short note declining an invitation to [event]
 ```
 
 Voice mode returns a labeled pastiche. It never presents generated words as Emily Post's own.

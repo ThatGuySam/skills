@@ -8,7 +8,7 @@ npx skills add ThatGuySam/skills --skill agent-verify
 ```
 
 ```text title="Example prompt" wrap
-Use $agent-verify to improve [prompts/reply.md] with red-green-refactor. Prove its score out of 10 on [my examples], then show before and after on unseen cases.
+Use $agent-verify to improve a prompt with red-green-refactor. Prove its score out of 10 on my examples, then show before and after on unseen cases. The prompt and examples are in [prompts/reply.md and examples/]
 ```
 
 ## Why use it

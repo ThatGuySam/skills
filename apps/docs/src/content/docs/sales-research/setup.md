@@ -66,10 +66,14 @@ your constraints, and the decision you need. Mark unknown information as unknown
 Redact private details before sharing prompts or feedback with other testers.
 
 ```text
-Use $sales-research to draft my reply. I sell [service or product] to [buyer].
-They asked: [paste their redacted message]. We are at [stage]. My constraints
-are [constraints]. I want to decide [decision]. Give me the reply first, then
-explain any assumptions that materially affect it. Draft only.
+Use $sales-research to draft my reply. Give me the reply first, then explain
+any assumptions that materially affect it. Draft only.
+I sell: [service or product]
+To: [buyer]
+Stage: [stage]
+My constraints: [constraints]
+I want to decide: [decision]
+They asked: [paste their redacted message]
 ```
 
 Replace the bracketed fields with your own facts. See

@@ -36,13 +36,14 @@ The workflow addresses these common failures:
 ### Budget before quotes exist
 
 ```text
-Use $htma-measure to create a planning allowance for [project] before vendor quotes are available.
+Use $htma-measure to create a planning allowance for a project before vendor quotes are available.
 
-Decision: [approve discovery, reserve budget, reduce scope, or defer].
-Time horizon: [period or milestone].
-Threshold: [amount that changes the decision].
-Available evidence: [scope, comparable work, rates, constraints, and prior actuals].
 Treat the result as a budget allowance, not a promised quote.
+Decision: [approve discovery, reserve budget, reduce scope, or defer]
+Time horizon: [period or milestone]
+Threshold: [amount that changes the decision]
+Available evidence: [scope, comparable work, rates, constraints, and prior actuals]
+Project: [project]
 ```
 
 ### One confident number is hiding the risk
@@ -50,61 +51,68 @@ Treat the result as a budget allowance, not a promised quote.
 ```text
 Use $htma-measure to replace this point estimate with a calibrated range.
 
-Decision: [action the estimate informs].
-Point estimate and basis: [current estimate and how it was produced].
 Show low, central, and high values, confidence, assumptions, exclusions,
 and the conditions most likely to move the result.
+Decision: [action the estimate informs]
+Point estimate and basis: [current estimate and how it was produced]
 ```
 
 ### Unfamiliar work keeps losing hidden parts
 
 ```text
-Use $htma-measure to estimate [cost, effort, or duration] for this unfamiliar project.
+Use $htma-measure to estimate this unfamiliar project.
 
 Decompose the work before estimating it. Use comparable projects where they are relevant,
 state how this project differs, and keep facts separate from inference.
-Decision threshold: [budget, date, or return that changes the action].
+Decision threshold: [budget, date, or return that changes the action]
+Estimate: [cost, effort, or duration]
 ```
 
 ### Public price is not the same target as likely paid price
 
 ```text
-Use $htma-measure to estimate the likely paid quote for [deliverable].
+Use $htma-measure to estimate the likely paid quote for a deliverable.
 
 Distinguish public list price, budget allowance, and likely transaction price.
-Context: [buyer type, scope, location, timing, pickup or delivery, and known eligibility].
 Treat any unconfirmed discount as a labeled scenario, not a fact, and keep the range wide enough to include a no-discount outcome.
+Context: [buyer type, scope, location, timing, pickup or delivery, and known eligibility]
+Deliverable: [deliverable]
 ```
 
 ### Only a small sample is available
 
 ```text
-Use $htma-measure to update the estimate from these [N] observations.
+Use $htma-measure to update the estimate from these observations.
 
 State the prior or reference class, show what the sample changes, and keep the interval
-wide enough for the remaining uncertainty. Tell me whether collecting [next N]
-observations could change [decision] at [threshold].
+wide enough for the remaining uncertainty. Tell me whether collecting more
+observations could change the decision.
+Observations so far, then the next batch: [N], then [next N]
+Decision and threshold: [decision] at [threshold]
 ```
 
 ### Research needs a stopping rule
 
 ```text
-Use $htma-measure to decide whether we should research [unknown] further or act now.
+Use $htma-measure to decide whether we should research an unknown further or act now.
 
-Decision: [action].
-Threshold: [result that changes the action].
 Rank the remaining unknowns by value of information, propose the cheapest credible
 next measurement, and stop when more evidence is unlikely to change the decision.
+Decision: [action]
+Threshold: [result that changes the action]
+Unknown: [unknown]
 ```
 
 ### The cost of being wrong is asymmetric
 
 ```text
-Use $htma-measure to estimate [quantity] for [decision].
+Use $htma-measure to estimate a quantity where being too low and too high cost differently.
 
-Being too low would cause [consequence]. Being too high would cause [consequence].
 Show the calibrated range and explain which planning value fits that risk,
 rather than defaulting to the central estimate.
+Being too low would cause: [consequence]
+Being too high would cause: [consequence]
+Quantity and decision: [quantity] for [decision]
 ```
 
 ## What the research supports

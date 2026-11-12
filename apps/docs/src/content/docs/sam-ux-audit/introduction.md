@@ -8,7 +8,9 @@ npx skills add ThatGuySam/skills --skill sam-ux-audit
 ```
 
 ```text title="Example prompt" wrap
-Use $sam-ux-audit to audit [website URL] for a first-time visitor trying to [task]. Return prioritized findings with evidence and acceptance checks.
+Use $sam-ux-audit to audit a website for a first-time visitor. Return prioritized findings with evidence and acceptance checks.
+Their task: [task]
+Site: [website URL]
 ```
 
 ## Why use it
