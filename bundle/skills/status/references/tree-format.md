@@ -8,6 +8,7 @@ This presentation contract is owned by `sams-tree`. An identical bundled copy in
 - If the user requests no emoji or the output medium cannot render them, use compact text markers such as `[group]` and `[item]`, retaining the branching and indentation. An explicit request for a different format takes precedence.
 - Leave the subject or project implied, outside the tree's counted levels. A short introductory line may disambiguate it.
 - Show at most three displayed levels by default. The first visible items are level one. Honor requests for more detail.
+- A terminal does not reflow a tree row, so in a terminal reply keep every row inside the terminal's columns and prefer two displayed levels. When `phone-size` is available, follow its terminal reference for the column limit and for wrapping a long label onto continuation rows without cutting a branch.
 - Use known or easily inferred names and groupings. Combine deeper known paths with `->`, retaining their names and order.
 - Collapse non-relevant branches by showing their name followed by `…`. The ellipsis means hidden detail, not missing or completed work. Expand on request.
 - Preserve sibling order from the familiar source hierarchy when known. Prefer short labels over sentence-length descriptions.
