@@ -5,7 +5,9 @@ description: Install one skill or the full collection in Codex, Claude Code, and
 
 Use the Skills CLI to install one skill. The marketplace bundle installs every skill in the collection. The commands and invocation names for each client are below.
 
-Each install box has one row of tabs. **Prompt** comes first and is the default: it is a request you can paste into your agent, which then runs the install for you. The other tabs show the command for npx, bunx, pnx, mise, or Yarn dlx, including its flags. On a phone the tabs become one button that opens the same choices in a sheet.
+Each install box has one row of tabs. **Prompt** comes first and is the default: it is a request you can paste into your agent, which then runs the install for you. The other tabs show the command for npx, bunx, pnx, mise, or Yarn dlx, including its flags. The prompt itself always uses npx, which comes with Node.js. On a phone the tabs become one button that opens the same choices in a sheet.
+
+Under the prompt, **Open in ChatGPT** and **Open in Claude** hand it to an agent with the text filled in, and it waits for you to send it. On a computer they try the app first, Codex in the ChatGPT desktop app or Claude Code in a terminal, and open chatgpt.com or claude.ai when no app answers. On a phone they open the website, or the app when your phone hands the link to it. A website chat cannot run the install on your computer; it can only walk you through the steps.
 
 Your latest choice is remembered across pages and visits on this device. Picking a tab also adds it to the page address, such as `?install=prompt` or `?install=bunx`, so a link you share opens on that tab without changing what the other person has saved.
 

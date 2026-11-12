@@ -60,7 +60,7 @@ function tabFor(id) {
   return RUNNERS.some((runner) => runner.id === migrated) ? migrated : null
 }
 
-// A selection is the chosen tab plus the last runner, which the prompt's command uses.
+// A selection is the chosen tab plus the last runner, which a command with no prompt shows.
 // The address wins over storage so a shared link opens on the tab it names. Storage wins
 // over the default, and a runner saved before tabs existed still counts as a choice.
 export function readSelection(storage, href) {
@@ -125,13 +125,15 @@ function listNames(names) {
   return `${names.slice(0, -1).join(", ")}, and ${names.at(-1)}`
 }
 
-export function formatPrompt(command, id) {
+// The prompt always uses the first runner, npx, because it ships with Node.js and is the
+// one most machines already have. Other runners are offered as tabs, never put in the prompt.
+export function formatPrompt(command) {
   const install = parseInstall(command)
   if (!install) return null
   const has = (...flags) => flags.some((flag) => install.tokens.includes(flag))
   const targeted = has("--agent", "-a")
   const line = [
-    command.prefix + runnerFor(id).command,
+    command.prefix + RUNNERS[0].command,
     ...install.tokens,
     ...(has("--global", "-g") ? [] : ["--global"]),
     ...(has("--yes", "-y") ? [] : ["--yes"]),
@@ -145,4 +147,19 @@ export function formatPrompt(command, id) {
     `Run \`${line}\`${target}.`,
     `Then confirm that ${check} and tell me to start a new session.`,
   ].join(" ")
+}
+
+// Where the prompt can be opened. Each agent has a documented deep link for its app, which
+// fills the prompt and waits for the reader to send it, and a website link that does the same.
+export function openTargets(prompt) {
+  const web = (base) => {
+    const url = new URL(base)
+    url.searchParams.set("q", prompt)
+    return url.href
+  }
+  const encoded = encodeURIComponent(prompt)
+  return [
+    { id: "chatgpt", label: "ChatGPT", appName: "the ChatGPT app", site: "chatgpt.com", app: `codex://new?prompt=${encoded}`, web: web("https://chatgpt.com/") },
+    { id: "claude", label: "Claude", appName: "Claude Code", site: "claude.ai", app: `claude-cli://open?q=${encoded}`, web: web("https://claude.ai/new") },
+  ]
 }

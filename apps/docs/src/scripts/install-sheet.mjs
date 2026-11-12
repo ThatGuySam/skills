@@ -3,6 +3,8 @@
 // platform back gesture. The motion follows Vaul's sheet: one steep curve, a drag that
 // tracks the finger, and dismissal on distance or speed.
 
+import { createIcon } from "./install-icons.mjs"
+
 const DISMISS_DISTANCE = 0.4 // share of the sheet's height
 const DISMISS_SPEED = 0.5 // px per ms
 const DRAG_START = 8 // px of vertical travel before a press becomes a drag
@@ -143,7 +145,7 @@ export function openInstallSheet({ options, current, select, trigger }) {
     check.className = "install-sheet-check"
     check.textContent = "✓"
     check.setAttribute("aria-hidden", "true")
-    button.append(label, hint, check)
+    button.append(createIcon(option.id), label, hint, check)
     button.addEventListener("click", () => {
       onSelect(option.id)
       dismiss()

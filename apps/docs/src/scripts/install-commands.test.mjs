@@ -6,6 +6,7 @@ import {
   formatCommand,
   TAB_STORAGE_KEY,
   formatPrompt,
+  openTargets,
   parseCommand,
   readPreference,
   readSelection,
@@ -58,10 +59,11 @@ const memory = (initial = {}) => {
 }
 const page = "https://skills.samcarlton.com/emily/introduction/"
 
-test("the agent prompt installs the named skill non-interactively with the chosen runner", () => {
-  const prompt = formatPrompt(parseCommand("npx skills add ThatGuySam/skills --skill emily"), "bunx")
+test("the agent prompt installs the named skill non-interactively and always uses npx", () => {
+  const prompt = formatPrompt(parseCommand("npx skills add ThatGuySam/skills --skill emily"))
   assert.match(prompt, /^Install the emily agent skill from https:\/\/github\.com\/ThatGuySam\/skills for me\./)
-  assert.ok(prompt.includes("`bunx skills add ThatGuySam/skills --skill emily --global --yes`"))
+  assert.ok(prompt.includes("`npx skills add ThatGuySam/skills --skill emily --global --yes`"))
+  for (const runner of RUNNERS.slice(1)) assert.ok(!prompt.includes(runner.command), `${runner.id} never appears in the prompt`)
   assert.ok(prompt.includes("adding `--agent`"), "asks the agent to target itself")
   assert.ok(prompt.includes("`emily/SKILL.md` exists"))
   assert.ok(prompt.length < 340, "short enough to fit a phone screen with its Copy button")
@@ -69,7 +71,7 @@ test("the agent prompt installs the named skill non-interactively with the chose
 
 test("the agent prompt keeps flags the command already has and names every skill", () => {
   const source = "DISABLE_TELEMETRY=1 npx skills add thatguysam/skills \\\n  --skill sams-tree sams-status \\\n  --agent codex -g -y"
-  const prompt = formatPrompt(parseCommand(source), "npx")
+  const prompt = formatPrompt(parseCommand(source))
   assert.ok(prompt.includes("`DISABLE_TELEMETRY=1 npx skills add thatguysam/skills --skill sams-tree sams-status --agent codex -g -y`"))
   assert.ok(!prompt.includes("adding `--agent`"))
   assert.ok(prompt.includes("the sams-tree and sams-status agent skills"))
@@ -84,7 +86,7 @@ test("commands that do not install a named remote skill have no agent prompt", (
     "npx skills update htma-measure --yes",
     "npx skills remove sales-research",
     "npx skills list",
-  ]) assert.equal(formatPrompt(parseCommand(source), "npx"), null, source)
+  ]) assert.equal(formatPrompt(parseCommand(source)), null, source)
 })
 
 test("the prompt is the first tab and the default for a new visitor", () => {
@@ -93,7 +95,7 @@ test("the prompt is the first tab and the default for a new visitor", () => {
   assert.deepEqual(readSelection(memory(), page), { tab: "prompt", runner: "npx" })
 })
 
-test("a picked tab is remembered on the next page, and the prompt keeps the last runner", () => {
+test("a picked tab is remembered on the next page, and a command with no prompt keeps the last runner", () => {
   const storage = memory()
   let selection = saveSelection(storage, readSelection(storage, page), "bunx")
   assert.deepEqual(readSelection(storage, "https://skills.samcarlton.com/phone-size/introduction/"), { tab: "bunx", runner: "bunx" })
@@ -126,4 +128,15 @@ test("blocked storage still shows the default and accepts a pick for the page", 
   const selection = readSelection(blocked, page)
   assert.deepEqual(selection, { tab: "prompt", runner: "npx" })
   assert.deepEqual(saveSelection(blocked, selection, "mise"), { tab: "mise", runner: "mise" })
+})
+
+test("the prompt opens in each agent's app by its documented deep link, or on its website", () => {
+  const prompt = formatPrompt(parseCommand("npx skills add ThatGuySam/skills --skill emily"))
+  const [chatgpt, claude] = openTargets(prompt)
+  assert.equal(chatgpt.app, `codex://new?prompt=${encodeURIComponent(prompt)}`)
+  assert.equal(claude.app, `claude-cli://open?q=${encodeURIComponent(prompt)}`)
+  assert.equal(new URL(chatgpt.web).origin + new URL(chatgpt.web).pathname, "https://chatgpt.com/")
+  assert.equal(new URL(claude.web).origin + new URL(claude.web).pathname, "https://claude.ai/new")
+  for (const target of [chatgpt, claude]) assert.equal(new URL(target.web).searchParams.get("q"), prompt)
+  assert.ok(prompt.length < 5000, "within Claude Code's deep-link prompt limit")
 })

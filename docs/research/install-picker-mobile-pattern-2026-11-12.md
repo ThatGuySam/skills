@@ -10,7 +10,7 @@ Research memo, 2026-11-12. Sam asked for the docs site's install box to offer si
 
 ## Short Answer
 
-Keep tabs where they fit and replace them below about 30rem of box width. On a phone, show one button with the current choice and open the options in a modal bottom sheet. Build the sheet on the native `<dialog>` element with Vaul's motion, not on Vaul itself.
+Keep tabs where they fit and replace them below about 37rem of box width. On a phone, show one button with the current choice and open the options in a modal bottom sheet. Build the sheet on the native `<dialog>` element with Vaul's motion, not on Vaul itself.
 
 ## What the Evidence Says
 
@@ -42,7 +42,7 @@ Emil Kowalski's gesture guidance, bundled in Sam's `emil-gesture-ui` skill, says
 
 ## Recommendation
 
-Use a container query on the install box, not a viewport query, so the layout follows the room the box has. Above 30rem show the tab group. Below it show the button and sheet. One selection drives both, is saved to local storage, and is written to the address for sharing.
+Use a container query on the install box, not a viewport query, so the layout follows the room the box has. Above 37rem show the tab group. Below it show the button and sheet. The threshold was 30rem before each tab gained a mark, which widened the row from 350px to 484px. One selection drives both, is saved to local storage, and is written to the address for sharing.
 
 What would change this: if the sheet later needs scrollable content, snap points, or a text field, the hand-written gesture stops being small and a maintained sheet library becomes the better choice. If the site adopts React for other reasons, Vaul's cost drops to its own 18.5 kB.
 

@@ -4,6 +4,7 @@ import {
   TAB_STORAGE_KEY,
   formatCommand,
   formatPrompt,
+  openTargets,
   parseCommand,
   readSelection,
   saveSelection,
@@ -11,6 +12,8 @@ import {
   tabsFor,
   urlForTab,
 } from "./install-commands.mjs"
+import { createIcon } from "./install-icons.mjs"
+import { openInAgent } from "./install-open.mjs"
 import { openInstallSheet } from "./install-sheet.mjs"
 
 const storage = () => window.localStorage
@@ -33,7 +36,8 @@ function updatePickers() {
   for (const picker of pickers) {
     const shown = shownTab(selection, picker.options[0].id === PROMPT_TAB)
     const prompt = shown === PROMPT_TAB
-    renderCommand(picker.code, prompt ? formatPrompt(picker.command, selection.runner) : formatCommand(picker.command, shown))
+    renderCommand(picker.code, prompt ? formatPrompt(picker.command) : formatCommand(picker.command, shown))
+    picker.open.hidden = !prompt
     for (const tab of picker.tabs) {
       const active = tab.dataset.tab === shown
       tab.setAttribute("aria-selected", String(active))
@@ -41,7 +45,7 @@ function updatePickers() {
       if (active) picker.pre.setAttribute("aria-labelledby", tab.id)
     }
     const label = picker.options.find((option) => option.id === shown).label
-    picker.choice.textContent = label
+    picker.choice.replaceChildren(createIcon(shown), label)
     picker.select.dataset.tab = shown
     picker.select.setAttribute("aria-label", `Showing ${label}. Choose what to show`)
     picker.copy.setAttribute("aria-label", prompt ? "Copy install prompt" : "Copy command")
@@ -66,7 +70,7 @@ function createTabs(options, panelId) {
     tab.type = "button"
     tab.id = `${panelId}-${option.id}`
     tab.dataset.tab = option.id
-    tab.textContent = option.label
+    tab.append(createIcon(option.id), option.label)
     tab.setAttribute("role", "tab")
     tab.setAttribute("aria-controls", panelId)
     tab.addEventListener("click", () => selectTab(option.id))
@@ -96,12 +100,33 @@ function createSelect(options) {
   select.className = "install-command-select"
   select.setAttribute("aria-haspopup", "dialog")
   const choice = document.createElement("span")
+  choice.className = "install-command-choice"
   const chevron = document.createElement("span")
   chevron.className = "install-command-chevron"
   chevron.setAttribute("aria-hidden", "true")
   select.append(choice, chevron)
   select.addEventListener("click", () => openInstallSheet({ options, current: select.dataset.tab, select: selectTab, trigger: select }))
   return { select, choice }
+}
+
+// Links that open the prompt in an agent. They are plain https links, so they work without
+// script and a phone can hand them to the installed app.
+function createOpenLinks(prompt, report) {
+  const row = document.createElement("div")
+  row.className = "install-command-open"
+  const label = document.createElement("span")
+  label.textContent = "Open in"
+  row.append(label, ...openTargets(prompt).map((target) => {
+    const link = document.createElement("a")
+    link.href = target.web
+    link.target = "_blank"
+    link.rel = "noopener"
+    link.append(createIcon(target.id), target.label)
+    link.setAttribute("aria-label", `Open the prompt in ${target.label}`)
+    link.addEventListener("click", (event) => openInAgent(event, target, report))
+    return link
+  }))
+  return row
 }
 
 function initialize() {
@@ -124,7 +149,8 @@ function initialize() {
     pre.tabIndex = 0
     pre.id = `install-command-${++nextId}`
     pre.setAttribute("role", "tabpanel")
-    const options = tabsFor(Boolean(formatPrompt(command, selection.runner)))
+    const prompt = formatPrompt(command)
+    const options = tabsFor(Boolean(prompt))
     const { list, tabs } = createTabs(options, pre.id)
     const { select, choice } = createSelect(options)
     const copy = document.createElement("button")
@@ -134,8 +160,9 @@ function initialize() {
     const status = document.createElement("span")
     status.className = "install-command-status"
     status.setAttribute("role", "status")
+    const open = prompt ? createOpenLinks(prompt, (text) => { status.textContent = text }) : document.createElement("div")
     toolbar.append(list, select, status, copy)
-    panel.append(toolbar, pre)
+    panel.append(toolbar, pre, open)
     copy.addEventListener("click", async () => {
       const value = code.textContent
       try {
@@ -153,7 +180,7 @@ function initialize() {
     // Expressive Code ships its page-wide stylesheet and script inside the first block.
     block.before(...block.querySelectorAll(":scope > link, :scope > script"))
     block.replaceWith(panel)
-    pickers.push({ panel, pre, code, command, status, copy, tabs, select, choice, options })
+    pickers.push({ panel, pre, code, command, status, copy, tabs, select, choice, options, open })
   }
   selection = readSelection(storage, location.href)
   updatePickers()
