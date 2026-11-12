@@ -7,6 +7,8 @@ Use the Skills CLI to install one skill. The marketplace bundle installs every s
 
 Use **Run with** to choose npx, bunx, pnx, mise, or Yarn dlx. Your latest choice is remembered across pages and visits on this device. Copy command copies the selected version, including its flags.
 
+Choose **Prompt** above an install command to get a request you can paste into your agent, which then runs the install for you. The page address gains `?install=prompt`, so a link you share opens on the prompt. **Command** switches back.
+
 Yarn dlx requires modern Yarn (2+); pnx requires pnpm 12+. The mise command provisions Node LTS and the Skills CLI as needed while respecting your mise policies. If JavaScript or browser storage is unavailable, the original npx command remains usable.
 
 The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices map to pnx; npm exec maps to npx. Use arrow keys, Home/End, or type a runner name to move through the menu. Escape dismisses it; Enter selects.

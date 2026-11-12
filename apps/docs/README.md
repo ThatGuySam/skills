@@ -14,7 +14,7 @@ Read this before writing, editing, reviewing, or planning any page. Every sectio
 
 On a 375 by 667 phone screen, a reader should see the page title, the install command, and the best example prompt, each in its own copyable box. Nothing else comes first.
 
-1. **Install command.** The first content after the frontmatter is a `bash` block with `npx skills add ThatGuySam/skills --skill <id>`. The install picker turns it into a runner menu and a Copy button.
+1. **Install command.** The first content after the frontmatter is a `bash` block with `npx skills add ThatGuySam/skills --skill <id>`. The install picker turns it into Command and Prompt tabs, a runner menu, and a Copy button. The Prompt tab is built from the command by `src/scripts/install-commands.mjs`, and `?install=prompt` in the address opens on it. Check the 375 by 667 layout on the Command tab; the prompt is longer by design.
 2. **Example prompt.** Next is a ` ```text title="Example prompt" wrap ` block with the single best prompt for the skill. Make it concrete, keep it to about five lines on a phone, and put the user's own facts in `[brackets]`.
 3. **`## Why use it`.** A phone-size brief: a bold one-line outcome, then **Use it when**, **You get**, and **Limit**. Aim for 60–90 words.
 4. **Invocation line.** `$<id>` in Codex, `/<id>` in Claude Code, and `/sam:<id>` with the collection bundle.

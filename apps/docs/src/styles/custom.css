@@ -66,8 +66,58 @@ code {
   background: var(--sl-color-bg);
   cursor: pointer;
 }
-.install-command-toolbar button {
+.install-command-toolbar > button {
   margin-inline-start: auto;
+}
+.install-command-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.45rem;
+  background: var(--sl-color-bg);
+}
+.install-command-toolbar .install-command-tabs button {
+  min-height: calc(2.5rem - 6px);
+  padding: 0.3rem 0.55rem;
+  border: 0;
+  font-weight: 600;
+  color: var(--sl-color-gray-3);
+  background: transparent;
+}
+.install-command-toolbar .install-command-tabs button:hover {
+  color: var(--sl-color-white);
+}
+.install-command-toolbar .install-command-tabs button[aria-selected="true"] {
+  color: var(--sl-color-white);
+  background: var(--sl-color-gray-6);
+}
+.install-command-tabs :focus-visible {
+  outline-offset: 1px;
+}
+.install-command-picker-tabbed .install-command-toolbar {
+  flex-wrap: wrap;
+}
+@media (max-width: 30rem) {
+  /* Tabs, runner, and Copy share one row on a phone; the status drops below it. */
+  .install-command-picker-tabbed .install-command-toolbar {
+    gap: 0.4rem;
+    padding-inline: 0.75rem;
+  }
+  .install-command-picker-tabbed .install-runner-text {
+    display: none;
+  }
+  .install-command-picker-tabbed .install-command-toolbar .install-runner-trigger {
+    min-width: 0;
+    gap: 0.5rem;
+  }
+  .install-command-picker-tabbed .install-command-status {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .install-command-picker-tabbed .install-command-status:empty {
+    display: none;
+  }
 }
 .install-command-picker :focus-visible {
   outline: 2px solid var(--sl-color-accent-high);
