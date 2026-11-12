@@ -8,8 +8,10 @@ export const RUNNERS = [
   { id: "yarn", label: "Yarn dlx", command: "yarn dlx skills" },
 ]
 
+const LEGACY_RUNNERS = { pnpx: "pnx", pnpm: "pnx", npm: "npx" }
+
 export function runnerFor(id) {
-  const migrated = { pnpx: "pnx", pnpm: "pnx", npm: "npx" }[id] ?? id
+  const migrated = LEGACY_RUNNERS[id] ?? id
   return RUNNERS.find((runner) => runner.id === migrated) ?? RUNNERS[0]
 }
 
@@ -41,25 +43,61 @@ export function formatCommand(command, id) {
   return command.prefix + runnerFor(id).command + command.arguments
 }
 
-export const MODE_PARAM = "install"
-export const MODES = [
-  { id: "command", label: "Command" },
-  { id: "prompt", label: "Prompt" },
-]
+export const TAB_STORAGE_KEY = "sam-skills:install-tab"
+export const TAB_PARAM = "install"
+export const PROMPT_TAB = "prompt"
 
-export function modeFor(id) {
-  return MODES.find((mode) => mode.id === id)?.id ?? "command"
+// One tab group: the agent prompt first, then each runner's command.
+export function tabsFor(hasPrompt) {
+  const runners = RUNNERS.map((runner) => ({ id: runner.id, label: runner.label, hint: runner.command }))
+  return hasPrompt ? [{ id: PROMPT_TAB, label: "Prompt", hint: "A request to paste into your agent" }, ...runners] : runners
 }
 
-// The command tab is the default, so only the prompt tab appears in the URL.
-export function modeFromUrl(href) {
-  return modeFor(new URL(href).searchParams.get(MODE_PARAM))
+// Returns a known tab ID, or null for anything else.
+function tabFor(id) {
+  if (id === PROMPT_TAB) return PROMPT_TAB
+  const migrated = LEGACY_RUNNERS[id] ?? id
+  return RUNNERS.some((runner) => runner.id === migrated) ? migrated : null
 }
 
-export function urlForMode(href, id) {
+// A selection is the chosen tab plus the last runner, which the prompt's command uses.
+// The address wins over storage so a shared link opens on the tab it names. Storage wins
+// over the default, and a runner saved before tabs existed still counts as a choice.
+export function readSelection(storage, href) {
+  let savedTab = null
+  let savedRunner = null
+  try {
+    savedTab = tabFor(storage().getItem(TAB_STORAGE_KEY))
+    savedRunner = tabFor(storage().getItem(STORAGE_KEY))
+  } catch {
+    // Blocked storage falls through to the address and the default.
+  }
+  if (savedRunner === PROMPT_TAB) savedRunner = null
+  const linked = href ? tabFor(new URL(href).searchParams.get(TAB_PARAM)) : null
+  const tab = linked ?? savedTab ?? savedRunner ?? PROMPT_TAB
+  return { tab, runner: tab === PROMPT_TAB ? (savedRunner ?? RUNNERS[0].id) : tab }
+}
+
+export function saveSelection(storage, selection, id) {
+  const tab = tabFor(id) ?? selection.tab
+  const next = { tab, runner: tab === PROMPT_TAB ? selection.runner : tab }
+  try {
+    storage().setItem(TAB_STORAGE_KEY, next.tab)
+  } catch {
+    // The current page still works when the browser blocks persistent storage.
+  }
+  if (tab !== PROMPT_TAB) savePreference(storage, tab)
+  return next
+}
+
+// A command with no prompt, such as `skills list`, shows the last runner instead.
+export function shownTab(selection, hasPrompt) {
+  return selection.tab === PROMPT_TAB && !hasPrompt ? selection.runner : selection.tab
+}
+
+export function urlForTab(href, id) {
   const url = new URL(href)
-  if (modeFor(id) === "command") url.searchParams.delete(MODE_PARAM)
-  else url.searchParams.set(MODE_PARAM, modeFor(id))
+  url.searchParams.set(TAB_PARAM, tabFor(id) ?? PROMPT_TAB)
   return url.href
 }
 
@@ -91,28 +129,20 @@ export function formatPrompt(command, id) {
   const install = parseInstall(command)
   if (!install) return null
   const has = (...flags) => flags.some((flag) => install.tokens.includes(flag))
-  const scoped = has("--global", "-g")
   const targeted = has("--agent", "-a")
   const line = [
     command.prefix + runnerFor(id).command,
     ...install.tokens,
-    ...(scoped ? [] : ["--global"]),
+    ...(has("--global", "-g") ? [] : ["--global"]),
     ...(has("--yes", "-y") ? [] : ["--yes"]),
   ].join(" ")
   const many = install.skills.length > 1
-  const run = [
-    `Run \`${line}\`.`,
-    ...(targeted ? [] : ["Add `--agent` with the ID of the agent you are running in, such as `claude-code` or `codex`."]),
-    ...(scoped ? [] : ["Drop `--global` if I ask for this project only."]),
-  ].join(" ")
-  const confirm = many
-    ? `Confirm that ${listNames(install.skills.map((skill) => `\`${skill}/SKILL.md\``))} now exist in my skills folder.`
-    : `Confirm that \`${install.skills[0]}/SKILL.md\` now exists in my skills folder.`
+  const check = many ? "each skill's `SKILL.md` exists" : `\`${install.skills[0]}/SKILL.md\` exists`
+  const target = targeted ? "" : ", adding `--agent` with your own agent ID, such as `claude-code` or `codex`"
+  // One short paragraph: on a phone the whole prompt and its Copy button should fit one screen.
   return [
     `Install the ${listNames(install.skills)} agent skill${many ? "s" : ""} from ${install.url} for me.`,
-    "",
-    `1. ${run}`,
-    `2. ${confirm}`,
-    `3. Tell me to start a new session, then show me one example of how to use ${many ? "each skill" : "the skill"}.`,
-  ].join("\n")
+    `Run \`${line}\`${target}.`,
+    `Then confirm that ${check} and tell me to start a new session.`,
+  ].join(" ")
 }

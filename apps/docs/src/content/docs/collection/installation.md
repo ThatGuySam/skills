@@ -5,13 +5,13 @@ description: Install one skill or the full collection in Codex, Claude Code, and
 
 Use the Skills CLI to install one skill. The marketplace bundle installs every skill in the collection. The commands and invocation names for each client are below.
 
-Use **Run with** to choose npx, bunx, pnx, mise, or Yarn dlx. Your latest choice is remembered across pages and visits on this device. Copy command copies the selected version, including its flags.
+Each install box has one row of tabs. **Prompt** comes first and is the default: it is a request you can paste into your agent, which then runs the install for you. The other tabs show the command for npx, bunx, pnx, mise, or Yarn dlx, including its flags. On a phone the tabs become one button that opens the same choices in a sheet.
 
-Choose **Prompt** above an install command to get a request you can paste into your agent, which then runs the install for you. The page address gains `?install=prompt`, so a link you share opens on the prompt. **Command** switches back.
+Your latest choice is remembered across pages and visits on this device. Picking a tab also adds it to the page address, such as `?install=prompt` or `?install=bunx`, so a link you share opens on that tab without changing what the other person has saved.
 
 Yarn dlx requires modern Yarn (2+); pnx requires pnpm 12+. The mise command provisions Node LTS and the Skills CLI as needed while respecting your mise policies. If JavaScript or browser storage is unavailable, the original npx command remains usable.
 
-The menu shows one spelling per runner family. Saved pnpx or pnpm dlx choices map to pnx; npm exec maps to npx. Use arrow keys, Home/End, or type a runner name to move through the menu. Escape dismisses it; Enter selects.
+The tabs show one spelling per runner family. Saved pnpx or pnpm dlx choices map to pnx; npm exec maps to npx. Use the arrow keys or Home/End to move between tabs. In the sheet, Escape, the Close button, a tap outside, or a downward drag dismisses it.
 
 ## See what is available
 

@@ -1,21 +1,20 @@
 import {
-  MODES,
+  PROMPT_TAB,
   STORAGE_KEY,
+  TAB_STORAGE_KEY,
   formatCommand,
   formatPrompt,
-  modeFor,
-  modeFromUrl,
   parseCommand,
-  readPreference,
-  runnerFor,
-  savePreference,
-  urlForMode,
+  readSelection,
+  saveSelection,
+  shownTab,
+  tabsFor,
+  urlForTab,
 } from "./install-commands.mjs"
-import { createRunnerMenu } from "./runner-menu.mjs"
+import { openInstallSheet } from "./install-sheet.mjs"
 
 const storage = () => window.localStorage
-let selected = readPreference(storage)
-let mode = modeFromUrl(location.href)
+let selection = readSelection(storage, location.href)
 let pickers = []
 let nextId = 0
 
@@ -30,45 +29,47 @@ function renderCommand(code, text) {
   }))
 }
 
-function updatePickers(id = selected) {
-  selected = runnerFor(id).id
+function updatePickers() {
   for (const picker of pickers) {
-    picker.runnerMenu.setValue(selected)
-    // A picker without a prompt, such as `skills list`, always shows its command.
-    const shown = picker.tabs.length ? mode : "command"
-    renderCommand(picker.code, (shown === "prompt" ? formatPrompt : formatCommand)(picker.command, selected))
+    const shown = shownTab(selection, picker.options[0].id === PROMPT_TAB)
+    const prompt = shown === PROMPT_TAB
+    renderCommand(picker.code, prompt ? formatPrompt(picker.command, selection.runner) : formatCommand(picker.command, shown))
     for (const tab of picker.tabs) {
-      const active = tab.dataset.mode === shown
+      const active = tab.dataset.tab === shown
       tab.setAttribute("aria-selected", String(active))
       tab.tabIndex = active ? 0 : -1
       if (active) picker.pre.setAttribute("aria-labelledby", tab.id)
     }
-    picker.copy.setAttribute("aria-label", `Copy install ${shown}`)
+    const label = picker.options.find((option) => option.id === shown).label
+    picker.choice.textContent = label
+    picker.select.dataset.tab = shown
+    picker.select.setAttribute("aria-label", `Showing ${label}. Choose what to show`)
+    picker.copy.setAttribute("aria-label", prompt ? "Copy install prompt" : "Copy command")
     picker.status.textContent = ""
   }
 }
 
-// The tab lives in the URL so a link can open straight on the prompt.
-function selectMode(id) {
-  mode = modeFor(id)
-  history.replaceState(history.state, "", urlForMode(location.href, mode))
+// The choice is saved for the next page and written to the address for sharing.
+function selectTab(id) {
+  selection = saveSelection(storage, selection, id)
+  history.replaceState(history.state, "", urlForTab(location.href, selection.tab))
   updatePickers()
 }
 
-function createTabs(panelId) {
+function createTabs(options, panelId) {
   const list = document.createElement("div")
   list.className = "install-command-tabs"
   list.setAttribute("role", "tablist")
-  list.setAttribute("aria-label", "Install format")
-  const tabs = MODES.map((item) => {
+  list.setAttribute("aria-label", "Show install as")
+  const tabs = options.map((option) => {
     const tab = document.createElement("button")
     tab.type = "button"
-    tab.id = `${panelId}-${item.id}`
-    tab.dataset.mode = item.id
-    tab.textContent = item.label
+    tab.id = `${panelId}-${option.id}`
+    tab.dataset.tab = option.id
+    tab.textContent = option.label
     tab.setAttribute("role", "tab")
     tab.setAttribute("aria-controls", panelId)
-    tab.addEventListener("click", () => selectMode(item.id))
+    tab.addEventListener("click", () => selectTab(option.id))
     return tab
   })
   list.addEventListener("keydown", (event) => {
@@ -81,15 +82,30 @@ function createTabs(panelId) {
     }[event.key]
     if (index < 0 || next === undefined) return
     event.preventDefault()
-    selectMode(tabs[next].dataset.mode)
+    selectTab(tabs[next].dataset.tab)
     tabs[next].focus()
   })
   list.append(...tabs)
   return { list, tabs }
 }
 
+// Narrow boxes swap the tab row for this button, which opens the options in a sheet.
+function createSelect(options) {
+  const select = document.createElement("button")
+  select.type = "button"
+  select.className = "install-command-select"
+  select.setAttribute("aria-haspopup", "dialog")
+  const choice = document.createElement("span")
+  const chevron = document.createElement("span")
+  chevron.className = "install-command-chevron"
+  chevron.setAttribute("aria-hidden", "true")
+  select.append(choice, chevron)
+  select.addEventListener("click", () => openInstallSheet({ options, current: select.dataset.tab, select: selectTab, trigger: select }))
+  return { select, choice }
+}
+
 function initialize() {
-  if (!("showPopover" in HTMLElement.prototype)) return
+  if (!("showModal" in (window.HTMLDialogElement?.prototype ?? {}))) return
   pickers = pickers.filter((picker) => picker.panel.isConnected)
   for (const block of document.querySelectorAll(".sl-markdown-content .expressive-code")) {
     // Expressive Code's copy payload retains newlines between highlighted divs.
@@ -102,35 +118,23 @@ function initialize() {
     panel.setAttribute("aria-label", "Skills CLI command")
     const toolbar = document.createElement("div")
     toolbar.className = "install-command-toolbar"
-    const label = document.createElement("div")
-    label.className = "install-runner-label"
-    const labelText = document.createElement("span")
-    labelText.className = "install-runner-text"
-    labelText.textContent = "Run with "
-    label.append(labelText)
-    const runnerMenu = createRunnerMenu((id) => {
-      savePreference(storage, id)
-      updatePickers(id)
-    })
-    label.append(runnerMenu.element)
-    const copy = document.createElement("button")
-    copy.type = "button"
-    copy.textContent = "Copy"
-    copy.setAttribute("aria-label", "Copy install command")
     const pre = document.createElement("pre")
     const code = document.createElement("code")
     pre.append(code)
     pre.tabIndex = 0
     pre.id = `install-command-${++nextId}`
-    const { list, tabs } = formatPrompt(command, selected) ? createTabs(pre.id) : { list: null, tabs: [] }
-    if (list) pre.setAttribute("role", "tabpanel")
-    else pre.setAttribute("aria-label", "Install command")
+    pre.setAttribute("role", "tabpanel")
+    const options = tabsFor(Boolean(formatPrompt(command, selection.runner)))
+    const { list, tabs } = createTabs(options, pre.id)
+    const { select, choice } = createSelect(options)
+    const copy = document.createElement("button")
+    copy.type = "button"
+    copy.className = "install-command-copy"
+    copy.textContent = "Copy"
     const status = document.createElement("span")
     status.className = "install-command-status"
     status.setAttribute("role", "status")
-    // One toolbar row, so the tabs do not push the example prompt off a phone screen.
-    toolbar.append(...(list ? [list] : []), label, status, copy)
-    panel.classList.toggle("install-command-picker-tabbed", Boolean(list))
+    toolbar.append(list, select, status, copy)
     panel.append(toolbar, pre)
     copy.addEventListener("click", async () => {
       const value = code.textContent
@@ -140,29 +144,30 @@ function initialize() {
       } catch {
         const range = document.createRange()
         range.selectNodeContents(code)
-        const selection = window.getSelection()
-        selection?.removeAllRanges()
-        selection?.addRange(range)
+        const selected = window.getSelection()
+        selected?.removeAllRanges()
+        selected?.addRange(range)
         status.textContent = "Select and copy the text"
       }
     })
     // Expressive Code ships its page-wide stylesheet and script inside the first block.
     block.before(...block.querySelectorAll(":scope > link, :scope > script"))
     block.replaceWith(panel)
-    pickers.push({ panel, runnerMenu, pre, code, command, status, copy, tabs })
+    pickers.push({ panel, pre, code, command, status, copy, tabs, select, choice, options })
   }
-  mode = modeFromUrl(location.href)
-  updatePickers(readPreference(storage))
+  selection = readSelection(storage, location.href)
+  updatePickers()
 }
 
 initialize()
 document.addEventListener("astro:page-load", initialize)
-window.addEventListener("resize", () => pickers.forEach((picker) => picker.runnerMenu.position()))
-window.addEventListener("scroll", () => pickers.forEach((picker) => picker.runnerMenu.position()), true)
 window.addEventListener("popstate", () => {
-  mode = modeFromUrl(location.href)
+  selection = readSelection(storage, location.href)
   updatePickers()
 })
+// Another browser tab changed the saved choice.
 window.addEventListener("storage", (event) => {
-  if (event.key === STORAGE_KEY || event.key === null) updatePickers(event.newValue)
+  if (event.key !== STORAGE_KEY && event.key !== TAB_STORAGE_KEY && event.key !== null) return
+  selection = readSelection(storage)
+  updatePickers()
 })

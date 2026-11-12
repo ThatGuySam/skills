@@ -7,12 +7,14 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-12
 
-### Install boxes offer a prompt for your agent
+### Install boxes: a prompt for your agent, runners as tabs, a sheet on phones
 
-- Every command that installs a named skill now has **Command** and **Prompt** tabs. The prompt asks an agent to run the install without questions, target itself with `--agent`, confirm the skill's `SKILL.md` exists, and tell you to start a new session. It follows the runner chosen under **Run with**.
-- Choosing **Prompt** adds `?install=prompt` to the page address, so a shared link opens on the prompt. For example, `https://skills.samcarlton.com/emily/introduction/?install=prompt`.
-- Commands that list, update, or remove skills keep the plain command box.
-- Checked in installed Chrome at 375 by 667 on all 14 skill introduction pages: the tabs share the toolbar row and the example prompt still ends on the first screen. The install command inside the prompt was run on two machines with `--agent claude-code codex`; the prompt itself has not yet been handed to a fresh agent.
+- Every command that installs a named skill now opens on a **Prompt** tab: a short request to paste into an agent, which runs the install without questions, targets itself with `--agent`, confirms the skill's `SKILL.md` exists, and tells you to start a new session.
+- The runner dropdown is gone. npx, bunx, pnx, mise, and Yarn dlx are tabs in the same group, after Prompt. The prompt uses the last runner you picked. Commands that list, update, or remove skills show the runner tabs only.
+- Your tab is remembered in this browser across pages and visits. A runner saved before this change still opens on that runner.
+- Picking a tab adds it to the page address, so a shared link opens on it. For example, `https://skills.samcarlton.com/emily/introduction/?install=prompt`. A link's tab does not change what the visitor has saved.
+- On a phone the six tabs do not fit, so the box shows one button with the current choice. It opens a bottom sheet with a Close button that also closes on Escape, a tap outside, or a downward drag. The research behind that choice is in the repository at `docs/research/install-picker-mobile-pattern-2026-11-12.md`.
+- Checked in installed Chrome at 375 by 667 on all 14 skill introduction pages: with the Prompt tab showing, the title, the whole prompt, and Copy fit the first screen, and the example prompt starts just below it. With a runner tab showing, the example prompt also fits. Not checked: a physical phone, iOS Safari, and screen readers. The install command inside the prompt was run on two machines with `--agent claude-code codex`; the prompt itself has not yet been handed to a fresh agent.
 
 ### Emily joins the collection
 

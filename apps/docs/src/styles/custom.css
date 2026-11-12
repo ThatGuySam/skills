@@ -35,26 +35,23 @@ code {
 }
 
 .install-command-picker {
+  container-type: inline-size;
   margin-block: 1.5rem;
   border: 1px solid var(--sl-color-gray-5);
   border-radius: 0.5rem;
   overflow: hidden;
   background: var(--sl-color-bg-sidebar);
 }
+.sl-markdown-content > .install-command-picker:first-child {
+  margin-top: 0;
+}
 .install-command-toolbar {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem 1rem;
+  gap: 0.5rem 0.75rem;
   padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--sl-color-gray-5);
   font-size: var(--sl-text-sm);
-}
-.install-runner-label {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  color: var(--sl-color-gray-2);
 }
 .install-command-toolbar button {
   min-height: 2.5rem;
@@ -66,7 +63,7 @@ code {
   background: var(--sl-color-bg);
   cursor: pointer;
 }
-.install-command-toolbar > button {
+.install-command-toolbar .install-command-copy {
   margin-inline-start: auto;
 }
 .install-command-tabs {
@@ -79,14 +76,12 @@ code {
 }
 .install-command-toolbar .install-command-tabs button {
   min-height: calc(2.5rem - 6px);
-  padding: 0.3rem 0.55rem;
+  padding: 0.3rem 0.6rem;
   border: 0;
   font-weight: 600;
+  white-space: nowrap;
   color: var(--sl-color-gray-3);
   background: transparent;
-}
-.install-command-toolbar .install-command-tabs button:hover {
-  color: var(--sl-color-white);
 }
 .install-command-toolbar .install-command-tabs button[aria-selected="true"] {
   color: var(--sl-color-white);
@@ -95,28 +90,27 @@ code {
 .install-command-tabs :focus-visible {
   outline-offset: 1px;
 }
-.install-command-picker-tabbed .install-command-toolbar {
-  flex-wrap: wrap;
+.install-command-toolbar .install-command-select {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
 }
-@media (max-width: 30rem) {
-  /* Tabs, runner, and Copy share one row on a phone; the status drops below it. */
-  .install-command-picker-tabbed .install-command-toolbar {
-    gap: 0.4rem;
-    padding-inline: 0.75rem;
-  }
-  .install-command-picker-tabbed .install-runner-text {
+.install-command-chevron {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  opacity: 0.7;
+}
+/* Six tabs need about 30rem. Below that, one button opens the same choices in a sheet. */
+@container (max-width: 30rem) {
+  .install-command-tabs {
     display: none;
   }
-  .install-command-picker-tabbed .install-command-toolbar .install-runner-trigger {
-    min-width: 0;
-    gap: 0.5rem;
-  }
-  .install-command-picker-tabbed .install-command-status {
-    order: 1;
-    flex-basis: 100%;
-  }
-  .install-command-picker-tabbed .install-command-status:empty {
-    display: none;
+  .install-command-toolbar .install-command-select {
+    display: inline-flex;
   }
 }
 .install-command-picker :focus-visible {
@@ -137,86 +131,166 @@ code {
 .install-command-token {
   white-space: nowrap;
 }
-.sl-markdown-content > .install-command-picker:first-child {
-  margin-top: 0;
-}
-@media (max-width: 50rem) {
-  h1#_top {
-    font-size: var(--sl-text-3xl);
-  }
-}
 .install-command-picker code {
   font-family: var(--sl-font-mono);
   font-size: var(--sl-text-code);
   color: var(--sl-color-text);
   white-space: inherit;
 }
+@media (max-width: 50rem) {
+  h1#_top {
+    font-size: var(--sl-text-3xl);
+  }
+}
 
-.install-command-toolbar .install-runner-trigger {
+/* The sheet enters and leaves on Vaul's iOS-style curve. Its backdrop fades with the drag. */
+.install-sheet {
+  --install-sheet-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  position: fixed;
+  inset: auto 0 0 0;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 85dvh;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+  border: 1px solid var(--sl-color-gray-5);
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  font-family: var(--sl-font);
+  color: var(--sl-color-text);
+  background: var(--sl-color-bg-sidebar);
+  overscroll-behavior: contain;
+  touch-action: none;
+  transition: translate 0.5s var(--install-sheet-ease);
+}
+.install-sheet[open] {
+  display: flex;
+  flex-direction: column;
+}
+@starting-style {
+  .install-sheet[open] {
+    translate: 0 100%;
+  }
+}
+.install-sheet.is-closing {
+  translate: 0 100%;
+}
+.install-sheet::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgb(0 0 0 / calc(0.55 * var(--install-sheet-shown, 1)));
+  transition: background-color 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+@starting-style {
+  .install-sheet[open]::backdrop {
+    background: rgb(0 0 0 / 0);
+  }
+}
+.install-sheet.is-closing::backdrop {
+  background: rgb(0 0 0 / 0);
+}
+.install-sheet.is-dragging,
+.install-sheet.is-dragging::backdrop {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .install-sheet,
+  .install-sheet::backdrop {
+    transition: none;
+  }
+}
+.install-sheet-handle {
+  flex: none;
+  width: 2.5rem;
+  height: 0.3rem;
+  margin: 0.15rem auto 0.4rem;
+  border-radius: 1rem;
+  background: var(--sl-color-gray-4);
+}
+.install-sheet-header {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  min-width: 6rem;
   justify-content: space-between;
-  border-color: transparent;
-  border-radius: 0.6rem;
-  background: transparent;
+  gap: 1rem;
+  padding: 0 0.25rem 0.5rem 0.65rem;
+}
+.install-sheet-header h2 {
+  margin: 0;
+  font-size: var(--sl-text-base);
   font-weight: 600;
+  color: var(--sl-color-white);
 }
-.install-runner-trigger:hover,
-.install-runner-trigger[aria-expanded="true"] {
-  background: var(--sl-color-gray-6);
+.install-sheet button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
-.install-runner-chevron {
-  width: 0.4rem;
-  height: 0.4rem;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
-  opacity: 0.7;
-}
-.install-runner-menu {
-  position: fixed;
-  inset: auto;
-  margin: 0;
-  width: 12rem;
-  max-width: calc(100vw - 16px);
-  padding: 0.4rem;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 0.9rem;
-  background: color-mix(in srgb, var(--sl-color-bg) 94%, var(--sl-color-white));
-  color: var(--sl-color-text);
-  box-shadow: 0 12px 32px rgb(0 0 0 / 25%);
-  overflow-y: auto;
-}
-.install-runner-menu button {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0.55rem 2rem 0.55rem 0.65rem;
+.install-sheet-close {
+  min-height: 2.75rem;
+  padding: 0.35rem 0.65rem;
   border: 0;
   border-radius: 0.5rem;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-2);
+  background: transparent;
+}
+.install-sheet-options {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  list-style: none;
+}
+.install-sheet-options button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.75rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.5rem 0.65rem;
+  border: 0;
+  border-radius: 0.6rem;
   text-align: start;
   background: transparent;
-  color: inherit;
 }
-.install-runner-menu button:hover,
-.install-runner-menu button:focus-visible {
-  background: color-mix(in srgb, var(--sl-color-gray-5) 50%, transparent);
+.install-sheet-options button[aria-current="true"] {
+  background: var(--sl-color-gray-6);
 }
-.install-runner-menu button:focus-visible {
+.install-sheet-label {
+  font-weight: 600;
+  color: var(--sl-color-white);
+}
+.install-sheet-hint {
+  grid-column: 1;
+  overflow: hidden;
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.install-sheet-check {
+  grid-area: 1 / 2 / span 2;
+  visibility: hidden;
+  color: var(--sl-color-text-accent);
+}
+.install-sheet-options button[aria-current="true"] .install-sheet-check {
+  visibility: visible;
+}
+.install-sheet :focus-visible {
+  outline: 2px solid var(--sl-color-accent-high);
   outline-offset: -2px;
 }
-.install-runner-check {
-  display: none;
-  position: absolute;
-  right: 0.7rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.install-runner-menu button[aria-checked="true"] .install-runner-check {
-  display: block;
+@media (hover: hover) and (pointer: fine) {
+  .install-command-toolbar .install-command-tabs button:hover {
+    color: var(--sl-color-white);
+  }
+  .install-sheet-options button:hover,
+  .install-sheet-close:hover {
+    background: color-mix(in srgb, var(--sl-color-gray-5) 50%, transparent);
+  }
 }
 
 /* ---------- Dark theme (default) — Linear near-black ---------- */
