@@ -7,6 +7,15 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-12
 
+### Phone Size sizes terminal replies for a phone
+
+- A reply shown in a terminal, such as a Claude Code or Codex CLI session, is now sized for a phone terminal by default: 40 columns with a 2-column gutter, so 38 usable, and 20 rows. Say you are at a desk, give a size, or set `PHONE_SIZE_COLUMNS` and `PHONE_SIZE_ROWS` to change it.
+- Fenced blocks, trees and tables must fit the columns. Prose still reflows. A long quoted label in a tree wraps onto continuation rows that keep the branch lines, long URLs go whole on their own line, and a table too wide to draw becomes short records. Code, commands and logs are never re-wrapped.
+- New `scripts/terminal_fit.py` counts display columns in a draft, with 18 unit tests. Terminal replies end with a counted fit line in place of "Phone fit unverified".
+- Sam's Tree and Sam's Status gained one line in the shared tree format: in a terminal, keep rows inside the columns and prefer two levels.
+- An Agent Verify comparison with the previous version returned **improved on tested cases**, as a pilot of one run per case. A tree of eight long notes went from lines of 85 to 112 columns to 38 of 38, with every note word for word. A prose-and-links reply and a Linear-bound near-miss showed no regression.
+- **The 40 and the 20 are assumptions.** No phone terminal was measured or seen. Both terminal replies ran about 41 rows against the 20-row budget and said that they scroll. Codex CLI is untested. The [recorded trials](https://github.com/ThatGuySam/skills/blob/main/skills/phone-size/evals/results.md) have the method and limits.
+
 ### Example prompts put the fill-in last
 
 - Every example prompt with a `[bracketed]` fill-in now ends with it, so you can paste the prompt and backspace straight into the part you change. For example, Emily's prompt ends `My situation: [situation]`.

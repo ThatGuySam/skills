@@ -1,6 +1,6 @@
 ---
 name: phone-size
-description: Condense tasks, updates, decisions, research, and handoffs into a comfortable phone-screen brief with progressively disclosed detail. Use for phone-sized or one-screen summaries, dense issue descriptions, and mobile review content; not for responsive CSS alone or lossless shortening of a full document.
+description: Condense tasks, updates, decisions, research, and handoffs into a comfortable phone-screen brief with progressively disclosed detail. Use for phone-sized or one-screen summaries, dense issue descriptions, mobile review content, and replies shown in a terminal that may be read on a phone; not for responsive CSS alone or lossless shortening of a full document.
 ---
 
 # Phone Size
@@ -21,6 +21,8 @@ Use familiar words and complete sentences. Cut repeated policy, dated reconcilia
 
 Aim initially for about 80–120 visible words, including the title and disclosure labels, and less for a simple task. This is a drafting budget, not proof of screen fit. Fit the brief and its routes comfortably in the actual viewport, leaving room for the host application's controls. Rewrite overflow; never shrink readable type, clip text, line-clamp or hide required meaning to pass.
 
+When the reply itself is shown in a terminal, such as a Claude Code or Codex CLI session, read [terminal replies](references/terminal.md) before drafting. Assume it is read on a phone terminal unless the user says otherwise. Fenced blocks, trees and tables must then fit a narrow grid of columns, and a row budget stands beside the word budget.
+
 Read [content patterns](references/content-patterns.md) when deciding what a task, decision, research note or status update must retain.
 
 ## Disclose the rest
@@ -35,7 +37,7 @@ Preserve the source's access boundary. Keep private detail in protected destinat
 
 ## Check and deliver
 
-Read [verification](references/verification.md) before calling the result finished. Check meaning, disclosure, destination behavior and actual layout separately. If you cannot inspect the target, deliver the useful draft and say "Phone fit unverified"; do not claim a word count or HTML mockup verifies another app.
+Read [verification](references/verification.md) before calling the result finished. Check meaning, disclosure, destination behavior and actual layout separately. If you cannot inspect the target, deliver the useful draft and say "Phone fit unverified"; do not claim a word count or HTML mockup verifies another app. For a terminal reply, run the bundled column check and end with the counted-fit line that [terminal replies](references/terminal.md) gives in its place.
 
 Return the brief or artifact first, then only consequential limits and the actual saved/published state. For an authorized edit, preserve the original, check for intervening changes, write only the intended content, and read it back. Preparing copy does not authorize sending, publishing, changing task status, or modifying related records.
 

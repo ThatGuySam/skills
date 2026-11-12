@@ -18,6 +18,10 @@ For a plain email, a brief plus a document link is more reliable than interactiv
 
 For a full contract, procedure, tutorial or specification, preserve the continuous source and create a short entry brief. Confirm scope before changing legally or operationally binding wording. A request to shorten wording losslessly is not permission to remove requirements.
 
+## Terminal agent sessions
+
+A reply drawn by a terminal, such as a Claude Code or Codex CLI session, is a fixed grid of character cells and may be read on a phone. Read [terminal replies](terminal.md) for the grid to assume, how to fit trees, tables, fenced blocks and long URLs, and the check to run. The chat guidance above still decides what the brief says and where its detail goes. A terminal has no collapsible sections: put the brief first, then titled detail, and say when it scrolls.
+
 ## Standalone HTML or an existing web interface
 
 Use semantic headings, links and native `details`/`summary` for independent optional sections. Start sections collapsed unless the user needs them immediately. Keep labels visible, descriptive and touch-friendly. Provide a clear way back from lengthy detail. Avoid nested disclosure and horizontal tables on a narrow viewport.

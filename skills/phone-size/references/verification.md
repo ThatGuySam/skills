@@ -19,6 +19,8 @@ At baseline typography:
 
 For HTML, inspect rendered bounding boxes and document/element scroll dimensions after fonts and layout settle. Check actual text and controls, not just a container's declared height. A browser's mobile viewport emulation is not a physical-device test. If the host app cannot be inspected, do not substitute a facsimile and claim that app passed.
 
+For a terminal reply, the viewport is a grid of columns and rows, not CSS pixels. Use the grid and the bundled check in [terminal replies](terminal.md). Every line that cannot reflow fits the usable columns; rows are a budget that required wording may exceed. A column count is arithmetic about the draft. It does not show how the phone client drew it.
+
 ## Disclosure and accessibility
 
 Open every route. Confirm it reveals the promised content, that links land correctly, and that Back/close preserves a usable reading position. Save and reopen native app content to verify persistence and default collapse behavior. Test keyboard focus and activation, visible focus, meaningful names and screen-reader reading order where tooling permits.
@@ -31,6 +33,7 @@ Record the target, dimensions, text scale, artifact revision, checks and limits.
 
 - **Draft; phone fit unverified:** content and destinations prepared, target layout not inspected.
 - **Content checked:** meaning and links reviewed; no layout claim.
+- **Columns counted:** a terminal reply measured against a named grid, stating whether that grid was assumed, recorded by the user or measured from a phone client; the screen was not inspected.
 - **Rendered fit checked:** named viewport and artifact inspected; state whether simulated or physical.
 - **Saved and reopened:** native destination readback and disclosure tested.
 

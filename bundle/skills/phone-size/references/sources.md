@@ -12,6 +12,16 @@ Phone Size is a portable synthesis, not an official Poteto, Matt Pocock or Linea
 
 The phone dimensions, composition budget and acceptance checks are this workflow's design choices, not measured universal limits or claims by those authors. The instructions are original synthesis. Authoring used Sam's Skill Creator's locked sources; its integrity receipt and scoped validation are retained under `evals/`.
 
+## Terminal grid
+
+Added November 12, 2026. The terminal guidance separates what was measured from what is assumed:
+
+- **Measured**, in one Claude Code 2.1 session on macOS inside a 77-column, 67-row terminal: a tool shell reported 80 columns from `tput cols`, 0 from `$COLUMNS`, and no terminal from `stty size`; the ancestor-terminal lookup in `scripts/terminal_fit.py grid` returned 77 by 67, matching the multiplexer's own report; Claude Code indented reply text and fenced blocks by 2 columns.
+- **Assumed**: the 40-column and 20-row phone grid. No phone terminal was measured. The column figure is arithmetic from phone widths and text sizes; the row figure is a judgment.
+- **Untested**: the lookup inside Codex CLI or a sandbox that hides parent processes, any phone client's actual grid, how terminals other than the one tested draw emoji followed by a variation selector, and terminals set to draw ambiguous-width characters such as box-drawing lines and arrows two columns wide (the count takes them as one).
+
+The continuation-row rule for trees and the record form for tables are this workflow's design choices.
+
 ## Replacing phone-roll
 
 Install `phone-size` as the canonical skill. Preserve existing phone-roll scripts, schemas and saved artifacts for callers that still need them. Replace its discovery entry with an explicit-only compatibility alias that loads phone-size when invoked. Do not delete older outputs or silently change their schemas. Inspect any script callers separately before retiring the legacy tools.
