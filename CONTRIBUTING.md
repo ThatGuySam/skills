@@ -7,7 +7,9 @@ Contributions should improve a published skill's behavior, evidence, or portabil
 Ordinary authorized changes go directly to `main`; a pull request is optional,
 not the default. Sync the latest remote `main`, make a small focused change, run
 the relevant checks, and publish only within the task's authorization. Preserve
-unrelated work and never force-push shared history.
+unrelated work and never force-push shared history. Maintainers and their agents
+work in the existing checkout on `main` and do not create branches or worktrees
+unless asked; `AGENTS.md` has the full rule.
 
 Use a branch or pull request when explicitly requested, when a contributor lacks
 direct write access, or when repository rules require it. Required checks and

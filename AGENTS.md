@@ -10,10 +10,15 @@ This repository contains the agent skills Sam uses and publishes.
 
 ## Contribution workflow
 
-- Use trunk-based development in this repository. For ordinary changes the user has authorized publishing, commit and push directly to the current `main` branch by default; a pull request is not required.
-- Honor an explicit request for a branch, pull request, review gate, or draft-only work. This default does not authorize publication when the task only asks for investigation or a draft.
-- Start from the latest remote `main`, keep changes small and focused, preserve unrelated work, and run the applicable validation gates before pushing.
-- Never force-push shared history. If `main` advances, reconcile and rerun affected checks before publishing.
+This repository is trunk-based. Work happens on `main` in the existing checkout.
+
+- Use the existing primary checkout on `main` for normal work. Make small, task-scoped changes, validate each one, and commit it on `main`.
+- Do not create or switch to a branch, worktree, detached checkout, fork, or second clone unless the user explicitly asks for that operation. Uncommitted files, parallel agents, a skill's default steps, a review request, and a push request do not authorize one.
+- This policy overrides any skill's default worktree, branch, rebase, or pull-request steps. For pstack Feature work, follow the [trunk-first playbook](.agents/playbooks/trunk-first.md).
+- Use one writer at a time on the checkout. Preserve unrelated staged, unstaged, and untracked work, and stage only the files the task owns. Do not stash, reset, or rewrite history to get a clean tree. If other work blocks a commit, a check, or a deploy, report it rather than isolating around it.
+- For changes the user has authorized publishing, push `main` to `origin/main`; a pull request is not required. A commit is not a push, and a push is not a deploy. This default does not authorize publication when the task only asks for investigation or a draft.
+- Before pushing, fetch. If `origin/main` has advanced, merge it into local `main`, rerun the affected checks, then push. Never force-push shared history.
+- When the user asks for a branch or pull request by name, keep it short-lived and return the work to `main`. A branch request does not authorize a worktree.
 - Respect required repository rules and checks. If they block direct publication, report the blocker rather than disabling protection, changing permissions, or bypassing checks.
 
 ## Collection boundaries
@@ -46,9 +51,10 @@ This repository contains the agent skills Sam uses and publishes.
 - Never copy private eval material here: fixtures from real machines, private cases, criteria, or grader files. Public verification pages summarize method and scores only. Public evals in `evals/` use labeled synthetic inputs.
 - `node scripts/check-private-leaks.mjs` blocks private canaries and raw macOS diagnostics in CI and in the pre-push hook (`git config core.hooksPath .githooks`). When the companion repository is checked out next to this one as `../skills-private`, or `SKILLS_PRIVATE_DIR` points to it, the check also applies that repository's private-term rules.
 - If that companion checkout exists, read its `AGENTS.md` before running, adding, or changing a private eval, or before promoting an experimental skill from it.
+- The private eval runners pin a public commit by checking it out read-only in a temporary detached worktree. That is a measurement fixture. Do not edit or commit there.
 
 ## Deploying the docs site
 
 - `skills.samcarlton.com` is a personal side project, not a business production app. Sam decided on 2026-11-05 that agents may deploy it without asking, as the last step of a pushed docs change.
-- Deploy only content that is already on remote `main`. Build from a clean checkout or worktree of `origin/main`, not from a tree holding someone else's uncommitted work.
-- From `apps/docs`, pass the validation gates above, then run `bun run deploy`, which builds and runs `wrangler deploy`. Verify the live pages and `llms-full.txt` afterward.
+- Deploy only content that is already on remote `main`. Deploy from the primary checkout once local `main` equals `origin/main` and `git status` shows no modified, staged, or untracked files under the paths the site is built from: `apps/docs`, `skills`, `bundle`, `demos`, and `skill-catalog.json`. Do not create a worktree to deploy. If someone else's uncommitted work sits in those paths, report it.
+- Pass the validation gates above, then run `cd apps/docs && bun run deploy` from the repository root, which builds and runs `wrangler deploy`. Verify the live pages and `llms-full.txt` afterward.
