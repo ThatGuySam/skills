@@ -13,7 +13,6 @@ import {
   urlForTab,
 } from "./install-commands.mjs"
 import { createIcon } from "./install-icons.mjs"
-import { openInAgent } from "./install-open.mjs"
 import { openInstallSheet } from "./install-sheet.mjs"
 
 const storage = () => window.localStorage
@@ -109,21 +108,19 @@ function createSelect(options) {
   return { select, choice }
 }
 
-// Links that open the prompt in an agent. They are plain https links, so they work without
-// script and a phone can hand them to the installed app.
-function createOpenLinks(prompt, report) {
+// Links that open the prompt in an agent, by way of PrefillPrompt's preview screen.
+function createOpenLinks(prompt) {
   const row = document.createElement("div")
   row.className = "install-command-open"
   const label = document.createElement("span")
   label.textContent = "Open in"
   row.append(label, ...openTargets(prompt).map((target) => {
     const link = document.createElement("a")
-    link.href = target.web
+    link.href = target.url
     link.target = "_blank"
     link.rel = "noopener"
     link.append(createIcon(target.id), target.label)
     link.setAttribute("aria-label", `Open the prompt in ${target.label}`)
-    link.addEventListener("click", (event) => openInAgent(event, target, report))
     return link
   }))
   return row
@@ -160,7 +157,7 @@ function initialize() {
     const status = document.createElement("span")
     status.className = "install-command-status"
     status.setAttribute("role", "status")
-    const open = prompt ? createOpenLinks(prompt, (text) => { status.textContent = text }) : document.createElement("div")
+    const open = prompt ? createOpenLinks(prompt) : document.createElement("div")
     toolbar.append(list, select, status, copy)
     panel.append(toolbar, pre, open)
     copy.addEventListener("click", async () => {

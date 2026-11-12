@@ -130,13 +130,14 @@ test("blocked storage still shows the default and accepts a pick for the page", 
   assert.deepEqual(saveSelection(blocked, selection, "mise"), { tab: "mise", runner: "mise" })
 })
 
-test("the prompt opens in each agent's app by its documented deep link, or on its website", () => {
+test("the open-in links go to PrefillPrompt's preview with the agent preset and the prompt intact", () => {
   const prompt = formatPrompt(parseCommand("npx skills add ThatGuySam/skills --skill emily"))
   const [chatgpt, claude] = openTargets(prompt)
-  assert.equal(chatgpt.app, `codex://new?prompt=${encodeURIComponent(prompt)}`)
-  assert.equal(claude.app, `claude-cli://open?q=${encodeURIComponent(prompt)}`)
-  assert.equal(new URL(chatgpt.web).origin + new URL(chatgpt.web).pathname, "https://chatgpt.com/")
-  assert.equal(new URL(claude.web).origin + new URL(claude.web).pathname, "https://claude.ai/new")
-  for (const target of [chatgpt, claude]) assert.equal(new URL(target.web).searchParams.get("q"), prompt)
+  for (const [target, id] of [[chatgpt, "chatgpt"], [claude, "claude"]]) {
+    const url = new URL(target.url)
+    assert.equal(url.origin + url.pathname, "https://prefillprompt.com/open")
+    assert.equal(url.searchParams.get("s"), id)
+    assert.equal(url.searchParams.get("q"), prompt)
+  }
   assert.ok(prompt.length < 5000, "within Claude Code's deep-link prompt limit")
 })

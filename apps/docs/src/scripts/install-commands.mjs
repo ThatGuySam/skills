@@ -149,17 +149,14 @@ export function formatPrompt(command) {
   ].join(" ")
 }
 
-// Where the prompt can be opened. Each agent has a documented deep link for its app, which
-// fills the prompt and waits for the reader to send it, and a website link that does the same.
+// Where the prompt can be opened. Each link goes to PrefillPrompt's preview screen with the
+// agent preset. That screen shows the prompt, warns if it looks dangerous, and opens the
+// agent's app or website when the reader clicks.
 export function openTargets(prompt) {
-  const web = (base) => {
-    const url = new URL(base)
+  return ["chatgpt", "claude"].map((id) => {
+    const url = new URL("https://prefillprompt.com/open")
+    url.searchParams.set("s", id)
     url.searchParams.set("q", prompt)
-    return url.href
-  }
-  const encoded = encodeURIComponent(prompt)
-  return [
-    { id: "chatgpt", label: "ChatGPT", appName: "the ChatGPT app", site: "chatgpt.com", app: `codex://new?prompt=${encoded}`, web: web("https://chatgpt.com/") },
-    { id: "claude", label: "Claude", appName: "Claude Code", site: "claude.ai", app: `claude-cli://open?q=${encoded}`, web: web("https://claude.ai/new") },
-  ]
+    return { id, label: id === "chatgpt" ? "ChatGPT" : "Claude", url: url.href }
+  })
 }
