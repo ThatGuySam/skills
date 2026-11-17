@@ -5,6 +5,10 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-17
+
+Zach Prompting now covers GPT-6.2 Astra and Sol, released today. The vendor reference covers dropping inherited brevity rules, standalone handoffs, when the model should stop to ask, how it should handle tests and visual work, the API parameter changes, and lost reasoning after prefix edits. [OpenAI’s GPT-6.2 guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra)
+
 ## 2026-11-12
 
 ### Phone Size sizes terminal replies for a phone
