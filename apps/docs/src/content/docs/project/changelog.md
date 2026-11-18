@@ -7,6 +7,10 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 
 ## 2026-11-18
 
+### Emily drafts messages
+
+- New Draft mode writes a message you will send yourself, such as an email or text, with the manners built into the message rather than cited. A personal style skill, when loaded, sets the voice. No behavior was re-measured for this.
+
 ### Sam's Action Items
 
 - Publish `sams-action-items`: turn a meeting into one compact, copyable tree of what remains, with your own notes kept word for word and transcript-only actions marked "(meeting)".
