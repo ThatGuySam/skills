@@ -17,7 +17,7 @@ Use the named meeting. When “recent” has several plausible matches, identify
 
 ## Recover the Actual Actions
 
-Read the full available original discussion and the user's own notes before selecting the brief. Personal notes are a starting inventory; generated summaries are navigation. For “all actions,” cover the full relevant discussion beyond any supplied seed list. Join later explanations, corrections, and requests back to the actions they qualify, including exceptions and work completed during the call.
+Read the full available original discussion and the user's own notes before selecting the brief. Read every source the user can access for the meeting, including client and private meetings. Quote them to the user in this chat whenever the exact words help; keep client and private details out of anything published, posted, or shared beyond the user. Personal notes are a starting inventory; generated summaries are navigation. For “all actions,” cover the full relevant discussion beyond any supplied seed list. Join later explanations, corrections, and requests back to the actions they qualify, including exceptions and work completed during the call.
 
 For each candidate, recover the deliverable, owner, recipient, requested channel or format, purpose, timing or dependency, and commitment strength. Retain source locators and ownership evidence for supported details; mark absent information unknown. Distinguish commitments, requests, context-supported inferences, suggestions, deferred ideas, and completed work. Use line numbers or searchable passages when timestamps are unreliable.
 

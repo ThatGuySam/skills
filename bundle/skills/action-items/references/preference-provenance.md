@@ -1,6 +1,6 @@
 # Preference Provenance
 
-This skill was written in October 2026 from a correction ledger built from Sam's real meeting follow-up work: direct user corrections in agent chats, the artifacts those chats produced, and later reviews. The ledger and its source meetings are private and are not part of this repository. Normal use is self-contained.
+This skill was written in October 2026 from a correction ledger built from Sam's real meeting follow-up work: direct user corrections in agent chats, the artifacts those chats produced, and later reviews. The ledger and its source meetings are private and are not part of this repository; maintainers keep the full provenance, with the quoted corrections, in the private companion repository under `evals/sams-action-items/`. Normal use is self-contained.
 
 The ledger separates direct user corrections from authored artifacts, contextual meeting attribution, and researcher observations. Its case groups are neither unique mistake counts nor a complete history.
 
