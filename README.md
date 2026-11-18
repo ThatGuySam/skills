@@ -28,6 +28,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 | Agent Verify | Verify new work and compare before/after improvements with fresh subagents and independent QA. | [agent-verify](apps/docs/src/content/docs/agent-verify/introduction.md) |
 | Activity Monitor | Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. | [activity-monitor](apps/docs/src/content/docs/activity-monitor/introduction.md) |
 | Emily | Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check. | [emily](apps/docs/src/content/docs/emily/introduction.md) |
+| Sam's Action Items | Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word. | [sams-action-items](apps/docs/src/content/docs/action-items/introduction.md) |
 <!-- skills:end:readme-catalog -->
 
 Install a listed skill with `npx skills add ThatGuySam/skills --skill <id>`. Each linked guide includes usage examples and verification limits. Sam's Skill Creator and Sam UX Audit restore their locked dependencies on first use.
@@ -103,7 +104,8 @@ skills/
 ├── htma-measure/
 ├── agent-verify/
 ├── activity-monitor/
-└── emily/
+├── emily/
+└── sams-action-items/
 ```
 <!-- skills:end:readme-tree -->
 

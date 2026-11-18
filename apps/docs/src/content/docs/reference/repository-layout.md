@@ -24,7 +24,8 @@ skills/
 ├── htma-measure/
 ├── agent-verify/
 ├── activity-monitor/
-└── emily/
+├── emily/
+└── sams-action-items/
 ```
 <!-- skills:end:repository-tree -->
 

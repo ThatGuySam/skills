@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sam's Action Items"
+  short_description: "Preserve meeting actions in a compact, copyable tree"
+  default_prompt: "Use $sams-action-items with $phone-size and $sams-tree to preserve my action notes verbatim, layer in sourced context and remaining actions, and return one copyable two-level tree in this chat. Keep it compact while retaining what someone needs to act."

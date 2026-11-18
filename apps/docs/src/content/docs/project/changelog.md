@@ -5,6 +5,14 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-18
+
+### Sam's Action Items
+
+- Publish `sams-action-items`: turn a meeting into one compact, copyable tree of what remains, with your own notes kept word for word and transcript-only actions marked "(meeting)".
+- It works with any transcript or notes source the agent can read, and uses Phone Size and Sam's Tree for the output.
+- The instructions match the version Sam used privately, with personal paths and client names removed. Its evidence is one blind trial on one private meeting; there is no public eval yet. See [verification](/action-items/verification/).
+
 ## 2026-11-12
 
 ### Phone Size sizes terminal replies for a phone
