@@ -13,6 +13,10 @@ Dated changes to the skills, installation metadata, and documentation. Verificat
 - It works with any transcript or notes source the agent can read, and uses Phone Size and Sam's Tree for the output.
 - The instructions match the version Sam used privately, with personal paths and client names removed. Its evidence is one blind trial on one private meeting; there is no public eval yet. See [verification](/action-items/verification/).
 
+## 2026-11-17
+
+Zach Prompting now covers GPT-6.2 Astra and Sol, released today. The vendor reference covers dropping inherited brevity rules, standalone handoffs, when the model should stop to ask, how it should handle tests and visual work, the API parameter changes, and lost reasoning after prefix edits. [OpenAI’s GPT-6.2 guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra)
+
 ## 2026-11-12
 
 ### Phone Size sizes terminal replies for a phone

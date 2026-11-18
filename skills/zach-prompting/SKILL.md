@@ -79,7 +79,7 @@ Do not force a small prompt into a large template. For complex artifacts, use th
 
 ## Keep vendor guidance conditional
 
-Read the relevant section of [vendor guidance](references/vendor-guidance.md) for model-specific prompting or migration, debugging a failure on a named model, reasoning or effort settings, long-run runtime behavior, rolling out a changed prompt to live conversations, or source-backed rationale. Verify current guidance for the exact target model and runtime before applying provider controls.
+Read the relevant section of [vendor guidance](references/vendor-guidance.md) for model-specific prompting or migration, debugging a failure on a named model, reasoning or effort settings, long-run runtime behavior, rolling out a changed prompt to live conversations, or source-backed rationale. For GPT-6.2 Astra or Sol, use the November 17 section of that reference. Verify current guidance for the exact target model and runtime before applying provider controls.
 
 Do not copy model-specific settings into a general artifact unless the named runtime uses them. Prefer shared behavioral rules in portable skills and keep provider controls in scoped sections. To change how much a model thinks, use the runtime's reasoning or effort setting rather than prompt wording. Add a vendor's sample prompt only for a behavior observed on the target model, and measure its effect and its token cost.
 
