@@ -4,6 +4,24 @@ Date: 2026-11-05.
 
 Show a concrete question, compress the waiting, and leave the answer visible long enough to read. This memo supports Sam's Activity Monitor video post. It is personal editorial research, not a change to the published skill or its product documentation.
 
+## Parked entry point
+
+As of November 21, 2026, the edit and source-backed writing recommendations are complete. No X post or upload was performed in this thread. The later copy recommendation supersedes the initial draft below.
+
+Read [the practitioner follow-up](#follow-up-practitioner-sources-for-post-copy) for the post's do's, don'ts, and attribution limits, and [the delivered edit](#delivered-edit) for the timeline and verification. The video and supporting assets remain local under `exports/activity-monitor-x-2026-11-05/`. That machine-local package includes recorded diagnostics and an absolute source-recording path, so it is excluded from publication.
+
+Suggested copy from the final discussion:
+
+> "Why is my Mac slow?"
+>
+> Made an Activity Monitor skill that lets your agent check CPU, memory, and disk, then explain what it finds.
+>
+> In this run, memory load was the strongest suspect. The capture didn't establish the cause.
+
+Thread: Agent-skill demo and tweet research, Codex `01a1ad0c-52aa-7263-9bf6-5fcffdae5e9f`. The discussion explains why the initial video research did not substantiate the original tweet wording; the practitioner follow-up records the corrected attribution.
+
+Next: preview the local MP4 expanded and choose the final post wording. Posting remains Sam's decision. Recheck platform requirements if re-exporting later.
+
 ## Scope and local evidence
 
 The supplied recording is 74.122 seconds, 1622 by 1284 pixels, with no audio stream. It shows `$activity-monitor Why is my computer slow?`, tool activity, and a final answer. The complete answer appears around 53 seconds. The local [skill](../../skills/activity-monitor/SKILL.md) describes bounded macOS resource inspection and separates observations from possible causes. No existing memo in `docs/research/` covered social video demos.
@@ -41,7 +59,7 @@ The source uses long terminal lines. Holding the output helps reading time, but 
 
 ## Delivered edit
 
-The [MP4](../../exports/activity-monitor-x-2026-11-05/activity-monitor-x.mp4) preserves the source window and adds a small banner above it. Its data model is a sequence of source intervals with playback rates and an optional final hold:
+The local `exports/activity-monitor-x-2026-11-05/activity-monitor-x.mp4` preserves the source window and adds a small banner above it. Its data model is a sequence of source intervals with playback rates and an optional final hold:
 
 | Source interval | Playback | Purpose |
 | --- | --- | --- |
@@ -52,7 +70,7 @@ The [MP4](../../exports/activity-monitor-x-2026-11-05/activity-monitor-x.mp4) pr
 
 Measured export: 45.133 seconds, 2,634,370 bytes, 1440 by 1200 pixels, H.264, yuv420p, 30 fps, no audio. Small frame-timing differences arise from converting the variable-frame-rate source to 30 fps. Playback speed is labeled in the video. The original file is unchanged.
 
-FFmpeg's installed `-h filter=setpts`, `-h filter=tpad`, and `-h filter=concat` documentation verified the filters. The online [filter documentation](https://ffmpeg.org/ffmpeg-filters.html) was discoverable but timed out during direct retrieval. The [render script](../../exports/activity-monitor-x-2026-11-05/render.sh) is retained with its banner assets.
+FFmpeg's installed `-h filter=setpts`, `-h filter=tpad`, and `-h filter=concat` documentation verified the filters. The online [filter documentation](https://ffmpeg.org/ffmpeg-filters.html) was discoverable but timed out during direct retrieval. The local `exports/activity-monitor-x-2026-11-05/render.sh` is retained with its banner assets.
 
 Verification used a full FFmpeg decode with no reported errors, ffprobe metadata, and extracted frames spanning the opening, activity, answer, and final hold. This applies the Prove It Works principle to the exported artifact. Model the Domain shaped the explicit source-interval timeline instead of scattered timing expressions. No live X upload was performed.
 
