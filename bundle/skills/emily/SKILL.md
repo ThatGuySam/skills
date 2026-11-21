@@ -17,6 +17,7 @@ Give useful present-day etiquette advice without pretending that a 1922 rule is 
    - **Historical**: explain what the original publication says and how its setting shaped the rule.
    - **Apprentice**: show the reasoning so the user can learn the underlying etiquette principle.
    - **Voice**: write a clearly labeled pastiche; never claim the generated words are Emily Post's words or imply Institute endorsement.
+   - **Draft**: write a message the user will send themselves (an email, text, or note). Follow [Draft mode](#draft-mode) and skip the answer contract.
 3. Identify the people affected, their relationship, power differences, invitation or obligation status, location/culture, channel, timing, safety, consent, and accessibility concerns. Ask one concise clarifying question only when a missing fact would materially change the recommendation.
 
 ## Retrieve evidence
@@ -80,6 +81,26 @@ When a modern object or channel did not exist in the source—email, Slack, soci
 When the sources conflict, say so and explain which principle carries more weight now. When the corpus is silent, say that plainly and reason from the modern bridge instead of manufacturing an Emily Post rule.
 
 If the user asks what **Emily Post herself** said, asks for her exact rule, or requests a quotation, search the Post-authored corpus first. When it has no direct match, lead with “The bundled historical corpus contains no direct Emily Post rule on this.” Do not substitute a quotation from the modern Emily Post Institute, a descendant, a later edition, or this skill. If you mention a nearby historical passage, explicitly label its relevance or analogy `inference`; proximity is not a direct rule on the absent topic. Still answer the practical question: add a clearly labeled current recommendation from the modern bridge or modern synthesis, with its different author and evidence class unmistakable. Paraphrase that replacement guidance; do not reproduce another author's quotation to satisfy the failed quotation request. The summaries in `references/modern-bridge.md` are never quotations.
+
+## Draft mode
+
+Use this when the user asks you to write or revise a message they will send under their own name. The reader will never see this skill, so the manners have to be in the message itself, in the user's present-day voice. Do not cite, quote, or imitate Emily Post, and return only the message unless the user asks for more.
+
+**Personal style.** When the user asks for their own voice, or names or has loaded a personal style skill (for example `sams-comms`), read that skill first. Its greetings, wording, and order override the defaults below. The manners below still apply. Without one, write plain, present-day, courteous messages and take no house style from this skill.
+
+Before writing, read the whole thread and settle four things: who the reader is to the user (a stranger, an official, a client, a colleague, a friend); what they last said, did, asked, or worried about; what is hard to say in this message; and what should happen next.
+
+Then write the message so that:
+
+1. **It begins with the reader.** Take up the particular thing they said or did before the user's own business. If they apologized without need, release them from it. If the user is thanking them, name what they did and what it cost them. The exception is a refusal or bad news (rule 2).
+2. **The hard thing is said early, plainly, and once.** A refusal or bad news goes in the first sentence, with its true reason given briefly, and the thanks follow it. Putting the no behind a paragraph of thanks makes the reader wait for it. Post's regrets open with the refusal: "We are so sorry that we shall be unable to dine with you on the seventh, as we have a previous engagement" (XI). Agreement with a criticism is conceded in one sentence with no defense. An apology that is owed states the lapse at its real size (how long, what was missed) with one plain reason, once, and without groveling. When no apology is owed, do not write one, and never invent a delay or a fault.
+3. **The next step is easy.** Say what the user will do and by when, or the one thing they ask of the reader. When the request costs the reader something, leave them a graceful way to say no.
+4. **It holds one pleasant word that belongs to this reader**, such as a wish for the thing they have ahead. A stock closing is not one.
+5. **The register fits the relationship.** A stranger on a serious matter needs the user's full name, their role, and why they are writing now. A text to a friend sounds like a text: short, no greeting or sign-off, in the words the two already use. Give a word to everyone on the thread who is owed one.
+6. **It stays inside what the user said.** Include every point they gave. You may add courtesy (thanks, acknowledgment, a good wish) but no new facts, dates, promises, or feelings. Rough dictation becomes the user's plain speech, not formal prose.
+7. **Nothing is there for show.** Cut stock openers and closers, restatements of the reader's message, anything said twice, stacked exclamation marks, and corporate or old-fashioned words. The message is as long as the matter and no longer.
+
+Last, read it as the reader would. They should feel the user thought of them in particular, and the user should be willing to say every sentence aloud.
 
 ## Voice mode
 

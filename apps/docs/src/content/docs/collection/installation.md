@@ -22,7 +22,7 @@ npx skills add thatguysam/skills --list
 ```
 
 <!-- skills:start:installation-names -->
-The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`.
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`, `sams-action-items`.
 <!-- skills:end:installation-names -->
 
 ## Install one skill
@@ -149,6 +149,14 @@ Answer etiquette questions from Emily Post's public-domain writing, with citatio
 ```bash
 npx skills add ThatGuySam/skills --skill emily
 ```
+
+### Sam's Action Items
+
+Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word. [Read the guide](/action-items/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill sams-action-items
+```
 <!-- skills:end:installation-commands -->
 
 ## Install the collection in Codex
@@ -187,6 +195,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. Skills
 | Agent Verify | `/agent-verify` | `/sams:agent-verify` | `$agent-verify` | `$sams:agent-verify` |
 | Activity Monitor | `/activity-monitor` | `/sams:activity-monitor` | `$activity-monitor` | `$sams:activity-monitor` |
 | Emily | `/emily` | `/sams:emily` | `$emily` | `$sams:emily` |
+| Sam's Action Items | `/sams-action-items` | `/sams:action-items` | `$sams-action-items` | `$sams:action-items` |
 <!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.

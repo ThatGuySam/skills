@@ -5,6 +5,18 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-18
+
+### Emily drafts messages
+
+- New Draft mode writes a message you will send yourself, such as an email or text, with the manners built into the message rather than cited. A personal style skill, when loaded, sets the voice. No behavior was re-measured for this.
+
+### Sam's Action Items
+
+- Publish `sams-action-items`: turn a meeting into one compact, copyable tree of what remains, with your own notes kept word for word and transcript-only actions marked "(meeting)".
+- It works with any transcript or notes source the agent can read, and uses Phone Size and Sam's Tree for the output.
+- The instructions match the version Sam used privately, with personal paths and client names removed. Its evidence is one blind trial on one private meeting; there is no public eval yet. See [verification](/action-items/verification/).
+
 ## 2026-11-17
 
 Zach Prompting now covers GPT-6.2 Astra and Sol, released today. The vendor reference covers dropping inherited brevity rules, standalone handoffs, when the model should stop to ask, how it should handle tests and visual work, the API parameter changes, and lost reasoning after prefix edits. [OpenAI’s GPT-6.2 guide](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra)

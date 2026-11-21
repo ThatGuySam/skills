@@ -89,6 +89,12 @@
       "title": "Emily",
       "summary": "Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check.",
       "guide": "emily/introduction"
+    },
+    {
+      "id": "sams-action-items",
+      "title": "Sam's Action Items",
+      "summary": "Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word.",
+      "guide": "action-items/introduction"
     }
   ],
   "navigationGroups": [
@@ -409,6 +415,25 @@
         {
           "label": "Verification",
           "slug": "emily/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "sams-action-items"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "action-items/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "action-items/reference"
+        },
+        {
+          "label": "Verification",
+          "slug": "action-items/verification"
         }
       ]
     }
