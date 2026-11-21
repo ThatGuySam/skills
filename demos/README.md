@@ -50,3 +50,5 @@ Recording replaces the local account name, which tools such as `ls -l` print, wi
 Rendering caps each pause at two seconds and speeds playback up to 8x, aiming for about 45 seconds. The final frame holds for 10 seconds so the result can be read. Captions state the recording date, Codex version, and speed.
 
 Re-record when a skill's behavior or default prompt changes. Commit the cast, metadata, media, and embed changes together.
+
+Status and open questions: [handoff](../docs/handoffs/skill-demos-2026-11-21.md).
