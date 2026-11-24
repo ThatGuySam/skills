@@ -26,7 +26,8 @@ skills/
 ├── agent-verify/
 ├── activity-monitor/
 ├── emily/
-└── sams-action-items/
+├── sams-action-items/
+└── luma-event-ops/
 ```
 <!-- skills:end:distribution-tree -->
 

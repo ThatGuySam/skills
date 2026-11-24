@@ -5,6 +5,13 @@ description: Public changes to the skills, distribution metadata, and documentat
 
 Dated changes to the skills, installation metadata, and documentation. Verification limits accompany the relevant entries.
 
+## 2026-11-24
+
+### Luma Event Operations joins the collection
+
+- Draft and manage the listing, registration, and guest communications for a specific Luma event you host. Install it with `npx skills add ThatGuySam/skills --skill luma-event-ops`. The collection bundle is now 0.18.0. [Install and use](/luma-event-ops/introduction/)
+- The skill checks for automatic notifications before saving a change and asks for explicit scope before it promotes a listing or sends guest messages. It passed a small offline synthetic pilot. [Verification](/luma-event-ops/verification/)
+
 ## 2026-11-18
 
 ### Emily drafts messages

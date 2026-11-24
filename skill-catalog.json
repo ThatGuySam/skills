@@ -95,6 +95,12 @@
       "title": "Sam's Action Items",
       "summary": "Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word.",
       "guide": "action-items/introduction"
+    },
+    {
+      "id": "luma-event-ops",
+      "title": "Luma Event Operations",
+      "summary": "Draft listings, manage registration, and coordinate guest updates for a Luma event you host.",
+      "guide": "luma-event-ops/introduction"
     }
   ],
   "navigationGroups": [
@@ -434,6 +440,25 @@
         {
           "label": "Verification",
           "slug": "action-items/verification"
+        }
+      ]
+    },
+    {
+      "skills": [
+        "luma-event-ops"
+      ],
+      "items": [
+        {
+          "label": "Install and use",
+          "slug": "luma-event-ops/introduction"
+        },
+        {
+          "label": "Reference",
+          "slug": "luma-event-ops/reference"
+        },
+        {
+          "label": "Verification",
+          "slug": "luma-event-ops/verification"
         }
       ]
     }

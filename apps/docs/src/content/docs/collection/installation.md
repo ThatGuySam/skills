@@ -22,7 +22,7 @@ npx skills add thatguysam/skills --list
 ```
 
 <!-- skills:start:installation-names -->
-The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`, `sams-action-items`.
+The repository publishes `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`, `sams-action-items`, `luma-event-ops`.
 <!-- skills:end:installation-names -->
 
 ## Install one skill
@@ -157,6 +157,14 @@ Turn a meeting into a compact, copyable tree of what remains, keeping your own n
 ```bash
 npx skills add ThatGuySam/skills --skill sams-action-items
 ```
+
+### Luma Event Operations
+
+Draft listings, manage registration, and coordinate guest updates for a Luma event you host. [Read the guide](/luma-event-ops/introduction/).
+
+```bash
+npx skills add ThatGuySam/skills --skill luma-event-ops
+```
 <!-- skills:end:installation-commands -->
 
 ## Install the collection in Codex
@@ -196,6 +204,7 @@ The HTTPS repository URL avoids depending on a configured GitHub SSH key. Skills
 | Activity Monitor | `/activity-monitor` | `/sams:activity-monitor` | `$activity-monitor` | `$sams:activity-monitor` |
 | Emily | `/emily` | `/sams:emily` | `$emily` | `$sams:emily` |
 | Sam's Action Items | `/sams-action-items` | `/sams:action-items` | `$sams-action-items` | `$sams:action-items` |
+| Luma Event Operations | `/luma-event-ops` | `/sams:luma-event-ops` | `$luma-event-ops` | `$sams:luma-event-ops` |
 <!-- skills:end:installation-invocations -->
 
 After updating an existing Claude installation, run `/reload-plugins` or begin a new session before using the new namespace.

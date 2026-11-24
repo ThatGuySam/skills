@@ -1,0 +1,11 @@
+interface:
+  display_name: "Luma Event Operations"
+  short_description: "Manage a Luma listing and guest updates as its host"
+  default_prompt: "Use $luma-event-ops to review my Luma listing and prepare paste-ready copy and a registration question."
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

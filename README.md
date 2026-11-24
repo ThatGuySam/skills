@@ -29,6 +29,7 @@ Sam's Skills contains reusable workflows for Codex, Claude Code, and other agent
 | Activity Monitor | Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. | [activity-monitor](apps/docs/src/content/docs/activity-monitor/introduction.md) |
 | Emily | Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check. | [emily](apps/docs/src/content/docs/emily/introduction.md) |
 | Sam's Action Items | Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word. | [sams-action-items](apps/docs/src/content/docs/action-items/introduction.md) |
+| Luma Event Operations | Draft listings, manage registration, and coordinate guest updates for a Luma event you host. | [luma-event-ops](apps/docs/src/content/docs/luma-event-ops/introduction.md) |
 <!-- skills:end:readme-catalog -->
 
 Install a listed skill with `npx skills add ThatGuySam/skills --skill <id>`. Each linked guide includes usage examples and verification limits. Sam's Skill Creator and Sam UX Audit restore their locked dependencies on first use.
@@ -105,7 +106,8 @@ skills/
 ├── agent-verify/
 ├── activity-monitor/
 ├── emily/
-└── sams-action-items/
+├── sams-action-items/
+└── luma-event-ops/
 ```
 <!-- skills:end:readme-tree -->
 

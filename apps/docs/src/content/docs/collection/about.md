@@ -38,6 +38,7 @@ A skill belongs here when it is:
 | Activity Monitor | Explain Mac slowdowns, freezes, and hung apps with a short evidence-backed brief. | [activity-monitor](/activity-monitor/introduction/) |
 | Emily | Answer etiquette questions from Emily Post's public-domain writing, with citations and a present-day check. | [emily](/emily/introduction/) |
 | Sam's Action Items | Turn a meeting into a compact, copyable tree of what remains, keeping your own notes word for word. | [sams-action-items](/action-items/introduction/) |
+| Luma Event Operations | Draft listings, manage registration, and coordinate guest updates for a Luma event you host. | [luma-event-ops](/luma-event-ops/introduction/) |
 <!-- skills:end:about-catalog -->
 
 Each skill remains canonical in its own `skills/<name>/` directory. Collection packaging points to those directories instead of copying their instructions.
@@ -46,7 +47,7 @@ Each skill remains canonical in its own `skills/<name>/` directory. Collection p
 
 - **Repository:** `ThatGuySam/skills`
 <!-- skills:start:about-names -->
-Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`, `sams-action-items`.
+Standalone skills: `phone-size`, `sams-tree`, `sams-status`, `sams-env`, `andrej-explain`, `migrate-cgpt`, `sales-research`, `sams-gen-writing`, `sams-skill-creator`, `sam-ux-audit`, `zach-prompting`, `htma-measure`, `agent-verify`, `activity-monitor`, `emily`, `sams-action-items`, `luma-event-ops`.
 <!-- skills:end:about-names -->
 - **Marketplace:** `thatguysam-skills`
 - **Plugin install key:** `sams@thatguysam-skills`
